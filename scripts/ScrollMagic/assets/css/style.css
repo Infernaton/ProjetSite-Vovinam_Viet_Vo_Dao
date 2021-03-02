@@ -1,0 +1,54 @@
+/*
+	General styles
+*/
+
+body, html {
+	height: 100%
+}
+.touchonly {
+	display: none;
+}
+html.touch .touchonly {
+	display: block;
+}
+.noselect, .noselect * {
+	user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+}
+.doselect, .doselect *:not(.noselect) {
+	user-select: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-o-user-select: text;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+section.demo {
+	text-align: center;
+}
+.demo#section-slides, .demo#section-wipes {
+	height: 100%;
+	width: 100%;
+	background-image: none;
+}
+/*
+	colors
+*/
+
+.box1.outline, .box2.outline, .box3.outline {
+	border: 1px solid white;
+}
+.white {
+	background-color: #FFFFFF;
+}
