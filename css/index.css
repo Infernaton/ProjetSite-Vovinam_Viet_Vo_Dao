@@ -1,7 +1,10 @@
 a{  
-    color: #6565a7;
+    color: black;
     text-decoration: none;
     outline: none;
+}
+.link{
+    color:#6565a7;
 }
 a:hover{
     color: #DC3634;
