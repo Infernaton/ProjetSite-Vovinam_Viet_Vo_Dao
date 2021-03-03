@@ -94,11 +94,40 @@
 
         </ul>
     </nav>
-    <div>
-        <p>
-            <a class="dropdown-item" href="../direction_tech/internship.html">Stages GRT Coupes</a> <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+    <div class="container">
+        <h2 class="text-center mt-5">Passage de grades</h2>
+        <div class="row">
+            <div id="belt" class="col-sm-8">
+                <img id="beltPicture" src="../assets/img/belt/init.png">
+            </div>
+            <div id="chooseBelt" class="col-sm-4 text-center">
+                <select name="belt" class="custom-select mb-3" onchange="document.getElementById('beltPicture').src = this.value">
+                    <option value="../assets/img/belt/init.png" selected>Initiation</option>
+                    <option value="../assets/img/belt/bleu1.png">C. bleue 1er Cap</option>
+                    <option value="../assets/img/belt/bleu2.png">C. bleue 2e Cap</option>
+                    <option value="../assets/img/belt/bleu3.png">C. bleue 3e Cap</option>
+    
+                    <option value="../assets/img/belt/jaune1.png">C. jaune 1er Dang</option>
+                    <option value="../assets/img/belt/jaune2.png">C. jaune 2e Dang</option>
+                    <option value="../assets/img/belt/jaune3.png">C. jaune 3e Dang</option>
+    
+                    <option value="../assets/img/belt/rouge0.png">C. rouge</option>
+                    <option value="../assets/img/belt/rouge1.png">C. rouge 1er degré</option>
+                    <option value="../assets/img/belt/rouge2.png">C. rouge 2e degré</option>
+                    <option value="../assets/img/belt/rouge3.png">C. rouge 3e degré</option>
+                    <option value="../assets/img/belt/rouge4.png">C. rouge 4e degré</option>
+                    <option value="../assets/img/belt/rouge5.png">C. rouge 5e degré</option>
+                    <option value="../assets/img/belt/rouge6.png">C. rouge 6e degré</option>
+                </select>
+                <a href="download_file/3.2.1_Les_grades_Internationaux.pdf" class="link">Voir "Les_grades_Internationaux.pdf"</a><br>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <a href="download_file/3.2.2_Les grades du Vovinam-Viàt Vo Dao.pdf" class="link">Voir "Les grades du Vovinam-Viàt Vo Dao.pdf"</a> <br>
+            <a href="download_file/3.3_Organisation des examens des grades.pdf" class="link">Voir "Organisation des examens des grades.pdf"</a> <br>
+            <a href="download_file/3.4_Programmes d'examens.pdf" class="link">Voir "Programmes d'examens.pdf"</a>
+        </div>
     </div>
 </body>
 </html>
