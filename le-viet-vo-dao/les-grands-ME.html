@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/maitres.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -94,5 +95,79 @@
 
         </ul>
     </nav>
+
+    <div class="container">
+        <div class="text-center">
+            <div style="padding: 50px;">
+                <h1 class="content-title">Le Maître fondateur</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <img style="width: 85%; margin-top:5px" src="../assets/img/Maitres/ME_Fondateur.png" alt="">
+            </div>
+            <div class="col-sm-8">
+                <div class="card-container manual-flip">
+                    <div class="card">
+                        <div class="front">
+                            <div class="content">
+                                <div class="main">
+                                    <h3 class="name">Maitre Nguyễn Lộc</h3>
+                                    <p class="profession">1912-1960</p>
+                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
+                                </div>
+                                <div class="footer">
+                                    <button class="btn btn-simple" onclick="rotateCard(this)">
+                                        <i class="fa fa-mail-forward"></i> Manual Rotation
+                                    </button>
+                                </div>
+                            </div>
+                        </div> <!-- end front panel -->
+                        <div class="back">
+                            <div class="header">
+                                <h5>"To be or not to be, this is my awesome motto!"</h5>
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <p>Hello World!</p>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                    <i class="fa fa-reply"></i> Retour
+                                </button>
+                                <div class="social-links text-center">
+                                    <a href="http://deepak646.blogspot.in/" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                    <a href="http://deepak646.blogspot.in/" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                    <a href="http://deepak646.blogspot.in/" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div> <!-- end back panel -->
+                    </div> <!-- end card -->
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <div style="padding: 50px;">
+                <h1 class="content-title">Les grands maîtres</h1>
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+       $().ready(function(){
+        $('[rel="tooltip"]').tooltip();
+
+    });
+
+    function rotateCard(btn){
+        var $card = $(btn).closest('.card-container');
+        console.log($card);
+        if($card.hasClass('hover')){
+            $card.removeClass('hover');
+        } else {
+            $card.addClass('hover');
+        }
+    }
+</script>
 </html>    

@@ -39,8 +39,8 @@
      * shape. I guess these could be any shape, they don't
      * necessarily have to be round 🙂.
      */
-    --cap-image-left: url("../assets/svg/left.svg");
-    --cap-image-right: url("../assets/svg/right.svg");
+    --cap-image-left: url("../assets/svg/yellow_left.svg");
+    --cap-image-right: url("../assets/svg/yellow_right.svg");
   }
 .content-title{
   display: inline;
