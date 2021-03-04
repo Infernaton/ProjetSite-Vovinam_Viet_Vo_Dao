@@ -1,0 +1,15 @@
+img.alignRight{
+    float: right;
+    margin: 130px 12px 25px 0;
+    padding: 15px;
+}
+
+p.alignLeft{
+    text-align: left;
+    text-align: justify;
+    
+}
+p.alignRight{
+    text-align: right;
+    text-align: justify;
+}
