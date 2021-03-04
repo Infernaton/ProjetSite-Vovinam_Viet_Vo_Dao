@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vovinam Viet Vodao</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/directionTech.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Vovinam Viet Vodao</title>
 </head>
 <body>
@@ -32,10 +39,10 @@
                 <a class="nav-link" href="../index.html">Accueil</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color:#e82226">La fédération</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">La fédération</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="../federation/federation.html">La fédération</a>
-                    <a class="dropdown-item" href="../federation/calendar.html" style="color:#e82226">Calendrier</a>
+                    <a class="dropdown-item" href="../federation/calendrier.html">Calendrier</a>
                     <a class="dropdown-item" href="../federation/map.html">Les régions</a>
                     <a class="dropdown-item" href="../federation/map.html">Les clubs</a>
                     <a class="dropdown-item" href="../federation/contacts.html">Contacts</a>
@@ -44,14 +51,14 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Direction technique</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color:#e82226">Direction technique</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="../direction_tech/master_council.html">Le conseil des ME</a>
-                    <a class="dropdown-item" href="../direction_tech/masterList_blackBeltList.html">Liste O.CN et ME</a>
-                    <a class="dropdown-item" href="../direction_tech/calendar.html">Calendrier technique</a>
-                    <a class="dropdown-item" href="../direction_tech/internship.html">Stages GRT Coupes</a>
-                    <a class="dropdown-item" href="../direction_tech/level_rank.html">Passage de grades</a>
-                    <a class="dropdown-item" href="../direction_tech/training.html">Formations</a>
+                    <a class="dropdown-item" href="../direction_tech/conseilMaitre.html">Le conseil des ME</a>
+                    <a class="dropdown-item" href="../direction_tech/listeMaitre.html">Liste O.CN et ME</a>
+                    <a class="dropdown-item" href="../direction_tech/calendrier.html">Calendrier technique</a>
+                    <a class="dropdown-item" href="../direction_tech/stage.html">Stages GRT Coupes</a>
+                    <a class="dropdown-item" href="../direction_tech/changeGrade.html" style="color:#e82226">Passage de grades</a>
+                    <a class="dropdown-item" href="../direction_tech/formation.html">Formations</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -93,43 +100,50 @@
 
         </ul>
     </nav>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">	
-	
-	<div class="container">
-		<div class="row row-striped">
-			<div class="col-2 text-right">
-				<h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
-				<h2>MARS</h2>
-			</div>
-			<div class="col-10">
-				<h3 class="text-uppercase"><strong>COMPETITION VOVINAM</strong></h3>
-				<ul class="list-inline">
-				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lundi</li>
-					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12H30 - 14H </li>
-					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Dojo Caen</li>
-				</ul>
-				<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                    ut labore et dolore magna aliqua.
-                </p>
-			</div>
-		</div>
-		<div class="row row-striped">
-			<div class="col-2 text-right">
-				<h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
-				<h2>MARS</h2>
-			</div>
-			<div class="col-10">
-				<h3 class="text-uppercase"><strong>ENTRAINEMENT MAITRES</strong></h3>
-				<ul class="list-inline">
-				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Vendredi</li>
-					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 14H30 - 16H</li>
-					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Dojo Paris</li>
-				</ul>
-				<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                    labore et dolore magna aliqua.
-                </p>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="text-center mt-5">
+            <h2 class="content-title">Passage de grades</h2>
+        </div>
+        <br>
+        <div class="row">
+            <div id="belt" class="col-sm-7">
+                <img style="width: 40%;" id="beltPicture" src="../assets/img/ceintures/c_initiation.png">
+            </div>
+            <div id="chooseBelt" class="col-sm-5">
+                <select name="belt" class="custom-select mb-3" onchange="document.getElementById('beltPicture').src = this.value">
+                    <option value="../assets/img/ceintures/c_initiation.png" selected>Initiation</option>
+                    <option value="../assets/img/ceintures/c_bleu_1er_cap.png">C. bleue 1er Cap</option>
+                    <option value="../assets/img/ceintures/c_bleu_2eme_cap.png">C. bleue 2e Cap</option>
+                    <option value="../assets/img/ceintures/c_bleu_3eme_cap.png">C. bleue 3e Cap</option>
+    
+                    <option value="../assets/img/ceintures/c_jaune_1er_dang.png">C. jaune 1er Dang</option>
+                    <option value="../assets/img/ceintures/c_jaune_2eme_dang.png">C. jaune 2e Dang</option>
+                    <option value="../assets/img/ceintures/c_jaune_3eme_dang.png">C. jaune 3e Dang</option>
+    
+                    <option value="../assets/img/ceintures/c_rouge.png">C. rouge</option>
+                    <option value="../assets/img/ceintures/c_rouge_1er_degre.png">C. rouge 1er degré</option>
+                    <option value="../assets/img/ceintures/c_rouge_2eme_degre.png">C. rouge 2e degré</option>
+                    <option value="../assets/img/ceintures/c_rouge_3eme_degre.png">C. rouge 3e degré</option>
+                    <option value="../assets/img/ceintures/c_rouge_4eme_degre.png">C. rouge 4e degré</option>
+                    <option value="../assets/img/ceintures/c_rouge_5eme_degre.png">C. rouge 5e degré</option>
+                    <option value="../assets/img/ceintures/c_rouge_6eme_degre.png">C. rouge 6e degré</option>
+                </select>
+                <div class="text-center">
+                    <p>Pour toutes informations sur le Passage des différents grades :</p>
+                    <a href="download_file/3.2.1_Les_grades_Internationaux.pdf" class="link">Voir "Les_grades_Internationaux.pdf"</a><br>
+                    <a href="download_file/3.2.2_Les grades du Vovinam-Viàt Vo Dao.pdf" class="link">Voir "Les grades du Vovinam-Viàt Vo Dao.pdf"</a> <br>
+                    <a href="download_file/3.3_Organisation des examens des grades.pdf" class="link">Voir "Organisation des examens des grades.pdf"</a> <br>
+                    <a href="download_file/3.4_Programmes d'examens.pdf" class="link">Voir "Programmes d'examens.pdf"</a>
+                </div>
+                <div>
+                    <br>
+                    <br>
+                    <p class="border pl-3">
+                        Formulaire pour passer un grade: <a href="#" class="link">formulaire.pdf</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

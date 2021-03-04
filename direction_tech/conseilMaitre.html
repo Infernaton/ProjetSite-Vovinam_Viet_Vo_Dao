@@ -42,7 +42,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">La fédération</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="../federation/federation.html">La fédération</a>
-                    <a class="dropdown-item" href="../federation/calendar.html">Calendrier</a>
+                    <a class="dropdown-item" href="../federation/calendrier.html">Calendrier</a>
                     <a class="dropdown-item" href="../federation/map.html">Les régions</a>
                     <a class="dropdown-item" href="../federation/map.html">Les clubs</a>
                     <a class="dropdown-item" href="../federation/contacts.html">Contacts</a>
@@ -53,12 +53,12 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color:#e82226">Direction technique</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="../direction_tech/master_council.html">Le conseil des ME</a>
-                    <a class="dropdown-item" href="../direction_tech/masterList_blackBeltList.html">Liste O.CN et ME</a>
-                    <a class="dropdown-item" href="../direction_tech/calendar.html">Calendrier technique</a>
-                    <a class="dropdown-item" href="../direction_tech/internship.html">Stages GRT Coupes</a>
-                    <a class="dropdown-item" href="../direction_tech/level_rank.html" style="color:#e82226">Passage de grades</a>
-                    <a class="dropdown-item" href="../direction_tech/training.html">Formations</a>
+                    <a class="dropdown-item" href="../direction_tech/conseilMaitre.html" style="color:#e82226">Le conseil des ME</a>
+                    <a class="dropdown-item" href="../direction_tech/listeMaitre.html">Liste O.CN et ME</a>
+                    <a class="dropdown-item" href="../direction_tech/calendrier.html">Calendrier technique</a>
+                    <a class="dropdown-item" href="../direction_tech/stage.html">Stages GRT Coupes</a>
+                    <a class="dropdown-item" href="../direction_tech/changeGrade.html">Passage de grades</a>
+                    <a class="dropdown-item" href="../direction_tech/formation.html">Formations</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -97,51 +97,69 @@
                     <a class="dropdown-item" href="../Contacts/personnalite-federation.html">Personnalité de la fédération</a>
                 </div>
             </li>
-
         </ul>
     </nav>
     <div class="container">
         <div class="text-center mt-5">
-            <h2 class="content-title">Passage de grades</h2>
+            <h2 class="content-title">Le conseil des Maîtres</h2> 
         </div>
         <br>
-        <div class="row">
-            <div id="belt" class="col-sm-7">
-                <img style="width: 40%;" id="beltPicture" src="../assets/img/ceintures/c_initiation.png">
+        <h4 class="ml-3">Sommaire</h4>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        <ul>
+                            <li><a href="#def"class="link">Définition</a></li>
+                        </ul>
+                    </th>
+                    <th>
+                        <ul>
+                            <li><a href="#hist"class="link">Historique</a></li>
+                        </ul>
+                    </th>
+                    <th>
+                        <ul>
+                            <li><a href="#rule"class="link">Règlement Intérieur</a></li>
+                        </ul>
+                    </th>
+                </tr>
+            </tbody>
+            <div id="def"></div>
+        </table>
+        <div>
+            <br>
+            <h3><span class="ml-3">Qu'est ce que le Conseil des Maîtres ?</span></h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                officia deserunt mollit anim id est laborum.
+            </p>
+            <div id="hist"></div>
+        </div>
+        <div>
+            <br>
+            <h3><span class="ml-3">Historique du Conseil</span></h3>
+            <div class="container border">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                    officia deserunt mollit anim id est laborum.
+                </p>
             </div>
-            <div id="chooseBelt" class="col-sm-5">
-                <select name="belt" class="custom-select mb-3" onchange="document.getElementById('beltPicture').src = this.value">
-                    <option value="../assets/img/ceintures/c_initiation.png" selected>Initiation</option>
-                    <option value="../assets/img/ceintures/c_bleu_1er_cap.png">C. bleue 1er Cap</option>
-                    <option value="../assets/img/ceintures/c_bleu_2eme_cap.png">C. bleue 2e Cap</option>
-                    <option value="../assets/img/ceintures/c_bleu_3eme_cap.png">C. bleue 3e Cap</option>
-    
-                    <option value="../assets/img/ceintures/c_jaune_1er_dang.png">C. jaune 1er Dang</option>
-                    <option value="../assets/img/ceintures/c_jaune_2eme_dang.png">C. jaune 2e Dang</option>
-                    <option value="../assets/img/ceintures/c_jaune_3eme_dang.png">C. jaune 3e Dang</option>
-    
-                    <option value="../assets/img/ceintures/c_rouge.png">C. rouge</option>
-                    <option value="../assets/img/ceintures/c_rouge_1er_degre.png">C. rouge 1er degré</option>
-                    <option value="../assets/img/ceintures/c_rouge_2eme_degre.png">C. rouge 2e degré</option>
-                    <option value="../assets/img/ceintures/c_rouge_3eme_degre.png">C. rouge 3e degré</option>
-                    <option value="../assets/img/ceintures/c_rouge_4eme_degre.png">C. rouge 4e degré</option>
-                    <option value="../assets/img/ceintures/c_rouge_5eme_degre.png">C. rouge 5e degré</option>
-                    <option value="../assets/img/ceintures/c_rouge_6eme_degre.png">C. rouge 6e degré</option>
-                </select>
-                <div class="text-center">
-                    <p>Pour toutes informations sur le Passage des différents grades :</p>
-                    <a href="download_file/3.2.1_Les_grades_Internationaux.pdf" class="link">Voir "Les_grades_Internationaux.pdf"</a><br>
-                    <a href="download_file/3.2.2_Les grades du Vovinam-Viàt Vo Dao.pdf" class="link">Voir "Les grades du Vovinam-Viàt Vo Dao.pdf"</a> <br>
-                    <a href="download_file/3.3_Organisation des examens des grades.pdf" class="link">Voir "Organisation des examens des grades.pdf"</a> <br>
-                    <a href="download_file/3.4_Programmes d'examens.pdf" class="link">Voir "Programmes d'examens.pdf"</a>
-                </div>
-                <div>
-                    <br>
-                    <br>
-                    <p class="border pl-3">
-                        Formulaire pour passer un grade: <a href="#" class="link">formulaire.pdf</a>
-                    </p>
-                </div>
+            <div id="rule"></div>
+        </div>
+        <div>
+            <br>
+            <h3><span class="ml-3">Réglement Intérieur</span></h3>
+            <div class="container pt-2 my-3 border">
+                <ul>
+                    <li><a href="#" class="link">Voir le Réglement Intérieur</a></li>
+                </ul>
             </div>
         </div>
     </div>
