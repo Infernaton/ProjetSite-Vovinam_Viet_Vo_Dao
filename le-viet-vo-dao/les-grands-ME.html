@@ -117,35 +117,30 @@
                         <div class="front">
                             <div class="content">
                                 <div class="main">
-                                    <h3 class="name">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession">1912-1960</p>
+                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
+                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
                                     <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
                                 </div>
-                                <div class="footer">
+                                <div class="footer" style="float: right;">
                                     <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        <i class="fa fa-mail-forward"></i> Manual Rotation
+                                        En savoir +
                                     </button>
                                 </div>
                             </div>
                         </div> <!-- end front panel -->
                         <div class="back">
                             <div class="header">
-                                <h5>"To be or not to be, this is my awesome motto!"</h5>
+                                <h5>Header</h5>
                             </div>
                             <div class="content">
                                 <div class="main">
-                                    <p>Hello World!</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique distinctio illum dolore, veritatis labore fugiat accusamus, nulla ea cum ipsa saepe possimus eius sequi a at porro deleniti enim aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta odit, repudiandae accusantium enim nemo veritatis, deleniti cum unde adipisci quaerat molestias modi. Perferendis quaerat sint minus harum rem ad reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat at sapiente neque assumenda sunt doloremque fuga magni aspernatur eveniet iusto aut omnis illum ratione a illo quis, id et rerum!</p>
                                 </div>
                             </div>
                             <div class="footer">
                                 <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
-                                    <i class="fa fa-reply"></i> Retour
+                                    Retour
                                 </button>
-                                <div class="social-links text-center">
-                                    <a href="http://deepak646.blogspot.in/" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                    <a href="http://deepak646.blogspot.in/" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                                    <a href="http://deepak646.blogspot.in/" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                                </div>
                             </div>
                         </div> <!-- end back panel -->
                     </div> <!-- end card -->
@@ -155,6 +150,65 @@
         <div class="text-center">
             <div style="padding: 50px;">
                 <h1 class="content-title">Les grands maîtres</h1>
+            </div>
+            <div class="border row">
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master1" src="a">
+                    <label for="master1">1</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master2" src="a">
+                    <label for="master2">2</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master3" src="a">
+                    <label for="master3">3</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master4" src="a">
+                    <label for="master4">4</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master5" src="a">
+                    <label for="master5">5</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master6" src="a">
+                    <label for="master6">6</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master7" src="a">
+                    <label for="master7">7</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master8" src="a">
+                    <label for="master8">8</label>
+                </div>
+                <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
+                    <img name="master9" src="a">
+                    <label for="master9">9</label>
+                </div>
+            </div>
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Maitre ....</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Modal body...
+                        </div>
+                    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
