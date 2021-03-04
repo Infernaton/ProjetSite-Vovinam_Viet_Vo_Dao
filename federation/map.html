@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Vovinam Viet Vodao</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
     <header>
@@ -25,12 +27,12 @@
                 <a class="nav-link" href="../index.html">Accueil</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color:#e82226">La fédération</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">La fédération</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="../federation/federation.html">La fédération</a>
                     <a class="dropdown-item" href="../federation/calendar.html">Calandrier</a>
-                    <a class="dropdown-item" href="../federation/map.html" style="color:#e82226">Les régions</a>
-                    <a class="dropdown-item" href="../federation/map.html" style="color:#e82226">Les clubs</a>
+                    <a class="dropdown-item" href="../federation/map.html">Les régions</a>
+                    <a class="dropdown-item" href="../federation/map.html">Les clubs</a>
                     <a class="dropdown-item" href="../federation/contacts.html">Contacts</a>
                     <a class="dropdown-item" href="../federation/lien.html">Lien</a>
                     <a class="dropdown-item" href="../federation/legal.html">Label-Légal-régularité</a>
@@ -48,11 +50,11 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Le Vovinam VVD</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: #e82226;">Le Vovinam VVD</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="../le-viet-vo-dao/la-discipline.html">Le sport et ses valeurs</a>
                     <a class="dropdown-item" href="../le-viet-vo-dao/l-histoire.html">Son histoire</a>
-                    <a class="dropdown-item" href="../le-viet-vo-dao/la-fede-mondiale.html">La fédération mondiale</a>
+                    <a class="dropdown-item" href="../le-viet-vo-dao/la-fede-mondiale.html" style="color: #e82226;">La fédération mondiale</a>
                     <a class="dropdown-item" href="../le-viet-vo-dao/les-grands-ME.html">Les grands Maîtres</a>
                 </div>
             </li>
@@ -86,14 +88,231 @@
 
         </ul>
     </nav>
-    <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id='map' style='width: auto; height: 600px;'></div>
+            </div>
+        </div>
+    </div>
+        <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHVvbDNrMDA2aDIycG13dHN4OHM4ZzYifQ.DhQMoc4x6Wc272t8z7VBIg';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [2.40,47.45],
+    zoom: 5
+    });
 
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgHAUVDlzFiwpNfNEru7DKerE9M9y10A4&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
-  </body>
-</html>
+    map.on('load', function () {
+
+        const markers = [
+            {url: '../assets/img/markers/blue_marker.png', id: 'blue_marker'},
+            {url: '../assets/img/markers/red_marker.png', id: 'red_marker'}
+        ]
+
+        markers.forEach(marker => {
+            map.loadImage(marker.url, function(error,image){
+                map.addImage(marker.id,image);
+            })
+        });
+        map.addSource('club', {
+                    'type': 'geojson',
+                        'data': {
+                            'type': 'FeatureCollection',
+                            'features': [
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>ECOLE VOVINAM VIET VO DAO- Paris 12E</strong><p><a href='http://paris.vovinam.fr' target='_blank' style='color:#e82226;'>ECOLE VOVINAM VIET VO DAO</a></p><p>Enseignant principal : Maître SFORZA Aldo</p><p>Contact : NGUYỄN Hùng – <a style='color:#e82226;' href='tel:06.62.12.72.28'>06.62.12.72.28</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [2.40148012,48.8326985]
+                                    }
+                                },
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>U.M.S.P.C SECT. VOVINAM VIET VO DAO</strong><p><a href='http://vovinam.pontault.free.fr' target='_blank' style='color:#e82226;'>U.M.S.P.C SECT. VOVINAM VIET VO DAO</a></p><p>Enseignant principal : Maître TRẰN Antonella</p><p>Contact : MARTINS Daniel  – <a style='color:#e82226;' href='tel:06.66.02.39.47'>06.66.02.39.47</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [2.603671,48.778046]
+                                    }
+                                },
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>ASS.CULTURELLE VOVINAM V.V.D. 77</strong><p><a href='http://vovinam.moissy.free.fr' target='_blank' style='color:#e82226;'>ASS.CULTURELLE VOVINAM V.V.D. 77</a></p><p>Enseignant principal : MARTINS Daniel</p><p>Contact : MARTINS Daniel  – <a style='color:#e82226;' href='tel:06.66.02.39.47'>06.66.02.39.47</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [2.5790146, 48.633755]
+                                    }
+                                }
+
+                            ]
+                        }
+                    })
+                // Add a GeoJSON source with 3 comite.
+                map.addSource('comite', {
+                    'type': 'geojson',
+                        'data': {
+                            'type': 'FeatureCollection',
+                            'features': [
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>Comité Vovinam-Viet Vo Dao de Normandie</strong><p><a href='http://www.vovinam-caen.com' target='_blank' style='color:blue;'>Comité de Normandie</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [-0.357452,49.189114]
+                                    }
+                                }
+                                ,
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>Comité Vovinam-Viet Vo Dao du Grand-Est</strong><p><a href='http://www.vovinam-reims.com' target='_blank' style='color:blue;'>Comité du Grand-Est</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [4.023365,49.273242]
+                                    }
+                                },
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>Comité Vovinam-Viet Vo Dao d'Île de France'</strong><p><a href='http://www.vovinam-idf.fr' target='_blank' style='color:blue;'>Comité d'Île de France'</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [2.293141,48.687693]
+                                    }
+                                },
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>Comité Vovinam-Viet Vo Dao de la Nouvelle-Aquitaine (Limousin) </strong><p><a href='http://www.vovinam-limousin.fr' target='_blank' style='color:blue;'>Comité de la Nouvelle-Aquitaine</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [1.303053,45.916689]
+                                    }
+                                },
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>Comité Vovinam-Viet Vo Dao de la Nouvelle-Aquitaine (Poitiers) </strong><p><a href='http://www.vovinam-caen.com' target='_blank' style='color:blue;'>Comité de la Nouvelle-Aquitaine</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [0.388512,46.573685]
+                                    }
+                                },
+                                {
+                                'type': 'Feature',
+                                'properties': {'description':
+                                                "<strong>Comité Vovinam-Viet Vo Dao d'Auvergne-Rhône-Alpes</strong><p><a href='http://www.vietvodaolyon.free.fr' target='_blank' style='color:blue;'>Comité d'Auvergne-Rhône-Alpes</a></p>",},
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [4.694197,45.766722]
+                                    }
+                                }
+                            ]
+                        }
+                    });
+                    
+                    
+                    // Add a symbol layer
+                    map.addLayer({
+                        'id': 'regions',
+                        'type': 'symbol',
+                        'source': 'comite',
+                        'layout': {
+                            'icon-image': 'blue_marker'
+                        }   
+                    });
+                    map.addLayer({
+                        'id': 'clubs',
+                        'type': 'symbol',
+                        'source': 'club',
+                        'layout': {
+                            'icon-image': 'red_marker'
+                        }   
+                    },'regions');
+                }
+            );
+
+
+        
+        // Center the map on the coordinates of any clicked symbol from the 'regions' layer.
+        map.on('click', 'regions', function (e) {
+            map.flyTo({
+            center: e.features[0].geometry.coordinates,
+            zoom:10
+            });
+        });
+        // When a click event occurs on a feature in the places layer, open a popup at the
+        // location of the feature, with description HTML from its properties.
+        map.on('click', 'regions', function (e) {
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var description = e.features[0].properties.description;
+            
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+            
+            new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+        });
+        
+        // Change the cursor to a pointer when the it enters a feature in the 'regions' layer.
+        map.on('mouseenter', 'regions', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'regions', function () {
+            map.getCanvas().style.cursor = '';
+            });
+            
+        // Center the map on the coordinates of any clicked symbol from the 'regions' layer.
+        map.on('click', 'clubs', function (e) {
+            map.flyTo({
+            center: e.features[0].geometry.coordinates,
+            zoom:10
+            });
+        });
+        // When a click event occurs on a feature in the places layer, open a popup at the
+        // location of the feature, with description HTML from its properties.
+        map.on('click', 'clubs', function (e) {
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var description = e.features[0].properties.description;
+            
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+            
+            new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+        });
+        
+        // Change the cursor to a pointer when the it enters a feature in the 'regions' layer.
+        map.on('mouseenter', 'clubs', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'clubs', function () {
+            map.getCanvas().style.cursor = '';
+            });
+
+    </script>
+
+</body>
+</html>    
