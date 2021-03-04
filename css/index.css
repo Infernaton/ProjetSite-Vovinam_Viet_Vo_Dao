@@ -13,12 +13,3 @@ a:hover{
 .hide{
     display: none;
 }
-
-#internshipContent h3{
-    border-bottom: 1px solid black;
-}
-#internshipContent h5{
-    border-bottom: 1px solid black;
-    padding: 1%;
-    padding-left: 3%;
-}

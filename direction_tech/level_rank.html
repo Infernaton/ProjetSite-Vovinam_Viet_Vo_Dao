@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/directionTech.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -96,11 +97,12 @@
     </nav>
     <div class="container">
         <h2 class="text-center mt-5">Passage de grades</h2>
+        <br>
         <div class="row">
-            <div id="belt" class="col-sm-8">
+            <div id="belt" class="col-sm-7">
                 <img style="width: 40%;" id="beltPicture" src="../assets/img/ceintures/c_initiation.png">
             </div>
-            <div id="chooseBelt" class="col-sm-4 text-center">
+            <div id="chooseBelt" class="col-sm-5 text-center">
                 <select name="belt" class="custom-select mb-3" onchange="document.getElementById('beltPicture').src = this.value">
                     <option value="../assets/img/ceintures/c_initiation.png" selected>Initiation</option>
                     <option value="../assets/img/ceintures/c_bleu_1er_cap.png">C. bleue 1er Cap</option>
@@ -119,14 +121,14 @@
                     <option value="../assets/img/ceintures/c_rouge_5eme_degre.png">C. rouge 5e degré</option>
                     <option value="../assets/img/ceintures/c_rouge_6eme_degre.png">C. rouge 6e degré</option>
                 </select>
-                <a href="download_file/3.2.1_Les_grades_Internationaux.pdf" class="link">Voir "Les_grades_Internationaux.pdf"</a><br>
+                <div class="text-center">
+                    <p>Pour toutes informations sur le Passage des différents grades :</p>
+                    <a href="download_file/3.2.1_Les_grades_Internationaux.pdf" class="link">Voir "Les_grades_Internationaux.pdf"</a><br>
+                    <a href="download_file/3.2.2_Les grades du Vovinam-Viàt Vo Dao.pdf" class="link">Voir "Les grades du Vovinam-Viàt Vo Dao.pdf"</a> <br>
+                    <a href="download_file/3.3_Organisation des examens des grades.pdf" class="link">Voir "Organisation des examens des grades.pdf"</a> <br>
+                    <a href="download_file/3.4_Programmes d'examens.pdf" class="link">Voir "Programmes d'examens.pdf"</a>
+                </div>
             </div>
-        </div>
-        
-        <div class="text-center">
-            <a href="download_file/3.2.2_Les grades du Vovinam-Viàt Vo Dao.pdf" class="link">Voir "Les grades du Vovinam-Viàt Vo Dao.pdf"</a> <br>
-            <a href="download_file/3.3_Organisation des examens des grades.pdf" class="link">Voir "Organisation des examens des grades.pdf"</a> <br>
-            <a href="download_file/3.4_Programmes d'examens.pdf" class="link">Voir "Programmes d'examens.pdf"</a>
         </div>
     </div>
 </body>
