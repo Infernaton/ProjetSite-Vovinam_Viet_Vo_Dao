@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/federation.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -93,9 +94,32 @@
         </ul>
     </nav>
     <div class="container">
+        <div class="text-center">
+            <div style="padding: 50px; display: inline-flex;">
+                <h1 class="content-title-blue">Les Régions</h1><h1>&nbsp;et&nbsp;</h1><h1 class="content-title-red">Clubs</h1>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <div id='map' style='width: auto; height: 600px;'></div>
+                <div class='map-overlay' id='features'><h4 style="margin: 10px;">Carte des comités régionaux et leur clubs</h4></div>
+                <div class='map-overlay' id='legend'></div>
+            </div>
+        </div>
+        <div class="text-center">
+            <div style="padding: 50px; display: inline-flex;">
+                <h1 class="content-title-blue">Les Régions</h1>
+            </div>
+            <div>
+                Liste des comités et leurs infos
+            </div>
+        </div>
+        <div class="text-center">
+            <div style="padding: 50px; display: inline-flex;">
+                <h1 class="content-title-red">Les clubs</h1>
+            </div>
+            <div>
+                Liste des clubs par régions et leurs infos
             </div>
         </div>
     </div>
@@ -109,6 +133,22 @@
     });
 
     map.on('load', function () {
+        var layers = ['Comités régionaux', 'Clubs'];
+        var colors = ['#1c55a3', '#e82226'];
+        for (i = 0; i < layers.length; i++) {
+            var layer = layers[i];
+            var color = colors[i];
+            var item = document.createElement('div');
+            var key = document.createElement('span');
+            key.className = 'legend-key';
+            key.style.backgroundColor = color;
+
+            var value = document.createElement('span');
+            value.innerHTML = layer;
+            item.appendChild(key);
+            item.appendChild(value);
+            legend.appendChild(item);
+        }
 
         const markers = [
             {url: '../assets/img/markers/blue_marker.png', id: 'blue_marker'},
@@ -184,7 +224,7 @@
                                 {
                                 'type': 'Feature',
                                 'properties': {'description':
-                                                "<strong>Comité Vovinam-Viet Vo Dao d'Île de France</strong><p><a href='http://www.vovinam-idf.fr' target='_blank' style='color:blue;'>Comité d'Île de France'</a></p>",},
+                                                "<strong>Comité Vovinam-Viet Vo Dao d'Île de France</strong><p><a href='http://www.vovinam-idf.fr' target='_blank' style='color:blue;'>Comité d'Île de France</a></p>",},
                                 'geometry': {
                                     'type': 'Point',
                                     'coordinates': [2.293141,48.687693]
