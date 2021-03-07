@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr_FR">
+<!-- Configurations / Import de nos sources css/js -->
 <head>
 	<meta charset="utf-8"> 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,7 +13,9 @@
     <script type="text/javascript" src="../scripts/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <title>Vovinam Viet Vodao</title>
 </head>
+<!-- Fin des configurations -->
 <body>
+    <!-- Header (logo+réseaux) -->
 	<header>
         <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 15px;">
             <div class="row">
@@ -26,6 +29,8 @@
             </div>
         </div>
     </header>
+    <!-- Fin du header -->
+    <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm bg-white justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -92,6 +97,8 @@
 
         </ul>
     </nav>
+    <!-- Fin de la barre de navigation -->
+    <!-- Début des paneaux racontant l'histoire du VVD -->
 	<section class="demo" id="section-wipes" style="margin-top: 20px;">
 		<style type="text/css">
 			.panel {
@@ -99,6 +106,7 @@
 				width: 100%;
 			}
 		</style>
+        <!-- Une section = une page de l'histoire -->
         <section class="panel white" style="padding-bottom: 20px;">
             <div class="container">
                 <div class="">
@@ -314,21 +322,20 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 		<script>
-			$(function () { // wait for document ready
-				// init
+            // Script d'animation
+			$(function () { // Chargement complet de la page
+				// Initialisation
 				var controller = new ScrollMagic.Controller({
 					globalSceneOptions: {
 						triggerHook: 'onLeave',
-						duration: "200%" // this works just fine with duration 0 as well
-						// However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
-						// Normally 100% would work for this, but here 200% is used, as Panel 3 is shown for more than 100% of scrollheight due to the pause.
+						duration: "200%"
 					}
 				});
 
-				// get all slides
+				// Récupère toutes les sections
 				var slides = document.querySelectorAll("section.panel");
 
-				// create scene for every slide
+				// Effet de scroll page par page
 				for (var i=0; i<slides.length; i++) {
 					new ScrollMagic.Scene({
 							triggerElement: slides[i]
@@ -340,7 +347,7 @@
 			});
 		</script>
         <script>
-            // build scene
+            // Script d'animation (non fonctionel pour le moment)
             new ScrollMagic.Scene({
                                 triggerElement: "#trigger1",
                                 triggerHook: 0.9, // show, when scrolled 10% into view

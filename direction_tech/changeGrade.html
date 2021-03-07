@@ -1,13 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vovinam Viet Vodao</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
+<html lang="fr_FR">
+    <!-- Configurations de la page -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +12,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Vovinam Viet Vodao</title>
 </head>
+<!-- Fin des configuration -->
 <body>
+    <!-- Header -->
     <header>
         <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 15px;">
             <div class="row">
@@ -33,6 +28,8 @@
             </div>
         </div>
     </header>
+    <!-- Fin du Header -->
+    <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm bg-white justify-content-center sticky-top">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -99,15 +96,20 @@
 
         </ul>
     </nav>
+    <!-- Fin de la barre de navigation -->
+    <!-- Page container -->
     <div class="container">
+        <!-- Titre -->
         <div class="text-center mt-5">
             <h2 class="content-title">Passage de grades</h2>
         </div>
         <br>
         <div class="row">
+            <!-- Affichage du mannequin -->
             <div id="belt" class="col-sm-7">
                 <img style="width: 40%;" id="beltPicture" src="../assets/img/ceintures/c_initiation.png">
             </div>
+            <!-- Menu déroulant pour afficher n'importe quelle ceinture -->
             <div id="chooseBelt" class="col-sm-5">
                 <select name="belt" class="custom-select mb-3" onchange="document.getElementById('beltPicture').src = this.value">
                     <option value="../assets/img/ceintures/c_initiation.png" selected>Initiation</option>

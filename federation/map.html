@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr_FR">
+    <!-- Configurations de la page -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,9 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
 </head>
+<!-- Fin des configurations -->
 <body>
+    <!-- Header -->
     <header>
         <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 15px;">
             <div class="row">
@@ -27,6 +30,8 @@
             </div>
         </div>
     </header>
+    <!-- Fin du header -->
+    <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm bg-white justify-content-center sticky-top">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -93,12 +98,16 @@
 
         </ul>
     </nav>
+    <!-- Fin de la barre de navigation -->
+    <!-- Page container -->
     <div class="container">
+        <!-- Titre -->
         <div class="text-center">
             <div style="padding: 50px; display: inline-flex;">
                 <h1 class="content-title-blue">Les Régions</h1><h1>&nbsp;et&nbsp;</h1><h1 class="content-title-red">Clubs</h1>
             </div>
         </div>
+        <!-- Chargement de la map grande taille -->
         <div class="row">
             <div class="col-sm-12">
                 <div id='map' style='width: auto; height: 600px;'></div>
@@ -106,24 +115,32 @@
                 <div class='map-overlay' id='legend'></div>
             </div>
         </div>
+        <!-- Liste des Comités Régionaux -->
         <div class="text-center">
+            <!-- Titre -->
             <div style="padding: 50px; display: inline-flex;">
                 <h1 class="content-title-blue">Les Régions</h1>
             </div>
+            <!-- Liste -->
             <div>
                 Liste des comités et leurs infos
             </div>
         </div>
+        <!-- Liste des clubs -->
         <div class="text-center">
+            <!-- Titre -->
             <div style="padding: 50px; display: inline-flex;">
                 <h1 class="content-title-red">Les clubs</h1>
             </div>
+            <!-- Liste -->
             <div>
                 Liste des clubs par régions et leurs infos
             </div>
         </div>
     </div>
+    <!-- Scripts et configurations de la map -->
         <script>
+            // Génération de la map
     mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
     var map = new mapboxgl.Map({
     container: 'map',
@@ -131,8 +148,9 @@
     center: [2.40,47.45],
     zoom: 5
     });
-
+    // Au chargement de la map >
     map.on('load', function () {
+        // Légendes de la carte
         var layers = ['Comités régionaux', 'Clubs'];
         var colors = ['#1c55a3', '#e82226'];
         for (i = 0; i < layers.length; i++) {
@@ -149,17 +167,18 @@
             item.appendChild(value);
             legend.appendChild(item);
         }
-
+        // Chargement des deux markers utilisés
         const markers = [
             {url: '../assets/img/markers/blue_marker.png', id: 'blue_marker'},
             {url: '../assets/img/markers/red_marker.png', id: 'red_marker'}
         ]
-
+        // Chargement HTML des markers
         markers.forEach(marker => {
             map.loadImage(marker.url, function(error,image){
                 map.addImage(marker.id,image);
             })
         });
+        // Liste des clubs, avec position et description
         map.addSource('club', {
                     'type': 'geojson',
                         'data': {
@@ -196,8 +215,8 @@
                             ]
                         }
                     })
-                // Add a GeoJSON source with 3 comite.
-                map.addSource('comite', {
+        // Liste des comités, avec position et description
+        map.addSource('comite', {
                     'type': 'geojson',
                         'data': {
                             'type': 'FeatureCollection',
@@ -284,74 +303,68 @@
 
 
         
-        // Center the map on the coordinates of any clicked symbol from the 'regions' layer.
+        // Centre la carte sur un click d'un comité
         map.on('click', 'regions', function (e) {
             map.flyTo({
             center: e.features[0].geometry.coordinates,
             zoom:10
             });
         });
-        // When a click event occurs on a feature in the places layer, open a popup at the
-        // location of the feature, with description HTML from its properties.
+        // Zoom sur la position d'un comité une fois click dessus
         map.on('click', 'regions', function (e) {
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description = e.features[0].properties.description;
             
-            // Ensure that if the map is zoomed out such that multiple
-            // copies of the feature are visible, the popup appears
-            // over the copy being pointed to.
+            // Check si c'est pas déjà zoom
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
-            
+            // Affiche le popup avec les infos du comité cliqué
             new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);
         });
         
-        // Change the cursor to a pointer when the it enters a feature in the 'regions' layer.
+        // Change le curseur une fois la souris sur le marker
         map.on('mouseenter', 'regions', function () {
             map.getCanvas().style.cursor = 'pointer';
         });
         
-        // Change it back to a pointer when it leaves.
+        // Change le curseur quand la souris quitte le marker
         map.on('mouseleave', 'regions', function () {
             map.getCanvas().style.cursor = '';
             });
             
-        // Center the map on the coordinates of any clicked symbol from the 'regions' layer.
+        // Centre la carte sur un click d'un club
         map.on('click', 'clubs', function (e) {
             map.flyTo({
             center: e.features[0].geometry.coordinates,
             zoom:10
             });
         });
-        // When a click event occurs on a feature in the places layer, open a popup at the
-        // location of the feature, with description HTML from its properties.
+        // Zoom sur la position d'un club une fois click dessus
         map.on('click', 'clubs', function (e) {
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description = e.features[0].properties.description;
             
-            // Ensure that if the map is zoomed out such that multiple
-            // copies of the feature are visible, the popup appears
-            // over the copy being pointed to.
+            // Check si c'est pas déjà zoom
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
-            
+            // Affiche le popup avec les infos du club cliqué
             new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);
         });
         
-        // Change the cursor to a pointer when the it enters a feature in the 'regions' layer.
+        // Change le curseur une fois la souris sur le marker
         map.on('mouseenter', 'clubs', function () {
             map.getCanvas().style.cursor = 'pointer';
         });
         
-        // Change it back to a pointer when it leaves.
+        // Change le curseur quand la souris quitte le marker
         map.on('mouseleave', 'clubs', function () {
             map.getCanvas().style.cursor = '';
             });

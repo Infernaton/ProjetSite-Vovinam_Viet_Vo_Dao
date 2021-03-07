@@ -1,5 +1,6 @@
 var section = document.querySelectorAll(".section-fade");
 
+// Fonction de "fade" quand on scroll
 function fadeOutOnScroll(element) {
     section.forEach(element => {
 	if (!element) {
