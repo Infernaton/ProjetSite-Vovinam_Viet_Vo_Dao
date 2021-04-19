@@ -15,7 +15,7 @@ function partials_header($page){
         <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 15px;">
             <div class="row">
                 <div class="col-sm-2"><a href=""><img src="assets/img/logo.png" width="45%" height="90%"></a></div>
-                <div class="col-sm-9"><a href"><img src="assets/img/header.png" width="95%"></a></div>
+                <div class="col-sm-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
             </div>
         </div>
     </header>
@@ -26,9 +26,9 @@ function partials_header($page){
                 <a class="nav-link" href="">Accueil</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="nav-federation" data-toggle="dropdown">La fédération</a>
+                <a class="nav-link dropdown-toggle" href="#" id="nav-federation" data-toggle="dropdown">La Fédération</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="" id="federation" >La fédération</a>
+                    <a class="dropdown-item" href="" id="federation" >La Fédération</a>
                     <a class="dropdown-item" href="" id="calendrier">Calendrier</a>
                     <a class="dropdown-item" href="" id="clubs">Les clubs</a>
                     <a class="dropdown-item" href="" id="contact-federation">Contacts</a>
@@ -52,7 +52,7 @@ function partials_header($page){
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="" id="valeurs">Le sport et ses valeurs</a>
                     <a class="dropdown-item" href="" id="histoires">Son histoire</a>
-                    <a class="dropdown-item" href="" id="federation-mondiale">La fédération mondiale</a>
+                    <a class="dropdown-item" href="" id="federation-mondiale">La Fédération mondiale</a>
                     <a class="dropdown-item" href="" id="grands-maitres">Les grands Maîtres</a>
                 </div>
             </li>
@@ -80,7 +80,7 @@ function partials_header($page){
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="" id="contact-contact">Contacts</a>
                     <a class="dropdown-item" href="" id="FAQ">FAQ</a>
-                    <a class="dropdown-item" href="" id="personnalite">Personnalité de la fédération</a>
+                    <a class="dropdown-item" href="" id="personnalite">Personnalité de la Fédération</a>
                 </div>
             </li>
         </ul>
