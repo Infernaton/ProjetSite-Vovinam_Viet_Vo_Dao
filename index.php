@@ -8,13 +8,24 @@ require_once 'php/partials/footer.php';
 //'pages' and 'delete' are Array declared in init.php and refer to different status
 
 //Uses to switch between the different pages 
-$page = 'home';
-if (isset($_GET['p'])) {
-    if (in_array($_GET['p'],$pages)){
-        $page = $_GET['p'];
+//var_dump($pages);
+
+$pageCate = 'home';
+$page = '';
+if (isset($_GET['c'])) {
+    if (array_key_exists($_GET['c'],$pages)){
+        $pageCate = $_GET['c'];
+        if (isset($_GET['p'])){
+            try{
+                $page = $pages[$pageCate][(int)$_GET['p']];
+            }
+            catch (Exception $e){
+                $page = '';
+            }
+        }
     }
     else {
-        $page = '404';
+        $pageCate = '404';
     }
 }
 partials_header($page);
@@ -26,7 +37,7 @@ if (isset($_GET['delete'])){
         die;
     }
 }*/
-require_once 'php/views/' . $page . '.php';
+require_once 'php/views/'.$pageCate.$page.'.php';
 
 partials_footer();
 ?>

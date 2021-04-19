@@ -28,7 +28,7 @@ function partials_header($page){
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="nav-federation" data-toggle="dropdown">La Fédération</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="" id="federation" >La Fédération</a>
+                    <a class="dropdown-item" href="?c=federation&p=0" id="federation" >La Fédération</a>
                     <a class="dropdown-item" href="" id="calendrier">Calendrier</a>
                     <a class="dropdown-item" href="" id="clubs">Les clubs</a>
                     <a class="dropdown-item" href="" id="contact-federation">Contacts</a>
