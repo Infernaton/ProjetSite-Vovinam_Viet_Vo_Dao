@@ -1,6 +1,6 @@
 <div class="container">
     <!-- Image du groupe fondateur -->
-    <img class="alignRight"; src="../assets/img/le-vvd/groupe_fondateur.jpg">
+    <img class="alignRight"; src="assets/img/le-vvd/groupe_fondateur.jpg">
         <h1> La Fédération </h1>
         <h3> Présentation</h3>
         <p class="alignLeft">

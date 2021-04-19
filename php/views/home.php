@@ -1,3 +1,7 @@
+<head>
+<link rel="stylesheet" href="css/index.css">
+</head>
+
 <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicateurs du slide -->
