@@ -20,6 +20,8 @@ function partials_header($page){
             </div>
         </div>
     </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm bg-white justify-content-center sticky-top">
         <ul class="navbar-nav">
