@@ -8,6 +8,7 @@ function partials_header($page){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Vovinam Viet Vodao</title>
 </head>
 <body>
@@ -23,7 +24,7 @@ function partials_header($page){
     <nav class="navbar navbar-expand-sm bg-white justify-content-center sticky-top">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="">Accueil</a>
+                <a class="nav-link" href="?c=home">Accueil</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="nav-federation" data-toggle="dropdown">La Fédération</a>
@@ -31,20 +32,20 @@ function partials_header($page){
                     <a class="dropdown-item" href="?c=federation&p=0" id="federation" >La Fédération</a>
                     <a class="dropdown-item" href="" id="calendrier">Calendrier</a>
                     <a class="dropdown-item" href="" id="clubs">Les clubs</a>
-                    <a class="dropdown-item" href="" id="contact-federation">Contacts</a>
-                    <a class="dropdown-item" href="" id="lien">Lien</a>
-                    <a class="dropdown-item" href="" id="label">Label-Légal-régularité</a>
+                    <a class="dropdown-item" href="?c=federation&p=2" id="contact-federation">Contacts</a>
+                    <a class="dropdown-item" href="?c=federation&p=3" id="lien">Lien</a>
+                    <a class="dropdown-item" href="?c=federation&p=4" id="label">Label-Légal-régularité</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="nav-dir-tech" data-toggle="dropdown">Direction technique</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="" id="conseil-ME">Le conseil des ME</a>
-                    <a class="dropdown-item" href="" id="liste-ME">Liste O.CN et ME</a>
-                    <a class="dropdown-item" href="" id="calendrier-tech">Calendrier technique</a>
-                    <a class="dropdown-item" href="" id="stage-GRT">Stages GRT Coupes</a>
-                    <a class="dropdown-item" href="" id="grades">Passage de grades</a>
-                    <a class="dropdown-item" href="" id="formation">Formations</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=0" id="conseil-ME">Le conseil des ME</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=1" id="liste-ME">Liste O.CN et ME</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=2" id="calendrier-tech">Calendrier technique</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=3" id="stage-GRT">Stages GRT Coupes</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=5" id="grades">Passage de grades</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=6" id="formation">Formations</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

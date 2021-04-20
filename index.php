@@ -30,13 +30,14 @@ if (isset($_GET['c'])) {
 }
 partials_header($page);
 /*
-//In case the user want to delete or to Log out with his account
+//In case the user want to delete or to Log out with our account
 if (isset($_GET['delete'])){
     if (in_array($_GET['delete'],$del)){
         require_once 'php/management/'.$_GET['delete'].'.php';
         die;
     }
 }*/
+//var_dump($pageCate,$page);
 require_once 'php/views/'.$pageCate.$page.'.php';
 
 partials_footer();
