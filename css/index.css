@@ -16,6 +16,7 @@ a:hover{
 }
 footer{
     border-top: 1px solid #1c55a3;
+    position: sticky;
 }
 
 #yt{

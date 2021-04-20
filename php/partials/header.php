@@ -45,7 +45,7 @@ function partials_header($page){
                     <a class="dropdown-item" href="?c=directionTech&p=1" id="liste-ME">Liste O.CN et ME</a>
                     <a class="dropdown-item" href="?c=directionTech&p=2" id="calendrier-tech">Calendrier technique</a>
                     <a class="dropdown-item" href="?c=directionTech&p=3" id="stage-GRT">Stages GRT</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=4" id="stage-GRT">Compétition</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=4" id="competition">Compétition</a>
                     <a class="dropdown-item" href="?c=directionTech&p=5" id="grades">Passage de grades</a>
                     <a class="dropdown-item" href="?c=directionTech&p=6" id="formation">Formations</a>
                 </div>
@@ -53,10 +53,10 @@ function partials_header($page){
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="nav-vovinam" data-toggle="dropdown">Le Vovinam VVD</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=vietVoDao&p=0" id="valeurs">Le sport et ses valeurs</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=1" id="histoires">Son histoire</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=2" id="federation-mondiale">La Fédération mondiale</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=3" id="grands-maitres">Les grands Maîtres</a>
+                    <a class="dropdown-item" href="?c=vietVoDao&p=0" id="valeurs">La discipline et ses valeurs</a>
+                    <a class="dropdown-item" href="?c=vietVoDao&p=1" id="histoires">L'Histoire</a>
+                    <a class="dropdown-item" href="?c=vietVoDao&p=3" id="grands-maitres">Les Grands Maîtres</a>
+                    <a class="dropdown-item" href="?c=vietVoDao&p=2" id="federation-mondiale">La Fédération Mondiale</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
