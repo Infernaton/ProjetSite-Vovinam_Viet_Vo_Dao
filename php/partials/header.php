@@ -1,6 +1,5 @@
 <?php 
 function partials_header($categorie,$page){
-    require_once "php/init.php";
 ?>   
 <!DOCTYPE html>
 <html lang="fr_FR">
@@ -40,7 +39,7 @@ function partials_header($categorie,$page){
                 </div>
             </li>
             <li class="nav-item dropdown" id="directionTech">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Direction technique</a>
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Direction Technique</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=directionTech&p=0" id="conseil-ME">Le Conseil des ME</a>
                     <a class="dropdown-item" href="?c=directionTech&p=1" id="liste-ME">Liste officielle des maîtres et ceintures noires</a>
@@ -52,7 +51,7 @@ function partials_header($categorie,$page){
                 </div>
             </li>
             <li class="nav-item dropdown" id="vietVoDao">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Le Vovinam VVD</a>
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Le Vovinam-Viet Vo Dao</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=vietVoDao&p=0" id="valeurs">La discipline et ses valeurs</a>
                     <a class="dropdown-item" href="?c=vietVoDao&p=1" id="histoires">L'Histoire</a>
