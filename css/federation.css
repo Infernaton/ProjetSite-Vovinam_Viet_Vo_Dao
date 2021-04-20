@@ -45,6 +45,7 @@ a:hover{
      * fill via CSS because it's a background image. */
     --underline-color-red: #e82226;
     --underline-color-blue: #1c55a3;
+    --underline-color-yellow: #ffe600;
     
     /* We need to know the width of the cap images so that we
      * can position everything on the x axis accordingly. */
@@ -66,6 +67,8 @@ a:hover{
     --cap-image-right-red: url("../assets/svg/red_right.svg");
     --cap-image-left-blue: url("../assets/svg/blue_left.svg");
     --cap-image-right-blue: url("../assets/svg/blue_right.svg");
+    --cap-image-left-yellow: url("../assets/svg/yellow_left.svg");
+    --cap-image-right-yellow: url("../assets/svg/yellow_right.svg");
   }
 .content-title-red{
   display: inline;
@@ -97,6 +100,26 @@ a:hover{
     linear-gradient(180deg, var(--underline-color-blue), var(--underline-color-blue)),
     var(--cap-image-left-blue),
     var(--cap-image-right-blue);
+  background-position-x:
+    calc(var(--underline-cap-width) * var(--underline-width-scale)),
+    0,
+    100%;
+  background-position-y: calc(100% - var(--underline-offset-y) * -1);
+  background-size:
+    calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px),
+    auto calc(var(--underline-width) * 1px),
+    auto calc(var(--underline-width) * 1px);
+}
+.content-title-yellow{
+  display: inline;
+  --underline-width-scale: calc(var(--underline-width) / var(--underline-intrinsic-width));
+  padding: 0px calc(var(--underline-padding-x) + calc(var(--underline-cap-width) * var(--underline-width-scale)));
+  box-decoration-break: clone;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(180deg, var(--underline-color-yellow), var(--underline-color-yellow)),
+    var(--cap-image-left-yellow),
+    var(--cap-image-right-yellow);
   background-position-x:
     calc(var(--underline-cap-width) * var(--underline-width-scale)),
     0,

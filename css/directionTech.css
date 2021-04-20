@@ -61,3 +61,6 @@ h5{
     auto calc(var(--underline-width) * 1px),
     auto calc(var(--underline-width) * 1px);
 }
+li{
+  margin-top: 0.5%;
+}
