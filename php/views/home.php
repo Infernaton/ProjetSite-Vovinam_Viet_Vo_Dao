@@ -1,31 +1,30 @@
 <div id="demo" class="carousel slide" data-ride="carousel">
-
+  <?php 
+  $dir = "assets/img/caroussel";
+  $photos = scandir($dir,1);
+  ?>
   <!-- Indicateurs du slide -->
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-    <li data-target="#demo" data-slide-to="3"></li>
-    <li data-target="#demo" data-slide-to="3"></li>
+    <?php
+    for ($i=1;$i<count($photos)-2;$i++){
+      echo '<li data-target="#demo" data-slide-to="'.$i.'"></li>';
+    }
+    ?>
   </ul>
       
   <!-- Photos slides -->
   <div class="carousel-inner" >
     <div class="carousel-item active">
-      <img src="assets/img/vietvodao.png" height="100%" width="100%" alt="vietvodao">
+      <img src="<?php echo $dir.'/'.$photos[0]?>" height="100%" width="100%" alt="vietvodao">
     </div>
-    <div class="carousel-item">
-      <img src="assets/img/vietvodao3.jpg" height="100%" width="100%" alt="vietvodao">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/img/vietvodao5.jpg" height="100%" width="100%" alt="vietvodao">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/img/enfantsAssis.jpg" height="100%" width="100%" alt="vietvodao">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/img/adultesAssis.jpg" height="100%" width="100%" alt="vietvodao">
-    </div>
+    <?php
+    for ($i=1; $i<count($photos)-2;$i++){
+      echo '<div class="carousel-item">',
+        '<img src="'.$dir.'/'.$photos[$i].'" height="100%" width="100%" alt="vietvodao">',
+        '</div>';
+    }
+    ?>
   </div>
       
         <!-- Left and right controls -->

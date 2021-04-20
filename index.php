@@ -12,12 +12,14 @@ require_once 'php/partials/footer.php';
 
 $pageCate = 'home';
 $page = '';
+$index = 0;
 if (isset($_GET['c'])) {
     if (array_key_exists($_GET['c'],$pages)){
         $pageCate = $_GET['c'];
         if (isset($_GET['p'])){
             try{
                 $page = $pages[$pageCate][(int)$_GET['p']];
+                $index = (int)$_GET['p'];
             }
             catch (Exception $e){
                 $page = '';
@@ -28,7 +30,7 @@ if (isset($_GET['c'])) {
         $pageCate = '404';
     }
 }
-partials_header($page);
+partials_header($pageCate,$index);
 /*
 //In case the user want to delete or to Log out with our account
 if (isset($_GET['delete'])){
