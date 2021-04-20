@@ -10,9 +10,9 @@ $resultDB = $req->fetchAll(PDO::FETCH_ASSOC);
 $pages = [
     'home' => ['home'],
     'federation' => ['/federation','/map','/contacts','/lien','/legal'],
-    'directionTech' => ['/conseilMaitre','/listeMaitre','/calendrier','/stage','/coupes','/changeGrade','/formation'],
+    'directionTech' => ['/conseilMaitre','/listeMaitre','/calendrier','/stage','/competition','/changeGrade','/formation'],
     'vietVoDao' => ['/discipline','/histoire','/fedeMondial','/grandMaitres'],
-    'affiliation' => ['/doc','/modalitéAffiliation','/faq','/licenciés','/passeport'],
+    'affiliation' => ['/doc','/modaliteAffiliation','/faq','/licencies','/passeport'],
     'actualite' => ['actualite'],
     'contacts' => ['/contacts','/faq','/personnaliteFede'],
 ];
