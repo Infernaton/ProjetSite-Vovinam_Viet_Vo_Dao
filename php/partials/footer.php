@@ -22,6 +22,7 @@ function partials_footer(){
                 <div class="p-2">
                     <a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance" target="_blank" ><img src="assets/img/fb.png"  id = "fb"></a>
                 </div>
+                <p id="mention-legal">mention légal</p>
         </div>
     </footer>
 </body>

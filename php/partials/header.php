@@ -45,7 +45,7 @@ function partials_header($page){
                     <a class="dropdown-item" href="?c=directionTech&p=1" id="liste-ME">Liste officielle des maîtres et ceintures noires</a>
                     <a class="dropdown-item" href="?c=directionTech&p=2" id="calendrier-tech">Calendrier technique</a>
                     <a class="dropdown-item" href="?c=directionTech&p=3" id="stage-GRT">Stages GRT</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=4" id="coupes">Compétition</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=4" id="competition">Compétition</a>
                     <a class="dropdown-item" href="?c=directionTech&p=5" id="grades">Passage de grades</a>
                     <a class="dropdown-item" href="?c=directionTech&p=6" id="formation">Formations</a>
                 </div>
