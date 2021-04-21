@@ -2,13 +2,7 @@
 
 function partials_footer(){
 ?>   
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet"  href="css/index.css">
     
-</head>
-<body>
     <footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <div class="col-sm-1">

@@ -1,6 +1,4 @@
-<head>
 <link rel="stylesheet" href="css/discipline.css">
-</head>
 
 <div class="container-fluid section-fade" id="banner">
         <style>           

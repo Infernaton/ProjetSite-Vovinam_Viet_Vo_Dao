@@ -1,10 +1,4 @@
-?>
-
-<!doctype html>
-<html lang="fr">
 <link rel="stylesheet" href="css/addObjectpage.css">
-
-<body>
 
   <form action="php/management/addMasterDB.php">
     <div id="container" class="container">
@@ -38,4 +32,3 @@
       </div>
     </div> 
   </form> 
-</body> 

@@ -1,6 +1,4 @@
-<head>
-    <link rel="stylesheet" href="css/federation.css">
-</head>
+<link rel="stylesheet" href="css/federation.css">
 
 <body>
     <div class="info">
