@@ -18,7 +18,8 @@ $pages = [
     'affiliation' => ['/doc','/modaliteAffiliation','/faq','/licencies','/passeport'],
     'actualite' => ['actualite'],
     'contacts' => ['/contacts','/faq','/personnaliteFede'],
-    'login' => ['login','register'],
+    'login' => ['/login','/register'],
+    'admin' => ['/addMaster'],
 ];
 $del = ['logOut'];
 ?>
