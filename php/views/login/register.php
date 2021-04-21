@@ -4,8 +4,7 @@
     <link rel="stylesheet" href="css/federation.css">
     <title>Inscription</title>
 </head>
-
-<div id="logine">
+<div class="corps">
     <form action="verification.php" method="POST">
     <div class="login">
         <h1 class="content-title-yellow">Connexion</h1>
@@ -18,7 +17,7 @@
             <input type="text" placeholder="Entrer votre prénom" name="username" required>
         </div>
         <div class ="nom">
-            <label><b>Non de Famille</b></label>
+            <label><b>Nom de Famille</b></label>
             <input type="text" placeholder="Entrer votre nom de famille" name="username" required>
         </div>
         <div class ="email">
@@ -39,6 +38,7 @@
             echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
         }
         ?>
+    
     </div>
     </form>
 </div>
