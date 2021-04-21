@@ -9,6 +9,14 @@
     <title>Vovinam Viet Vodao</title>
 </head>
 <body>
+    <header>
+        <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 10px; padding-bottom: 10px">
+            <div class="row">
+                <div class="col-sm-2"><a href=""><img src="assets/img/logo.png" width="45%" height="100%"></a></div>
+                <div class="col-sm-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
+            </div>
+        </div>
+    </header>
 <?php
 // check auth
 
@@ -54,6 +62,7 @@ if (isset($_GET['delete'])){
 }*/
 require_once 'php/views/'.$pageCate.$page.'.php';
 
+// </body> in the footer
 if ($pageCate != 'admin'){
     partials_footer();
 }

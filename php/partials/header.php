@@ -1,14 +1,6 @@
 <?php 
 function partials_header($categorie,$page){
 ?>   
-    <header>
-        <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 15px;">
-            <div class="row">
-                <div class="col-sm-2"><a href=""><img src="assets/img/logo.png" width="45%" height="90%"></a></div>
-                <div class="col-sm-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
-            </div>
-        </div>
-    </header>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Barre de navigation -->
