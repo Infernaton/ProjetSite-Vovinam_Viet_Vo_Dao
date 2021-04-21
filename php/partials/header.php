@@ -55,8 +55,8 @@ function partials_header($categorie,$page){
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=vietVoDao&p=0" id="valeurs">La discipline et ses valeurs</a>
                     <a class="dropdown-item" href="?c=vietVoDao&p=1" id="histoires">L'Histoire</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=3" id="grands-maitres">Les Grands Maîtres</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=2" id="federation-mondiale">La Fédération mondiale</a>
+                    <a class="dropdown-item" href="?c=vietVoDao&p=2" id="grands-maitres">Les Grands Maîtres</a>
+                    <a class="dropdown-item" href="?c=vietVoDao&p=3" id="federation-mondiale">La Fédération mondiale</a>
                 </div>
             </li>
             <li class="nav-item dropdown" id="affiliation">
@@ -88,8 +88,9 @@ function partials_header($categorie,$page){
 currentCategory= document.getElementById('<?php echo $categorie?>');
 categoryName = currentCategory.getElementsByClassName("nav-link")[0];
 categoryName.classList.add("red");
-if (<?php echo $page?> != 0){
-    specCategory = currentCategory.getElementsByClassName("dropdown-item")[<?php echo (int)$page?>];
+
+specCategory = currentCategory.getElementsByClassName("dropdown-item")[<?php echo (int)$page?>];
+if (typeof(specCategory) != 'undefined' && specCategory != null){
     specCategory.classList.add("red");
 }
 </script>
