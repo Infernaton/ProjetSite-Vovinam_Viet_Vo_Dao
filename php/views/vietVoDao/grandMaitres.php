@@ -1,3 +1,5 @@
+<?php require_once 'php/init.php';?>
+
 <head>
 <link rel="stylesheet" href="css/maitres.css">
 </head>
@@ -50,7 +52,7 @@
                             <!-- Boutton pour retourner la carte -->
                             <div class="footer">
                                 <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
+                                    <- Retour
                                 </button>
                             </div>
                         </div> <!-- Fin du dos de la carte -->
@@ -63,57 +65,19 @@
             <div style="padding: 50px;">
                 <h1 class="content-title">Les grands maîtres</h1>
             </div>
-        </div>
+        </div> 
+        <?php 
+        $greatMastersBeforeFetch = $db->query('SELECT * FROM specialist');
+        $greatMasters = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+
+        //var_dump($greatMasters);
+        ?>
         <!-- Carte des grands ME -->
         <div class="row">
-            <div class="col-sm-4">
-                <!-- Une carte -->
-                <div class="card-container manual-flip" >
-                    <div class="card">
-                        <!-- Coté frontal -->
-                        <div class="front">
-                            <div class="content">
-                                <!-- Photo -->
-                                <div class="user">
-                                    <img class="img-circle" src="assets/img/Maitres/ME_Fondateur.png"/>
-                                </div>
-                                <!-- Contenu -->
-                                <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
-                                </div>
-                                <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
-                                </div>
-                            </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5>Titre</h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
-                </div>
-            </div>
-            <div class="col-sm-4">
+            <?php
+            for ($i=0;$i<count($greatMasters);$i++){
+            ?>
+            <div class="col-sm-6">
                 <!-- Une carte -->
                 <div class="card-container manual-flip" >
                     <div class="card">
@@ -126,9 +90,14 @@
                                 </div>
                                 <!-- Contenu -->
                                 <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
+                                    <h3 class="name" style="display:inline-block"><?php echo $greatMasters[$i]['name']?></h3>
+                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;"><?php echo $greatMasters[$i]['birthday'].' - '.$greatMasters[$i]['deathDate']?></p>
+                                    <?php 
+                                    $functions = explode(',', $greatMasters[$i]["function"]);
+                                    for ($a=0; $a<count($functions); $a++){
+                                        echo '<p>'.$functions[$a].'</p>';
+                                    }
+                                    ?>
                                 </div>
                                 <!-- Boutton de rotation -->
                                 <div class="footer" style="float: right;">
@@ -142,306 +111,26 @@
                         <div class="back">
                             <!-- Titre -->
                             <div class="header">
-                                <h5>Titre</h5>
+                                <h5><b>Biographie de <?php echo $greatMasters[$i]['name']?></b></h5>
                             </div>
                             <!-- Contenu -->
                             <div class="content">
                                 <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
+                                    <p><?php echo $greatMasters[$i]['biography']?></p>
                                 </div>
                             </div>
                             <!-- Boutton de rotation -->
                             <div class="footer">
                                 <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
+                                    <- Retour
                                 </button>
                             </div>
                         </div> <!-- Fin du dos de la carte -->
                     </div> <!-- Fin d'une carte -->
                 </div>
             </div>
-            <div class="col-sm-4">
-                <!-- Une carte -->
-                <div class="card-container manual-flip" >
-                    <div class="card">
-                        <!-- Coté frontal -->
-                        <div class="front">
-                            <div class="content">
-                                <!-- Photo -->
-                                <div class="user">
-                                    <img class="img-circle" src=" assets/img/Maitres/ME_Fondateur.png"/>
-                                </div>
-                                <!-- Contenu -->
-                                <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
-                                </div>
-                                <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
-                                </div>
-                            </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5>Titre</h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <!-- Une carte -->
-                <div class="card-container manual-flip" >
-                    <div class="card">
-                        <!-- Coté frontal -->
-                        <div class="front">
-                            <div class="content">
-                                <!-- Photo -->
-                                <div class="user">
-                                    <img class="img-circle" src=" assets/img/Maitres/ME_Fondateur.png"/>
-                                </div>
-                                <!-- Contenu -->
-                                <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
-                                </div>
-                                <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
-                                </div>
-                            </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5>Titre</h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <!-- Une carte -->
-                <div class="card-container manual-flip" >
-                    <div class="card">
-                        <!-- Coté frontal -->
-                        <div class="front">
-                            <div class="content">
-                                <!-- Photo -->
-                                <div class="user">
-                                    <img class="img-circle" src=" assets/img/Maitres/ME_Fondateur.png"/>
-                                </div>
-                                <!-- Contenu -->
-                                <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
-                                </div>
-                                <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
-                                </div>
-                            </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5>Titre</h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <!-- Une carte -->
-                <div class="card-container manual-flip" >
-                    <div class="card">
-                        <!-- Coté frontal -->
-                        <div class="front">
-                            <div class="content">
-                                <!-- Photo -->
-                                <div class="user">
-                                    <img class="img-circle" src=" assets/img/Maitres/ME_Fondateur.png"/>
-                                </div>
-                                <!-- Contenu -->
-                                <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
-                                </div>
-                                <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
-                                </div>
-                            </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5>Titre</h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <!-- Une carte -->
-                <div class="card-container manual-flip" >
-                    <div class="card">
-                        <!-- Coté frontal -->
-                        <div class="front">
-                            <div class="content">
-                                <!-- Photo -->
-                                <div class="user">
-                                    <img class="img-circle" src=" assets/img/Maitres/ME_Fondateur.png"/>
-                                </div>
-                                <!-- Contenu -->
-                                <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
-                                </div>
-                                <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
-                                </div>
-                            </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5>Titre</h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <!-- Une carte -->
-                <div class="card-container manual-flip" >
-                    <div class="card">
-                        <!-- Coté frontal -->
-                        <div class="front">
-                            <div class="content">
-                                <!-- Photo -->
-                                <div class="user">
-                                    <img class="img-circle" src=" assets/img/Maitres/ME_Fondateur.png"/>
-                                </div>
-                                <!-- Contenu -->
-                                <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
-                                </div>
-                                <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
-                                </div>
-                            </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5>Titre</h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet.</p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
-                </div>
-            </div>
+            <?php 
+            } ?>
         </div>
     </div>
 
