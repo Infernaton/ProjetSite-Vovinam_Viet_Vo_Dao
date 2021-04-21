@@ -61,7 +61,7 @@
         <!-- Section -->
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="text-center">
-                <h2 class="content-title">Valeurs et Principe du Vovinam-Viet Vo Dao</h2>
+                <h2 class="content-title">Valeurs et Principes du Vovinam-Viet Vo Dao</h2>
             </div>
             <div class="mt-5">
                 <h4 class="pl-5 pb-2">Les Valeurs </h4>

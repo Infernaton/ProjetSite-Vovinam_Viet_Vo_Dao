@@ -12,8 +12,9 @@
     <header>
         <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 10px; padding-bottom: 10px">
             <div class="row">
-                <div class="col-sm-2"><a href=""><img src="assets/img/logo.png" width="45%" height="100%"></a></div>
+                <div class="col-sm-2"><a href="?c=home"><img src="assets/img/logo.png" width="45%" height="100%"></a></div>
                 <div class="col-sm-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
+                <div class="col-sm-1"><a href="?c=login&p=0">Login</a>
             </div>
         </div>
     </header>

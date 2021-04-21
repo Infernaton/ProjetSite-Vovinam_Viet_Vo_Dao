@@ -13,7 +13,7 @@ function partials_header($categorie,$page){
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">La Fédération</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=federation&p=0" id="federation" >La Fédération</a>
-                    <a class="dropdown-item" href="?c=federation&p=1" id="clubs">Les clubs</a>
+                    <a class="dropdown-item" href="?c=federation&p=1" id="clubs">Les clubs et les Régions</a>
                     <a class="dropdown-item" href="?c=federation&p=2" id="contact-federation">Contacts</a>
                     <a class="dropdown-item" href="?c=federation&p=3" id="lien">Lien</a>
                     <a class="dropdown-item" href="?c=federation&p=4" id="label">Label-Légal-régularité</a>
