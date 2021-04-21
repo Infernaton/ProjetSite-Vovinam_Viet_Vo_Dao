@@ -23,8 +23,9 @@ function partials_footer(){
                     <a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance" target="_blank" ><img src="assets/img/fb.png"  id = "fb"></a>
                 </div>
                 <div class="p-2">
-                    <a href="http://vietvodao.photos/" target="_blank" ><img src="assets/img/galerie.png"  id = "galerie"></a>
+                    <a href="http://vietvodao.photos/" target="_blank" ><img src="assets/img/galerie.png"id = "galerie"></a>
                 </div>
+            </div>
         </div>
     </footer>
 </body>
