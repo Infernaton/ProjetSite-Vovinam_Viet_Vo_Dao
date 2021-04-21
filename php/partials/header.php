@@ -1,17 +1,6 @@
 <?php 
 function partials_header($categorie,$page){
 ?>   
-<!DOCTYPE html>
-<html lang="fr_FR">
-    <!-- Configurations de la page -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Vovinam Viet Vodao</title>
-</head>
-<body>
     <header>
         <div class="container-fluid"  style="border-bottom: 1px solid #1c55a3; margin-top: 15px;">
             <div class="row">
@@ -21,7 +10,6 @@ function partials_header($categorie,$page){
         </div>
     </header>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm bg-white justify-content-center sticky-top " style="box-shadow: 0px 20px 60px 10px white;  ">
@@ -83,7 +71,6 @@ function partials_header($categorie,$page){
             </li>
         </ul>
     </nav>
-</body>
 <script> 
 
 currentCategory= document.getElementById('<?php echo $categorie?>');

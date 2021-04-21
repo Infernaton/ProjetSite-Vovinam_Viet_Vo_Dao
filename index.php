@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr_FR">
+<!-- Configurations de la page -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Vovinam Viet Vodao</title>
+</head>
+<body>
 <?php
 // check auth
 
@@ -30,7 +41,9 @@ if (isset($_GET['c'])) {
         $pageCate = '404';
     }
 }
-partials_header($pageCate,$index);
+if ($pageCate != 'admin') {
+    partials_header($pageCate,$index);
+}
 /*
 //In case the user want to delete or to Log out with our account
 if (isset($_GET['delete'])){
@@ -39,8 +52,10 @@ if (isset($_GET['delete'])){
         die;
     }
 }*/
-//var_dump($pageCate,$page);
 require_once 'php/views/'.$pageCate.$page.'.php';
 
-partials_footer();
+if ($pageCate != 'admin'){
+    partials_footer();
+}
 ?>
+</html>

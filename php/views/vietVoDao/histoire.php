@@ -1,7 +1,5 @@
-<head>
 <link rel="stylesheet" href="css/discipline.css">
 <link rel="stylesheet" href="scripts/ScrollMagic/assets/css/style.css" type="text/css">
-</head>
 
 <section class="demo" id="section-wipes" style="margin-top: 20px;">
 		<style type="text/css">

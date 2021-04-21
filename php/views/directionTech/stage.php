@@ -1,6 +1,4 @@
-<head>
 <link rel="stylesheet" href="css/directionTech.css">
-</head>
 
     <div class="container">
         <!-- Titre -->
