@@ -8,7 +8,7 @@
 <div id="logine">
     <form action="verification.php" method="POST">
     <div class="login">
-        <h1>Connexion</h1>
+        <h1 class="content-title-yellow">Connexion</h1>
         <div class ="user">
             <label><b>Nom d'utilisateur</b></label>
             <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>

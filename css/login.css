@@ -5,8 +5,9 @@ border-left: 1px solid #1c55a3;
 border-right: 1px solid #1c55a3;
 margin-left: auto;
 margin-right: auto;
-width: 13em;
-margin-bottom: 15px;
+width: 14em;
+margin-top: 5%;
+margin-bottom: 15%;
 }
 .user{
     margin-left: auto;
@@ -22,5 +23,6 @@ margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
     width: 12em;
-    margin-bottom: 21%;
+    margin-bottom: 20%;
+    margin-top: 5%;
 }
