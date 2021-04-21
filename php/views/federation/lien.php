@@ -2,28 +2,24 @@
     <link rel="stylesheet" href="css/federation.css">
 </head>
 
-<div class="info">
-        <h1> Liens </h1>
+<body>
+    <div class="info">
+        <h1 class ="content-title-yellow"> Liens </h1>
 
         <p>
-            <a href="blabla"> 
-                Lorem ipsum dolor sit amet 
-                laborum vel omnis, distinctio nisi.
+        
+            <a href="https://vovinamworldfederation.eu/fr/federation-mondiale.html"> 
+                <h3>Fédération Mondiale</h3>
             </a>
         </p>
         
         <p>
-            <a href="ahahah"> 
-                Lorem ipsum dolor sit amet  
-                laborum vel omnis, distinctio nisi.
+            <a href="http://www.famtv.fr/"> 
+                <h3>Fédération des Arts Martiaux Traditionnels Vietnamiens</h3>
+
             </a>
         </p>
-
-        <p>
-            <a href="heheh"> 
-                Lorem ipsum dolor sit amet 
-                laborum vel omnis, distinctio nisi.
-            </a>
-        </p>   
+  
        
-</div>
+    </div>
+</body>
