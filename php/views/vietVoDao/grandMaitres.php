@@ -25,7 +25,7 @@
                                 <div class="main">
                                     <h3 class="name" style="display:inline-block">Maitre Nguyễn Lộc</h3>
                                     <p class="profession" style="padding-bottom: 10px;display:inline-block;">1912-1960</p>
-                                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit animi ipsum. Inventore sint aliquid libero iste dolorum quasi soluta, aliquam, voluptas necessitatibus ex et eveniet. Voluptates doloribus quaerat laudantium.</p>
+                                    <p>Le Maître Nguyen Lôc est né en 1912 (soit le 8 avril du calendrier lunaire) dans le village de Hau Bang, district de Thach That, province de Sòn Tày au nord du Vietnam. Cette région étant bordée de montagnes, le Maître Fondateur pouvait observer les fêtes montagnardes. Dans ces fêtes, se déroulaient des jeux de lutte où les participants devaient mettre leur adversaire « le dos à terre ».</p>
                                 </div>
                                 <!-- Boutton pour retourner la carte -->
                                 <div class="footer" style="float: right;">
@@ -39,12 +39,12 @@
                         <div class="back">
                             <!-- Titre -->
                             <div class="header">
-                                <h5>Titre</h5>
+                                <h5>Suite ...</h5>
                             </div>
                             <!-- Contenu du dos -->
                             <div class="content">
                                 <div class="main">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique distinctio illum dolore, veritatis labore fugiat accusamus, nulla ea cum ipsa saepe possimus eius sequi a at porro deleniti enim aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta odit, repudiandae accusantium enim nemo veritatis, deleniti cum unde adipisci quaerat molestias modi. Perferendis quaerat sint minus harum rem ad reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat at sapiente neque assumenda sunt doloremque fuga magni aspernatur eveniet iusto aut omnis illum ratione a illo quis, id et rerum!</p>
+                                    <p>Dès son plus jeune âge, il est formé à la pratique martiale ainsi que philosophique. Sur les conseils de son maître, il parcourut le Vietnam pour compléter son enseignement auprès des Maîtres les plus compétents. Au cours de son long voyage, il recueille de précieux documents anciens, dispersés et méconnus. Le grand Maître Nguyen Lôc n’avait de cesse de chercher, d’apprendre et d’étudier …</p>
                                 </div>
                             </div>
                             <!-- Boutton pour retourner la carte -->
@@ -88,7 +88,7 @@
                                 </div>
                                 <!-- Contenu -->
                                 <div class="main">
-                                    <h3 class="name" style="display:inline-block"><?php echo $greatMasters[$i]['name']?></h3>
+                                    <h3 class="name" style="display:inline-block">Maître <?php echo $greatMasters[$i]['name']?></h3>
                                     <p class="profession" style="padding-bottom: 10px;display:inline-block;"><?php echo $greatMasters[$i]['birthday'].' - '.$greatMasters[$i]['deathDate']?></p>
                                     <?php 
                                     $functions = explode(',', $greatMasters[$i]["function"]);
