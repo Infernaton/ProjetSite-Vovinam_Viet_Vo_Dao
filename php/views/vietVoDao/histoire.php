@@ -1,15 +1,12 @@
 <link rel="stylesheet" href="css/discipline.css">
 <link rel="stylesheet" href="scripts/ScrollMagic/assets/css/style.css" type="text/css">
-
-<section class="demo mt-5" id="section-wipes">
-		<style type="text/css">
-			.panel {
+<style type="text/css">
+            .panel {
 				height: 100%;
-				width: 100%;
 			}
 		</style>
-        <!-- Une section = une page de l'histoire -->
-        <section class="panel white" style="padding-bottom: 20px;">
+<section class="mt-5" id="section-wipes">
+        <section class="panel white" >
             <div class="container">
                 <div class="">
                     <div style="padding: 20px;">
@@ -40,7 +37,40 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <!-- 
+        Une section = une page de l'histoire
+        <section class="panel white" >
+            <div class="container">
+                <div class="">
+                    <div style="padding: 20px;">
+                        <h1 class="content-title text-center">Description radide et introduction historique</h1>
+                    </div>
+                    <div class="row mt-5" >
+                        <div class="col-sm-5 pt-5">
+                            <img src="assets/img/le-vvd/groupe_fondateur.jpg" alt="" class="top-centered">
+                        </div>
+                        <div class="col-sm-7 pt-3">
+                            <p>
+                                L’histoire du Viêtnam est riche en évènements : conquêtes, invasions, révolutions, colonisation, 
+                                conflits internes se succèdent et expliquent le développement des techniques de combats.
+                            </p>
+                            <p>
+                                Etablir une date de naissance pour l’art martial, le « Võ » en vietnamien, est impossible. 
+                                Cependant, c’est sous le règne de l’empereur Hùng Vuong 1er, il y a <b> 5000 ans</b> de cela, que 
+                                les techniques de combat commencent à se développer.
+                            </p>
+                            <p>
+                                En 111 avant JC, le Viêtnam connaît sa première invasion chinoise, invasion qui durera jusqu’en 398 
+                                après JC et pendant laquelle la Chine tentera d’imposer ses mœurs et ses coutumes. Le pays va connaître 
+                                d’autres périodes d’invasions, mais moins marquantes ; l’art martial alors se structure.
+                            </p>
+                            <br><br><br><br><br><br><p style="margin-right: 75%;">▼</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="panel white">
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -71,7 +101,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="panel white" >
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -106,7 +136,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="panel white" >
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -149,7 +179,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="panel white" >
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -186,7 +216,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="panel white" >
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -219,11 +249,14 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <script type="text/javascript" src="scripts/ScrollMagic/assets/js/lib/jquery.min.js"></script>	
         <script type="text/javascript" src="scripts/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+        <script type="text/javascript" src="scripts/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
         <script>
-            // Script d'animation
+            /*// Script d'animation
 			$(function () { // Chargement complet de la page
 				// Initialisation
 				var controller = new ScrollMagic.Controller({
@@ -245,6 +278,31 @@
 						//.addIndicators() // add indicators (requires plugin)
 						.addTo(controller);
 				}
-			});
+			});*/
+            /*$(function () { // wait for document ready
+		    // init
+		    var controller = new ScrollMagic.Controller();
+
+		    // define movement of panels
+		    var wipeAnimation = new TimelineMax()
+			    // animate to second panel
+			    .to("#slideContainer", 1,   {x: "-25%"})	// move in to first panel
+			    // animate to third panel
+			    .to("#slideContainer", 1,   {x: "-50%"})
+			    // animate to forth panel
+			    .to("#slideContainer", 1,   {x: "-75%"})
+                .to("#slideContainer", 1,   {x: "-100%"})
+
+		    // create scene to pin and link animation
+		    new ScrollMagic.Scene({
+				triggerElement: "#pinContainer",
+				triggerHook: "onLeave",
+				duration: "500%"
+			    })
+			    .setPin("#pinContainer")
+			    .setTween(wipeAnimation)
+			    //.addIndicators() // add indicators (requires plugin)
+			    .addTo(controller);
+	        });*/
 		</script>
 	</section>
