@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/discipline.css">
 <link rel="stylesheet" href="scripts/ScrollMagic/assets/css/style.css" type="text/css">
 
-<section class="demo" id="section-wipes" style="margin-top: 20px;">
+<section class="demo mt-5" id="section-wipes">
 		<style type="text/css">
 			.panel {
 				height: 100%;

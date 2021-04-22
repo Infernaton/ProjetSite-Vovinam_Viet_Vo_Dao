@@ -12,12 +12,34 @@ div.link:hover{
     background-color: #DC3634;
     /*transform: scale(1.2);*/
 }
-
+html { height: 100%; }
+body{
+    min-height:100%; 
+    background-color: #8ebdff;
+    position:relative;
+    padding-bottom: 65px;
+}
+header{
+    background-color: white;
+}
+.header{
+    border-bottom: 1px solid #1c55a3; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+.container {
+    background-color: white;
+    padding-bottom: 1%;
+    border-radius: 5px;
+}
 footer{
     border-top: 1px solid #1c55a3;
-    position: sticky;
+    position: absolute; 
+    left: 0 ; right: 0; bottom: 0; 
+    height: 70px;
+    background-color: #44444c;
+    box-shadow: 0px -1px 10px 0px black;
 }
-
 #yt{
     width: 50px;
     margin-right: 5%;  

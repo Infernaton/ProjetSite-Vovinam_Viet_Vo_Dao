@@ -2,10 +2,10 @@
 
 <link rel="stylesheet" href="css/maitres.css">
 
-<div class="container">
+<div class="container mt-5">
         <!-- Titre de la page -->
         <div class="text-center">
-            <div style="padding: 50px;">
+            <div style="padding-bottom: 50px;">
                 <h1 class="content-title">Le Maître fondateur</h1>
             </div>
         </div>

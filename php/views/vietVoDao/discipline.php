@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/discipline.css">
+<link rel="stylesheet" href="css/discipline1.css">
 
 <div class="container-fluid section-fade" id="banner">
         <style>           
@@ -9,7 +9,7 @@
         </style>
         <!-- Fin de l'image -->
         <!-- Citation -->
-        <div class="container">
+        <div>
             <div class="wrapper-content">    
                 <div class="blockquote">
                     <h1>Être fort pour être utile.</h1>           
