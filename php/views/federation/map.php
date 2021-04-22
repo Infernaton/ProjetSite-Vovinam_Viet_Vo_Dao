@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="css/federation.css">
+<link rel="stylesheet" href="css/federation1.css">
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
 
-<div class="container">
+<div class="container mt-5">
         <!-- Titre -->
         <div class="text-center">
             <div style="padding: 50px; display: inline-flex;">
@@ -13,7 +13,6 @@
         <div class="row">
             <div class="col-sm-12">
                 <div id='map' style='width: auto; height: 600px;'></div>
-                <div class='map-overlay' id='features'><h4 style="margin: 10px;">Carte des comités régionaux et leur clubs</h4></div>
                 <div class='map-overlay' id='legend'></div>
             </div>
         </div>

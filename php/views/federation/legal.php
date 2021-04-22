@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="css/federation.css">
+<link rel="stylesheet" href="css/federation1.css">
 
-<div class="info">
-        <h1> Infos Légales </h1>
+<div class="container info mt-5">
+        <h1 class="content-title-yellow  pb-3"> Infos Légales </h1>
 
         <p>
         Lorem ipsum dolor sit amet 

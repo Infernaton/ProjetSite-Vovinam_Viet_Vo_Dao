@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="css/federation.css">
+<link rel="stylesheet" href="css/federation1.css">
 
 <div class="container">
     <!-- Image du groupe fondateur -->
-    <div class="text-center mt-5">
+    <div class="text-center mt-5 pb-3">
         <h1 class="content-title-yellow">La Fédération</h2>
     </div>
         <img class="mx-auto d-block" src="assets/img/le-vvd/groupe_fondateur.jpg">
