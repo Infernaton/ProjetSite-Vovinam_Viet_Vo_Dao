@@ -42,7 +42,7 @@
     <!-- Scripts et configurations de la map -->
         <script>
             // Génération de la map
-    mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXN0cm9ub3RlIiwiYSI6ImNrbnR6aHB6cTA3eGoyb25qc2h3OWQ5dWQifQ.N7MTEkXT1dIHNV2QyoDcPg';
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
@@ -70,8 +70,8 @@
         }
         // Chargement des deux markers utilisés
         const markers = [
-            {url: '../assets/img/markers/blue_marker.png', id: 'blue_marker'},
-            {url: '../assets/img/markers/red_marker.png', id: 'red_marker'}
+            {url: 'assets/img/markers/blue_marker.png', id: 'blue_marker'},
+            {url: 'assets/img/markers/red_marker.png', id: 'red_marker'}
         ]
         // Chargement HTML des markers
         markers.forEach(marker => {
