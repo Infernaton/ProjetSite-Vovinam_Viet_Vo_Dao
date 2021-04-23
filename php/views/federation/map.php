@@ -42,7 +42,7 @@
     <!-- Scripts et configurations de la map -->
         <script>
             // Génération de la map
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYXN0cm9ub3RlIiwiYSI6ImNrbnR6aHB6cTA3eGoyb25qc2h3OWQ5dWQifQ.N7MTEkXT1dIHNV2QyoDcPg';
+    mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
@@ -79,19 +79,43 @@
                 map.addImage(marker.id,image);
             })
         });
+        <?php 
+        require_once 'php/init.php';
+        $listClubBeforeFetch = $db->query('SELECT * FROM marqueur WHERE type="club"');
+        $listComiteBeforeFetch = $db->query('SELECT * FROM marqueur WHERE type="comite"');
+        $listClub = $listClubBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+        $listComite = $listComiteBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+        ?>
         // Liste des clubs, avec position et description
         map.addSource('club', {
                     'type': 'geojson',
                         'data': {
                             'type': 'FeatureCollection',
                             'features': [
-                                {
+                                <?php  
+                                foreach ($listClub as $club){
+                                    $contact = explode("-", $club['contact']);
+                                    echo "{",
+                                        "'type': 'Feature',",
+                                        "'properties': {",
+                                            "'description':",
+                                                "<p><strong><a href=".$club['lien']." target='_blank' style='color:#e82226;'>".$club['titre']."</a></strong></p>",
+                                                "<p>Enseignant principal : ".$club["enseignant"]."</p>",
+                                                "<p>Contact : ".$contact[0]." – <a style='color:#e82226;' href='tel:".$contact[1]."'>".$contact[1]."</a></p>",
+                                            "},",
+                                        "'geometry': {",
+                                            "'type': 'Point',",
+                                            "'coordinates': ".",",
+                                            "}",
+                                        "},";
+                                }?>
+                                /*{
                                 'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>ECOLE VOVINAM VIET VO DAO- Paris 12E</strong><p><a href='http://paris.vovinam.fr' target='_blank' style='color:#e82226;'>ECOLE VOVINAM VIET VO DAO</a></p><p>Enseignant principal : Maître SFORZA Aldo</p><p>Contact : NGUYỄN Hùng – <a style='color:#e82226;' href='tel:06.62.12.72.28'>06.62.12.72.28</a></p>",},
+                                'properties': {
+                                    'description': "<strong>ECOLE VOVINAM VIET VO DAO- Paris 12E</strong><p><a href='http://paris.vovinam.fr' target='_blank' style='color:#e82226;'>ECOLE VOVINAM VIET VO DAO</a></p><p>Enseignant principal : Maître SFORZA Aldo</p><p>Contact : NGUYỄN Hùng – <a style='color:#e82226;' href='tel:06.62.12.72.28'>06.62.12.72.28</a></p>",},
                                 'geometry': {
                                     'type': 'Point',
-                                    'coordinates': [2.40148012,48.8326985]
+                                    'coordinates': [2.40148012, 48.8326985]
                                     }
                                 },
                                 {
@@ -111,18 +135,36 @@
                                     'type': 'Point',
                                     'coordinates': [2.5790146, 48.633755]
                                     }
-                                }
+                                }*/
 
                             ]
                         }
-                    })
+                    });
         // Liste des comités, avec position et description
         map.addSource('comite', {
                     'type': 'geojson',
                         'data': {
                             'type': 'FeatureCollection',
                             'features': [
-                                {
+                                <?php  
+                                foreach ($listComite as $comite){
+                                    $contact = explode("-", $comite['contact']);
+                                    echo "{",
+                                        "'type': 'Feature',",
+                                        "'properties': {",
+                                            "'description':",
+                                                "<strong>".$comite['titre']."</strong>",
+                                                "<p><strong><a href=".$comite['lien']." target='_blank' style='color:#e82226;'>Lien du Site Officiel</a></strong></p>",
+                                                
+                                                "<p>Contact : ".$contact[0]." – <a style='color:#e82226;' href='tel:".$contact[1]."'>".$contact[1]."</a></p>",
+                                            "},",
+                                        "'geometry': {",
+                                            "'type': 'Point',",
+                                            "'coordinates': ".",",
+                                            "}",
+                                        "},";
+                                }?>
+                                /*{
                                 'type': 'Feature',
                                 'properties': {'description':
                                                 "<strong>Comité Vovinam-Viet Vo Dao de Normandie</strong><p><a href='http://www.vovinam-caen.com' target='_blank' style='color:blue;'>Comité de Normandie</a></p>",},
@@ -176,7 +218,7 @@
                                     'type': 'Point',
                                     'coordinates': [4.694197,45.766722]
                                     }
-                                }
+                                }*/
                             ]
                         }
                     });
@@ -208,7 +250,7 @@
         map.on('click', 'regions', function (e) {
             map.flyTo({
             center: e.features[0].geometry.coordinates,
-            zoom:10
+            zoom:20
             });
         });
         // Zoom sur la position d'un comité une fois click dessus
