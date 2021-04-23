@@ -15,7 +15,7 @@
         <input class="inputData" type="text" placeholder="Contact" name="contact" id="contact">
 
         <label class="data" for="club / comite"><b>club / comite</b></label>
-        <textarea class="inputData" type ="text" placeholder="club ou comite" name="club/comite" id="club/comite" required></textarea>
+        <textarea class="inputData" type ="text" placeholder="club ou comite" name="club_comite" id="club_comite" required></textarea>
 
         <label class="data" for="lien"><b>lien</b></label>
         <input class="inputData" type="text" placeholder="lien du site" name="lien" id="lien">

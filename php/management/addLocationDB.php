@@ -8,21 +8,22 @@ var_dump($result);
 
 //Prepare to add the object
 $req = $db->prepare('INSERT INTO marqueur (
-    titre, description, type, lien
-    ) VALUES (:titre, :description, :type, :lien)');
+    titre, enseignant, contact, club_comite, lien, coordonee
+    ) VALUES (:titre, :enseignant, :contact, :club_comite, :lien, :coordonee)');
 
 
 $req->bindValue(':titre' , $result["titre"]); 
 $req->bindValue(':enseignant' , $result["enseignant"]);
-$req->bindValue('contact' , $result["contact"]);
-$req->bindValue(':type', $result["type"]);
+$req->bindValue(':contact' , $result["contact"]);
+$req->bindValue(':club_comite', $result["club_comite"]);
 $req->bindValue(':lien' , $result["lien"]);
-$req->bindValue(':coordonee' , $base64_encode(serialize($coo)));
-$coo = explode("," ($result["coordonee"]));
+$coo = explode(",", ($result["coordonee"]));
+$req->bindValue(':coordonee' , base64_encode(serialize($coo)));
 
+var_dump ($coo);
 $req->execute();
 
 echo "\n Envoie réussi";
-//echo "<script type='text/javascript'> history.go(-1); </script>";
+echo "<script type='text/javascript'> history.go(-1); </script>";
 die;
 ?>
