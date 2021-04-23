@@ -16,7 +16,7 @@ header{
 html { height: 100%; }
 body{
     min-height:100%; 
-    background-color: #8ebdff;
+    background-color: #1c55a3;
     position:relative;
     padding-bottom: 65px;
 }
@@ -32,7 +32,7 @@ body{
 }
 footer{
     border-top: 1px solid #1c55a3;
-    position: absolute; 
+    position: fixed; 
     left: 0 ; right: 0; bottom: 0; 
     height: 70px;
     background-color: #44444c;
