@@ -13,7 +13,7 @@ function partials_header($categorie,$page){
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">La Fédération</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=federation&p=0" id="federation" >La Fédération</a>
-                    <a class="dropdown-item" href="?c=federation&p=1" id="clubs">Les clubs et les Régions</a>
+                    <a class="dropdown-item" href="?c=federation&p=1" id="clubs">Les Régions et Clubs</a>
                     <a class="dropdown-item" href="?c=federation&p=2" id="contact-federation">Contacts</a>
                     <a class="dropdown-item" href="?c=federation&p=3" id="lien">Lien</a>
                     <a class="dropdown-item" href="?c=federation&p=4" id="label">Label-Légal-régularité</a>
@@ -54,9 +54,9 @@ function partials_header($categorie,$page){
                 <a class="nav-link" href="?c=actualite">Actualités</a>
             </li>
             <li class="nav-item dropdown" id="contacts">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contacts</a>
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=contacts&p=0" id="contact-contact">Contacts</a>
+                    <a class="dropdown-item" href="?c=contacts&p=0" id="contact-contact">Contact</a>
                     <a class="dropdown-item" href="?c=contacts&p=1" id="FAQ">FAQ</a>
                     <a class="dropdown-item" href="?c=contacts&p=2" id="personnalite">Personnalité de la Fédération</a>
                 </div>
