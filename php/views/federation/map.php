@@ -1,7 +1,14 @@
 <link rel="stylesheet" href="css/federation1.css">
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
-
+<?php 
+    require_once 'php/init.php';
+    $listClubBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite like "club"');
+    $listClub = $listClubBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+    $listComiteBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite="comite"');
+    $listComite = $listComiteBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+    //var_dump($listClub);
+?>
 <div class="container mt-5">
         <!-- Titre -->
         <div class="text-center">
@@ -79,64 +86,46 @@
                 map.addImage(marker.id,image);
             })
         });
-        <?php 
-        require_once 'php/init.php';
-        $listClubBeforeFetch = $db->query('SELECT * FROM marqueur WHERE type="club"');
-        $listComiteBeforeFetch = $db->query('SELECT * FROM marqueur WHERE type="comite"');
-        $listClub = $listClubBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
-        $listComite = $listComiteBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
-        ?>
+        
         // Liste des clubs, avec position et description
         map.addSource('club', {
                     'type': 'geojson',
                         'data': {
                             'type': 'FeatureCollection',
                             'features': [
-                                <?php  
+                                <?php                                  
                                 foreach ($listClub as $club){
-                                    $contact = explode("-", $club['contact']);
-                                    echo "{",
-                                        "'type': 'Feature',",
-                                        "'properties': {",
-                                            "'description':",
-                                                "<p><strong><a href=".$club['lien']." target='_blank' style='color:#e82226;'>".$club['titre']."</a></strong></p>",
-                                                "<p>Enseignant principal : ".$club["enseignant"]."</p>",
-                                                "<p>Contact : ".$contact[0]." – <a style='color:#e82226;' href='tel:".$contact[1]."'>".$contact[1]."</a></p>",
-                                            "},",
-                                        "'geometry': {",
-                                            "'type': 'Point',",
-                                            "'coordinates': ".",",
-                                            "}",
-                                        "},";
-                                }?>
-                                /*{
-                                'type': 'Feature',
-                                'properties': {
-                                    'description': "<strong>ECOLE VOVINAM VIET VO DAO- Paris 12E</strong><p><a href='http://paris.vovinam.fr' target='_blank' style='color:#e82226;'>ECOLE VOVINAM VIET VO DAO</a></p><p>Enseignant principal : Maître SFORZA Aldo</p><p>Contact : NGUYỄN Hùng – <a style='color:#e82226;' href='tel:06.62.12.72.28'>06.62.12.72.28</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [2.40148012, 48.8326985]
+                                    $coo = unserialize(base64_decode($club['coordonee']));
+                                    $contact = explode("–", $club['contact']);
+                                    $contactSentence = "<p>Contact :<br>";
+                                    for ($i=0;$i <count($contact); $i++){
+                                        if ($contact[$i] == ""){
+                                            $contactSentence .= "-----";
+                                        }elseif ($i+1 ==count($contact)) {
+                                            $contactSentence .= " ".$contact[$i];
+                                        }else {
+                                            $contactSentence .= " ".$contact[$i]." -";
+                                        }
+                                        
                                     }
-                                },
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>U.M.S.P.C SECT. VOVINAM VIET VO DAO</strong><p><a href='http://vovinam.pontault.free.fr' target='_blank' style='color:#e82226;'>U.M.S.P.C SECT. VOVINAM VIET VO DAO</a></p><p>Enseignant principal : Maître TRẰN Antonella</p><p>Contact : MARTINS Daniel  – <a style='color:#e82226;' href='tel:06.66.02.39.47'>06.66.02.39.47</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [2.603671,48.778046]
+                                    //print_r($contact);
+                                    
+                                    if (count($coo) > 1){
+                                        echo "{",
+                                            "'type': 'Feature',",
+                                            "'properties': {",
+                                                "'description': ",
+                                                    '"<p><strong><a href='.$club['lien'].' target=_blank style=color:#e82226;>'.$club['titre'].'</a></strong></p><p>Enseignant principal : '.$club["enseignant"].'</p>',
+                                                    ''.$contactSentence.'</p>',
+                                                    '"},',
+                                            "'geometry': {",
+                                                "'type': 'Point',",
+                                                "'coordinates': [".(float)$coo[1].','.(float)$coo[0]."]",
+                                                "}",
+                                            "},";
                                     }
-                                },
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>ASS.CULTURELLE VOVINAM V.V.D. 77</strong><p><a href='http://vovinam.moissy.free.fr' target='_blank' style='color:#e82226;'>ASS.CULTURELLE VOVINAM V.V.D. 77</a></p><p>Enseignant principal : MARTINS Daniel</p><p>Contact : MARTINS Daniel  – <a style='color:#e82226;' href='tel:06.66.02.39.47'>06.66.02.39.47</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [2.5790146, 48.633755]
-                                    }
-                                }*/
-
+                                }
+                                ?>
                             ]
                         }
                     });
@@ -147,8 +136,12 @@
                             'type': 'FeatureCollection',
                             'features': [
                                 <?php  
-                                foreach ($listComite as $comite){
+                                /*foreach ($listComite as $comite){
                                     $contact = explode("-", $comite['contact']);
+                                    $coo = unserialize(base64_decode($comite['coordonee']));
+                                    $temp = $coo[0];
+                                    $coo[0] = $coo[1];
+                                    $coo[1] = $temp;
                                     echo "{",
                                         "'type': 'Feature',",
                                         "'properties': {",
@@ -160,11 +153,11 @@
                                             "},",
                                         "'geometry': {",
                                             "'type': 'Point',",
-                                            "'coordinates': ".",",
+                                            "'coordinates': ".$c.",",
                                             "}",
                                         "},";
-                                }?>
-                                /*{
+                                }*/?>
+                                {
                                 'type': 'Feature',
                                 'properties': {'description':
                                                 "<strong>Comité Vovinam-Viet Vo Dao de Normandie</strong><p><a href='http://www.vovinam-caen.com' target='_blank' style='color:blue;'>Comité de Normandie</a></p>",},
@@ -172,8 +165,7 @@
                                     'type': 'Point',
                                     'coordinates': [-0.357452,49.189114]
                                     }
-                                }
-                                ,
+                                },
                                 {
                                 'type': 'Feature',
                                 'properties': {'description':
@@ -218,7 +210,7 @@
                                     'type': 'Point',
                                     'coordinates': [4.694197,45.766722]
                                     }
-                                }*/
+                                }
                             ]
                         }
                     });
@@ -250,7 +242,7 @@
         map.on('click', 'regions', function (e) {
             map.flyTo({
             center: e.features[0].geometry.coordinates,
-            zoom:20
+            zoom:5
             });
         });
         // Zoom sur la position d'un comité une fois click dessus
