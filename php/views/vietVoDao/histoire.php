@@ -9,7 +9,7 @@
 </style>
 
 <div class="row">
-<div class="col-sm-4">
+<div class="arrow" style ="margin-right: 10%;margin-left: 10%;">
     <img src="assets/img/downArrow.png">
 </div>
 <section class="demowrap col-sm-8">
@@ -17,7 +17,7 @@
 
     <section class="demo" id="section-wipes">
         <!-- Une section = une page de l'histoire -->
-        <section class="panel white mt-5" style="padding-bottom: 20px;">
+        <section class="section-fade" style="padding-bottom: 20px;">
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="section-fade" style="padding-bottom: 20px;">
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="section-fade" style="padding-bottom: 20px;">
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -114,7 +114,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="section-fade" style="padding-bottom: 20px;">
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="section-fade" style="padding-bottom: 20px;">
             <div class="container">
                 <div class="text-center">
                     <div style="padding: 20px;">
@@ -194,10 +194,10 @@
                 </div>
             </div>
         </section>
-        <section class="panel white" style="padding-bottom: 20px;">
+        <section class="section-fade" style="padding-bottom: 20px;">
             <div class="container">
                 <div class="text-center">
-                    <div style="padding: 20px;">
+                    <div style="padding: 20px; margin-bottom: 20px;">
                         <h1 class="content-title">Conclusion</h1>
                     </div>
                     <div class="row mt-5">
@@ -230,6 +230,7 @@
         </section>
         <script type="text/javascript" src="scripts/ScrollMagic/assets/js/lib/jquery.min.js"></script>	
         <script type="text/javascript" src="scripts/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+        <script src="scripts/la-discipline.js"></script>
 
 		<script>
             // Script d'animation
