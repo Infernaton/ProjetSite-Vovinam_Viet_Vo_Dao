@@ -6,29 +6,10 @@
             <h2 class="content-title">Le conseil des Maîtres</h2> 
         </div>
         <br>
-        <h4 class="ml-3">Sommaire</h4>
-        <table class="table">
-            <tbody>
-                <tr>
-                    <th>
-                        <ul>
-                            <li><a href="#def"class="link">Définition</a></li>
-                        </ul>
-                    </th>
-                    <th>
-                        <ul>
-                            <li><a href="#hist"class="link">Président du Conseil</a></li>
-                        </ul>
-                    </th>
-                    <th>
-                        <ul>
-                            <li><a href="#rule"class="link">Membres du Conseil</a></li>
-                        </ul>
-                    </th>
-                </tr>
-            </tbody>
-            <div id="def"></div>
-        </table>
+        
+        <p  class="text-center">
+            ➢ <a href="?c=directionTech&p=1" class="link"> Voir la liste Actuelle du Conseil Des Maîtres</a>
+        </p>
         <div>
             <br>
             <h3><span class="ml-3">Qu'est ce que le Conseil des Maîtres ?</span></h3>
