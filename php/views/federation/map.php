@@ -71,8 +71,8 @@
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [2.40,47.45],
-    zoom: 5
+    center: [2.40,46.70],
+    zoom: 5.1
     });
     // Au chargement de la map >
     map.on('load', function () {
@@ -95,8 +95,8 @@
         }
         // Chargement des deux markers utilisés
         const markers = [
-            {url: 'assets/img/markers/blue_marker.png', id: 'blue_marker'},
-            {url: 'assets/img/markers/red_marker.png', id: 'red_marker'}
+            {url: 'assets/img/markers/blue_marker1.png', id: 'blue_marker'},
+            {url: 'assets/img/markers/red_marker1.png', id: 'red_marker'}
         ]
         // Chargement HTML des markers
         markers.forEach(marker => {
