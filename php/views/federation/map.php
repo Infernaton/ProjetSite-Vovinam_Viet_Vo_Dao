@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="css/federation1.css">
+<!-- The map-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
+<!-- GeoCoding, to transform simple address to Coordinate on the map-->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 <?php 
     require_once 'php/init.php';
     $listClubBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite like "club"');
@@ -18,6 +24,7 @@
         </div>
         <!-- Chargement de la map grande taille -->
         <div class="row">
+        
             <div class="col-sm-12">
                 <div id='map' style='width: auto; height: 600px;'></div>
                 <div class='map-overlay' id='legend'></div>
@@ -69,10 +76,10 @@
             // Génération de la map
     mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
     var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [2.40,46.70],
-    zoom: 5.1
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [2.40,46.70],
+        zoom: 5.1
     });
     // Au chargement de la map >
     map.on('load', function () {
@@ -102,7 +109,7 @@
         markers.forEach(marker => {
             map.loadImage(marker.url, function(error,image){
                 map.addImage(marker.id,image, {
-                    pixelRatio : 1.25,
+                    pixelRatio : 1.2,
                 });
             })
         });
@@ -114,9 +121,9 @@
                             'type': 'FeatureCollection',
                             'features': [
                                 <?php                                  
-                                foreach ($listClub as $club){
-                                    $coo = unserialize(base64_decode($club['coordonee']));
-                                    $contact = explode("–", $club['contact']);
+                                for($i=0;$i<count($listClub);$i++){
+                                    $coo = unserialize(base64_decode($listClub[$i]['coordonee']));
+                                    $contact = explode("–", $listClub[$i]['contact']);
                                     $contactSentence = "<p>Contact :<br>";
                                     for ($i=0;$i <count($contact); $i++){
                                         if ($contact[$i] == ""){
@@ -126,23 +133,22 @@
                                         }else {
                                             $contactSentence .= " ".$contact[$i]." -";
                                         }
-                                        
                                     }
-                                    //print_r($contact);
-                                    
-                                    if (count($coo) > 1){
-                                        echo "{",
-                                            "'type': 'Feature',",
-                                            "'properties': {",
-                                                "'description': ",
-                                                    '"<p><strong><a href='.$club['lien'].' target=_blank style=color:#e82226;>'.$club['titre'].'</a></strong></p><p>Enseignant principal : '.$club["enseignant"].'</p>',
-                                                    ''.$contactSentence.'</p>',
-                                                    '"},',
-                                            "'geometry': {",
-                                                "'type': 'Point',",
-                                                "'coordinates': [".(float)$coo[1].','.(float)$coo[0]."]",
-                                                "}",
-                                            "},";
+                                                                   
+                                    if (count($coo) > 1){ ?>
+                                        {
+                                        'type': 'Feature',
+                                        'properties': {
+                                            'description':
+                                                "<p><strong><a href='<?php echo $listClub[$i]['lien']?>' target='_blank' style='color:#e82226;'><?php echo$listClub[$i]['titre'] ?></a></strong></p><p>Enseignant principal : <?php echo $listClub[$i]["enseignant"] ?></p>" +
+                                                    "<?php echo $contactSentence ?></p>",
+                                            },
+                                        'geometry': {
+                                            'type': 'Point',
+                                            'coordinates': ["<?php echo (float)$coo[1] ?>","<?php echo (float)$coo[0]?>"],
+                                            }
+                                        },
+                                    <?php
                                     }
                                 }
                                 ?>
@@ -163,14 +169,15 @@
                                     for ($i=0;$i <count($contact); $i++){
                                         if ($contact[$i] == ""){
                                             $contactSentence .= "-----";
+                                            //If the first index is empty
                                         }elseif ($i+1 ==count($contact)) {
+                                            //The last index don't have a '-' at the end
                                             $contactSentence .= " ".$contact[$i];
                                         }else {
+                                            //To all index
                                             $contactSentence .= " ".$contact[$i]." -";
                                         }
-                                        
                                     }
-                                    //print_r($contact);
                                     
                                     if (count($coo) > 1){
                                         echo "{",
@@ -193,32 +200,32 @@
                     });
                     
                     
-                    // Add a symbol layer
-                    map.addLayer({
-                        'id': 'regions',
-                        'type': 'symbol',
-                        'source': 'comite',
-                        'layout': {
-                            'icon-image': 'blue_marker'
-                        }   
-                    });
-                    map.addLayer({
-                        'id': 'clubs',
-                        'type': 'symbol',
-                        'source': 'club',
-                        'layout': {
-                            'icon-image': 'red_marker'
-                        }   
-                    },'regions');
-                }
-            );
+        // Add a symbol layer
+        map.addLayer({
+            'id': 'regions',
+            'type': 'symbol',
+            'source': 'comite',
+            'layout': {
+                'icon-image': 'blue_marker'
+            }   
+        });
+        map.addLayer({
+            'id': 'clubs',
+            'type': 'symbol',
+            'source': 'club',
+            'layout': {
+                'icon-image': 'red_marker'
+                }   
+        },'regions');
+    });
 
-        // Zoom sur la position d'un comité une fois click dessus
-        map.on('click', 'regions', function (e) {
+
+    // Zoom sur la position d'un comité une fois click dessus
+    map.on('click', 'regions', function (e) {
             // Centre la carte sur un click d'un comité
             map.flyTo({
                 center: e.features[0].geometry.coordinates,
-                zoom:10
+                zoom:7
             });
 
             var coordinates = e.features[0].geometry.coordinates.slice();
@@ -233,20 +240,20 @@
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);
-        });
+    });
         
         // Change le curseur une fois la souris sur le marker
-        map.on('mouseenter', 'regions', function () {
+    map.on('mouseenter', 'regions', function () {
             map.getCanvas().style.cursor = 'pointer';
-        });
+    });
         
         // Change le curseur quand la souris quitte le marker
-        map.on('mouseleave', 'regions', function () {
+    map.on('mouseleave', 'regions', function () {
             map.getCanvas().style.cursor = '';
-            });
+    });
             
         // Zoom sur la position d'un club une fois click dessus
-        map.on('click', 'clubs', function (e) {
+    map.on('click', 'clubs', function (e) {
             // Centre la carte sur un click d'un club
             map.flyTo({
                 center: e.features[0].geometry.coordinates,
@@ -264,16 +271,15 @@
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);
-        });
+    });
         
         // Change le curseur une fois la souris sur le marker
-        map.on('mouseenter', 'clubs', function () {
+    map.on('mouseenter', 'clubs', function () {
             map.getCanvas().style.cursor = 'pointer';
-        });
+    });
         
         // Change le curseur quand la souris quitte le marker
-        map.on('mouseleave', 'clubs', function () {
+    map.on('mouseleave', 'clubs', function () {
             map.getCanvas().style.cursor = '';
-            });
-
+    });
     </script>
