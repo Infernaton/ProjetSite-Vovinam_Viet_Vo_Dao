@@ -19,7 +19,7 @@ $pages = [
     'actualite' => ['actualite'],
     'contacts' => ['/contacts','/faq','/personnaliteFede'],
     'login' => ['/login','/register'],
-    'admin' => ['/admin','/addMaster','/addClub'],
+    'admin' => ['/admin','/addMaster','/addClub','/seeCoord'],
 ];
 $del = ['logOut'];
 ?>

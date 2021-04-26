@@ -9,13 +9,13 @@
         <input class="inputData" type="text" placeholder="Nom du club" name="titre" id="titre" required>
 
         <label class="data" for="Enseignant"><b>Enseignant</b></label>
-        <input class="inputData" type="text" placeholder="nom de l'enseignant" name="enseignant" id="enseignant" >
+        <input class="inputData" type="text" placeholder="Nom de l'enseignant" name="enseignant" id="enseignant" >
 
         <label class="data" for="Contact"><b>Contact</b></label>
         <input class="inputData" type="text" placeholder="Contact" name="contact" id="contact">
 
         <label class="data" for="club / comite"><b>club / comite</b></label>
-        <textarea class="inputData" type ="text" placeholder="club ou comite" name="club_comite" id="club_comite" required></textarea>
+        <input class="inputData" type ="text" placeholder="club ou comite" name="club_comite" id="club_comite" required></input>
 
         <label class="data" for="lien"><b>lien</b></label>
         <input class="inputData" type="text" placeholder="lien du site" name="lien" id="lien">

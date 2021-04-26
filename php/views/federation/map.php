@@ -27,7 +27,7 @@
         <div class="text-center">
             <!-- Titre -->
             <div style="padding: 50px; display: inline-flex;">
-                <h1 class="content-title-blue">Les Régions</h1>
+                <h2 class="content-title-blue">Les Régions</h2>
             </div>
             <!-- Liste -->
             <div>
@@ -38,11 +38,29 @@
         <div class="text-center">
             <!-- Titre -->
             <div style="padding: 50px; display: inline-flex;">
-                <h1 class="content-title-red">Les clubs</h1>
+                <h2 class="content-title-red">Les clubs</h2>
             </div>
             <!-- Liste -->
             <div>
-                Liste des clubs par régions et leurs infos
+                <?php 
+                foreach ($listClub as $club){
+                    $contact = explode("–", $club['contact']);
+                    $contactSentence = "<p>Contact :<br>";
+                    for ($i=0;$i <count($contact); $i++){
+                        if ($contact[$i] == ""){
+                            $contactSentence .= "-----";
+                        }elseif ($i+1 ==count($contact)) {
+                            $contactSentence .= " ".$contact[$i];
+                        }else {
+                            $contactSentence .= " ".$contact[$i]." -";
+                        }
+                    }
+                    echo '<p><strong><a href='.$club['lien'].' target=_blank style=color:#e82226;>'.$club['titre'].'</a></strong></p>',
+                    '<p>Enseignant principal : '.$club["enseignant"].'</p>',
+                    ''.$contactSentence.'</p>';
+                }
+
+                ?>
             </div>
         </div>
     </div>
@@ -135,28 +153,39 @@
                         'data': {
                             'type': 'FeatureCollection',
                             'features': [
-                                <?php  
-                                /*foreach ($listComite as $comite){
-                                    $contact = explode("-", $comite['contact']);
-                                    $coo = unserialize(base64_decode($comite['coordonee']));
-                                    $temp = $coo[0];
-                                    $coo[0] = $coo[1];
-                                    $coo[1] = $temp;
-                                    echo "{",
-                                        "'type': 'Feature',",
-                                        "'properties': {",
-                                            "'description':",
-                                                "<strong>".$comite['titre']."</strong>",
-                                                "<p><strong><a href=".$comite['lien']." target='_blank' style='color:#e82226;'>Lien du Site Officiel</a></strong></p>",
-                                                
-                                                "<p>Contact : ".$contact[0]." – <a style='color:#e82226;' href='tel:".$contact[1]."'>".$contact[1]."</a></p>",
-                                            "},",
-                                        "'geometry': {",
-                                            "'type': 'Point',",
-                                            "'coordinates': ".$c.",",
-                                            "}",
-                                        "},";
-                                }*/?>
+                                <?php                                  
+                                foreach ($listComite as $club){
+                                    $coo = unserialize(base64_decode($club['coordonee']));
+                                    $contact = explode("–", $club['contact']);
+                                    $contactSentence = "<p>Contact :<br>";
+                                    for ($i=0;$i <count($contact); $i++){
+                                        if ($contact[$i] == ""){
+                                            $contactSentence .= "-----";
+                                        }elseif ($i+1 ==count($contact)) {
+                                            $contactSentence .= " ".$contact[$i];
+                                        }else {
+                                            $contactSentence .= " ".$contact[$i]." -";
+                                        }
+                                        
+                                    }
+                                    //print_r($contact);
+                                    
+                                    if (count($coo) > 1){
+                                        echo "{",
+                                            "'type': 'Feature',",
+                                            "'properties': {",
+                                                "'description': ",
+                                                    '"<p><strong><a href='.$club['lien'].' target=_blank style=color:#e82226;>'.$club['lien'].'</a></strong></p><p>Enseignant principal : '.$club["enseignant"].'</p>',
+                                                    ''.$contactSentence.'</p>',
+                                                    '"},',
+                                            "'geometry': {",
+                                                "'type': 'Point',",
+                                                "'coordinates': [".(float)$coo[1].','.(float)$coo[0]."]",
+                                                "}",
+                                            "},";
+                                    }
+                                }
+                                ?>/*
                                 {
                                 'type': 'Feature',
                                 'properties': {'description':
@@ -210,7 +239,7 @@
                                     'type': 'Point',
                                     'coordinates': [4.694197,45.766722]
                                     }
-                                }
+                                }*/
                             ]
                         }
                     });
@@ -236,17 +265,14 @@
                 }
             );
 
-
-        
-        // Centre la carte sur un click d'un comité
-        map.on('click', 'regions', function (e) {
-            map.flyTo({
-            center: e.features[0].geometry.coordinates,
-            zoom:5
-            });
-        });
         // Zoom sur la position d'un comité une fois click dessus
         map.on('click', 'regions', function (e) {
+            // Centre la carte sur un click d'un comité
+            map.flyTo({
+                center: e.features[0].geometry.coordinates,
+                zoom:10
+            });
+
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description = e.features[0].properties.description;
             
@@ -271,15 +297,13 @@
             map.getCanvas().style.cursor = '';
             });
             
-        // Centre la carte sur un click d'un club
-        map.on('click', 'clubs', function (e) {
-            map.flyTo({
-            center: e.features[0].geometry.coordinates,
-            zoom:10
-            });
-        });
         // Zoom sur la position d'un club une fois click dessus
         map.on('click', 'clubs', function (e) {
+            // Centre la carte sur un click d'un club
+            map.flyTo({
+                center: e.features[0].geometry.coordinates,
+                zoom:10
+            });
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description = e.features[0].properties.description;
             
