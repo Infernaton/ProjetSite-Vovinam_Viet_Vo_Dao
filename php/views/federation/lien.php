@@ -5,16 +5,16 @@
         <div class=" pb-3">
             <h1 class="content-title-yellow"> Liens </h1>
         </div>
-        <p>
-            <a href="https://vovinamworldfederation.eu/fr/federation-mondiale.html"> 
+        <ul>        
+            <li><a class="link" href="https://vovinamworldfederation.eu/fr/federation-mondiale.html"> 
                 <h3>Fédération Mondiale</h3>
-            </a>
-        </p>
+            </a></li>
         
-        <p>
-            <a href="http://www.famtv.fr/"> 
+        
+        
+            <li><a class="link" href="http://www.famtv.fr/"> 
                 <h3>Fédération des Arts Martiaux Traditionnels Vietnamiens</h3>
-            </a>
-        </p>     
+            </a></li>
+        </ul>
     </div>
 </body>
