@@ -3,7 +3,7 @@
 <div class="container">
         <!-- Titre -->
         <div class="text-center mt-5">
-            <h2 class="content-title">Liste O.CN et ME</h2>
+            <h2 class="content-title">Liste Officiel des Ceintures Noires et des Maîtres</h2>
         </div>
         <br>
         <p>
