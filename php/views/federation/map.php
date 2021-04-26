@@ -101,7 +101,9 @@
         // Chargement HTML des markers
         markers.forEach(marker => {
             map.loadImage(marker.url, function(error,image){
-                map.addImage(marker.id,image);
+                map.addImage(marker.id,image, {
+                    pixelRatio : 1.25,
+                });
             })
         });
         
@@ -185,61 +187,7 @@
                                             "},";
                                     }
                                 }
-                                ?>/*
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>Comité Vovinam-Viet Vo Dao de Normandie</strong><p><a href='http://www.vovinam-caen.com' target='_blank' style='color:blue;'>Comité de Normandie</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [-0.357452,49.189114]
-                                    }
-                                },
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>Comité Vovinam-Viet Vo Dao du Grand-Est</strong><p><a href='http://www.vovinam-reims.com' target='_blank' style='color:blue;'>Comité du Grand-Est</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [4.023365,49.273242]
-                                    }
-                                },
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>Comité Vovinam-Viet Vo Dao d'Île de France</strong><p><a href='http://www.vovinam-idf.fr' target='_blank' style='color:blue;'>Comité d'Île de France</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [2.293141,48.687693]
-                                    }
-                                },
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>Comité Vovinam-Viet Vo Dao de la Nouvelle-Aquitaine (Limousin) </strong><p><a href='http://www.vovinam-limousin.fr' target='_blank' style='color:blue;'>Comité de la Nouvelle-Aquitaine</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [1.303053,45.916689]
-                                    }
-                                },
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>Comité Vovinam-Viet Vo Dao de la Nouvelle-Aquitaine (Poitiers) </strong><p><a href='http://www.vovinam-caen.com' target='_blank' style='color:blue;'>Comité de la Nouvelle-Aquitaine</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [0.388512,46.573685]
-                                    }
-                                },
-                                {
-                                'type': 'Feature',
-                                'properties': {'description':
-                                                "<strong>Comité Vovinam-Viet Vo Dao d'Auvergne-Rhône-Alpes</strong><p><a href='http://www.vietvodaolyon.free.fr' target='_blank' style='color:blue;'>Comité d'Auvergne-Rhône-Alpes</a></p>",},
-                                'geometry': {
-                                    'type': 'Point',
-                                    'coordinates': [4.694197,45.766722]
-                                    }
-                                }*/
+                                ?>
                             ]
                         }
                     });
