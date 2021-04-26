@@ -1,20 +1,13 @@
 <link rel="stylesheet" href="css/federation1.css">
 
 <div class="container info mt-5">
-        <h1 class="content-title-yellow  pb-3"> Infos Légales </h1>
+    <div class="text-center">
+        <h1 class="content-title-yellow text-center"> Infos Légales </h1>
+    </div>
 
-        <p>
-        Lorem ipsum dolor sit amet 
-        laborum vel omnis, distinctio nisi.
-        </p>
+        <h3>Mentions Légales</h3>
         
-        <p>
-        Lorem ipsum dolor sit amet  
-        laborum vel omnis, distinctio nisi. 
-        </p>
+        <h3>RGPB</h3>
 
-        <p>
-            Lorem ipsum dolor sit amet 
-            laborum vel omnis, distinctio nisi.
-        </p>   
+        <h3>Photos </h3>   
 </div>
