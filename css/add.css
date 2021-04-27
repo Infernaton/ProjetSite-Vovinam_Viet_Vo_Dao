@@ -1,0 +1,26 @@
+.data{
+    display: block;
+    margin-bottom: 5px;
+}
+.boutton {
+    display: flex;
+    margin-top: 2%;
+}
+
+#btn-Action{
+    margin-left: 5%;
+}
+.content{
+    margin-left: 35%;
+}
+#addGM{
+    margin-left: 20%;
+}
+.form {
+    display: flex;
+    margin-top: 2%;
+    
+}
+label{
+margin: 5%;
+}
