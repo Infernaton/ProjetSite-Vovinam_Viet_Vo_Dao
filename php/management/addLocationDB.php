@@ -18,7 +18,7 @@ $req->bindValue(':contact' , $result["contact"]);
 $req->bindValue(':club_comite', $result["club_comite"]);
 $req->bindValue(':lien' , $result["lien"]);
 
-$coo = explode(",", ($result["coordonee"]));
+$coo = explode(",", ($result["result"]));
 $req->bindValue(':coordonee' , base64_encode(serialize($coo)));
 
 var_dump ($coo);

@@ -3,10 +3,10 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
 <!-- GeoCoding, to transform simple address to Coordinate on the map-->
-<!--<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>-->
+<script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 <?php 
     require_once 'php/init.php';
     $listClubBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite like "club"');
@@ -22,9 +22,9 @@
                 <h1 class="content-title-blue">Les Régions</h1><h1>&nbsp;et&nbsp;</h1><h1 class="content-title-red">Clubs</h1>
             </div>
         </div>
+
         <!-- Chargement de la map grande taille -->
         <div class="row">
-        
             <div class="col-sm-12">
                 <div id='map' style='width: auto; height: 600px;'></div>
                 <div class='map-overlay' id='legend'></div>
@@ -48,7 +48,6 @@
                 <h2 class="content-title-red">Les clubs</h2>
             </div>
             <!-- Liste -->
-            <script>console.log("Start")</script>
             <div>
                 <?php 
                 foreach ($listClub as $club){
@@ -75,7 +74,6 @@
     <!-- Scripts et configurations de la map -->
     <script>
     // Génération de la map
-    console.log("Start1")
     mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
     var map = new mapboxgl.Map({
         container: 'map',
@@ -119,46 +117,45 @@
         
         // Liste des clubs, avec position et description
         map.addSource('club', {
-                    'type': 'geojson',
-                        'data': {
-                            'type': 'FeatureCollection',
-                            'features': [
-                                <?php                                  
-                                foreach ($listClub as $club){
-                                    $coo = unserialize(base64_decode($club['coordonee']));
-                                    $contact = explode("–", $club['contact']);
-                                    $contactSentence = "<p>Contact :<br>";
-                                    for ($i=0;$i <count($contact); $i++){
-                                        if ($contact[$i] == ""){
-                                            $contactSentence .= "-----";
-                                        }elseif ($i+1 == count($contact)) {
-                                            $contactSentence .= " ".$contact[$i];
-                                        }else {
-                                            $contactSentence .= " ".$contact[$i]." -";
-                                        }
-                                    }
-                                                               
-                                    if (count($coo) > 1){ ?>
-                                        {
-                                        'type': 'Feature',
-                                        'properties': {
-                                            'description':
-                                                "<p><strong><a href='<?php echo $club['lien']?>' target='_blank' style='color:#e82226;'><?php echo$club['titre'] ?></a></strong></p><p>Enseignant principal : <?php echo $club["enseignant"] ?></p>" +
-                                                    "<?php echo $contactSentence ?></p>",
-                                            },
-                                        'geometry': {
-                                            'type': 'Point',
-                                            'coordinates': ["<?php echo (float)$coo[1] ?>","<?php echo (float)$coo[0]?>"],
-                                            }
-                                        },
-                                    <?php
-                                    }
+            'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        <?php                                  
+                        foreach ($listClub as $club){
+                            $coo = unserialize(base64_decode($club['coordonee']));
+                            $contact = explode("–", $club['contact']);
+                            $contactSentence = "<p>Contact :<br>";
+                            for ($i=0;$i <count($contact); $i++){
+                                if ($contact[$i] == ""){
+                                    $contactSentence .= "-----";
+                                }elseif ($i+1 == count($contact)) {
+                                    $contactSentence .= " ".$contact[$i];
+                                }else {
+                                    $contactSentence .= " ".$contact[$i]." -";
                                 }
-                                ?>
-                                
-                            ]
+                            }
+                                                               
+                            if (count($coo) > 1){ ?>
+                                {
+                                'type': 'Feature',
+                                'properties': {
+                                    'description':
+                                        "<p><strong><a href='<?php echo $club['lien']?>' target='_blank' style='color:#e82226;'><?php echo$club['titre'] ?></a></strong></p><p>Enseignant principal : <?php echo $club["enseignant"] ?></p>" +
+                                            "<?php echo $contactSentence ?></p>",
+                                    },
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': ["<?php echo (float)$coo[1] ?>","<?php echo (float)$coo[0]?>"],
+                                    }
+                                },
+                            <?php
+                            }
                         }
-                    });
+                        ?>
+                    ]
+                }
+            });
         // Liste des comités, avec position et description
         map.addSource('comite', {
                     'type': 'geojson',
