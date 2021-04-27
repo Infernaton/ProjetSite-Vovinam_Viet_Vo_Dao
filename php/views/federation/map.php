@@ -3,10 +3,10 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
 <!-- GeoCoding, to transform simple address to Coordinate on the map-->
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+<!--<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>-->
 <?php 
     require_once 'php/init.php';
     $listClubBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite like "club"');
@@ -48,6 +48,7 @@
                 <h2 class="content-title-red">Les clubs</h2>
             </div>
             <!-- Liste -->
+            <script>console.log("Start")</script>
             <div>
                 <?php 
                 foreach ($listClub as $club){
@@ -72,8 +73,9 @@
         </div>
     </div>
     <!-- Scripts et configurations de la map -->
-        <script>
-            // Génération de la map
+    <script>
+    // Génération de la map
+    console.log("Start1")
     mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
     var map = new mapboxgl.Map({
         container: 'map',
@@ -81,7 +83,8 @@
         center: [2.40,46.70],
         zoom: 5.1
     });
-    // Au chargement de la map >
+    
+    // Au chargement de la map
     map.on('load', function () {
         // Légendes de la carte
         var layers = ['Comités régionaux', 'Clubs'];
@@ -121,26 +124,26 @@
                             'type': 'FeatureCollection',
                             'features': [
                                 <?php                                  
-                                for($i=0;$i<count($listClub);$i++){
-                                    $coo = unserialize(base64_decode($listClub[$i]['coordonee']));
-                                    $contact = explode("–", $listClub[$i]['contact']);
+                                foreach ($listClub as $club){
+                                    $coo = unserialize(base64_decode($club['coordonee']));
+                                    $contact = explode("–", $club['contact']);
                                     $contactSentence = "<p>Contact :<br>";
                                     for ($i=0;$i <count($contact); $i++){
                                         if ($contact[$i] == ""){
                                             $contactSentence .= "-----";
-                                        }elseif ($i+1 ==count($contact)) {
+                                        }elseif ($i+1 == count($contact)) {
                                             $contactSentence .= " ".$contact[$i];
                                         }else {
                                             $contactSentence .= " ".$contact[$i]." -";
                                         }
                                     }
-                                                                   
+                                                               
                                     if (count($coo) > 1){ ?>
                                         {
                                         'type': 'Feature',
                                         'properties': {
                                             'description':
-                                                "<p><strong><a href='<?php echo $listClub[$i]['lien']?>' target='_blank' style='color:#e82226;'><?php echo$listClub[$i]['titre'] ?></a></strong></p><p>Enseignant principal : <?php echo $listClub[$i]["enseignant"] ?></p>" +
+                                                "<p><strong><a href='<?php echo $club['lien']?>' target='_blank' style='color:#e82226;'><?php echo$club['titre'] ?></a></strong></p><p>Enseignant principal : <?php echo $club["enseignant"] ?></p>" +
                                                     "<?php echo $contactSentence ?></p>",
                                             },
                                         'geometry': {
@@ -152,6 +155,7 @@
                                     }
                                 }
                                 ?>
+                                
                             ]
                         }
                     });
@@ -218,8 +222,6 @@
                 }   
         },'regions');
     });
-
-
     // Zoom sur la position d'un comité une fois click dessus
     map.on('click', 'regions', function (e) {
             // Centre la carte sur un click d'un comité
