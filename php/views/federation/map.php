@@ -15,6 +15,34 @@
     $listComite = $listComiteBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
     //var_dump($listClub);
 ?>
+<style>
+.mapboxgl-popup-content {
+    /*background-color: #91785D;*/
+    border-color: #91785D;
+    max-width: 250px;
+    box-shadow: 3px 3px 2px #8B5D33,
+        inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+    font-family: 'Oswald';
+}
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: #e82226;
+    }
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: #e82226;
+    }
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: #e82226;
+    }
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: #e82226;
+    }
+</style>
 <div class="container mt-5">
         <!-- Titre -->
         <div class="text-center">
@@ -38,7 +66,24 @@
             </div>
             <!-- Liste -->
             <div>
-                Liste des comités et leurs infos
+                <?php 
+                foreach ($listComite as $club){
+                    $rt = explode(" : ", $club['contact']);
+                    $pdt = explode(" : ",$club["enseignant"]);
+                    ?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4><strong>Comité <?php echo $club['titre']?> </strong></h4>Site web: <a href='<?php echo $club['lien']?>' target='_blank' style=color:#e82226;><?php echo $club['lien'] ?></a>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Président de ce Comité : <br><strong><?php echo $pdt[0]?></strong><br> (Contact: <?php echo $pdt[1] ?>)</p>
+                            <p>Responsable Technique : <br><strong><?php echo $rt[0] ?></strong><br> (Contact: <?php echo $rt[1] ?>)</p>
+                        </div>
+                    </div>
+                    <hr>
+                <?php
+                }
+                ?>
             </div>
         </div>
         <!-- Liste des clubs -->
@@ -62,11 +107,20 @@
                             $contactSentence .= " ".$contact[$i]." -";
                         }
                     }
-                    echo '<p><strong><a href='.$club['lien'].' target=_blank style=color:#e82226;>'.$club['titre'].'</a></strong></p>',
-                    '<p>Enseignant principal : '.$club["enseignant"].'</p>',
-                    ''.$contactSentence.'</p>';
+                    ?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p><strong><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></strong></p>
+                            <p>Adresse: </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Enseignant principal : <?php echo $club["enseignant"]?></p>
+                            <?php echo $contactSentence?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <?php
                 }
-
                 ?>
             </div>
         </div>
@@ -125,7 +179,7 @@
                         foreach ($listClub as $club){
                             $coo = unserialize(base64_decode($club['coordonee']));
                             $contact = explode("–", $club['contact']);
-                            $contactSentence = "<p>Contact :<br>";
+                            $contactSentence = "<p><strong>Contact :</strong><br>";
                             for ($i=0;$i <count($contact); $i++){
                                 if ($contact[$i] == ""){
                                     $contactSentence .= "-----";
@@ -141,8 +195,9 @@
                                 'type': 'Feature',
                                 'properties': {
                                     'description':
-                                        "<p><strong><a href='<?php echo $club['lien']?>' target='_blank' style='color:#e82226;'><?php echo$club['titre'] ?></a></strong></p><p>Enseignant principal : <?php echo $club["enseignant"] ?></p>" +
-                                            "<?php echo $contactSentence ?></p>",
+                                        "<p><strong><a href='<?php echo $club['lien']?>' target='_blank' style=color:#e82226;><?php echo$club['titre'] ?></a></strong></p> <hr>" +
+                                        "<p>Enseignant principal : <strong><?php echo $club["enseignant"] ?></strong></p>" +
+                                        "<?php echo $contactSentence ?></p>",
                                     },
                                 'geometry': {
                                     'type': 'Point',
@@ -165,34 +220,25 @@
                                 <?php                                  
                                 foreach ($listComite as $club){
                                     $coo = unserialize(base64_decode($club['coordonee']));
-                                    $contact = explode("–", $club['contact']);
-                                    $contactSentence = "<p>Contact :<br>";
-                                    for ($i=0;$i <count($contact); $i++){
-                                        if ($contact[$i] == ""){
-                                            $contactSentence .= "-----";
-                                            //If the first index is empty
-                                        }elseif ($i+1 ==count($contact)) {
-                                            //The last index don't have a '-' at the end
-                                            $contactSentence .= " ".$contact[$i];
-                                        }else {
-                                            //To all index
-                                            $contactSentence .= " ".$contact[$i]." -";
-                                        }
-                                    }
+
+                                    $rt = explode(" : ", $club['contact']);
+                                    $pdt = explode(" : ",$club["enseignant"]);
                                     
-                                    if (count($coo) > 1){
-                                        echo "{",
-                                            "'type': 'Feature',",
-                                            "'properties': {",
-                                                "'description': ",
-                                                    '"<p><strong><a href='.$club['lien'].' target=_blank style=color:#e82226;>'.$club['lien'].'</a></strong></p><p>Enseignant principal : '.$club["enseignant"].'</p>',
-                                                    ''.$contactSentence.'</p>',
-                                                    '"},',
-                                            "'geometry': {",
-                                                "'type': 'Point',",
-                                                "'coordinates': [".(float)$coo[1].','.(float)$coo[0]."]",
-                                                "}",
-                                            "},";
+                                    if (count($coo) > 1){ ?>
+                                        {
+                                        'type': 'Feature',
+                                        'properties': {
+                                            'description':
+                                                "<h4><strong>Comité <?php echo $club['titre']?> </strong></h4>Site web: <a href='<?php echo $club['lien']?>' target='_blank' style=color:#e82226;><?php echo $club['lien'] ?></a> <hr>"+
+                                                "<p>Président de ce Comité : <br><strong><?php echo $pdt[0]?></strong><br> (Contact: <?php echo $pdt[1] ?>)</p> <hr>" +
+                                                "<p>Responsable Technique : <br><strong><?php echo $rt[0] ?></strong><br> (Contact: <?php echo $rt[1] ?>)</p>",
+                                            },
+                                        'geometry': {
+                                            'type': 'Point',
+                                            'coordinates': ["<?php echo (float)$coo[1] ?>","<?php echo (float)$coo[0]?>"],
+                                            }
+                                        },
+                                    <?php
                                     }
                                 }
                                 ?>
