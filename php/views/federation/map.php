@@ -13,9 +13,23 @@
     $listClub = $listClubBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
     $listComiteBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite="comite"');
     $listComite = $listComiteBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
-    //var_dump($listClub);
 ?>
 <style>
+.tooltip-inner {
+    background-color:white;
+    color: black;
+    box-shadow:3px 3px 2px black,
+        inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0);
+}
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: black !important;
+}
+.tooltip.bs-tooltip-top .arrow:before {
+    border-top-color: black !important;
+}
+
 .mapboxgl-popup-content {
     /*background-color: #91785D;*/
     border-color: #91785D;
@@ -66,24 +80,38 @@
             </div>
             <!-- Liste -->
             <div>
+                <div class="row">
                 <?php 
-                foreach ($listComite as $club){
-                    $rt = explode(" : ", $club['contact']);
-                    $pdt = explode(" : ",$club["enseignant"]);
+                foreach ($listComite as $comite){
+                    $rt = explode(" : ", $comite['contact']);
+                    $pdt = explode(" : ",$comite["enseignant"]);
+                    $tooltipContent = "<p>Président de ce Comité : <br><strong>".$pdt[0]."</strong><br> (Contact: ".$pdt[1].")</p>".
+                                    "<p>Responsable Technique : <br><strong>".$rt[0]."</strong><br> (Contact: ".$rt[1].")</p>"
                     ?>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h4><strong>Comité <?php echo $club['titre']?> </strong></h4>Site web: <a href='<?php echo $club['lien']?>' target='_blank' style=color:#e82226;><?php echo $club['lien'] ?></a>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>Président de ce Comité : <br><strong><?php echo $pdt[0]?></strong><br> (Contact: <?php echo $pdt[1] ?>)</p>
-                            <p>Responsable Technique : <br><strong><?php echo $rt[0] ?></strong><br> (Contact: <?php echo $rt[1] ?>)</p>
-                        </div>
-                    </div>
+                    
+                        <button class="col-sm-4 btn" onClick='selectClub("<?php echo $comite['Comite']?>")' data-toggle="tooltip" title='<?php echo $tooltipContent?>'>
+                            <h4><strong>Comité <?php echo $comite['titre']?> </strong></h4>
+                            <p> Site web: <a href='<?php echo $comite['lien']?>' target='_blank' style=color:#e82226;>
+                                <?php 
+                                $lien = $comite['lien'];
+                                $printLien = '';
+
+                                strlen($lien) < 25? $count=strlen($lien):$count=25;
+                                for($i=0;$i<$count;$i++){
+                                    $printLien .= $lien[$i];
+                                }
+                                if ($count==25) { $printLien .= '...';}
+
+                                echo $printLien; ?>
+                            </a></p>
+                        </button>
+                                           
                     <hr>
                 <?php
                 }
                 ?>
+                </div>
+                
             </div>
         </div>
         <!-- Liste des clubs -->
@@ -93,8 +121,8 @@
                 <h2 class="content-title-red">Les clubs</h2>
             </div>
             <!-- Liste -->
-            <div>
-                <?php 
+            <div id="listClub">
+                <?php
                 foreach ($listClub as $club){
                     $contact = explode("–", $club['contact']);
                     $contactSentence = "<p>Contact :<br>";
@@ -108,10 +136,12 @@
                         }
                     }
                     ?>
+                    <div class="club">
                     <div class="row">
                         <div class="col-sm-6">
                             <p><strong><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></strong></p>
                             <p>Adresse: </p>
+                            <p class="hide comite"> <?php echo $club['Comite']?></p>
                         </div>
                         <div class="col-sm-6">
                             <p>Enseignant principal : <?php echo $club["enseignant"]?></p>
@@ -119,13 +149,21 @@
                         </div>
                     </div>
                     <hr>
+                    </div>
                     <?php
                 }
                 ?>
             </div>
         </div>
     </div>
-    <!-- Scripts et configurations de la map -->
+    <script src="scripts/searchClub.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip({html: true, placement: "top"});   
+        });
+    </script>
+
+    <!-- Configurations de la map -->
     <script>
     // Génération de la map
     mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
@@ -218,24 +256,24 @@
                             'type': 'FeatureCollection',
                             'features': [
                                 <?php                                  
-                                foreach ($listComite as $club){
-                                    $coo = unserialize(base64_decode($club['coordonee']));
+                                foreach ($listComite as $comite){
+                                    $coord = unserialize(base64_decode($comite['coordonee']));
 
-                                    $rt = explode(" : ", $club['contact']);
-                                    $pdt = explode(" : ",$club["enseignant"]);
+                                    $rt = explode(" : ", $comite['contact']);
+                                    $pdt = explode(" : ",$comite["enseignant"]);
                                     
                                     if (count($coo) > 1){ ?>
                                         {
                                         'type': 'Feature',
                                         'properties': {
                                             'description':
-                                                "<h4><strong>Comité <?php echo $club['titre']?> </strong></h4>Site web: <a href='<?php echo $club['lien']?>' target='_blank' style=color:#e82226;><?php echo $club['lien'] ?></a> <hr>"+
+                                                "<h4><strong>Comité <?php echo $comite['titre']?> </strong></h4>Site web: <a href='<?php echo $comite['lien']?>' target='_blank' style=color:#e82226;><?php echo $comite['lien'] ?></a> <hr>"+
                                                 "<p>Président de ce Comité : <br><strong><?php echo $pdt[0]?></strong><br> (Contact: <?php echo $pdt[1] ?>)</p> <hr>" +
                                                 "<p>Responsable Technique : <br><strong><?php echo $rt[0] ?></strong><br> (Contact: <?php echo $rt[1] ?>)</p>",
                                             },
                                         'geometry': {
                                             'type': 'Point',
-                                            'coordinates': ["<?php echo (float)$coo[1] ?>","<?php echo (float)$coo[0]?>"],
+                                            'coordinates': ["<?php echo (float)$coord[1] ?>","<?php echo (float)$coord[0]?>"],
                                             }
                                         },
                                     <?php
