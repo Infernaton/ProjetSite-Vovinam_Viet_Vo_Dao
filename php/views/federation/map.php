@@ -124,6 +124,7 @@
             <div id="listClub">
                 <?php
                 foreach ($listClub as $club){
+                    $coo = unserialize(base64_decode($club['coordonee']));
                     $contact = explode("–", $club['contact']);
                     $contactSentence = "<p>Contact :<br>";
                     for ($i=0;$i <count($contact); $i++){
@@ -136,12 +137,13 @@
                         }
                     }
                     ?>
-                    <div class="club">
+                    <div class="club" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])>
                     <div class="row">
                         <div class="col-sm-6">
-                            <p><strong><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></strong></p>
-                            <p>Adresse: </p>
-                            <p class="hide comite"> <?php echo $club['Comite']?></p>
+                            <div class="mt-4">
+                                <h5><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></h5>
+                                <p class="hide comite"> <?php echo $club['Comite']?></p>
+                            </div>
                         </div>
                         <div class="col-sm-6">
                             <p>Enseignant principal : <?php echo $club["enseignant"]?></p>
@@ -158,6 +160,7 @@
     </div>
     <script src="scripts/searchClub.js"></script>
     <script>
+        //Tool Tip des Comités
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip({html: true, placement: "top"});   
         });
@@ -173,7 +176,7 @@
         center: [2.40,46.70],
         zoom: 5.1
     });
-    
+
     // Au chargement de la map
     map.on('load', function () {
         // Légendes de la carte
@@ -365,4 +368,12 @@
     map.on('mouseleave', 'clubs', function () {
             map.getCanvas().style.cursor = '';
     });
+
+    function zoomTo(coord){
+        document.documentElement.scrollTop = 100;
+        map.flyTo({
+            center: coord,
+            zoom: 15,
+        });
+    }
     </script>
