@@ -1,8 +1,6 @@
 function selectClub(selection){
     let a, txtValue;
 
-    console.log(selection);
-
     let listClubs = document.getElementById("listClub");
     let clubs = listClubs.getElementsByClassName("club");
     

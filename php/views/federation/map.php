@@ -121,7 +121,6 @@
                 <div class="col-sm-12"><h2 class="content-title-red">Les clubs</h2></div>
                 <div class="col-sm-12"><h3 id="select"><small></small></h3></div>
                 
-                
             </div>
             <!-- Liste -->
             <div id="listClub">
