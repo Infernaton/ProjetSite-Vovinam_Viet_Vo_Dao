@@ -14,7 +14,7 @@
             deserunt mollit anim id est laborum.
         </p>
         <!-- Présentation conseil -->
-        <div class="container">
+        <div class="">
             <h3><span class="ml-3">Président du conseil des maîtres</span></h3>
             <div class="text-center" data-toggle="modal" data-target="#myModal">
                 <img alt="Président du conseil" name="president" src="image.png"><br>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <!-- Tableaux des maitres/membres etc -->
-        <div class="container">
+        <div class="">
             <br>
             <h5><span class="ml-3">➢ Les membres titulaires & les membres suppléants</span></h5>
             <div class="row">
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="">
             <br>
             <h5><span class="ml-3">➢ Les Experts</span></h5>
             <div class="row">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="">
             <br>
             <h5><span class="ml-3">➢ Les Responsables Techniques régionaux</span></h5>
             <div class="row">
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="">
             <br>
             <h5><span class="ml-3">➢ Les Enseignants</span></h5>
             <div class="row">
@@ -126,7 +126,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="">
             <br>
             <h5><span class="ml-3">➢ Les Ceintures Noires</span></h5>
             <div class="row">
