@@ -15,7 +15,7 @@ $req = $db->prepare('INSERT INTO marqueur (
 $req->bindValue(':titre' , $result["titre"]); 
 $req->bindValue(':enseignant' , $result["enseignant"]);
 $req->bindValue(':contact' , $result["contact"]);
-$req->bindValue(':club_comite', $result["club_comite"]);
+$req->bindValue(':club_comite', "club");
 $req->bindValue(':lien' , $result["lien"]);
 
 $coo = explode(",", ($result["result"]));
