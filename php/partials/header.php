@@ -1,8 +1,10 @@
 <?php 
 function partials_header($categorie,$page){
 ?>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm justify-content-center sticky-top navbar-lightgray">
         <ul class="navbar-nav">
@@ -65,6 +67,7 @@ function partials_header($categorie,$page){
     </nav>
 <script> 
 
+//To print in red the current Page
 currentCategory= document.getElementById('<?php echo $categorie?>');
 categoryName = currentCategory.getElementsByClassName("nav-link")[0];
 categoryName.classList.add("red");

@@ -4,7 +4,6 @@ function partials_footer(){
 ?>   
     
     <footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <div class="col-sm-1">
             <div class="d-flex flex-row">
                 <div class="p-2 ">
