@@ -10,7 +10,7 @@
 
   <form action="php/management/addLocationDB.php">
     <div id="container" class="container">
-        <div class ="content">
+        <div class ="col-sm-8">
           <h1>Ajouter un Club</h1>
           <div class="form">
             <label class="data" for="titre"><b>Titre</b></label>
@@ -28,18 +28,20 @@
             <label class="data" for="lien"><b>lien</b></label>
             <input class="inputData" type="text" placeholder="lien du site" name="lien" id="lien">
           </div>
-          <div class="form">
+          
+
+
+          
             <style>
               body { margin: 0; padding: 0; }
               #map { position: relative; top: 0; bottom: 20%; width: 80%; height: 80%}
             </style>
             <div class="row">
-              <div class="col-sm-6"><div id=map></div></div>
-              <div class="col-sm-6"><div id="coordonee"></div>
-            </div> 
-            <label class="data disabled" for="result"> <b>Coordonée GPS</b></label>
+              <div class="row"><div id=map></div></div>
+              <div class="col-sm-8"><div id="coordonee"></div>
+              <label class="col-sm-4 disabled" for="result"> <b>Coordonée GPS</b></label>
             <input class="list-group-item disabled" type="text" name="result" id="coo" placeholder="GPS">
-          </div>
+            </div> 
         </div> 
           </div>
           <div class ="boutton">
