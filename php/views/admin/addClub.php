@@ -40,6 +40,7 @@
               <div class="row"><div id=map></div></div>
               <div class="col-sm-8"><div id="coordonee"></div>
               <label class="col-sm-4 disabled" for="result"> <b>Coordonée GPS</b></label>
+
             <input class="list-group-item disabled" type="text" name="result" id="coo" placeholder="GPS">
             </div> 
         </div> 
