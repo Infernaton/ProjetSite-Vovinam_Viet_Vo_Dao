@@ -76,3 +76,15 @@ footer{
     color:#e82226;
 }
 .hide{display: none;}
+
+.currentHover {
+    background-color: #e4e4e4;
+}
+
+div.clickable {
+    padding-top: 0.5%;
+    border-bottom: 1px solid;
+}
+.clickable:hover {
+    background-color: #e4e4e4;
+}

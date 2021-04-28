@@ -31,7 +31,6 @@
 }
 
 .mapboxgl-popup-content {
-    /*background-color: #91785D;*/
     border-color: #91785D;
     max-width: 250px;
     box-shadow: 3px 3px 2px #8B5D33,
@@ -56,6 +55,7 @@
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
     border-left-color: #e82226;
     }
+
 </style>
 <div class="container mt-5">
         <!-- Titre -->
@@ -88,8 +88,8 @@
                     $tooltipContent = "<p>Président de ce Comité : <br><strong>".$pdt[0]."</strong><br> (Contact: ".$pdt[1].")</p>".
                                     "<p>Responsable Technique : <br><strong>".$rt[0]."</strong><br> (Contact: ".$rt[1].")</p>"
                     ?>
-                    
-                        <button class="col-sm-4 btn" onClick='selectClub("<?php echo $comite['Comite']?>")' data-toggle="tooltip" title='<?php echo $tooltipContent?>'>
+                        <button class="col-sm-4 btn clickable" 
+                            onClick='selectClub(["<?php echo $comite['Comite'].'","'.$comite['titre']?>"])' data-toggle="tooltip" title='<?php echo $tooltipContent?>'>
                             <h4><strong>Comité <?php echo $comite['titre']?> </strong></h4>
                             <p> Site web: <a href='<?php echo $comite['lien']?>' target='_blank' style=color:#e82226;>
                                 <?php 
@@ -117,8 +117,11 @@
         <!-- Liste des clubs -->
         <div class="text-center">
             <!-- Titre -->
-            <div style="padding: 50px; display: inline-flex;">
-                <h2 class="content-title-red">Les clubs</h2>
+            <div id="titleClub" style="padding: 50px; display: inline-flex;" class="row">
+                <div class="col-sm-12"><h2 class="content-title-red">Les clubs</h2></div>
+                <div class="col-sm-12"><h3 id="select"><small></small></h3></div>
+                
+                
             </div>
             <!-- Liste -->
             <div id="listClub">
@@ -137,8 +140,7 @@
                         }
                     }
                     ?>
-                    <div class="club" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])>
-                    <div class="row">
+                    <div class="club clickable row" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])>
                         <div class="col-sm-6">
                             <div class="mt-4">
                                 <h5><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></h5>
@@ -149,8 +151,6 @@
                             <p>Enseignant principal : <?php echo $club["enseignant"]?></p>
                             <?php echo $contactSentence?></p>
                         </div>
-                    </div>
-                    <hr>
                     </div>
                     <?php
                 }
