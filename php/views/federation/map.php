@@ -125,10 +125,6 @@
             <!-- Liste -->
             <div id="listClub" class="row">
                 <?php
-                /*<div class="col-sm-6">
-                            <p>Enseignant principal : <?php echo $club["enseignant"]?></p>
-                            <?php echo $contactSentence?></p>
-                        </div>*/
                 foreach ($listClub as $club){
                     $coo = unserialize(base64_decode($club['coordonee']));
                     $contact = explode("–", $club['contact']);
@@ -143,10 +139,8 @@
                             $contactSentence .= " ".$contact[$i]." -";
                         }
                     }
-
-                    $tooltipClub = "<p>Enseignant principal :".$club["enseignant"]."</p>".
+                    $tooltipClub = "<p>Enseignant principal : <br>".$club["enseignant"]."</p>".
                                     $contactSentence."</p>";
-
                     if (count($coo)==1) {
                         $coo = [null, null];
                     }

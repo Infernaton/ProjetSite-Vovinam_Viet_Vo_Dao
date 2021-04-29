@@ -1,10 +1,6 @@
 <?php 
 function partials_header($categorie,$page){
 ?>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm justify-content-center sticky-top navbar-lightgray">
         <ul class="navbar-nav">
@@ -46,7 +42,7 @@ function partials_header($categorie,$page){
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Affiliation/licenciés</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=affiliation&p=0" id="documentation">Documentation</a>
-                    <a class="dropdown-item" href="?c=affiliation&p=1" id="mod-affiliation">modalités d'Affiliation</a>
+                    <a class="dropdown-item" href="?c=affiliation&p=1" id="mod-affiliation">Modalités d'Affiliation</a>
                     <a class="dropdown-item" href="?c=affiliation&p=2" id="FAQ-affiliation">FAQ Affiliation</a>
                     <a class="dropdown-item" href="?c=affiliation&p=3" id="licences">Licenciés</a>
                     <a class="dropdown-item" href="?c=affiliation&p=4" id="passeport">Passeport</a>
@@ -65,6 +61,10 @@ function partials_header($categorie,$page){
             </li>
         </ul>
     </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 <script> 
 
 //To print in red the current Page
