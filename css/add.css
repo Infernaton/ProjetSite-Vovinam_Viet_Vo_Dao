@@ -2,11 +2,6 @@
     display: block;
     margin-bottom: 5px;
 }
-.boutton {
-    display: flex;
-    margin-top: 2%;
-   
-}
 
 #btn-Action{
     margin-left: 5%;
@@ -24,13 +19,27 @@ input{
     border: none;
     border-bottom: 2px solid rgb(41, 44, 209);
 }
-.btn-object{
-    border: 2px solid rgb(41, 44, 209);
-}
-.btn-Action{
-    border: 2px solid rgb(41, 44, 209);
-}
 textarea{
     border: none;
     border-bottom: 2px solid rgb(41, 44, 209);
+}
+button {
+    border: 2px solid rgb(41, 44, 209);
+    color:rgb(41, 44, 209);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    transition-duration: 0.4s;
+    
+ }
+  button:hover {
+    background-color: rgb(41, 44, 209); /* Green */
+    color: white;
+}
+
+.boutton{
+    display: flex;
+    margin-top: 20px;
 }
