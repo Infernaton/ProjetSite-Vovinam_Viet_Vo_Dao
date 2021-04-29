@@ -87,8 +87,8 @@ footer{
 
 div.clickable {
     padding-top: 0.5%;
-    border-bottom: 1px solid;
 }
 .clickable:hover {
     background-color: #e4e4e4;
+    border-radius: 5px;
 }

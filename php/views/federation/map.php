@@ -75,12 +75,12 @@
         <!-- Liste des Comités Régionaux -->
         <div class="text-center">
             <!-- Titre -->
-            <div style="padding: 50px; display: inline-flex;">
-                <h2 class="content-title-blue">Les Régions</h2>
+            <div style="padding: 50px; display: inline-flex;" class="row">
+                <div class="col-sm-12"> <h2 class="content-title-blue">Les Régions</h2> </div>
+                <div class="col-sm-12"> <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Comité ci-dessous pour voir les clubs se trouvant dans la même région</small></h4></div>
             </div>
             <!-- Liste -->
-            <div>
-                <div class="row">
+            <div class="row">
                 <?php 
                 foreach ($listComite as $comite){
                     $rt = explode(" : ", $comite['contact']);
@@ -89,7 +89,8 @@
                                     "<p>Responsable Technique : <br><strong>".$rt[0]."</strong><br> (Contact: ".$rt[1].")</p>"
                     ?>
                         <button class="col-sm-4 btn clickable" 
-                            onClick='selectClub(["<?php echo $comite['Comite'].'","'.$comite['titre']?>"])' data-toggle="tooltip" title='<?php echo $tooltipContent?>'>
+                            onClick='selectClub(["<?php echo $comite['Comite'].'","'.$comite['titre']?>"])' 
+                            data-toggle="tooltip" title='<?php echo $tooltipContent?>'>
                             <h4><strong>Comité <?php echo $comite['titre']?> </strong></h4>
                             <p> Site web: <a href='<?php echo $comite['lien']?>' target='_blank' style=color:#e82226;>
                                 <?php 
@@ -109,9 +110,7 @@
                     <hr>
                 <?php
                 }
-                ?>
-                </div>
-                
+                ?>                
             </div>
         </div>
         <!-- Liste des clubs -->
@@ -120,15 +119,21 @@
             <div id="titleClub" style="padding: 50px; display: inline-flex;" class="row">
                 <div class="col-sm-12"><h2 class="content-title-red">Les clubs</h2></div>
                 <div class="col-sm-12"><h3 id="select"><small></small></h3></div>
+                <div class="col-sm-12"> <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Club pour connaître sa position sur la carte.</small></h4></div>
                 
             </div>
             <!-- Liste -->
-            <div id="listClub">
+            <div id="listClub" class="row">
                 <?php
+                /*<div class="col-sm-6">
+                            <p>Enseignant principal : <?php echo $club["enseignant"]?></p>
+                            <?php echo $contactSentence?></p>
+                        </div>*/
                 foreach ($listClub as $club){
                     $coo = unserialize(base64_decode($club['coordonee']));
                     $contact = explode("–", $club['contact']);
                     $contactSentence = "<p>Contact :<br>";
+                    
                     for ($i=0;$i <count($contact); $i++){
                         if ($contact[$i] == ""){
                             $contactSentence .= "-----";
@@ -138,18 +143,35 @@
                             $contactSentence .= " ".$contact[$i]." -";
                         }
                     }
+
+                    $tooltipClub = "<p>Enseignant principal :".$club["enseignant"]."</p>".
+                                    $contactSentence."</p>";
+
+                    if (count($coo)==1) {
+                        $coo = [null, null];
+                    }
                     ?>
-                    <div class="club clickable row" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])>
-                        <div class="col-sm-6">
+                    <div class="club clickable col-sm-4" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])
+                        data-toggle="tooltip" title='<?php echo $tooltipClub?>'>
                             <div class="mt-4">
-                                <h5><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></h5>
-                                <p class="hide comite"> <?php echo $club['Comite']?></p>
+                                <!--<h5><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></h5>
+                                <p class="hide comite"> <?php echo $club['Comite']?></p>-->
+                                <h5><strong><?php echo $club['titre']?> </strong></h5>
+                                <p> Site web: <a href='<?php echo $club['lien']?>' target='_blank' style=color:#e82226;>
+                                <?php 
+                                $lien = $club['lien'];
+                                $printLien = '';
+
+                                strlen($lien) < 25? $count=strlen($lien):$count=25;
+                                for($i=0;$i<$count;$i++){
+                                    $printLien .= $lien[$i];
+                                }
+                                if ($count==25) { $printLien .= '...';}
+
+                                echo $printLien; ?>
+                            </a></p>
+                            <p class="hide comite"> <?php echo $club['Comite']?></p>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>Enseignant principal : <?php echo $club["enseignant"]?></p>
-                            <?php echo $contactSentence?></p>
-                        </div>
                     </div>
                     <?php
                 }
@@ -293,7 +315,8 @@
             'type': 'symbol',
             'source': 'comite',
             'layout': {
-                'icon-image': 'blue_marker'
+                'icon-image': 'blue_marker',
+                'visibility': 'visible',
             }   
         });
         map.addLayer({
@@ -301,7 +324,8 @@
             'type': 'symbol',
             'source': 'club',
             'layout': {
-                'icon-image': 'red_marker'
+                'icon-image': 'red_marker',
+                'visibility': 'none',
                 }   
         },'regions');
     });
@@ -368,11 +392,33 @@
             map.getCanvas().style.cursor = '';
     });
 
+    map.on('zoom', function () {
+        if (map.getZoom() < 6){
+            map.setLayoutProperty(
+                'clubs',
+                'visibility',
+                'none'
+            );
+        }else {
+            map.setLayoutProperty(
+                'clubs',
+                'visibility',
+                'visible'
+            );
+        }
+    });
+
     function zoomTo(coord){
-        document.documentElement.scrollTop = 100;
-        map.flyTo({
-            center: coord,
-            zoom: 15,
-        });
+        if (coord[0] != null){
+            let scrollPageState = document.documentElement.scrollTop;
+            for (let i=scrollPageState; i>210; i-=50){
+                document.documentElement.scrollTop = i;
+                console.log(i);
+            }
+            map.flyTo({
+                center: coord,
+                zoom: 12,
+            });
+        }
     }
     </script>
