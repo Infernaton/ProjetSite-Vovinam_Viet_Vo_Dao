@@ -106,7 +106,7 @@ for ($i=0; $i<count($histoire);$i++){
             <div class="container" id="<?php echo $partHistoire['id'] ?>">
                 <div class="text-center">
                     <div style="padding: 20px;">
-                        <h1 class="content-title"><?php echo $partHistoire['title']?></h1>
+                        <h1 class="content-title-yellow"><?php echo $partHistoire['title']?></h1>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

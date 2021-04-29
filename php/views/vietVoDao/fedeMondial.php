@@ -3,7 +3,7 @@
 <div class="container">
         <!-- Titre de la page -->
         <div class="text-center mt-5">
-            <h1 class="content-title">La Fédération Mondiale</h1>
+            <h1 class="content-title-yellow">La Fédération Mondiale</h1>
         </div>
         <div>
             <br>
