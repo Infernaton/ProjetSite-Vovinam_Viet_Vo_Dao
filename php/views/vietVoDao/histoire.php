@@ -87,9 +87,6 @@ for ($i=0; $i<count($histoire);$i++){
 <div class="container-fluid row p-1">
     <div class="container col-sm-3 p-3">
         <div class="fixed">
-            <!--<div class="col-sm-2">
-                <img src="assets/img/downArrow1.png">
-            </div>-->
             <div class="col-sm-6">
                 <ul>
                 <?php 
