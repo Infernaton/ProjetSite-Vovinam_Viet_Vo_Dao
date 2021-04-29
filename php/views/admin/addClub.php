@@ -50,7 +50,7 @@
                 <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
             </div>
             <div id="btn-Action">
-                <input type="submit" class="btn-modObject annim" value="Confirmer" name="submit" id="confirm">
+            <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
             </div>
           </div>
         </div>
