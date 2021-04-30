@@ -7,17 +7,19 @@ parse_str($url["query"],$result);
 var_dump($result);
 
 //Prepare to add the object
-$req = $db->prepare('INSERT INTO event (
-    type, title, description, dateDebut, dateFin, function
+$req = $db->prepare('INSERT INTO `event` (
+    type, title, description, dateDebut, dateFin, prerequis
     ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis)');
 
-$req->bindValue(':type' , $result["type"]); 
+$req->bindValue(':type' , 'Compétition'); 
 $req->bindValue(':title' , $result["title"]);
 $req->bindValue(':description', $result["description"]);
-$req->bindValue(':dateDebut' , $result["dateDebut"]);
-$req->bindValue(':dateFin' , $result["dateFin"]);
-$req->bindValue(':prerequis' , $result["prerequis"]);
+$req->bindValue(':dateDebut' , $result["debut"]);
+$req->bindValue(':dateFin' , $result["fin"]);
+$req->bindValue(':prerequis' , "");
 
+
+var_dump($req);
 $req->execute();
 
 echo "\n Envoie réussi";
