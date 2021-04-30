@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/add.css">
+<link rel="stylesheet" href="css/add1.css">
 <!-- The map-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet'/>
@@ -9,10 +9,7 @@
 <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 
 <style>
-  body { 
-    margin: 0; 
-    padding: 0; 
-  }
+  body { margin: 0; padding: 0; }
   #map { 
     position: relative;
     top: 10%; 
@@ -23,15 +20,21 @@
   #coordonee {
     position: absolute;
     z-index: 1;
-    margin-left: 25%;
+    margin-left: 35%;
   }
 </style>
 
 <form action="php/management/addLocationDB.php">
   <div id="container" class="container mt-5">
+    <div class="text-center"><h1 class="content-title-red">Ajouter un Club</h1></div>
+  
     <div class="row pt-5">
-    <div class="col-sm-5">
-      <h1>Ajouter un Club</h1>
+    <div class="col-sm-8">
+      <div id="coordonee"></div>
+      <div id=map></div>
+    </div>
+    <div class="col-sm-4 ">
+      
       <div class="form">
         <label class="data" for="titre"><b>Titre</b></label>
         <input class="inputData" type="text" placeholder="Nom du club" name="titre" id="titre" required>
@@ -61,10 +64,6 @@
           <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
         </div>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <div id="coordonee"></div>
-      <div id=map></div>
     </div>
     </div>
   </div>

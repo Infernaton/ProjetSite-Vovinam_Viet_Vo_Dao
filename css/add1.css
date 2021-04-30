@@ -1,0 +1,57 @@
+.data{
+    display: flex;
+    text-align: center;
+    margin-top: 5%;
+}
+/*.container {
+    padding-right:-50%;
+}*/
+#btn-Action{
+    margin-left: 5%;
+}
+input{
+    border: none;
+    border-bottom: 2px solid #1c55a3;
+}
+textarea{
+    border: none;
+    border-bottom: 2px solid #1c55a3;
+}
+button {
+    border: 2px solid #1c55a3;
+    color:#1c55a3;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    
+    transition-duration: 0.4s;
+}
+button:hover {
+    background-color: #1c55a3; /* Blue */
+    color: white;
+}
+.boutton{
+    display: flex;
+    margin-top: 20px;
+}
+#panel{
+    text-decoration: underline #1c55a3;
+    width: 1000px;
+    text-align: center;
+    margin-left: 5%;
+    font-size: 60px;
+}
+.btn-redirect {
+    display: block;
+    margin-bottom: 10%;
+}
+.btn-panel{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    padding: 100px 240px;
+    width:1000px;
+    font-size: 30px;
+    text-align: center;
+}
