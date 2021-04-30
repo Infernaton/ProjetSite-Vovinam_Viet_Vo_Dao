@@ -87,7 +87,10 @@ for ($i=0; $i<count($histoire);$i++){
 <div class="container-fluid row p-1">
     <div class="container col-sm-3 p-3">
         <div class="fixed">
-            <div class="col-sm-6">
+            
+            <div class="col-sm-8">
+                <div class="text-center"><h3 class="content-title-blue">L'Histoire du Vovinam</h3><br><h3 class="content-title-blue">Viet-Vo-Dao</h3></div>
+                <hr>
                 <ul>
                 <?php 
                     for ($i=0; $i<count($histoire);$i++){
@@ -106,7 +109,7 @@ for ($i=0; $i<count($histoire);$i++){
             <div class="container" id="<?php echo $partHistoire['id'] ?>">
                 <div class="text-center">
                     <div style="padding: 20px;">
-                        <h1 class="content-title-yellow"><?php echo $partHistoire['title']?></h1>
+                        <h2 class="content-title-yellow"><?php echo $partHistoire['title']?></h1>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

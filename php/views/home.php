@@ -38,7 +38,8 @@
 
 <div class="container">
   <br>
-  <h1>Ici sera présent un résumé du Vovinam Viet Vo Dao</h1>
+  <div class="text-center"><h1 class="content-title-yellow">Ici sera présent un résumé du Vovinam Viet Vo Dao</h1></div>
+  
   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint quia suscipit laudantium dolorem eos, soluta numquam eligendi quo libero illum aspernatur quisquam ea dignissimos error iure. Unde iure adipisci</p>
   <p>ipsum dolor sit amet consectetur adipisicing elit. Nesciunt facere, velit voluptates iste commodi ipsa! Corrupti ullam voluptatem, sit laboriosam dolorem, saepe ex velit illum ducimus esse suscipit architecto mollitia?</p>
   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non nam repudiandae natus placeat omnis eos inventore sequi quis in fugiat explicabo molestiae itaque odit corrupti minima doloremque iure, incidunt aut!</p>

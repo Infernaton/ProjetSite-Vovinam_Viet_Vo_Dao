@@ -3,7 +3,7 @@
 <div class="container">
         <!-- Titre de la page -->
         <div class="text-center mt-5">
-            <h1 class="content-title-yellow">La Fédération Mondiale</h1>
+            <h1 class="content-title-blue">La Fédération Mondiale</h1>
         </div>
         <div>
             <br>
@@ -13,7 +13,7 @@
             <!-- Liens de redirection -->
             <div class="ml-3">
                 <div>
-                    <p>➢ Site Officiel: <a href="#" class="link">https://</a></p>
+                    <p>➢ Site Officiel: <a href="https://vovinamworldfederation.eu/fr/" class="link">https://vovinamworldfederation.eu/fr/</a></p>
                 </div>
                 <div>
                     <p>➢ Conseil des Maîtres Mondial: <a href="#" class="link">https://</a></p>
