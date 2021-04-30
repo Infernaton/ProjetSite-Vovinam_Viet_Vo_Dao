@@ -8,54 +8,67 @@
 <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
 <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 
-  <form action="php/management/addLocationDB.php">
-    <div id="container" class="container">
-        <div class ="col-sm-8">
-          <h1>Ajouter un Club</h1>
-          <div class="form">
-            <label class="data" for="titre"><b>Titre</b></label>
-            <input class="inputData" type="text" placeholder="Nom du club" name="titre" id="titre" required>
-          </div>
-          <div class="form">
-            <label class="data" for="Enseignant"><b>Enseignant</b></label>
-            <input class="inputData" type="text" placeholder="Nom de l'enseignant" name="enseignant" id="enseignant" >
-          </div>
-          <div class="form">
-            <label class="data" for="Contact"><b>Contact</b></label>
-            <input class="inputData" type="text" placeholder="Contact" name="contact" id="contact">
-          </div>
-          <div class="form">
-            <label class="data" for="lien"><b>lien</b></label>
-            <input class="inputData" type="text" placeholder="lien du site" name="lien" id="lien">
-          </div>
+<style>
+  body { 
+    margin: 0; 
+    padding: 0; 
+  }
+  #map { 
+    position: relative;
+    top: 10%; 
+    bottom: 20%; 
+    width: 100%; 
+    height: 80%
+  }
+  #coordonee {
+    position: absolute;
+    z-index: 1;
+    margin-left: 25%;
+  }
+</style>
+
+<form action="php/management/addLocationDB.php">
+  <div id="container" class="container mt-5">
+    <div class="row pt-5">
+    <div class="col-sm-5">
+      <h1>Ajouter un Club</h1>
+      <div class="form">
+        <label class="data" for="titre"><b>Titre</b></label>
+        <input class="inputData" type="text" placeholder="Nom du club" name="titre" id="titre" required>
+      </div>
+      <div class="form">
+        <label class="data" for="Enseignant"><b>Enseignant Principal</b></label>
+        <input class="inputData" type="text" placeholder="Nom de l'enseignant" name="enseignant" id="enseignant" >
+      </div>
+      <div class="form">
+        <label class="data" for="Contact"><b>Contacter le club</b></label>
+        <input class="inputData" type="text" placeholder="Contact" name="contact" id="contact">
+      </div>
+      <div class="form">
+        <label class="data" for="lien"><b>Lien du site Web</b></label>
+        <input class="inputData" type="text" placeholder="lien du site" name="lien" id="lien">
+      </div>
+      <div class="form">
+        <label class="data disabled" for="result"> <b>Coordonée GPS</b></label>
+        <input class="list-group-item disabled" type="text" name="result" id="coo" placeholder="GPS" required>
+      </div>
           
-
-
-          
-            <style>
-              body { margin: 0; padding: 0; }
-              #map { position: relative; top: 0; bottom: 20%; width: 80%; height: 80%}
-            </style>
-            <div class="row">
-              <div class="row"><div id=map></div></div>
-              <div class="col-sm-8"><div id="coordonee"></div>
-              <label class="col-sm-4 disabled" for="result"> <b>Coordonée GPS</b></label>
-
-            <input class="list-group-item disabled" type="text" name="result" id="coo" placeholder="GPS">
-            </div> 
-        </div> 
-          </div>
-          <div class ="boutton">
-            <div id="btn-object">
-                <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
-            </div>
-            <div id="btn-Action">
-            <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
-            </div>
-          </div>
+      <div class ="boutton">
+        <div id="btn-object">
+          <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
         </div>
-    </div> 
-  </form> 
+        <div id="btn-Action">
+          <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div id="coordonee"></div>
+      <div id=map></div>
+    </div>
+    </div>
+  </div>
+</form> 
   
   
 <script>
@@ -63,8 +76,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllN
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
-  center: [-79.4512, 43.6568],
-  zoom: 13
+  center: [2, 47],
+  zoom: 4
 });
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
@@ -86,6 +99,6 @@ geocoder.on('result', function (e) {
  
 // Clear results container when search is cleared.
 geocoder.on('clear', function () {
-results.innerText = '';
+results.value = '';
 });
 </script>

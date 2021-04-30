@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/add1.css">
+<link rel="stylesheet" href="css/add.css">
 <form action="php/management/addObjectDB.php">
     <div id="container" class="container">
         <div class="text-center"> 
