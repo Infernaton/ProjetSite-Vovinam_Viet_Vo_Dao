@@ -3,7 +3,7 @@
   <form action="php/management/addMasterDB.php">
     <div id="container" class="container">
       
-          <h1 id="addGM">Ajout un Grand Maître à la Galerie</h1>
+        <h1 id="addGM">Ajout un Grand Maître à la Galerie</h1>
         <div class ="content">
           <div class = "nom">
             <label class="data" for="name"><b>Nom</b></label>
