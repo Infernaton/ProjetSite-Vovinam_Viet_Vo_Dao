@@ -3,7 +3,7 @@
 <div class="container">
         <!-- Titre de la page -->
         <div class="text-center mt-5">
-            <h2 class="content-title">Le conseil des Maîtres</h2> 
+            <h2 class="content-title-yellow">Le conseil des Maîtres</h2> 
         </div>
         <br>
         

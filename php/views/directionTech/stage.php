@@ -3,7 +3,7 @@
     <div class="container">
         <!-- Titre -->
         <div class="text-center mt-5">
-            <h2 class="content-title">Stages GRT Coupes</h2>
+            <h2 class="content-title-yellow">Stages GRT Coupes</h2>
         </div>
         <!-- Sommaire -->
         <h4 class="ml-3">Sommaire</h4>

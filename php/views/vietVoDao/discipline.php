@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/discipline1.css">
+<link rel="stylesheet" href="css/discipline.css">
 
 <div class="container-fluid section-fade" id="banner">
         <style>           
@@ -27,7 +27,7 @@
                     <div class="fb-video" data-href="https://www.facebook.com/229885840921077/videos/261154291127565" data-width="600" data-show-text="false"><blockquote cite="https://developers.facebook.com/FederationVovinamVietVoDaoFrance/videos/261154291127565/" class="fb-xfbml-parse-ignore"><a href="https://developers.facebook.com/FederationVovinamVietVoDaoFrance/videos/261154291127565/">Démonstration - Bercy Arena en 2017</a><p>La démonstration du Vovinam Viet Vo Dao à Bercy Arena en 2017</p>Publiée par <a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance/">Fédération Vovinam Viet Vo Dao France</a> sur Mercredi 20 juin 2018</blockquote></div>                </div>
                 <div class="col-sm-4">
                     <div>
-                        <h3 class="content-title">Le Vovinam-VietVoDao</h3>
+                        <h3 class="content-title-yellow">Le Vovinam-VietVoDao</h3>
                         <p style="padding-top: 20px;">Art Martial Traditionnel Vietnamien, il est l'œuvre de tout un peuple engagé tout au long de son histoire dans une lutte pour la définition et la préservation de son identité.
                         </p>
                     </div>
@@ -38,7 +38,7 @@
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="text-center">
                 <div style="padding: 20px;">
-                    <h2 class="content-title">Signification de l'écusson Vovinam-Viet Vo Dao</h2>
+                    <h2 class="content-title-yellow">Signification de l'écusson Vovinam-Viet Vo Dao</h2>
                 </div>
             </div>
             <div class="row m-4">
@@ -61,7 +61,7 @@
         <!-- Section -->
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="text-center">
-                <h2 class="content-title">Valeurs et Principes du Vovinam-Viet Vo Dao</h2>
+                <h2 class="content-title-yellow">Valeurs et Principes du Vovinam-Viet Vo Dao</h2>
             </div>
             <div class="mt-5">
                 <h4 class="pl-5 pb-2">Les Valeurs </h4>

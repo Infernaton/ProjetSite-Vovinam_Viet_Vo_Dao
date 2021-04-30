@@ -3,7 +3,7 @@
 <div class="container">
         <!-- Titre -->
         <div class="text-center mt-5">
-            <h2 class="content-title">Formations</h2>
+            <h2 class="content-title-yellow">Formations</h2>
         </div>
         <div>
             <h3><span class="ml-3">Formations des Maîtres</span></h3>

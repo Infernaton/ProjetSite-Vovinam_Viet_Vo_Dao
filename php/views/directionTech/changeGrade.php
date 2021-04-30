@@ -3,7 +3,7 @@
 <div class="container">
         <!-- Titre -->
         <div class="text-center mt-5">
-            <h1 class="content-title">Passage de grades</h2>
+            <h1 class="content-title-yellow">Passage de grades</h2>
         </div>
         <br>
         <div class="row">
