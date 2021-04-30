@@ -2,7 +2,7 @@
 <form action="php/management/addObjectDB.php">
     <div id="container" class="container mt-5">
         <div class="text-center"> 
-            <h1 id="addGM" class="content-title-blue">Créer un nouvel évènement</h1>
+            <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1>
         </div>
     <div class="row">
         <div class="col-sm-6">

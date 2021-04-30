@@ -49,8 +49,18 @@ button:hover {
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 5%;
-    padding: 100px 240px;
+    padding: 50px 240px;
     width:1000px;
     font-size: 30px;
     text-align: center;
+}
+.content{
+    margin-bottom: 30px
+}
+#master-row{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    font-size: 20px;
+
 }
