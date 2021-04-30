@@ -24,6 +24,7 @@
                 <datalist id="list">
                     <option value="Compétition">
                     <option value="Stage">
+                    <option value="Formation">
                     <option value="Autre">
                 </datalist>
             </div>
