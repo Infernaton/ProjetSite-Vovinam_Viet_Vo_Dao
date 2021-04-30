@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="css/add.css">
+<link rel="stylesheet" href="css/add1.css">
 
   <form action="php/management/addMasterDB.php">
     <div id="container" class="container">
-      
+      <div class="row">
         <h1 id="addGM">Ajout un Grand Maître à la Galerie</h1>
         <div class ="content">
           <div class = "nom">
@@ -39,5 +39,6 @@
           </div>
         </div>
       </div>
-    </div> 
-  </form> 
+    </div>
+  </div> 
+</form> 

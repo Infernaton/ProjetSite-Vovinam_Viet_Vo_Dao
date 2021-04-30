@@ -20,11 +20,9 @@ textarea{
 button {
     border: 2px solid #1c55a3;
     color:#1c55a3;
-    
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    
     transition-duration: 0.4s;
 }
 button:hover {
@@ -33,7 +31,7 @@ button:hover {
 }
 .boutton{
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 #panel{
     text-decoration: underline #1c55a3;

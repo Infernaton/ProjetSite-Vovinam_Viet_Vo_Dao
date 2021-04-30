@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/add.css">
+<link rel="stylesheet" href="css/add1.css">
 <form action="php/management/addObjectDB.php">
     <div id="container" class="container">
         <div class="text-center"> 
@@ -31,20 +31,19 @@
             <label class="data" for="prerequis"><b>Prérequis</b></label>
             <input class="inputData" type="text" placeholder="Prérequis (Optionnel, comme dans le cas d'un stage)" name="prerequis" id="prerequis">
         </div>
-
+    </div> 
         <div class="col-sm-12">
             <label class="data" for="description"><b>Description</b></label>
             <textarea class="inputData" rows="4" cols="100" name="description" placeholder="Description.." id="description"></textarea>
         </div>        
 
-        <div id="btn-object">
+        <div class="boutton">
             <div id="btn-reset">
                 <a onclick="history.go(-1);"><button class="btn-annul hidden annim" type="button" id='undo'>Annuler</button></a>
             </div>
             <div id="btn-Action">
-                <input type="submit" class="btn-modObject annim" value="Confirmer" name="submit" id="confirm">
+                <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
             </div>
         </div>
-    </div>
-    </div> 
+        
 </form> 
