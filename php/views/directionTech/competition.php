@@ -2,7 +2,8 @@
 
 <div class="container mt-5">
     <br>
-    <h1><span class="ml-3">Compétitions</span></h1>
+    <div class="text-center"><h1 class="content-title-blue">Compétitions</h1></div>
+    
     <!--Drawer for all season-->
     <div class="inline">
         <h4><b>Saison</b></h4>

@@ -6,7 +6,7 @@
         <!-- Titre de la page -->
         <div class="text-center">
             <div style="padding-bottom: 50px;">
-                <h1 class="content-title-red">Le Maître fondateur</h1>
+                <h1 class="content-title-blue">Le Maître fondateur</h1>
             </div>
         </div>
         <!-- Photo du ME Fondateur -->
@@ -61,7 +61,7 @@
         <!-- Titre -->
         <div class="text-center">
             <div style="padding: 50px;">
-                <h1 class="content-title-red">Les grands maîtres</h1>
+                <h1 class="content-title-blue">Les grands maîtres</h1>
             </div>
         </div> 
         <?php 

@@ -3,7 +3,7 @@
 <div class="container">
     <!-- Image du groupe fondateur -->
     <div class="text-center mt-5 pb-3">
-        <h1 class="content-title-yellow">La Fédération</h2>
+        <h1 class="content-title-blue">La Fédération</h2>
     </div>
         <img class="mx-auto d-block" src="assets/img/le-vvd/groupe_fondateur.jpg">
         <h3> Présentation</h3>
