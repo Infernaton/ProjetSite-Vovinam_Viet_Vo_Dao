@@ -1,12 +1,10 @@
 <link rel="stylesheet" href="css/add1.css">
 <form action="php/management/addObjectDB.php">
-    <div id="container" class="container">
+    <div id="container" class="container mt-5">
         <div class="text-center"> 
             <h1 id="addGM" class="content-title-blue">Créer un nouvel évènement</h1>
         </div>
     <div class="row">
-        
-
         <div class="col-sm-6">
             <label class="data" for="title"><b>Titre</b></label>
             <input class="inputData" type="text" placeholder="Titre" name="title" id="title" required>
@@ -37,11 +35,11 @@
             <textarea class="inputData" rows="4" cols="100" name="description" placeholder="Description.." id="description"></textarea>
         </div>        
 
-        <div class="boutton">
-            <div id="btn-reset">
+        <div class="d-flex justify-content-between mb-3">
+            <div id="btn-reset" class="p-2">
                 <a onclick="history.go(-1);"><button class="btn-annul hidden annim" type="button" id='undo'>Annuler</button></a>
             </div>
-            <div id="btn-Action">
+            <div id="btn-Action" class="p-2">
                 <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
             </div>
         </div>

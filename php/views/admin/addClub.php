@@ -56,11 +56,11 @@
         <input class="list-group-item disabled" type="text" name="result" id="coo" placeholder="GPS" required>
       </div>
           
-      <div class ="boutton">
-        <div id="btn-object">
+      <div class ="d-flex justify-content-between mb-3">
+        <div id="btn-object" class="p-2">
           <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
         </div>
-        <div id="btn-Action">
+        <div id="btn-Action" class="p-2">
           <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
         </div>
       </div>
