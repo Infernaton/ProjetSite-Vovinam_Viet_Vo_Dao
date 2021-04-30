@@ -12,9 +12,9 @@
             <input class="inputData" type="text" placeholder="Titre" name="title" id="title" required>
 
             <label class="data" for="debut"><b>Date de Début de l'évènement</b></label>
-            <input class="inputData" type="text" placeholder="jj/mm/aaaa" name="debut" id="dateDebut">
+            <input class="inputData" type="text" placeholder="jj/mm/aaaa" name="debut" id="dateDebut"required>
             <label class="data" for="fin"><b>Date de Fin de l'évènement</b></label>
-            <input class="inputData" type="text" placeholder="jj/mm/aaaa" name="fin" id="dateFin">
+            <input class="inputData" type="text" placeholder="jj/mm/aaaa" name="fin" id="dateFin"required>
         </div>
 
         <div class="col-sm-6">
@@ -28,8 +28,8 @@
                     <option value="Autre">
                 </datalist>
             </div>
-            <label class="data" for="prerequis"><b>Prérequis</b></label>
-            <input class="inputData" type="text" placeholder="Prérequis (Optionnel, comme dans le cas d'un stage)" name="prerequis" id="prerequis">
+            <label class="data" for="prerequis"><b>Prérequis (Optionnel, comme dans le cas d'un stage)</b></label>
+            <input class="inputData" type="text" placeholder="Prérequis" name="prerequis" id="prerequis">
         </div>
     </div> 
         <div class="col-sm-12">
