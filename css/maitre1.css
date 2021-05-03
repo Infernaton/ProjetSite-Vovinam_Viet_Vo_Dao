@@ -129,14 +129,13 @@ a:hover{
 
 /* back, initially hidden pane */
 .back {
-		-webkit-transform: rotateY( 180deg );
+-webkit-transform: rotateY( 180deg );
    -moz-transform: rotateY( 180deg );
      -o-transform: rotateY( 180deg );
         transform: rotateY( 180deg );
         z-index: 3;
 }
-
-.back .btn-simple{
+.btn-simple{
     position: absolute;
     left: 0;
     bottom: 4px;
@@ -182,16 +181,15 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 .card .content{
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
-    padding: 10px 20px 20px;
+    padding: 10px 20px;
+    
 }
 .card .content .main {
-    min-height: 160px;
-}
-.card .back .content .main {
-    height: 215px;
+    min-height: 200px;
+    height: 255px;
+    overflow-y: auto;
 }
 .card h5{
-    margin: 5px 0;
     font-weight: 400;
     line-height: 20px;
 }
@@ -202,10 +200,7 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 }
 .card .footer {
     border-top: 1px solid #EEEEEE;
-    color: #999999;
-    margin: 30px 0 0;
-    padding: 10px 0 0;
-    text-align: center;
+    margin: 3%;
 }
 .card .footer .social-links{
     font-size: 18px;
@@ -218,10 +213,10 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 }
 .card .header {
     padding: 15px 20px;
-    height: 90px;
+    height: auto;
 }
 .card .motto{
-		font-family: 'Arima Madurai', cursive;
+	font-family: 'Arima Madurai', cursive;
     border-bottom: 1px solid #EEEEEE;
     color: #999999;
     font-size: 14px;
@@ -376,4 +371,12 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
         z-index: 5;
         visibility: visible;
     }
+}
+.note {
+    color: #e82226;
+    font-size:60%;
+    vertical-align: top;
+}
+.hint{
+    color: #1c55a3;
 }
