@@ -49,7 +49,7 @@
       </div>
       <div class="form">
         <label class="data" for="lien"><b>Lien du site Web</b></label>
-        <input class="inputData" type="text" placeholder="lien du site" name="lien" id="lien">
+        <input class="inputData" type="text" placeholder="Lien du site" name="lien" id="lien">
       </div>
       <div class="form">
         <label class="data disabled" for="result"> <b>Coordonée GPS</b></label>

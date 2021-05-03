@@ -3,7 +3,7 @@
     
     <hr>
     <h4>
-        Fédération Francaise de VOVINAM Viet Vo Dao
+        Fédération de VOVINAM Viet Vo Dao France
     </h4>
     <br>
     <h4><small> Adresse: 6 Allée des Agrions, 91160 Ballainvilliers </small></h4>
