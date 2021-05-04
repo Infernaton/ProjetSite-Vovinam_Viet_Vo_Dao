@@ -15,8 +15,12 @@
         </div>
         <div class="hide">
             <div id="first">
-                <h5>Compétitions à venir</h5>
-                <p>-LOREM IPSUM-</p>
+                <h3>Compétitions à venir</h3>
+                <div class = "new">
+                    <h4>Compétition 1</h4>
+                    <p class = "date"> 22 mai 2022 - 23 mai 2022 </p>
+                    <p class= "lieux"> Paris</p>
+                </div>
                 <br>
             </div>
             <div id="second">
