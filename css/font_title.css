@@ -22,7 +22,7 @@
     
     /* The border is positioned relative to the bottom of the line.
      * We can move it upwards a little to create an overlap effect. */
-    --underline-offset-y: -0px;
+    --underline-offset-y: 1px;
     
     /* The padding to add to the x axis. By default, the caps would be
      * aligned with the beginning and end of the line. */

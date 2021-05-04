@@ -79,7 +79,7 @@ $histoire = ['
     }',
 ];
 for ($i=0; $i<count($histoire);$i++){
-    $histoire[$i] = json_decode($histoire[$i], true, 2048, JSON_UNESCAPED_UNICODE);
+    $histoire[$i] = json_decode($histoire[$i], true, JSON_UNESCAPED_UNICODE);
 }
 ?>
 <link rel="stylesheet" href="css/discipline.css">
