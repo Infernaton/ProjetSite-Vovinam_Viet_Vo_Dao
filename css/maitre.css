@@ -378,5 +378,21 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     vertical-align: top;
 }
 .hint{
-    color: #1c55a3;
+    border-bottom: 1px solid #1c55a3;
+}
+.subtitle {
+    color:#1c55a3;
+}
+.praise-sub {
+    padding-left: 4%;
+}
+.praise {
+    margin-top: 3%;
+    color: #333333;
+    font-style:oblique;
+}
+.praise .catch-phrase {
+    margin-left: -1%;
+    color:#111111;
+    font-size: 110%;
 }
