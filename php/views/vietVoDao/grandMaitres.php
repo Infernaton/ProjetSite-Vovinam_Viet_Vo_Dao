@@ -597,51 +597,187 @@ $greatMasters = ['
     }',
     '{
         "id": 8,
-        "note": [],
+        "note": [
+            "Le bateau Truong Xuan est le 1er bateau transportant des réfugiés politiques (boat people) ayant quitté le Vietnam avec 4.000 personnes à bord lorsque l\'armée communiste du Nord a envahi Saigon le 30 avril 1975. Parmi les rescapés, il y a l\'ensemble de la famille du maître fondateur Nguyễn Lộc, dont Madame Nguyễn Lộc, maître Nguyễn Dần, M. Nguyễn Hải, maître Nguyễn Chính, etc., soit au total une vingtaine de personnes. Maître Nguyễn Tiến Hội, fondateur du Vovinam-Viet Vo Dao en Allemagne, est également présent sur ce bateau.",
+            "Auparavant (2002-2004), maître Lê Sáng a assumé ce poste à l\'occasion de la réunion extraordinaire du Conseil Mondial des Maîtres du 4 février 2002 en Californie."
+        ],
         "content": [
             {
                 "title": "",
-                "paragraphes": []
+                "paragraphes": [
+                    "Grand Maître Nguyễn Dần est né en 1928 au Nord du Vietnam. Il est le jeune frère et disciple du maître Nguyễn Lộc.",
+                    "Il a débuté le Vovinam à l’âge de 8 ans (1936), pendant la période de recherche et de structuration du Vovinam par maître Nguyễn Lộc.",
+                    "/nguyendan/photo1.png&Photo 1:",
+                    "Il a fait partie du groupe de pratiquants ayant participé à l’ouverture du premier club Vovinam en 1940 à l’école Normale de Hanoï. Par la suite, il a aidé le maître fondateur à ouvrir d’autres centres d’entraînement à Hanoï, comme l’école Chu Van An dans le district de Ba Đình.",
+                    "Entre 1948 et 1949, il a eu pour mission d’entraîner 2 000 pratiquants à la cathédrale de Tây Ninh, au Sud du Vietnam. Sa mission terminée, il est retourné au Nord du Vietnam et a continué à développer le Vovinam à Hanoï.",
+                    "En 1954, il a suivi maître Nguyễn Lộc lors de son départ au Sud Vietnam, devenant l\'un de ses disciples les plus anciens du Vovinam-Viet Vo Dao.",
+                    "En 1975, en raison des événements au Vietnam, maître Nguyễn Dần et sa famille ont pris le chemin de l’exil vers les États-Unis ; ils ont embarqué sur le [bateau Truong Xuan] grâce à l\'aide du maître patriarche Trần Huy Phong. A partir de là, il a régulièrement participé à toutes les activités du Vovinam-Viet Vo Dao et apporté activement sa contribution sur le plan international.",
+                    "En 1990, lors du premier Congrès Mondial du Vovinam-Viet Vo Dao en Californie (États-Unis), il est élu Président de la Fédération Internationale de Vovinam-Viet Vo Dao.",
+                    "/nguyendan/photo2.png&Photo 2:",
+                    "En 1996, lors du 2ème Congrès Mondial à Paris dont le but est de réorganiser le Vovinam-Viet Vo Dao sur le plan international et créer deux nouvelles institutions essentielles, le Conseil Mondial des Maîtres et la Fédération Mondiale de Vovinam-Viet Vo Dao, maître Nguyễn Dần est invité comme conseiller pour le Conseil Mondial des Maîtres pendant deux mandats successifs.",
+                    "En 2004, malgré son grand âge, il a participé activement durant les cinq jours du 5ème Congrès Mondial organisé à Houston (États-Unis). Il a déclaré : « Malgré mon grand âge et ma force physique quelque peu diminuée, je suis toujours prêt à apporter ma contribution au Vovinam-Viet Vo Dao dans la mesure du possible de mes moyens ».",
+                    "C’est la raison pour laquelle, à la demande du Conseil Mondial des Maîtres, il a accepté d’assumer le poste de Président du Conseil Mondial des Maîtres (mandat 2004-2008), suite à la renonciation de maître Lê Sáng à cette fonction, par courrier du [16 Août 2004]. Maître Nguyễn Dần a assuré sans interruption cette fonction symbolique dans notre organisation internationale jusqu\'à sa mort."
+                ]
             }
         ]
     }',
     '{
         "id": 9,
-        "note": [],
+        "note": [
+            "Elle est aussi une enseignante du Vovinam-Viet Vo Dao.",
+            "Technique de respiration – énergie interne."
+        ],
         "content": [
             {
                 "title": "",
-                "paragraphes": []
+                "paragraphes": [
+                    "Grand maître Ngô Kim Tuyền est né le 1er février 1947 à Quy Hau, district Kim Son, dans la province Ninh Binh au Vietnam. Il a débuté le Vovinam-Viet Vo Dao le 15 juillet 1965 au centre de Vinh Vien. Il est formé par maître Trần Huy Phong, Nguyễn Văn Thư et Lê Sáng.",
+                    "/ngokimtuyen/photo1.png&Photo 1: Saigon 1993",
+                    "Selon ses notes : « ... je me suis inscrit à la première promotion du centre situé au n° 61, rue Vinh Vien. A cette époque, les cotisations mensuelles sont de 80 piastres, puis 120 piastres. J’ai suivi les cours du soir enseignés par maître Trần Huy Phong… ».",
+                    "En 1965, il est transféré au club de Tran Hung Dao, puis devient assistant du maître Trịnh Ngọc Minh dans ce club en 1967. En 1968, lorsque maître Minh est parti en mission à Nha Trang, il l’a remplacé comme enseignant principal.",
+                    "En 1966, il rejoint le programme de l’enseignement des arts martiaux au sein de l’Éducation Nationale avec des milliers de pratiquants de Vovinam-Viet Vo Dao dans les lycées de Saigon et Gia Dinh tels que Chu Van An, Trung Vuong, Cao Thang, Gia Long et Pétrus Ky. Il est en charge de l\'entraînement au lycée Pétrus Ky.",
+                    "Lorsque le lycée Pétrus Ky suspend ses activités, il crée le club Lam Son, rue Tran Binh Trong, à Saigon, pour permettre aux pratiquants de Pétrus Ky de poursuivre les entraînements. Parmi ces pratiquants, on peut citer Nguyễn Văn Chiếu, Lưu Thăng, Nguyễn Tôn Khoa, Võ Văn Tuấn, Nguyễn Chánh Tứ, Nguyễn Anh Dũng. Après les évènements du Tet Mau Than en 1968, la salle Tran Binh Trong est fermée. Tous les pratiquants ont été transférés au centre de Hung Vuong chez maître Lê Sáng.",
+                    "Maître Ngô Kim Tuyền a également enseigné dans d’autres clubs comme le petit séminaire Saint Guise de Phu Cuong (Tiểu chủng viện thánh Gui Se Phú Cường) et l\'Institut missionnaire de Phu Cuong (Đệ tử viện truyền giáo Phú Cường).",
+                    "/ngokimtuyen/photo2.png&Photo 2: Saigon 1993, Centre de Vo Dao Quan",
+                    "En 1967, lorsque l’enseignement du Vovinam-Viet Vo Dao est introduit dans la Police Nationale, maître Ngô Kim Tuyền est l’un des assistants du maître patriarche Lê Sáng durant les cours de formation.",
+                    "En 1968, avec l\'enseignant Hồ Tuấn Đãi, maître Ngô Kim Tuyền a développé le Vovinam-Viet Vo Dao dans le district Duc He, province de Long An. Puis à partir de ce lieu, il a ouvert plusieurs clubs à Khiem Cuong, Tan My, Cu Chi, Trang Bang, Binh Duong, Lai Thieu, Go Dau, Tay Ninh, etc.",
+                    "En 1969, il est devenu directeur technique du Vovinam-Viet Vo Dao de la région Nord-Ouest. Il est aidé par le grand maître Phạm Hữu Độ et maître Lý Phúc Thái pour le développement dans cette région.",
+                    "Aujourd\'hui, ses disciples Cao Hải Bình, Nguyễn Thành Tâm, Nguyễn Văn Thành, Đoàn Tấn Tạo, Lê Đằng Phương, Tô Nguyên Trung, Lưu Kim Lan, Đoàn Văn Viễn, etc., continuent à enseigner dans les provinces de Hau Nghia, Tay Ninh, Binh Duong, Binh Long, etc.",
+                    "En 1975, il s’est marié avec Madame [Nguyễn Thị Nga]; de cette union ont vu le jour Ngô Hồng  n (1976) et Ngô Hồng Vũ (1979).",
+                    "Après la chute de Saigon en 1975, le Vovinam-Viet Vo Dao étant interdit, maître Ngô Kim Tuyền s\'est entrainé dans la clandestinité avec maître Trần Huy Phong. Il est devenu alors l\'un des hommes clés de maître Phong pour organiser l\'évasion par bateaux pour les maîtres et les enseignants qui cherchent à quitter le Vietnam pour retrouver la liberté et ainsi développer le Vovinam-Viet Vo Dao à l’étranger. Grâce à ses actions, des centaines de maîtres et enseignants ont pu s’installer au Canada, en Australie, en Europe et aux États-Unis et sont devenus des piliers du Vovinam-Viet Vo Dao dans leur pays d’adoption.",
+                    "En 1991, lorsque le Vovinam-Viet Vo Dao est à nouveau autorisé par le nouveau régime politique, il participe activement au centre de Vo Dao Quan (Võ Đạo Quán Cây Tre) créé par maître Trần Huy Phong dans le district Binh Thanh, à Saigon. En 1992 maître Trần Huy Phong le nomme Vice-président de recherche et de développement et directeur technique de ce centre.",
+                    "/ngokimtuyen/photo3.png&Photo 3:",
+                    "En décembre 2003, il est tombé gravement malade, mais grâce à l\'enseignement de [Khi Cong] de maître Trần Huy Phong, il est parvenu à retrouver ses forces.",
+                    "/ngokimtuyen/photo4.png&Photo 4:",
+                    "Lors du 6ème Congrès Mondial de Vovinam-Viet Vo Dao à Paris du 5 au 8 mai 2008, sur proposition du Secrétaire Général du Conseil Mondial des Maîtres, maître Trần Nguyên Đạo, il est récompensé et promu au titre de Grand Maître, Ceinture Blanche Suprême, par le Conseil Mondial des Maîtres en même temps que les maîtres Lê Công Danh (Australie), Trần Tấn Vũ (Vietnam) et Nguyễn Văn Đông (États-Unis).",
+                    "Il s\'éteint le 22 novembre 2019 à Saigon à 73 ans après 16 ans de lutte contre la maladie.",
+                    "C\'est un grand maître, simple, rigoureux, persévérant et aimé par tous. Le décès du grand maître Ngô Kim Tuyền a provoqué beaucoup d’émotion et de regrets à sa famille ainsi qu’à tous les pratiquants du Vovinam-Viet Vo Dao, au Vietnam comme à l’étranger. C’est un disciple loyal, fidèle, un maître respectueux du Vovinam-Viet Vo Dao, une étoile brillante dans le ciel de la culture martiale du Vietnam.",
+                    "/ngokimtuyen/photo5.png&Photo 5:"
+                ]
             }
         ]
     }',
     '{
         "id": 10,
-        "note": [],
+        "note": [
+            "Appeler aussi la guerre d’Indochine.",
+            "Grand maître Phan Dương Bình (1929-2020).",
+            "Siège actuel des facultés de médecine et des sciences humaines Minh Đức, rue Nguyễn Văn Tráng, 1er district, à Saigon.",
+            "Disciple direct du maître fondateur Nguyễn Lộc et/ou membre du 1er Conseil des maîtres en 1964.",
+            "Équivalent à 20 000€ de nos jours.",
+            "Malcolm Browne Wilde (1931-2012): Journaliste, reporter photo.",
+            "World Press Photo of the Year 1963, puis prix Pulitzer en 1964."
+        ],
         "content": [
             {
                 "title": "",
-                "paragraphes": []
+                "paragraphes": [
+                    "Grand maître Nguyễn Văn Thông est né le 28 octobre 1925 à Hanoï, au Nord Vietnam, décédé le 7 septembre 2019 à Saigon. Disciple direct du maître fondateur Nguyễn Lộc, il a débuté le Vovinam en 1953 à rue Hang Bong, à Hanoï.",
+                    "/nguyenvanthong/photo1.png&Photo 1:",
+                    "Il a raconté ses débuts dans le Vovinam comme suit : « … C’est une chance pour moi de connaître le Vovinam. En 1950, fonctionnaire à Hanoï, j’ai eu sous mes ordres M. Nguyễn Hải, petit frère du maître Nguyễn Lộc. Hải m’a amené au club de rue Hang Bong et m’a présenté à maître Nguyễn Lộc... Maître Lộc me demande si je suis intéressé par les arts martiaux. Devant mon enthousiasme et ma réponse affirmative, il m’a accepté comme disciple. A partir de ce moment, je suis venu m’entrainer régulièrement avec lui… ».",
+                    "En 1954, à la suite des [accords de Genève], maître Nguyễn Văn Thông a migré avec sa famille dans le Sud du Vietnam et a poursuivi les entraînements avec maître Nguyễn Lộc au club Thu Khoa Huan, dans le 1er district à Saigon.",
+                    "Il a raconté : « … A cette époque, l’assistant du maître fondateur Nguyễn Lộc est maître [Phan Dương Bình]. Bien que nous sommes entrainés par maître Bình, c’est maître Lộc qui supervise les enseignements avec attention… Plus tard, maître Bình est retourné dans le Nord pour des raisons familiales… le club Thu Khoa Huan a déménagé plusieurs fois avec l’aide du maître Lê Sang avant de s’établir au [Building Everest], où maître Nguyễn Lộc était en convalescence avant de s’éteindre en 1960… Ensuite, c’est maître Trần Huy Phong qui devient le véritable successeur de Maître Lộc car il a continué à diriger le Vovinam… ».",
+                    "/nguyenvanthong/photo2.png&Photo 2:",
+                    "Dès la création officielle du Vovinam-Viet Vo Dao en 1964, maître Nguyễn Văn Thông est nommé Président de la Commission des Finances de la Direction Centrale (le premier Conseil des Maîtres). A cette époque, lors de la mise en place du système des grades, il a obtenu la ceinture rouge (4ème Dang) en même temps que les autres maîtres dirigeants comme Mạnh Hoàng (1938-1967), Ngô Hữu Liễn, Trần Bản Quế, Phan Quỳnh, Nguyễn Văn Cường, Trần Thế Phượng, etc.",
+                    "/nguyenvanthong/photo3.png&Photo 3:",
+                    "Pendant la période de développement (1964-1975), il est responsable des cours de Vovinam au lycée public Chu Văn An dans le cadre de l’enseignement des arts martiaux au sein de l’Éducation Nationale (1966-1968), puis il a ouvert d’autres cours dans le lycée privé Trần Hưng Đạo de 1967 à 1975. Il est ceinture rouge 2ème degré (6ème Dang) en 1975.",
+                    "En 1973, pour les besoins de développement international, maître Trần Huy Phong, Président de la Fédération de la Jeunesse Viet Vo Dao, a remplacé maître patriarche Lê Sáng pour diriger la Fédération de Formation Vovinam-Viet Vo Dao tout en assurant la présidence du Bureau de Développement International. Maître Nguyễn Văn Thông est désigné pour remplacer maître Trần Huy Phong au poste de Président de la Fédération de la Jeunesse Viet Vo Dao jusqu’en 1975.",
+                    "Le 16 septembre 1995, en réponse à l’appel du maître patriarche Trần Huy Phong, maître Nguyễn Văn Thông et les maîtres de l\'ancien Conseil des Maîtres en 1964 ont publié la déclaration de création officielle du Conseil Provisoire des Maîtres à l’étranger. Ce conseil est l\'organe précurseur du Conseil Mondial des Maîtres et de la Fédération Mondiale de Vovinam-Viet Vo Dao créés lors du 2ème Congrès Mondial en 1996 à Paris (France). A cette occasion, maître Nguyễn Văn Thông, en tant que [membre de la tradition du Vovinam-Viet Vo Dao], est promu au titre de Grand Maître, Ceinture Blanche Suprême et membre du Conseil Suprême des Maîtres.",
+                    "/nguyenvanthong/photo4.png&Photo 4:",
+                    "Par ailleurs, maître Thông est également connu au Vietnam en tant que photographe. C\'est lui qui a réalisé de très nombreuses photos retraçant l\'histoire du Vovinam-Viet Vo Dao, dans les années 1965-1975. Ses œuvres d’une valeur à la fois artistique et historique sont publiées dans de nombreuses revues et livres du Vovinam-Viet Vo Dao.",
+                    "Très humblement, il s’est exprimé : « … On peut dire que dans la vie, on m’appelle souvent « maître », car j’ai deux titres de maître : maître d’arts martiaux et maître en photographie… ».",
+                    "Autodidacte et passionné par la photographie dans les années 1945-1950, il est tellement passionné qu\'il a osé dépenser [10.000 piastres] d\'Indochine pour s\'acheter un appareil photo. Devenu photographe de renom, il a collaboré avec Monsieur Đỗ Hân, président de l’Association des Photographes de Hanoï, pour organiser deux expositions en 1953 et 1954 et obtenir des succès retentissants.",
+                    "Une fois installé dans le Sud en 1954, parallèlement aux activités Vovinam, il s’associe avec d\'autres photographes pour former le groupe des photographes de Saigon et enseigne cet art dans plusieurs établissements : l’École polytechnique Binh Dan, Association photo Vietnam-États-Unis et Lycée Lasan Taberd.",
+                    "En 1958, il est devenu célèbre en remportant la médaille d’honneur (au-dessus de la médaille d’or) avec la photo « Sortie en mer » (Ra Khơi, cf. photo 5), organisée par le Ministère de l’Information de la République du Sud Vietnam. Cette photo a également reçu la médaille d’or à Mantes la Jolie (France) ainsi que d’autres prix en Angleterre, à Hong Kong et à Singapour.",
+                    "De plus, l\'une de ses célèbres photos est celle du vénérable Thích Quảng Đức, qui s\'est immolé par le feu en 1963. Selon lui, cette scène d’auto-immolation a été prise en photo par trois personnes : lui-même, un bonze de la pagode Giac Minh (son élève en photographie) et un journaliste américain, Monsieur [Malcolm Browne]. Monsieur Malcolm Browne est un journaliste professionnel, ses photos sont rapidement diffusées dans le monde, lui procurant ainsi le [prix international de la photographie en 1963]. Quant à maître Nguyễn Văn Thông, ses photos ne sont envoyées en compétition internationale qu’en 1964. Il a ainsi remporté une médaille d\'argent en Angleterre et une médaille de bronze en Finlande (cf. photo 6).",
+                    "/nguyenvanthong/photo5.png&Photo 5:",
+                    "En 1975, sous le régime communiste du Vietnam, il est envoyé en camp de rééducation pendant 8 ans (1975-1983). A sa sortie, il n’a pas la possibilité de reprendre ses activités d\'arts martiaux car le Vovinam est encore interdit. Pour ce qui est de sa carrière de photographe, il est sollicité par le Président du Conseil des Arts de et des artistes photographes au Vietnam, membre du parti communiste, mais amoureux de l\'art, pour être son collaborateur. De 1984 à 1996, il est responsable de l\'équipe de formation, ouvrant ainsi 14 sessions pour former des photographes à Ho Chi Minh ville et dans les provinces du Sud. C’est ainsi que la plupart des photographes du Sud Vietnam sont ses élèves.",
+                    "Maître Nguyễn Văn Thông est décédé le 7 septembre 2019 à l’âge 95 ans, laissant derrière lui sept enfants : trois garçons et quatre filles. Maître Nguyễn Văn Thông est une étoile brillante du Vovinam-Viet Vo Dao, étoile qui reste gravée à tout jamais dans notre cœur car il a laissé de nombreuses œuvres précieuses. Sa disparition a laissé beaucoup de regrets pour de nombreuses personnes et organisations ; une grande perte non seulement pour le Vovinam-Viet Vo Dao mais aussi pour le monde artistique vietnamien.",
+                    "<h5>Quelques chefs d’œuvre du photographe Nguyễn Văn Thông</h5>",
+                    "/nguyenvanthong/photo6.png&Photo 6:"
+                ]
             }
         ]
     }',
     '{
         "id": 11,
-        "note": [],
+        "note": [
+            "À l\'occasion du retour de la délégation internationale à Hanoï pour célébrer le 80ème anniversaire de la première démonstration de Vovinam-Viet Vo Dao en 1939, les représentants de la délégation internationale: maître Nguyễn Thế Trường, Président de la Fédération Mondiale de Vovinam-Viet Vo Dao, Me. Huỳnh Hữu Quý (Belgique), Me. Guerrib Mai, Présidente de la Fédération Vovinam-Viet Vo Dao de France, Me. Trương Quang An (Vietnam), Me. Guerrib Amar, directeur technique de la Fédération française et Me. Trần Nguyên Đạo."
+        ],
         "content": [
             {
                 "title": "",
-                "paragraphes": []
+                "paragraphes": [
+                    "Le grand maître Phan Dương Bình est né le 10 octobre 1929 à Hanoï, Vietnam. Il est l\'un des disciples hautement qualifiés du maître fondateur Nguyễn Lộc. Il a débuté en 1948, à l\'âge de 19 ans, en même temps que le grand maître Trần Đức Hợp (1931-2000), au club de la rue Hang Than, à Hanoï.",
+                    "/phanduongbinh/photo1.png&Photo 1:",
+                    "Dès le début, maître Nguyễn Lộc a décelé les talents du maître Phan Dương Bình. Il lui a demandé de venir s’entraîner chez lui, rue Hang Than, en dehors des cours publics. Après le déménagement du maître Nguyễn Lộc à la rue Tôn Dan, maître Phan Dương Bình continue à s’entraîner au domicile du maître fondateur et à l’assister dans ses cours publics.",
+                    "En 1948, lorsque maître Nguyễn Lộc quitte la région de Bùi Chu-Phát Diệm pour retourner à Hà Nội, maître Phan Dương Bình est toujours à ses côtés pour l’assister durant les cinq années les plus difficiles à Hanoï (1949-1954). A cette époque, maître Lê Sáng a interrompu ses entraînements pour créer sa boutique de chaussures « Phi Diep » avec Monsieur Đặng Bẩy.",
+                    "Maître Phan Dương Bình a la ferme intention d’aider son maître et relancer le Vovinam après des années de dispersion et d’arrêt dus au contexte de guerre. Il a ouvert de nouvelles salles et assuré les cours à rue Hang Trong et rue Ton Dan à Hanoï.",
+                    "/phanduongbinh/photo2.png&Photo 2:",
+                    "Il est également avec maître Nguyễn Lộc à l’origine de la création de l\'association des experts des arts martiaux du Vietnam, créant de nombreuses animations dans les centres d’entraînement à l’école de Hang Than.",
+                    "En 1954, il a suivi maître Nguyễn Lộc dans le Sud du Vietnam et l’a assisté au centre d’entraînement de la rue Aviateur Garros (rue Thu Khoa Huan). Cependant, pour des raisons familiales, il est obligé de retourner dans le Nord. Restant seul au Nord, il a continué à s’entraîner et à étudier différents arts martiaux. Il est alors devenu un des grands maîtres spécialisés dans le domaine de l’énergie interne, le Khí Công.",
+                    "En 1985, il reprend contact avec le maître patriarche Trần Huy Phong. En 1986 avec le soutien officiel du Département de la Jeunesse et des Sports de Hanoï, il organise le déplacement de la première délégation de Vovinam-Viet Vo Dao de Hanoï pour se rendre à Saigon et rencontrer l\'autorité du Vovinam-Viet Vo Dao, maître patriarche Trần Huy Phong.",
+                    "/phanduongbinh/photo3.png&Photo 3:",
+                    "Cette rencontre symbolique et émouvante a marqué l\'histoire de notre École. Pour la 1ère fois, le Vovinam-Viet Vo Dao du Nord et du Sud a renoué des contacts après 32 ans de séparation (1954-1986), (photo 4).",
+                    "/phanduongbinh/photo4.png&Photo 4:",
+                    "A cette occasion, en qualité de maître patriarche de troisième génération, maître Trần Huy Phong a régularisé le grade de ceinture rouge deuxième degré (6ème Dang) pour maître Phan Dương Bình. Sept ans après, en 1993, il est promu ceinture rouge 3ème degré (7ème Dang) par maître patriarche Lê Sáng.",
+                    "En 1995, en réponse à l’appel du maître patriarche Trần Huy Phong, maître Phan Dương Bình et les maîtres de l\'ancien Conseil des Maîtres en 1964 ont publié le 16 septembre 1995 la déclaration de création officielle du Conseil Provisoire des Maîtres à l’étranger. Ce conseil est le précurseur du Conseil Mondial des Maîtres et de la Fédération Mondiale de Vovinam-Viet Vo Dao, créés lors du 2ème Congrès Mondial en 1996 à Paris. Par la même occasion, maître Phan Dương Bình est promu au titre de Grand Maître, Ceinture Blanche Suprême car faisant partie des membres de la tradition du Vovinam-Viet Vo Dao (disciple direct du maître fondateur ou/et membre du premier Conseil des Maîtres en 1964).",
+                    "A partir de cette date, il participe activement au Conseil Mondial des Maîtres, dont il devient Vice-président du Conseil Suprême des Maîtres pendant deux mandats successifs, de 2008 à 2012 et de 2012 à 2016.",
+                    "/phanduongbinh/photo5.png&Photo 5:",
+                    "/phanduongbinh/photo6.png&Photo 6:",
+                    "Dès 2009, la santé du maître Phan Dương Bình se dégrade lentement à cause de son grand âge. Il souhaite donc transmettre toutes ses connaissances sur l’énergie interne (Khí Công) dont il a la maitrise après plus de 60 ans de recherches. Cependant, il n\'a pas trouvé tout de suite la personne adéquate pour recevoir un tel enseignement et continuer à perpétuer ses œuvres.",
+                    "/phanduongbinh/photo7.png&Photo 7:",
+                    "Dans les années 1986, suite aux échanges avec le maître patriarche Trần Huy Phong, maître Phan Dương Bình a contribué à un certain nombre de matières pour enrichir le système technique du Vovinam- Viet Vo Dao comme Thất Thập Nhị Bát Thức, les Quyền de « Khí Công » (énergie) ainsi que les Song Luyện (travail à deux) réservés aux personnes âgées.",
+                    "/phanduongbinh/photo9.png&Photo 8:",
+                    "/phanduongbinh/photo9.png&Photo 9:",
+                    "Ces travaux ont été retransmis à certains maîtres et enseignants par les maîtres Trần Huy Phong et Lê Sáng. Parmi eux, cinq maîtres ont eu ce privilège : Ngô Kim Tuyền, Nguyễn Chánh Tứ, Trương Quang An, Vũ Kim Trọng et Trần Nguyên Đạo.",
+                    "Cependant, maître Phan Dương Bình n’est pas satisfait car ces enseignements n’ont pas eu le développement escompté et ne font pas partie du programme d’enseignement officiel du Vovinam-Viet Vo Dao, notamment celui destiné aux personnes âgées ; et ceci, malgré les efforts du maître Trần Huy Phong qui a créé le système pédagogique baptisé « Gymnastique de l’esprit » ou « Tâm Thể Dục » pour être enseigné à l’université Hung Vương, projet qui n’a jamais pu aboutir suite au décès de maître Trần Huy Phong.",
+                    "De plus, la matière de « Khí Công » (énergie) enseignée actuellement dans le Vovinam-Viet Vo Dao n\'est qu\'au stade d’initiation (niveau 1) alors que selon maître Phan Dương Bình, il devrait y avoir cinq niveaux.",
+                    "/phanduongbinh/photo10.png&Photo 10:",
+                    "C’est pourquoi le grand maître Phan Dương Bình a souhaité transmettre ses connaissances à maître Trần Nguyên Đạo, car il estime que celui-ci possède toutes les capacités requises pour poursuivre ses travaux.",
+                    "De plus, maître Trần Nguyên Đạo a déjà reçu les enseignements et hérité des œuvres de « Khí Công » du maître Trần Huy Phong avant son décès. Maître Dao dispose également des documents (photos, vidéos, documents) des maîtres Vũ Kim Trọng et Trương Quan An, lorsque ces derniers ont reçu l’enseignement du maître Trần Huy Phong. Pour maître Trần Nguyên Đạo, il est tout à fait légitime et qu\'il se doit poursuivre l’œuvre des maîtres Phan Dương Bình, Lê Sáng et Trần Huy Phong.",
+                    "Ainsi, depuis mai 2009, maître Trần Nguyên Đạo a décidé de se rendre régulièrement à Hà Nội pour compléter et terminer sa formation sur le Khí Công avec le grand maître Phan Dương Bình.",
+                    "En 2018, la santé de maître Phan Dương Bình, âgé de 89 ans, présente des signes de faiblesse, ce qui nécessite une hospitalisation. Conscient que le temps de maître Bình est compté, maître Trần Nguyên Đạo concentre tous ses efforts pour achever les deux livres de Khi Cong, supervisé par maître Phan Dương Binh depuis 2009. En juillet 2018, maître Trần Nguyên Đạo s\'est rendu au chevet de son maître à l\'hôpital pour lui présenter les deux livres de « Khí Công ». Satisfait et soulagé, maître Phan Dương Bình valide les deux œuvres attendues depuis de longue date.",
+                    "/phanduongbinh/photo11.png&Photo 11:",
+                    "Durant l\'été 2019, la santé du maître Phan Dương Bình, âgé de 90 ans, se détériore rapidement. Il a perdu sa parole et sa mobilité, mais son esprit est resté toujours lucide. Lorsque la délégation internationale est venue lui rendre visite au mois d’août 2019, il a même exécuté quelques gestes techniques avec maître Trần Nguyên Đạo, sous les yeux étonnés [des maîtres présents].",
+                    "Le 15 mai 2020, le grand maître Phan Dương Bình a quitté ce monde paisiblement avec satisfaction et soulagement.",
+                    "Son départ n\'est pas une surprise, mais la douleur est très intense pour tous ceux qui le connaissent.",
+                    "Le grand maître Phan Dương Binh est une étoile brillante du Vovinam-Viet Vo Dao. Sa disparition a laissé un grand vide dans le cœur de tous les pratiquants. C\'est une grande perte, non seulement pour le Vovinam-Viet Vo Dao, mais aussi pour tous les arts martiaux vietnamiens.",
+                ]
             }
         ]
     }',
     '{
         "id":12,
-        "note": [],
+        "note": [
+            "Grand maître Phan Dương Bình (1929-2020).",
+            "À l\'époque les pratiquants ne portaient pas de Vo Phuc, mais s’entrainent avec un maillot à manches courtes et portent des chaussures de ville.",
+            "Extrait des mémoires du grand maître Lê Văn Phúc: « Mémoires des jours de pratique avec le maître fondateur », revue spéciale du Vovinam-Viet Vo Dao, 1971, pages 76, 77 (Hồi ký những ngày theo học võ sư sáng tổ, đặc san Vovinam-Viet Vo Dao, 1971).",
+            "L\'Académie militaire Thu Duc ou Thu Duc Infantry School. Une école de formation d\'officiers de l\'armée de la République du Sud Vietnam.",
+            "Une école de la haute administration de la République du Sud Vietnam, équivalente à l\'ENA en France.",
+            "Disciple direct du maître fondateur ou/et membre du premier Conseil des Maîtres en 1964.",
+        ],
         "content": [
             {
                 "title": "",
-                "paragraphes": []
+                "paragraphes": [
+                    "Maître Lê Văn Phúc est non seulement un grand maître du Vovinam-Viet Vo Dao, mais aussi un poète, un écrivain, un journaliste pour de nombreux journaux et radios dans des pays comme États-Unis, Canada, Australie et Grande Bretagne (station de radio BBC).",
+                    "Dans le Vovinam-Viet Vo Dao, il occupe une place très particulière dans le cœur des pratiquants. Il est aimé et respecté de tous, non pas parce qu\'il est un maître ou un écrivain célèbre, mais par sa simplicité et son ouverture d’esprit.",
+                    "Maître Lê Văn Phúc est né le 14 décembre 1934 à Hải Dương, au Nord Vietnam. Il débute le Vovinam à l’âge de 17 ans, au moment où il s’est installé à Hanoï pour suivre ses études au lycée Nguyen Trai. Il s’entraîne sous la direction du maître Nguyễn Lộc à rue Hang Trong en 1951.",
+                    "Il a raconté l’enseignement du maître Nguyễn Lộc comme suit : « … Un an après m\'être renseigné et inscrit, je commence à apprendre réellement le Vovinam en 1951... Dans toute ma vie de pratiquant du Vovinam, je n’ai eu l’honneur d’être corrigé par maître Nguyễn Lộc qu’environ une dizaine de fois, mais chaque technique corrigée s\'est imprégnée au plus profond de moi-même. Les corrections sont très rapides, très fortes, très tranchantes et aussi très douloureuses. Et je ne peux que subir.",*
+                    "En général, maître Nguyễn Lộc explique pour que nous travaillions nous-mêmes. Parfois, maître [Binh] dispense les cours, pendant que maître Nguyễn Lộc nous observe. L’entraînement avec maître Binh est également très dur. A chaque faute technique, il nous corrige tout de suite de manière très énergique, une vraie correction pour ainsi dire. Comment pouvons-nous supporter ses coups de bottes écrasées [sur nos petites poitrines ?]. Après l’entraînement, lorsque nous nous massons la poitrine, ses bottes ont laissé une belle trace rouge comme souvenir et nous ressentons une très forte douleur. Je n’ai toujours pas compris comment nous avons fait pour être encore plus motivés au lieu de tout abandonner[... »].",
+                    "/levanphuc/photo1.png&Photo 1:",
+                    "En 1954, il a migré avec sa famille dans le Sud du Vietnam et a enseigné le Vovinam-Viet Vo Dao à la garde royale de Da Lat sous le règne de l’empereur Bao Dai jusqu’en 1955. Ensuite, maître Phuc a reçu l\'ordre de mobilisation générale pour entrer à l\'école des officiers de [Thu Duc] et reste militaire jusqu\'à sa démobilisation avec le grade de capitaine. Pendant cette période, il a toujours enseigné le Vovinam-Viet Vo Dao aux militaires où il a servi ainsi qu\'aux pratiquants civils jusqu\'en 1975.",
+                    "En 1970, titulaire d’un diplôme d’études supérieures de droit à l’université de Saigon et diplômé de l\'[École Nationale d\'Administration], il est nommé Directeur de Cabinet du Premier ministre de la République du Sud Vietnam. De par sa position, il a pu apporter son aide et sa contribution au Vovinam-Viet Vo Dao tout en restant humble et modeste, qualité qu’il a pu apprendre auprès du maître Nguyễn Lộc. Il raconte les paroles du maître fondateur comme suit : « …Vous devez changer vos méthodes de travail pour vous adapter à toutes les situations, innover pour que le Vovinam-Viet Vo Dao soit plus scientifique, plus moderne. Si vous vous apercevez que mon enseignement n\'est pas encore performant, votre devoir est de l’améliorer pour qu\'il devienne meilleur. Si ma méthode présente quelques lacunes, n\'hésitez pas à la compléter. Ce faisant, vos contributions sont bénéfiques pour que le Vovinam puisse devenir un art martial national… ».",
+                    "En 1975, à 41 ans, il a migré aux États-Unis d’Amérique dans des conditions difficiles. Au lieu d’être découragé et pessimiste, il a mobilisé son énergie pour écrire des poèmes et des livres. Ses œuvres ayant contribué à la culture vietnamienne sont très célèbres comme : Tôi Làm Tôi Mất Nước (j’ai fait perdre mon pays), Bóng Thời Gian (l’ombre du temps), Khung Trời Kỷ Niệm (un pan du ciel de souvenirs), etc.",
+                    "/levanphuc/photo2.png&Photo 2:",
+                    "Parallèlement à ses activités professionnelles, il a suivi de très près celles du Vovinam et a apporté régulièrement sa contribution.",
+                    "En 1995, en réponse à l’appel du maître patriarche Trần Huy Phong, maître Lê Văn Phúc et les maîtres de l\'ancien du Conseil des Maîtres en 1964, ont publié le 16 septembre 1995 la déclaration de création officielle du Conseil Provisoire des Maîtres à l’étranger. Ce conseil est le précurseur du Conseil Mondial des Maîtres et de la Fédération Mondiale de Vovinam-Viet Vo Dao, créés lors du 2ème Congrès Mondial en 1996 à Paris, France. A cette occasion, maître Lê Văn Phúc est promu au titre de Grand Maître, Ceinture Blanche Suprême car il a fait partie des [membres de la tradition du Vovinam-Viet Vo Dao].",
+                    "Maître Lê Văn Phúc a été élu pour deux mandats successifs (1996-2000 et 2000-2004) comme membre du bureau permanent du Conseil Mondial des Maîtres. En 2004, il a décidé de se retirer pour laisser la place à la jeune génération. Il est devenu alors membre du Conseil Suprême des Maîtres.",
+                    "/levanphuc/photo3.png&Photo 3:",
+                    "Maître Lê Văn Phúc est décédé le 7 août 2020 (18 juin de l\'année Canh Ty) à Reston, l\'État de Virginie, aux États-Unis, à 86 ans. Lors de son enterrement, conformément à ses souhaits, au moment de la mise en bière, sa famille a placé l’écusson Vovinam-Viet Vo Dao sur sa poitrine tandis que son Vo Phuc et sa Ceinture Blanche Suprême sont déposés à ses côtés.",
+                    "Le grand maître Lê Văn Phúc est une étoile brillante du Vovinam-Viet Vo Dao. Sa disparition a laissé beaucoup de chagrin et de regrets pour ses proches. C’est une grande perte, non seulement pour le Vovinam-Viet Vo Dao, mais aussi pour le monde littéraire et culturel de la communauté vietnamienne.",
+                ]
             }
         ]
     }'
