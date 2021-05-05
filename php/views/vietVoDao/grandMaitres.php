@@ -1,6 +1,11 @@
 <?php 
 require_once 'php/init.php';
 
+$greatMastersBeforeFetch = $db->query('SELECT * FROM specialist');
+$greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+
+//var_dump($greatMasters);
+
 $path = 'assets/img/Maitres';
 $greatMasters = ['
     {
@@ -63,10 +68,10 @@ $greatMasters = ['
                 "title":"I - La jeunesse et la période préliminaire à la création",
                 "paragraphes": [
                     "Monsieur Nguyễn Lộc est né le [24 mai 1912] dans le village de Huu Bang, district de Thach That, province de [Son Tay], au Nord du Vietnam. Fils de Monsieur Nguyễn Đình Xuyến et de Madame Nguyễn Thị Hoà, il est l\'aîné d\'une famille de trois frères et [deux sœurs]. Pour des raisons économiques, sa famille a déménagé ensuite à Hanoï, capitale du Vietnam.",
-                    "Maître Nguyễn Lộc a grandit dans un pays sous domination coloniale française depuis cinquante ans (1862-1912) <cf. annexe 1>, où les tensions sociales sont au [plus haut]. D’un côté, les révolutionnaires incitent la population et en particulier les jeunes à commettre des actions violentes contre le gouvernement colonial français, de l\'autre, les colonialistes utilisent toutes les ruses et manœuvres pour réprimer, terroriser ou endormir la population par des courants mondains, romantiques et dévergondés afin que les patriotes vietnamiens ne disposent de soutien dans la population pour étendre la révolution contre la puissance dominatrice.",
+                    "Maître Nguyễn Lộc a grandit dans un pays sous domination coloniale française depuis cinquante ans (1862-1912) (cf. annexe 1), où les tensions sociales sont au [plus haut]. D’un côté, les révolutionnaires incitent la population et en particulier les jeunes à commettre des actions violentes contre le gouvernement colonial français, de l\'autre, les colonialistes utilisent toutes les ruses et manœuvres pour réprimer, terroriser ou endormir la population par des courants mondains, romantiques et dévergondés afin que les patriotes vietnamiens ne disposent de soutien dans la population pour étendre la révolution contre la puissance dominatrice.",
                     "Face à cette situation, maître Nguyễn Lộc a pris conscience de ces courants opposés qui tiraillent le pays. Il cherche une autre voie dans le but de surpasser ces deux tendances et de développer une nouvelle orientation, pouvant conduire les jeunes vietnamiens dans une voie plus pacifique et plus noble.",
                     "D\'un côté, maître Nguyễn Lộc condamne avec fermeté la politique colonialiste et de l\'autre, il désapprouve les méthodes violentes préconisées par les révolutionnaires de l\'époque.",
-                    "Selon lui, l\'Homme doit être au centre de toute réflexion. Il prône la révolution du corps et de l’esprit <cf. annexe 2> pour guider la jeunesse sur trois plans : l’Esprit, le Corps et la Voie. Il considère que le fait d\'être humain est une bonne chose, mais devenir [l\'Homme Vrai] est encore plus noble.",
+                    "Selon lui, l\'Homme doit être au centre de toute réflexion. Il prône la révolution du corps et de l’esprit (cf. annexe 2) pour guider la jeunesse sur trois plans : l’Esprit, le Corps et la Voie. Il considère que le fait d\'être humain est une bonne chose, mais devenir [l\'Homme Vrai] est encore plus noble.",
                     "Pour lui, l\'Homme Vrai doit être ouvert au dialogue, indépendant, pacifique, énergique, courageux, tolérant, généreux, pur, respectueux, déterminé, cultivé, intègre, fort, utile et avoir le [sens de l’honneur]. L\'Homme Vrai se doit aussi de cultiver un corps robuste, solide, résistant et tenace pour se défendre et pour être utile à la société.",
                     "Avec ces valeurs, il veut, d’une part, aider les jeunes à s’échapper de l\'intoxication du régime colonial et, d’autre part, réveiller ceux qui se sont engagés dans la voie violente afin d’éviter des tueries et de la haine.",
                     "Maître Nguyễn Lộc pense que la société humaine est durable, alors que le régime colonial ou les violences révolutionnaires ne sont que temporaires. Il ne veut pas que les générations futures subissent les conséquences d’une politique d\'intoxication ou de violence. Ainsi, son souhait est de laisser au peuple vietnamien et à l\'humanité un modèle de vie, une méthode permettant de se perfectionner par l’art de cultiver son corps et son esprit avec un art martial moderne, inspiré de la tradition des arts martiaux vietnamiens plusieurs fois millénaires.",
@@ -80,12 +85,12 @@ $greatMasters = ['
                 "title": "II - La période de création (1939-1945)",
                 "paragraphes": [
                     "Après une année expérimentale réussie, qui dépasse largement ses prévisions, maître Nguyễn Lộc prend la décision de présenter le Vovinam au public.",
-                    "A l\'automne 1939, maître Nguyễn Lộc emmène ses premiers élèves <cf. annexe 3> au Grand Théâtre de Hanoï <cf. annexe 4> pour effectuer la première démonstration de l\'histoire du Vovinam. Parmi les élèves ayant participé à cette démonstration historique, figurent Mademoiselle Nguyễn Thị Minh <cf. annexe 5>, [Monsieur Tạ Quang Bửu] et Monsieur Nguyễn Đăng Hiển (D\'après les témoignages de Madame Nguyễn Lộc et des maîtres Nguyễn Dần, Lê sáng, Phan Dương Bình et Trần Huy Phong).",
+                    "A l\'automne 1939, maître Nguyễn Lộc emmène ses premiers élèves (cf. annexe 3) au Grand Théâtre de Hanoï (cf. annexe 4) pour effectuer la première démonstration de l\'histoire du Vovinam. Parmi les élèves ayant participé à cette démonstration historique, figurent Mademoiselle Nguyễn Thị Minh (cf. annexe 5), [Monsieur Tạ Quang Bửu] et Monsieur Nguyễn Đăng Hiển (D\'après les témoignages de Madame Nguyễn Lộc et des maîtres Nguyễn Dần, Lê sáng, Phan Dương Bình et Trần Huy Phong).",
                     "Par cette démonstration, il veut également mesurer l\'accueil de la population et évaluer à travers ses pratiquants, les valeurs martiales qu\'il a étudiées durant des années.",
                     "/archive/photo2.png&Photo2: Le Grand Théâtre de Hanoï, 1900. Source: Jean Noury, l\'indochine en cartes postales avant l\'ouragan, Publi-fusion, 1992",
                     "Après cette démonstration, le Vovinam est chaleureusement accueilli par tous les milieux sportifs et d\'arts martiaux à Hanoï, devenant ainsi le flambeau éclatant des arts martiaux nationaux pour la jeunesse. En effet, pendant plus de 75 ans (1862-1940), le gouvernement colonial français a interdit toutes les activités d\'arts martiaux au Vietnam. Maître Nguyễn Lộc est le premier à redonner vie aux arts martiaux nationaux, lançant ainsi un appel pour réveiller les consciences vietnamiennes plongées dans un sommeil profond depuis plus d’un demi-siècle.",
                     "Il redonne ainsi la confiance et la fierté aux jeunes oscillant encore entre les courants romantiques occidentaux et les idées haineuses.",
-                    "L\'affection et l\'estime de la population de Hanoï pour le Vovinam sont une grande surprise pour les autorités coloniales, dont Monsieur Maurice Ducoroy, Commissaire général de la Jeunesse et des Sports en Indochine [cf. annexe 6]. Par l\'intermédiaire du [docteur Đặng Vũ Hỷ], président de l\'Association sportive de Hanoï, Monsieur Maurice Ducoroy invite maître Nguyễn Lộc à [enseigner le Vovinam] à l\'[école Normale de Hanoï]. Maître Nguyễn Lộc accepte et commence officiellement l’enseignement du Vovinam en 1940.",
+                    "L\'affection et l\'estime de la population de Hanoï pour le Vovinam sont une grande surprise pour les autorités coloniales, dont Monsieur Maurice Ducoroy, Commissaire général de la Jeunesse et des Sports en Indochine (cf. annexe 6). Par l\'intermédiaire du [docteur Đặng Vũ Hỷ], président de l\'Association sportive de Hanoï, Monsieur Maurice Ducoroy invite maître Nguyễn Lộc à [enseigner le Vovinam] à l\'[école Normale de Hanoï]. Maître Nguyễn Lộc accepte et commence officiellement l’enseignement du Vovinam en 1940.",
                     "Par la suite, plusieurs clubs de Vovinam ouvrent dans différents quartiers de Hanoi, accueillant de nombreux jeunes issus de tous les milieux sociaux (lycéens, étudiants, employés et ouvriers). On découvre alors dans le Vovinam, non seulement des techniques simples, efficaces et faciles à pratiquer, mais aussi une philosophie de vie, basée sur",
                     "/archive/photo3.png&Photo 3: Maître Nguyễn Lộc entouré de ses élèves, Hanoï, 1948. G/D: Trần Đức Hợp, Nguyễn Cao Hách, Phan Dương Bình, Nguyễn Lộc, Bùi Thiện Nghĩa, Nguyễn Dần",
                     "l’idéal de l\'Homme Vrai en harmonie avec les valeurs millénaires des arts martiaux traditionnels du Vietnam.",
@@ -96,10 +101,10 @@ $greatMasters = ['
             {
                 "title": "III - La période de l\'indépendance du Vietnam",
                 "paragraphes": [
-                    "Le 9 mars 1945, l\'armée japonaise renverse le gouvernement colonial français en Indochine, arrête le gouverneur colonial, Jean Decoux, [cf. annexe 7] et rend l’indépendance au Vietnam. Le surlendemain, 11 mars 1945, l’empereur Bảo Đại [cf. annexe 8] proclame l\'indépendance, abolit tous les traités signés avec la France depuis 1884 et met fin à 83 ans de domination française.",
+                    "Le 9 mars 1945, l\'armée japonaise renverse le gouvernement colonial français en Indochine, arrête le gouverneur colonial, Jean Decoux, (cf. annexe 7) et rend l’indépendance au Vietnam. Le surlendemain, 11 mars 1945, l’empereur Bảo Đại (cf. annexe 8) proclame l\'indépendance, abolit tous les traités signés avec la France depuis 1884 et met fin à 83 ans de domination française.",
                     "Ce brusque changement est une surprise et en l’absence de préparation, laisse le pays dans le chaos et le désordre. En effet, la plupart des institutions jusqu’alors gérées par les Français, à savoir l\'économie, la politique, l\'armée, la police, l\'éducation, l\'administration, etc., se retrouvent subitement sans commandement. Le premier gouvernement indépendant, le gouvernement [Trần Trọng Kim], ne dure que quatre mois. Raison pour laquelle toutes les personnalités connues et compétentes sont invitées à entrer au gouvernement. Maître Nguyễn Lộc, avec son prestige de fondateur d\'un grand mouvement à Hanoï est invité à y entrer. Cependant, il décline formellement l’offre car selon lui, le Vovinam n’est pas un parti politique et n\'a donc pas vocation à s\'engager dans la politique pour imposer ses idées. Maître Nguyễn Lộc laisse néanmoins ses pratiquants libres de participer à la vie politique, le Vovinam ne portant pas atteinte à la liberté de ses pratiquants.",
                     "En revanche, le Vovinam œuvre pour la société. Ainsi lorsque la situation le réclame, le Vovinam participe et apporte son concours aux pouvoirs politiques pour effectuer des actions sociales, caritatives et humanitaires dans un esprit d\'altruisme et non lucratif. Animé par cette vision, maître Nguyễn Lộc, tout en déclinant l’offre d’entrer au gouvernement, accepte en revanche de l’aider dans les actions sociales et caritatives.",
-                    "C’est ainsi que pendant cette période d’instabilité, les pratiquants du Vovinam sont enthousiastes et assurent la sécurité dans les quartiers intra et extra-muros de Hanoï. En outre, maître Nguyễn Lộc collabore avec [d\'autres collectivités]pour organiser les fêtes nationales, telles que la commémoration des [rois Hùng Vươn], des [deux sœurs Trưng]. Ils participent également à l’organisation d’actions humanitaires dans le cadre du programme d\'aide à la terrible famine qui a ravagé le Nord du Vietnam et tué environ deux millions de personnes en 1945 <cf. annexe 9>.",
+                    "C’est ainsi que pendant cette période d’instabilité, les pratiquants du Vovinam sont enthousiastes et assurent la sécurité dans les quartiers intra et extra-muros de Hanoï. En outre, maître Nguyễn Lộc collabore avec [d\'autres collectivités]pour organiser les fêtes nationales, telles que la commémoration des [rois Hùng Vươn], des [deux sœurs Trưng]. Ils participent également à l’organisation d’actions humanitaires dans le cadre du programme d\'aide à la terrible famine qui a ravagé le Nord du Vietnam et tué environ deux millions de personnes en 1945 (cf. annexe 9).",
                     "Ainsi, maître Nguyễn Lộc utilise les actions sociales plutôt que la politique pour réaliser son idéal : celui de former une génération de jeunes utiles à la société. Il crée successivement des cours d\'auto-défense dans différents endroits : à l\'École Normale, à [l\'École Buoi], au [Parc de Au Tri Vien], au Parc de Septo et au Parc de Nha Den.",
                     "Il a notamment ouvert des cours Vovinam à la [Cité Universitaire] du Vietnam, cours destinés non seulement aux étudiants mais aussi à la population. Dans ce centre, outre l\'enseignement de techniques martiales, il a particulièrement œuvré à la transmission du savoir et de la connaissance, comme l\'esprit de l\'Homme Vrai. Plusieurs pratiquants de ses cours deviendront plus tard des cadres du [Parti Démocratique] et du partie Communiste comme [Dương Đức Hiền], [Cù Huy Cận], [Xuân Diệu] et [Phan Mỹ].",
                     "Parallèlement, pour répondre aux besoins des jeunes, il crée deux groupements de jeunesse : <ul><li>L\'association des pratiquants engagés (Đoàn Võ Sĩ Cảm Tử), qui comprend des jeunes pratiquants robustes et actifs.</li><li>L\'association des héros de demain (Đoàn Anh Hùng Ngày Mai), qui comprend des adolescents de moins de 18 ans.</li></ul>",
@@ -116,10 +121,10 @@ $greatMasters = ['
                     "Quelques temps plus tard, Dương Đức Hiền, ancien élève du maître Nguyễn Lộc à la Cité universitaire, qui n\'est plus Ministre de la Jeunesse mais devenu commandant général de la guérilla et de la milice populaire dans le district de Quoc Oai. Il apprend que maître Nguyễn Lộc est revenu au village de Huu Bang ; il l’informe que la guerre approche et lui conseille de s’en fuir à nouveau vers une région plus sûre.",
                     "Suivant ses conseils, maître Nguyễn Lộc et ses disciples se remettent en route. Partout où ils s’arrêtent, la résistance locale leur demande d’enseigner les arts martiaux aux jeunes et à la milice populaire. Cependant, ils ne restent jamais plus de trois mois à chaque endroit. Durant un an d’exil dans la région montagneuse, maître Nguyễn Lộc et ses disciples dispensent de nombreux cours de Vovinam dans les villages de Chue Luu, Am Thuong, Thanh Huong, Dan Ha, Dan Phu, etc. Malheureusement, ces entraînements restent épars et sporadiques à cause du manque de moyens de transport et de communication, mais surtout à cause de la guerre, source d’une grande incertitude.",
                     "Lassé par ces déplacements et par la guerre, maître Nguyễn Lộc descend vers Dong Quan où il retrouve le groupe de Nguyễn Mỹ qui revient de Thanh Hoa. Il conseille à ses disciples de retourner auprès de leurs familles. Il pense en effet qu’en développant leur enseignement chacun à des endroits différents, ils pourront aider plus efficacement la résistance. Il se sépare donc une nouvelle fois de ses disciples.",
-                    "Quelque temps après, maître Nguyễn Lộc s\'installe dans la zone contrôlée par la milice catholique à [Bui Chu et Phat Diem], une zone autonome peuplée de catholiques, dirigée par les évêques [Lê Hữu Từ] et [Phạm Ngọc Chi]. Faisant suite à l\'invitation de Monsieur Trần Thiện, commandant général de la milice catholique de cette zone, maître Nguyễn Lac envoie ses disciples enseigner les arts martiaux aux militaires et aux jeunes de cette zone <cf. annexe 10>",
+                    "Quelque temps après, maître Nguyễn Lộc s\'installe dans la zone contrôlée par la milice catholique à [Bui Chu et Phat Diem], une zone autonome peuplée de catholiques, dirigée par les évêques [Lê Hữu Từ] et [Phạm Ngọc Chi]. Faisant suite à l\'invitation de Monsieur Trần Thiện, commandant général de la milice catholique de cette zone, maître Nguyễn Lac envoie ses disciples enseigner les arts martiaux aux militaires et aux jeunes de cette zone (cf. annexe 10)",
                     "En août 1948, maître Nguyễn Lac retourne à Hanoï. Il se retrouve dans une situation difficile, mais malgré cela, il continue à ouvrir des cours Vovinam et à former de nouveaux élèves. Cependant, ses élèves ne restent pas longtemps, soit pour des raisons économiques, soit pour s’engager dans la guerre franco-vietnamienne. Parmi les disciples qui l’ont suivi à Hanoï, maître Lê Sáng demande lui aussi à suspendre ses activités pour des raisons économiques pendant six ans (cf. annexe 16). Le seul enseignant resté auprès de",
-                    "/archive/photo4.png&Photo 4 : Hanoï 1990. Les retrouvailles des anciens après 36 ans de séparation (1954-1990) G/D : Phan Dương Bình, Lê Sáng, Nguyễn Mỹ, Trịnh Cự Quí, Đặng Văn Bảy Extrait de la revue Vovinam-Viet Vo Dao, États-Unis, 1991",
-                    "maître Nguyễn Lộc est maître Phan Dương Bình, l’un de ses meilleurs élèves et le disciple le plus efficace durant cette période difficile. Maître Bình l’aide à enseigner le Vovinam au club de Hang Trong et à [l\'École Hang Than]. Parmi les élèves de cette période, Lê Văn Phúc, deviendra plus tard un grand maître du Vovinam <cf. annexe 11>.",
+                    "/archive/photo4.png&Photo 4: Hanoï 1990. Les retrouvailles des anciens après 36 ans de séparation (1954-1990) G/D: Phan Dương Bình, Lê Sáng, Nguyễn Mỹ, Trịnh Cự Quí, Đặng Văn Bảy Extrait de la revue Vovinam-Viet Vo Dao, États-Unis, 1991",
+                    "maître Nguyễn Lộc est maître Phan Dương Bình, l’un de ses meilleurs élèves et le disciple le plus efficace durant cette période difficile. Maître Bình l’aide à enseigner le Vovinam au club de Hang Trong et à [l\'École Hang Than]. Parmi les élèves de cette période, Lê Văn Phúc, deviendra plus tard un grand maître du Vovinam (cf. annexe 11).",
                     "En 1951, maître Nguyễn Lộc et d’autres personnalités de Hanoï créent l\'association des experts [d\'Arts Martiaux Vietnamiens] (Việt Nam Võ Sĩ Đoàn). Cette association relance le mouvement Vovinam avec des entraînements de masse à l\'École Hang Than, à Hanoï. Néanmoins, en 1954, la guerre franco-vietnamienne arrivant dans une phase cruciale, maître Nguyễn Lộc doit à nouveau suspendre toutes ses activités.",
                     "En juin 1954, l’armée française est vaincue à Dien Bien Phu. Les accords de Genève sont signés le 20 juillet 1954, mettant fin à la guerre. Le Vietnam est alors séparé en deux, le Nord dirigé par Hồ Chí Minh, qui établit le régime Communiste et le Sud est gouverné par Bảo Đại sous un régime Républicain monarchique."
                 ]
@@ -130,9 +135,9 @@ $greatMasters = ['
                     "En août 1954, en raison du partage Nord-Sud du Vietnam, maître Nguyễn Lộc et sa famille décident de migrer au Sud, à Saigon, avec quelques-uns de ses disciples les plus [proches], notamment Phan Dương Bình, Nguyễn Dần et Trần Đức Hợp. Dans le même temps, d\'autres disciples migrent eux aussi à Saigon comme Lê Sáng, Bùi Thiện Nghĩa, Hà Trọng Thịnh, Nguyễn Văn Thông, Lê Trọng Hiệp, Lê Văn Phúc, Ngô Hữu Liễn, etc",
                     "Maître Nguyễn Lộc arrive au Sud Vietnam dans une situation politique brûlante et chaotique, laissant derrière lui tous ses biens afin de poursuivre son idéal : former une génération de jeunes pour la société et pour l\'humanité.",
                     "La première salle d’entraînement de Vovinam inaugurée au Sud Vietnam se situe au [51 rue Frères Louis à Saigon]. Par la suite, elle déménage à la rue Aviateur Garros, appelée [club de Thu Khoa Huan]. Ce club est le centre d’entrainement de Vovinam le plus importante du maître Nguyễn Lộc. Les pratiquants se comptent par centaine, parmi les pratiquants formés dans ce club, il y a Trần Huy Phong, Phạm Hữu Độ, Nguyễn Văn Thư, Ngô Hữu Liễn, Trần Thế Phượng, Nguyễn Văn Nuôi, Nguyễn Gia Tuấn, etc.",
-                    "/archive/photo5.png&Photo 5 : en 1955, Maître Nguyễn Lộc enseigne à l\'École National de la Gendarmerie du Vietnam",
+                    "/archive/photo5.png&Photo 5: en 1955, Maître Nguyễn Lộc enseigne à l\'École National de la Gendarmerie du Vietnam",
                     "Par ailleurs, le Vovinam est invité par les autorités de la République du Sud Vietnam à enseigner à l’École des Officiers de la [Gendarmerie Nationale de Thu Duc] (photo 5 et 6) et à un certain nombre d\'unités du régiment du génie de l’armée.",
-                    "Malheureusement, en 1957, la santé de maître Nguyễn Lộc se dégrade subitement. Il est forcé d’arrêter l’enseignement et déménage chez son jeune frère Nguyễn Hải au [Building Everest] où il continue d\'étudier les arts martiaux et perfectionne le système philosophique du Vovinam. Il autorise ses disciples Lê Sáng, Trần Huy Phong, Nguyễn Gia Tuấn, Nguyễn Văn Nuôi et Nguyễn Văn Thư, à ouvrir d’autres salles d’entraînement, tandis qu’il se retire comme conseiller. Ceux-ci créer le centre d’entraînement central du Vovinam, dont le siège est installé à l\'avenue Tran Hung Dao, dans le 5ème district de Saigon <cf. annexe 12> et les succursales situées rue Tran Khanh Du, rue Su Van Hanh et rue Phan Dinh Phung.",
+                    "Malheureusement, en 1957, la santé de maître Nguyễn Lộc se dégrade subitement. Il est forcé d’arrêter l’enseignement et déménage chez son jeune frère Nguyễn Hải au [Building Everest] où il continue d\'étudier les arts martiaux et perfectionne le système philosophique du Vovinam. Il autorise ses disciples Lê Sáng, Trần Huy Phong, Nguyễn Gia Tuấn, Nguyễn Văn Nuôi et Nguyễn Văn Thư, à ouvrir d’autres salles d’entraînement, tandis qu’il se retire comme conseiller. Ceux-ci créer le centre d’entraînement central du Vovinam, dont le siège est installé à l\'avenue Tran Hung Dao, dans le 5ème district de Saigon (cf. annexe 12) et les succursales situées rue Tran Khanh Du, rue Su Van Hanh et rue Phan Dinh Phung.",
                     "C’est à cette époque que maître Lê Sáng, étant le plus âgé et ayant le plus d’ancienneté dans la discipline, est appelé [Maître Aîné (võ sư trưởng)]."
                 ]
             },
@@ -145,24 +150,70 @@ $greatMasters = ['
                     "Cet esprit moderne est visible dans la plupart des photos, où l\'on peut voir maître Nguyễn Lộc en tenue de ville et ses élèves le saluant debout, en se tenant droit et le regardant en face. Cet esprit a fait du Vovinam-Viet Vo Dao un art martial populaire, ouvert à tous les milieux sociaux. Le Vovinam n\'a rien à cacher, n’est ni mystérieux, ni sélectif, ni réservé à une élite minoritaire comme dans la plupart des écoles d\'arts martiaux de l’époque. C’est grâce à cet esprit a permit au vovinam de continuer de progresser malgré les guerres et les interdictions et de se développé jusqu’à devenir un art martial mondial.",
                     "Sur le plan d’organisationnel, maître Nguyễn Lộc n\'est pas obnubilé par la hiérarchie, ni par une gestion complexe. Il préfère la simplicité et privilégie les actions efficaces afin d\'atteindre facilement l’objectif. Par conséquent, durant toute la période d\'édification de 1938 à 1960, le Vovinam n\'a pas de patriarche. Maître Nguyễn Lộc se contente d’être reconnu comme le maître fondateur.",
                     "Bien qu’ayant fondé le Vovinam par ses efforts personnels, il persiste à considérer que cette œuvre doit être dédiée à la société et à l\'humanité, conformément à l\'idéal qu\'il poursuit. Selon ses souhaits, le Vovinam ne doit pas être considéré comme son œuvre personnelle ou celle de [sa famille], mais comme un héritage de la culture des arts martiaux vietnamiens, une œuvre collective à laquelle tous les maîtres et pratiquants ont le droit de contribuer et poursuivre comme dans une grande famille.",
-                    "Sa façon d’enseigner est très minutieuse ; il s\'occupe de chaque pratiquant en fonction de leurs aptitudes techniques et niveaux culturels. Lui seul peut enseigner les nouvelles techniques et ses assistants ont le devoir de les faire réviser en [son absence].Plus tard, cette méthode deviendra « La méthode » d’enseignement du Vovinam-Viet Vo Dao, une « méthode non codifiée », mais que tous les maîtres appliquent encore de nos jours.",
-                    "/archive/photo6.png&Photo 6 : en 1955, Devant l\'École Nationale de la Gendarmerie du Vietnam – de gauche à droite Nguyễn Văn Thông, Trần Đức Hợp, Lê Sáng, Nguyễn Lộc, Bùi Thiện Nghĩa, Nguyễn Cao Hách, Nguyễn Dần",
+                    "Sa façon d’enseigner est très minutieuse ; il s\'occupe de chaque pratiquant en fonction de leurs aptitudes techniques et niveaux culturels. Lui seul peut enseigner les nouvelles techniques et ses assistants ont le devoir de les faire réviser en [son absence]. Plus tard, cette méthode deviendra « La méthode » d’enseignement du Vovinam-Viet Vo Dao, une « méthode non codifiée », mais que tous les maîtres appliquent encore de nos jours.",
+                    "/archive/photo6.png&Photo 6: en 1955, Devant l\'École Nationale de la Gendarmerie du Vietnam – de gauche à droite Nguyễn Văn Thông, Trần Đức Hợp, Lê Sáng, Nguyễn Lộc, Bùi Thiện Nghĩa, Nguyễn Cao Hách, Nguyễn Dần",
                     "Quant aux disciples ayant un bon niveau culturel et une aptitude au management, maître Nguyễn Lộc les forme plus particulièrement dans les domaines sociaux, politiques, psychologiques et de gestion. Il encourage souvent ses élèves à participer aux activités collectives et sociales en dehors des cours d\'arts martiaux. Grâce à cela, la plupart des maîtres qu’il a formés ont acquis des compétences aussi bien sur le plan technique qu’intellectuel et obtiennent souvent une bonne position dans la société."
                 ]
             },
             {
                 "title": "VII - Le décès du maître Nguyễn Lộc",
                 "paragraphes": [
-                    "Maître Nguyễn Lộc décède le [29 avril 1960] à Saigon <cf. annexe 13> et est inhumé dans le cimetière de Mac Dinh Chi <cf. annexe 14>. Il laisse neuf enfants, trois garçons et six filles. Il n’a vécu que 48 ans mais a laissé aux arts martiaux vietnamiens et à l’humanité une œuvre extraordinaire : le Vovinam-Viet Vo Dao.",
+                    "Maître Nguyễn Lộc décède le [29 avril 1960] à Saigon (cf. annexe 13) et est inhumé dans le cimetière de Mac Dinh Chi (cf. annexe 14). Il laisse neuf enfants, trois garçons et six filles. Il n’a vécu que 48 ans mais a laissé aux arts martiaux vietnamiens et à l’humanité une œuvre extraordinaire : le Vovinam-Viet Vo Dao.",
                     "Il laisse également une génération de jeunes bien formés, pleins d\'idéaux, capables de lui succéder pour atteindre l’objectif dont il a tant rêvé, celui de populariser le Vovinam-Viet Vo Dao au niveau national avec comme idéal, « Être Fort Pour Être Utile » et être « l’Homme Vrai ». Ses disciples réaliseront beaucoup d’avancées vers cet objectif durant la période entre 1960 et 1975, mais ils considèrent toujours cette œuvre comme inachevée.",
                     "Aujourd\'hui, le Vovinam-Viet Vo Dao est devenu un symbole de la culture vietnamienne, largement répandu à travers le monde, sans distinction d\'appartenance ethnique, de pays, de religion ou d\'opinion politique."
                 ]
             },
             {
-                "title": "VIII - Éloge funèbre du maître Nguyễn Lộc",
-                "paragraphes": []
+                "title": "VIII - Éloge funèbre du maître Nguyễn Lộc <br> <small class=\"praise-sub\">Lu par Maître Aîné Lê Sáng lors de la cérémonie d\'enterrement du fondateur Nguyễn Lộc au cimetière de Mac Dinh Chi à Saigon, avril 1960.</small>",
+                "paragraphes": [
+                    "<div class=\"catch-phrase\"></div>",
+                    "La vie et la mort, tout le monde doit passer par là, mais nous même, comme tous les pratiquants du Vovinam, ne pensons pas que ce moment douloureux est arrivé si tôt.",
+                    "Rappelle-toi de l’époque où le pays était encore sous le [joug de l\'esclavage]. Animé d’une passion débordante, tu as quitté tes amis insouciants pour t\'engager personnellement dans une noble voie.",
+                    "Avec talent, tu as pu harmoniser la quintessence des arts martiaux anciens et modernes de l\'Asie pour concevoir une discipline au service de la nation.",
+                    "Au fil des ans, tu as développé le fruit de ton invention en transmettant une force intense à la jeunesse pour une vie meilleure, confiante, fière et utile.",
+                    "Grâce à toi, la patrie est resplendissante !",
+                    "Grâce à toi, la jeunesse n\'est plus désorientée !",
+                    "Ainsi, tu es devenu célèbre dans tout le pays, du Nord au Sud, à travers des millions de pratiquants.",
+                    "Sous la domination française, les colonialistes te craignaient. Ils ont tout essayé mais n\'ont pas pu te corrompre. Sous la domination japonaise, les fascistes n’ont pas réussi à t’ébranler par l\'argent ou la gloire. Pendant toute la période où le pays était en mouvement, tu as su donner au peuple l\'arme la plus tranchante pour être confiant dans la lutte et pour défendre notre chère patrie. Comme toujours, tu es resté en dehors de tout endoctrinement pour être indépendant, la tête haute, et avec un seul objectif : former des générations de jeunes en bonne santé physique et mentale.",
+                    "Pourquoi le destin si capricieux t’a-t-il emporté trop tôt, laissant à ceux qui restent beaucoup de regrets et d’affection.",
+                    "<div class=\"catch-phrase\"></div>",
+                    "Émus au point de ne pouvoir te faire d\'éloge funèbre, voici tes proches en sanglots qui n’arrêtent pas de pleurer, voilà tes élèves qui sont venus te dire adieu, le cœur serré.",
+                    "Nous te pleurons en te remerciant des liens affectueux maître-élèves qui nous unissent ; nous te pleurons et t’adressons notre profonde gratitude. Tu nous as considérés comme les membres de ta famille, tu nous as traités comme tes frères de sang.",
+                    "Aujourd’hui, tu n\'es plus sur Terre ; ton corps est parti, mais ton esprit reste encore, et restera pour toujours dans le cœur des générations futures et dans l\'histoire.",
+                    "Toujours fidèles à notre idéal, nous nous engageons à suivre ton exemple, à être dignes de ta confiance et à poursuivre la voie de l\'art martial Vovinam.",
+                    "<div class=\"catch-phrase\"></div>",
+                    "De ton vivant, tu as glorifié notre pays. Ta mort signifie simplement que tu nous as transmis ta force, et maintenant, c\'est à notre tour de retransmettre cette énergie au peuple et aux générations futures.",
+                    "S\'associant avec l\'âme sacrée du pays, nous sommes convaincus que tu resteras toujours à nos côtés pour nous guider et nous rappeler à remplir notre devoir.",
+                    "<div class=\"catch-phrase\"></div>",
+                    "En ce moment réunis ici, nous nous inclinons devant ton cercueil pour te dire adieu et prions pour toi, pour que ton âme soit libre dans l\'au-delà."
+                ]
             }
         ]
+    }',
+    '{
+        "id": 1,
+        "note": [],
+        "content": []
+    }',
+    '{
+        "id": 2,
+        "note": [],
+        "content": []
+    }',
+    '{
+        "id": 3,
+        "note": [],
+        "content": []
+    }',
+    '{
+        "id": 4,
+        "note": [],
+        "content": []
+    }',
+    '{
+        "id": 5,
+        "note": [],
+        "content": []
     }'
 ];
 
@@ -261,16 +312,24 @@ $fondatorData = $greatMasters[0];
                     <!-- Modal body -->
                     <div class="modal-body">
                         <?php 
+                        $hint =0;
                         for ($i=0;$i<count($fondatorData['content']);$i++){
                             $part = $fondatorData['content'][$i];
                         ?>
-                        <div class="subtitle pl-3">
-                            <h4><?php echo $part['title']?></h4>
-                        </div>
-                        <div class="content pl-5 pr-5">
+                        <div id=<?php echo $i?>>
+                            <div class="subtitle pl-3">
+                                <h4><?php echo $part['title']?></h4>
+                            </div>
+                            <div class="content pl-4 pr-4">
                             <?php 
-                            $hint =0;
                             foreach ($part['paragraphes'] as $sentence){
+                                if ($sentence[0] == '/'){
+                                    $sentence = explode("&",$sentence);
+                                    echo '<img src="#">';
+                                    $sentence = $sentence[1];
+                                    echo '<p> <b>'.$sentence.'</b> </p>';
+                                    continue;
+                                }
                                 for ($a=0;$a<strlen($sentence);$a++){
                                     if ($sentence[$a] == '['){
                                         $sentence = str_replace_first("[","<span class=\"hint\" rel=\"tooltip\" title=\"".$fondatorData['note'][$hint]."\">",$sentence);
@@ -280,46 +339,17 @@ $fondatorData = $greatMasters[0];
                                 }
                                 echo '<p>'.$sentence.'</p>';
                             }
-                            ?>
+                            ?>  
+                            </div>
                         </div>
                         <?php
                         }
                         ?>
-                        <!--
-                        <div class="subtitle">
-                            <h4> VIII - Éloge funèbre du maître Nguyễn Lộc</h4>
-                            <h4 class="praise-sub"><small>Lu par Maître Aîné Lê Sáng lors de la cérémonie d'enterrement du fondateur Nguyễn Lộc au cimetière de Mac Dinh Chi à Saigon, avril 1960.</small></h4>
-                        </div>
-                        <div class="praise pl-5 pr-5">
-                                            
-                                            <p>Grand frère Nguyễn Lộc !</p>
-                                            
-                                            <div class="catch-phrase"></div>
-                                            <p>La vie et la mort, tout le monde doit passer par là, mais nous même, comme tous les pratiquants du Vovinam, ne pensons pas que ce moment douloureux est arrivé si tôt.</p>
-                                            <p>Rappelle-toi de l’époque où le pays était encore sous <span class="hint" rel="tooltip" title="<?php echo $note[51]?>">le joug de l'esclavage<span class="note">52</span></span>. Animé d’une passion débordante, tu as quitté tes amis insouciants pour t'engager personnellement dans une noble voie.</p>
-                                            <p>Avec talent, tu as pu harmoniser la quintessence des arts martiaux anciens et modernes de l'Asie pour concevoir une discipline au service de la nation.</p>
-                                            <p>Au fil des ans, tu as développé le fruit de ton invention en transmettant une force intense à la jeunesse pour une vie meilleure, confiante, fière et utile.</p>
-                                            <p>Grâce à toi, la patrie est resplendissante !</p>
-                                            <p>Grâce à toi, la jeunesse n'est plus désorientée !</p>
-                                            <p>Ainsi, tu es devenu célèbre dans tout le pays, du Nord au Sud, à travers des millions de pratiquants.</p>
-                                            <p>Sous la domination française, les colonialistes te craignaient. Ils ont tout essayé mais n'ont pas pu te corrompre. Sous la domination japonaise, les fascistes n’ont pas réussi à t’ébranler par l'argent ou la gloire. Pendant toute la période où le pays était en mouvement, tu as su donner au peuple l'arme la plus tranchante pour être confiant dans la lutte et pour défendre notre chère patrie. Comme toujours, tu es resté en dehors de tout endoctrinement pour être indépendant, la tête haute, et avec un seul objectif : former des générations de jeunes en bonne santé physique et mentale.</p>
-                                            <p>Pourquoi le destin si capricieux t’a-t-il emporté trop tôt, laissant à ceux qui restent beaucoup de regrets et d’affection.</p>
-                                            <div class="catch-phrase"></div>
-                                            <p>Émus au point de ne pouvoir te faire d'éloge funèbre, voici tes proches en sanglots qui n’arrêtent pas de pleurer, voilà tes élèves qui sont venus te dire adieu, le cœur serré.</p>
-                                            <p>Nous te pleurons en te remerciant des liens affectueux maître-élèves qui nous unissent ; nous te pleurons et t’adressons notre profonde gratitude. Tu nous as considérés comme les membres de ta famille, tu nous as traités comme tes frères de sang.</p>
-                                            <p>Aujourd’hui, tu n'es plus sur Terre ; ton corps est parti, mais ton esprit reste encore, et restera pour toujours dans le cœur des générations futures et dans l'histoire.</p>
-                                            <p>Toujours fidèles à notre idéal, nous nous engageons à suivre ton exemple, à être dignes de ta confiance et à poursuivre la voie de l'art martial Vovinam.</p>
-                                            <div class="catch-phrase"></div>
-                                            <p>De ton vivant, tu as glorifié notre pays. Ta mort signifie simplement que tu nous as transmis ta force, et maintenant, c'est à notre tour de retransmettre cette énergie au peuple et aux générations futures.</p>
-                                            <p>S'associant avec l'âme sacrée du pays, nous sommes convaincus que tu resteras toujours à nos côtés pour nous guider et nous rappeler à remplir notre devoir.</p>
-                                            <div class="catch-phrase"></div>
-                                            <p>En ce moment réunis ici, nous nous inclinons devant ton cercueil pour te dire adieu et prions pour toi, pour que ton âme soit libre dans l'au-delà.</p>
-                                            <div class="source"></div>
-                        </div>-->
                     </div>
                     <script>
                         fondatorModal = document.getElementById('fondator');
                         catchPhrase = fondatorModal.getElementsByClassName('catch-phrase');
+                        catchPhrase[0].parentElement.classList.add("praise");
                         for (i=0;i<catchPhrase.length;i++){
                             catchPhrase[i].innerHTML = "<p>Grand frère Nguyễn Lộc !</p>";
                         }
@@ -327,6 +357,7 @@ $fondatorData = $greatMasters[0];
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
+                        <p class="praise"><small>Extrait du livre « Histoire du Vovinam-Viet Vo Dao » rédigé et publié par le Grand-maitre TRAN Nguyen Dao.</small></p>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -338,16 +369,10 @@ $fondatorData = $greatMasters[0];
                 <h1 class="content-title-blue">Les grands maîtres</h1>
             </div>
         </div> 
-        <?php 
-        $greatMastersBeforeFetch = $db->query('SELECT * FROM specialist');
-        $greatMasters = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
-
-        //var_dump($greatMasters);
-        ?>
         <!-- Carte des grands ME -->
         <div class="row">
             <?php
-            for ($i=0;$i<count($greatMasters);$i++){
+            for ($i=0;$i<count($greatMastersDB);$i++){
             ?>
             <div class="col-sm-6">
                 <!-- Une carte -->
@@ -362,10 +387,10 @@ $fondatorData = $greatMasters[0];
                                 </div>
                                 <!-- Contenu -->
                                 <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maître <?php echo $greatMasters[$i]['name']?></h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;"><?php echo $greatMasters[$i]['birthday'].' - '.$greatMasters[$i]['deathDate']?></p>
+                                    <h3 class="name" style="display:inline-block">Maître <?php echo $greatMastersDB[$i]['name']?></h3>
+                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;"><?php echo $greatMastersDB[$i]['birthday'].' - '.$greatMastersDB[$i]['deathDate']?></p>
                                     <?php 
-                                    $functions = explode(',', $greatMasters[$i]["function"]);
+                                    $functions = explode(',', $greatMastersDB[$i]["function"]);
                                     for ($a=0; $a<count($functions); $a++){
                                         echo '<p>'.$functions[$a].'</p>';
                                     }
@@ -383,12 +408,12 @@ $fondatorData = $greatMasters[0];
                         <div class="back">
                             <!-- Titre -->
                             <div class="header">
-                                <h5><b>Biographie de <?php echo $greatMasters[$i]['name']?></b></h5>
+                                <h5><b>Biographie de <?php echo $greatMastersDB[$i]['name']?></b></h5>
                             </div>
                             <!-- Contenu -->
                             <div class="content">
                                 <div class="main">
-                                    <p><?php echo $greatMasters[$i]['biography']?></p>
+                                    <p><?php echo $greatMastersDB[$i]['biographyShort']?></p>
                                 </div>
                             </div>
                             <!-- Boutton de rotation -->
