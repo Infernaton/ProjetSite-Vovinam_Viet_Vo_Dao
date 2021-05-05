@@ -16,12 +16,17 @@
         <div class="hide">
             <div id="first">
                 <h3>Compétitions à venir</h3>
-                <div class = "new">
+                <div class = "compet_new" id ="new-1">
                     <h4>Compétition 1</h4>
                     <p class = "date"> 22 mai 2022 - 23 mai 2022 </p>
                     <p class= "lieux"> Paris</p>
                 </div>
                 <br>
+                <div class = "compet_new" id ="new-2">
+                    <h4>Compétition 2</h4>
+                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
+                    <p class= "lieux"> Bordeaux</p>
+                </div>
             </div>
             <div id="second">
                 <h5>Précédente compétitions</h5>

@@ -9,6 +9,7 @@ h5{
 li{
   margin-top: 0.5%;
 }
-.new{
-  border: 2px solid #1c55a3;
+.compet_new{
+    border-bottom: 2px solid #1c55a3;
+    border-radius: 5px;
 }
