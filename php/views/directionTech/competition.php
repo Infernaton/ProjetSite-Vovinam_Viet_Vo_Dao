@@ -15,7 +15,7 @@
         </div>
         <div class="hide">
             <div id="first">
-                <h3>Compétitions à venir</h3>
+                <h3 id = "venir" > Compétitions à venir</h3>
                 <div class = "compet_new" id ="new-1">
                     <h4>Compétition 1</h4>
                     <p class = "date"> 22 mai 2022 - 23 mai 2022 </p>
