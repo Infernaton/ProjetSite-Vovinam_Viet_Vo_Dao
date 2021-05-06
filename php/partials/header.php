@@ -1,6 +1,25 @@
 <?php 
 function partials_header($categorie,$page){
 ?>   
+<!-- Configurations de la page -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/font_title.css">
+    <title>Vovinam Viet Vodao</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid header">
+            <div class="row">
+                <div class="col-sm-2"><a href="?c=home"><img src="assets/img/logo.png" width="45%" height="100%"></a></div>
+                <div class="col-sm-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
+            </div>
+        </div>
+    </header>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-sm justify-content-center sticky-top navbar-lightgray">
         <ul class="navbar-nav">
@@ -65,8 +84,10 @@ function partials_header($categorie,$page){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<?php
+    if ($categorie!='admin'){
+        ?>
 <script> 
-
 //To print in red the current Page
 currentCategory= document.getElementById('<?php echo $categorie?>');
 categoryName = currentCategory.getElementsByClassName("nav-link")[0];
@@ -77,6 +98,7 @@ if (typeof(specCategory) != 'undefined' && specCategory != null){
     specCategory.classList.add("red");
 }
 </script>
-<?php
+        <?php
+    }
 }
 ?>
