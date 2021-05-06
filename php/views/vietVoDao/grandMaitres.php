@@ -973,8 +973,8 @@ $fondatorData = $greatMasters[0];
         for($i=0;$i<count($greatMastersDB);$i++) {
         ?>
         <div class="modal fade" id="m-<?php echo $greatMastersDB[$i]['id']?>">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
 
                         <div class="modal-header">
                             <h3 class="modal-title">Maître <?php echo $greatMastersDB[$i]['name']?><small class="profession"> <?php echo $greatMastersDB[$i]['birthday'].' - '.$greatMastersDB[$i]['deathDate']?></small></h3>
@@ -1022,9 +1022,9 @@ $fondatorData = $greatMasters[0];
                             <p class="praise"><small>Extrait du livre « Histoire du Vovinam-Viet Vo Dao » rédigé et publié par le Grand-maitre TRAN Nguyen Dao.</small></p>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
-                    </div>
                 </div>
             </div>
+        </div>
         <?php
         }
         ?>
