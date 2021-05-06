@@ -220,7 +220,7 @@ $greatMasters = ['
                     "Fils de Monsieur Trần Văn Bảng (1898-1975) et de Madame Trần Thị Nhạn (1913-1993), il est issu d’une famille dotée d\'une tradition martiale depuis le XIIème siècle. Il est le 27ème descendant du grand [Trần Hưng Đạo (1228-1300)]",
                     "Ayant grandi dans une période où le Vietnam était encore sous la domination française, il a eu la chance de vivre sur les terres de la famille Tran à Nam Dinh et a pu recevoir les enseignements selon les traditions martiales de la famille. Tous les jours, son grand-père, Monsieur Trần Văn Khiêm (1879-1949), lui a dispensé des cours d\'arts martiaux, d’acupuncture, de stratégies, de techniques de lutte, de techniques d’équitation ainsi que l’art de diriger et de commander.",
                     "Cette formation a forgé en lui la générosité, un noble esprit et un caractère énergique, prêt à défendre les causes justes.",
-                    "/tranhuyphong/photo1.png&Photo 1 - 1991, Couverture du livre "Esprit Trần Huy Phong" Commémoration du 20ème anniversaire de son décès (1997-2017)",
+                    "/tranhuyphong/photo1.png&Photo 1 - 1991, Couverture du livre \"Esprit Trần Huy Phong\" Commémoration du 20ème anniversaire de son décès (1997-2017)",
                     "Son courage et sa volonté se remarquent déjà à l’adolescence. En 1950, à l’âge de 12 ans, sa famille s’est retrouvée dans une pauvreté extrême en raison de la guerre franco-vietnamienne (1946-1954) [] et sa mère est tombée gravement malade. Sa famille a perdu tout contact avec son père qui occupait un poste de responsable dans la province Cam Pha (près de la frontière chinoise), il a décidé alors d’emmener son petit frère Trần Huy Quyền, 5 ans, pour franchir à pied quelques [centaines de kilomètres] afin de retrouver leur père. Lors de leurs retrouvailles, le père de maître Trần Huy Phong, très ému, a pris la décision de démissionner de son poste pour rentrer avec ses deux enfants afin de sauver sa femme.",
                     "En 1954, à la suite aux accords de Genève, maître Trần Huy Phong a suivi sa famille dans le Sud du Vietnam. A l’âge de 16 ans, il a rencontré le maître Nguyễn Lộc avec qui il a débuté le Vovinam-Viet Vo Dao en 1954 au club Thu Khoa Huan à Saigon.",
                     "Ayant déjà acquis une base solide en arts martiaux et possédant de grandes capacités, il a progressé très rapidement pour devenir un des disciples éminents du maître fondateur Nguyễn Lộc."
@@ -243,12 +243,12 @@ $greatMasters = ['
                     "Au début de l’année 1964, après la suite au second coup d\'État, un nouveau gouvernement est créé. Les droits fondamentaux de l\'Homme et de la société sont rétablis et le Vovinam a reçu l’autorisation de reprendre ses activités.",
                     "Devant l’essor rapide du Vovinam, la création d’une structure s’impose. Maître Trần Huy Phong et les maîtres de l’époque (Lê Sáng, Mạnh Hoàng, Nguyễn Văn Thư, Ngô Hữu Liễn, Phan Quỳnh, Trần Bản Quế, Nguyễn Văn Cường et Nguyễn Văn Thông), ont établi un projet pour structurer et légaliser l’organisation du Vovinam. Ainsi, une Direction Centrale (le Conseil des Maîtres) a vu le jour. Maître Lê Sáng est élu à la fonction de patriarche et maître Trần Huy Phong en qualité d’assistant du patriarche, directeur technique ainsi que Président de la Commission de Développement du Vovinam-Viet Vo Dao.",
                     "C’est un projet d’envergure annonçant une période d\'expansion importante dans l’histoire du Vovinam-Viet Vo Dao.",
-                    "Sur le plan de l`\'organisation et du développement du Vovinam-Viet Vo Dao, maître Trần Huy Phong, avec l’aide des maîtres de l’époque, a apporté sa contribution par les actions suivantes :",
+                    "Sur le plan de l\'organisation et du développement du Vovinam-Viet Vo Dao, maître Trần Huy Phong, avec l’aide des maîtres de l’époque, a apporté sa contribution par les actions suivantes :",
                     "<h5>Création des structures fondamentales</h5><ul><li>Création d’une fédération nationale.</li><li>Établissement des statuts (appelé statuts 1964).</li><li>Définition et création de la fonction de patriarche.</li><li>Création de la Direction Centrale (le premier Conseil des Maîtres).</li></ul>",
                     "<h5>Création des programmes></h5><ul><li>Élaboration du programme d\'enseignement national.</li><li>Définition du système d\'examen.</li><li>Élaboration du système des grades.</li><li>Rédaction d’un programme philosophique et pédagogique.</li><li>Élaboration des dix principes fondamentaux.</li></ul>",
-                    "<h5>Création des fonctionnements de base</h5><ul><li>Création des soutenances de thèse de maître.</li><li>Changement du « Vovinam » en « Vovinam-Viet Vo Dao ».</li><li>Esquisse de la tenue officielle.</li><li>Création de l\'écusson.</li><li>Élaboration des cérémonies et des rituels du Vovinam-Viet Vo Dao.</li>",
-                    "<h5>Dans le domaine technique</h5><ol><li>Les techniques de ciseaux volants supplémentaires, du [n° 12 au 21] pour les niveaux moyens (ceinture jaune).</li><li>Les vingt premières techniques de stratégie de combats (Chien Luoc), fondées sur les enseignements du maître fondateur Nguyễn Lộc.</li><li>La codification des quinze techniques de lutte (Vat), inspirées des entraînements de combats codifiés en duo (Song Luyen Vat).</li><li>Les techniques de contre-attaque du 2ème au 7ème niveau.</li><li>Un éventail de techniques de combats à mains nues contre les armes blanches comme le cimeterre (Ma Tau), la hache (Bua), la baïonnette (Sung Luoi Le), le bâton (Gay).</li><li>Le système de combats encadrés (compétition) : règles, procédure, sécurité, équipement, arbitrage, etc. Il faut savoir qu’avant 1964, le Vovinam-Viet Vo Dao n’est pas encore doté d\'un système de combats, ni de règles de compétitions. Grâce à la contribution de maître Trần Huy Phong, le Vovinam-Viet Vo Dao dispose encore aujourd’hui d\'un système de [combats règlementés] pour les examens et les compétitions.</li>",
-                    "<h5>Dans les domaines philosophiques et pédagogiques</h5>Maître Trần Huy Phong a :<ol><li>Développement de la théorie de l\'harmonie entre la force et la souplesse, utilisant le bambou comme symbole pour illustrer cette philosophie.</li><li>Utilisation des sciences physiques et mathématiques pour démontrer et interpréter les méthodes de chutes et de roulades.</li><li>Mise en œuvre de l’art de vivre avec « cinq principes de méditation et quatre méthodes de progression » (Năm Tu Bốn Tiến) pour le programme de formation des fonctionnaires du Vietnam.</li><li>Démonstration du caractère traditionnel du Vovinam-Viet Vo Dao.</li><li>Démonstration de l’aspect moderne du Vovinam-Viet Vo Dao.</li><li>Démonstration du caractère éducatif du Vovinam-Viet Vo Dao.</li><li>Démonstration des méthodes et l\'art du management pour la formation des maîtres et des dirigeants.</li><li>Démonstration de la théorie de la Révolution du Corps et de l\'Esprit (Chủ thuyết Cách Mạnh Tâm Thân).</li><li>Élaboration le programme de pédagogie du Corps et de l’Esprit (Tâm Thể) destiné à être enseigné à l’université.</li><li>Élaboration des théories et les méthodes d’enseignement de l’énergie interne (Nội Công Tâm Pháp), Khí Công, Bát Thủ Pháp, pour les niveaux supérieurs.</li></ol>",
+                    "<h5>Création des fonctionnements de base</h5><ul><li>Création des soutenances de thèse de maître.</li><li>Changement du « Vovinam » en « Vovinam-Viet Vo Dao ».</li><li>Esquisse de la tenue officielle.</li><li>Création de l\'écusson.</li><li>Élaboration des cérémonies et des rituels du Vovinam-Viet Vo Dao.</li></ul>",
+                    "<h5>Dans le domaine technique</h5><ol><li>Les techniques de ciseaux volants supplémentaires, du [n° 12 au 21] pour les niveaux moyens (ceinture jaune).</li><li>Les vingt premières techniques de stratégie de combats (Chien Luoc), fondées sur les enseignements du maître fondateur Nguyễn Lộc.</li><li>La codification des quinze techniques de lutte (Vat), inspirées des entraînements de combats codifiés en duo (Song Luyen Vat).</li><li>Les techniques de contre-attaque du 2ème au 7ème niveau.</li><li>Un éventail de techniques de combats à mains nues contre les armes blanches comme le cimeterre (Ma Tau), la hache (Bua), la baïonnette (Sung Luoi Le), le bâton (Gay).</li><li>Le système de combats encadrés (compétition) : règles, procédure, sécurité, équipement, arbitrage, etc. Il faut savoir qu’avant 1964, le Vovinam-Viet Vo Dao n’est pas encore doté d\'un système de combats, ni de règles de compétitions. Grâce à la contribution de maître Trần Huy Phong, le Vovinam-Viet Vo Dao dispose encore aujourd’hui d\'un système de [combats règlementés] pour les examens et les compétitions.</li></ol>",
+                    "<h5>Dans les domaines philosophiques et pédagogiques</h5>Maître Trần Huy Phong a :<ol><li>Développement de la théorie de l\'harmonie entre la force et la souplesse, utilisant le bambou comme symbole pour illustrer cette philosophie.</li><li>Utilisation des sciences physiques et mathématiques pour démontrer et interpréter les méthodes de chutes et de roulades.</li><li>Mise en œuvre de l’art de vivre avec « cinq principes de méditation et quatre méthodes de progression » (Năm Tu Bốn Tiến) pour le programme de formation des fonctionnaires du Vietnam.</li><li>Démonstration du caractère traditionnel du Vovinam-Viet Vo Dao.</li><li>Démonstration de l’aspect moderne du Vovinam-Viet Vo Dao.</li><li>Démonstration du caractère éducatif du Vovinam-Viet Vo Dao.</li><li>Démonstration des méthodes et l\'art du management pour la formation des maîtres et des dirigeants.</li><li>Démonstration de la théorie de la Révolution du Corps et de l\'Esprit (Chủ thuyết Cách Mạnh Tâm Thân).</li><li>Élaboration le programme de pédagogie du Corps et de l’Esprit (Tâm Thể) destiné à être enseigné à l’université.</li><li>Élaboration des théories et les méthodes d’enseignement de l’énergie interne (Nội Công Tâm Pháp), Khí Công, Bát Thủ Pháp, pour les niveaux supérieurs.</li></ol>"
                 ]
             },
             {
@@ -256,7 +256,7 @@ $greatMasters = ['
                 "paragraphes": [
                     "En 1965, le Vovinam-Viet Vo Dao a participé au programme d’enseignement des arts martiaux au sein de l’Éducation Nationale. A cette époque, les maîtres Mạnh Hoàng et Trần Huy Phong sont enseignants dans des lycées de Saigon. Grâce à leurs connaissances, ils ont obtenu des autorisations et effectué des démonstrations qui ont permis d’ouvrir de nombreux centres d’entraînement dans les lycées Chu Van An, Trung Vuong, Cao Thang, Gia Long et Pétrus Ký, totalisant plus de 8 000 inscriptions.",
                     "En 1966, maître Trần Huy Phong et maître Mạnh Hoàng ont créé le centre d’entraînement Hoa Lư, au numéro 2 bis rue Đinh Tiên Hoàng, dans le 1er district de Saigon. Maître Trần Huy Phong occupe la fonction de directeur de ce centre. De 1966 à 1975, maître Trần Huy Phong gère et développe ce centre pour en faire le lieu d\'entraînement le plus grand et le plus prestigieux du Vovinam-Viet Vo Dao au Vietnam. Des milliers de pratiquants y sont formés. Parmi eux, certains sont devenus maîtres, grands maîtres ou enseignants et ont contribués à la diffusion du Vovinam-Viet Vo Dao dans le monde :",
-                    "<b>Au Vietnam</b>: Vũ Kim Trọng, Nguyễn Văn Chi, Mai Văn Hiệp, Trần Đức Hùng, Khâu Thanh Danh, Hoàng Việt Quý, Ng<b>uyễn Văn Lộc, Nguyễn Văn Vang, Nguyễn Văn Khải, Lê Hoàng Ngân, Tô Văn Thiện, Nguyễn Công Văn, Nguyễn Xu, Nguyễn Xong Danh, Trần Quyền, Huỳnh Văn Hoa, Nguyễn Ngọc Thơ, Phạm Công Đệ.",
+                    "<b>Au Vietnam</b>: Vũ Kim Trọng, Nguyễn Văn Chi, Mai Văn Hiệp, Trần Đức Hùng, Khâu Thanh Danh, Hoàng Việt Quý, Nguyễn Văn Lộc, Nguyễn Văn Vang, Nguyễn Văn Khải, Lê Hoàng Ngân, Tô Văn Thiện, Nguyễn Công Văn, Nguyễn Xu, Nguyễn Xong Danh, Trần Quyền, Huỳnh Văn Hoa, Nguyễn Ngọc Thơ, Phạm Công Đệ.",
                     "<b>Aux États-Unis</b>: Phùng Mạnh Tâm, Nguyễn Xuân Ngọc, Phạm Đình Phúc, Trần Văn Bé, Nguyễn Văn Đông, Nguyễn Thế Hùng, Nguyễn Bá Dương, Phạm Thị Cúc, Nguyễn Gia Đức, Nguyễn Tiến Hoá, Phạm Văn Bảo, Phạm Phú Thành, Nguyễn Văn Lương, [Nguyễn Quân], [Nguyễn Chính], Tạ Văn Lương Việt, Bùi Khắc Hùng, Nguyễn Trung Thành, Nguyễn Thị Lài, Nguyễn Thế Tài, Thái Thanh Xuân, Lê Quang Liêm.",
                     "<b>Au Canada</b>: Trần Văn Trung, Phạm Đình Tự, Nguyễn Ngọc Thanh, Lê Minh Thiền, Huỳnh Lâm, Lê Hữu Phước, Khúc Thị Ngọc Hậu.",
                     "<b>En Europe</b>: Trần Nguyên Đạo, Nguyễn Điện, Nguyễn Thị Huệ, Nguyễn Tiến Hội, Sudorruslan Mohamed.",
@@ -320,7 +320,7 @@ $greatMasters = ['
                     "« …Maître Trần Huy Phong est le meilleur parmi mes frères-condisciples ; il possède des qualités de cœur que j\'ai pu détecter dès mes premiers jours à la direction de l\'École. Il a été mon assistant le plus compétent depuis près de 30 ans, avec moi, il a dirigé l\'École et m’a remplacé quand je suis absent. Il est fidèle et loyal au Vovinam-Viet Vo Dao ; son amour et son affection pour les condisciples est sans limite ; il se comporte de façon juste envers son prochain et protège le bon déroulement de la fraternité.",
                     "Il est imprégné de l’esprit du Viet Vo Dao, représentant clairement les trois principes de vie du Viet Vo Dao : vivre, laisser les autres vivre et vivre pour les autres. Il a un esprit d\'engagement, de courage, la capacité d’assumer des responsabilités. Il n’a pas peur de prendre des risques, il a la foi, la confiance, la persévérance et une réactivité hors pair.",
                     "Sa vie est simple, honnête et sincère. Il se montre toujours désintéressé pour servir l’idéal du Vovinam-Viet Vo Dao. Il possède une personnalité hors du commun, la vertu, une volonté de progresser, une grande connaissance des arts martiaux, la compétence, un grand charisme, c’est un grand dirigeant. Il a un niveau élevé en techniques martiales, une connaissance générale profonde ; je pense qu\'il pourra porter l\'École au sommet du processus de développement du Vovinam-Viet Vo Dao pour l\'humanité… ».",
-                    "/tranhuyphong/photo7.png&Photo 7: Võ Đạo Quán Cây Tre 1992 – Maître patriarche Trần Huy Phong. G/D: Nguyễn Trung Thành, Vũ Kim Trọng, Trần Nguyên Đạo, Trần Đức Hùng, Mai Văn Hiệp, Ngô Kim Tuyền, Bá Thiên, Phạm Đình Tự, Trương Quang An",                    
+                    "/tranhuyphong/photo7.png&Photo 7: Võ Đạo Quán Cây Tre 1992 – Maître patriarche Trần Huy Phong. G/D: Nguyễn Trung Thành, Vũ Kim Trọng, Trần Nguyên Đạo, Trần Đức Hùng, Mai Văn Hiệp, Ngô Kim Tuyền, Bá Thiên, Phạm Đình Tự, Trương Quang An"
                 ]
             }
         ]
@@ -391,7 +391,7 @@ $greatMasters = ['
                     "<h5>Il a assumé plusieurs hautes fonctions :</h5><ul><li>1985- 2000 : président du Conseil des Maîtres de France.</li><li>1990-1992 : président du Conseil des Maîtres d’Europe.</li><li>2000-2004 : président de la Fédération Mondiale de Vovinam-Viet Vo Dao.</li><li>2004-2016 : secrétaire général du Conseil Mondial des Maîtres de Vovinam-Viet Vo Dao (3 mandats successifs)</li><li>Depuis 2004 : président de la Commission Technique Internationale.</li><li>Depuis 2015 : président du Conseil Consultatif de la Fédération Mondiale Vocotruyen (WFVV).</li></ul>",
                     "/trannguyendao/photo5.png&Photo 5: Ecole Polythechnique de Palaiseau, France, 1976.",
                     "<h5>Maître Dao en quelques chiffres</h5>Dans le cadre de sa mission de développement du Vovinam-Viet Vo Dao, maître Trần Nguyên Đạo a contribué à former environ 95 maîtres dans le monde:",
-                    "<ul><li>2 ceintures blanches suprêmes (10ème Dang).</li><li>2 ceintures rouges 3ème degré (7ème Dang).</li><li>8 ceintures rouges 2ème degré (6ème Dang).</li><li>10 ceintures rouges 1er degré (5ème Dang).</li><li>Environ 73 ceintures rouges (4ème Dang).</li><ul>",
+                    "<ul><li>2 ceintures blanches suprêmes (10ème Dang).</li><li>2 ceintures rouges 3ème degré (7ème Dang).</li><li>8 ceintures rouges 2ème degré (6ème Dang).</li><li>10 ceintures rouges 1er degré (5ème Dang).</li><li>Environ 73 ceintures rouges (4ème Dang).</li></ul>",
                     "/trannguyendao/photo6.png&Photo 6: Bruxelles, Belgique, 1984.",
                     "Respectant la tradition du Vovinam-Viet Vo Dao, maître Trần Nguyên Đạo a présenté cinq fois des thèses d’arts martiaux (1977, 1990, 1998, 2005 et 2016). Il est promu au titre de Grand Maître, Ceinture Blanche Suprême, par le Conseil Mondial des Maîtres lors du 8ème Congrès Mondial de Vovinam-Viet Vo Dao en 2016 en Californie (États-Unis), après avoir dirigé le Conseil Mondial des Maîtres pendant 12 ans.",
                     "En 2015, maître Trần Nguyên Đạo reçoit la reconnaissance de l\'État vietnamien, par l’intermédiaire du Comité Olympique du Vietnam et de la Fédération Mondiale Vocotruyen, pour sa contribution à la culture des arts martiaux vietnamiens. A cette occasion, il est promu au titre de Grand Maître International (10ème Dang)."
@@ -426,7 +426,7 @@ $greatMasters = ['
                     "De 1969 à 1973, avec le soutien actif du grand maître Phạm Hữu Độ, sous-préfet de la province Binh Dinh, et du grand maître Nguyễn Văn Cường, sous-préfet de la province Lam Dong, le Vovinam-Viet Vo Dao a connu un essor fulgurant dans toute la région du Centre et des hauts plateaux du Vietnam. Maître Trịnh Ngọc Minh a nommé ses meilleurs disciples pour assumer la responsabilité des centres d’entraînement suivants :",
                     "<ul><li>Le Centre Vovinam-Viet Vo Dao de Tuy Hoa, province Phu Yen, sous la direction de l’enseignant Trần Văn Phước.</li><li>Le Centre Vovinam-Viet Vo Dao de Da Lat, province Tuyen Duc, sous la direction de l’enseignant Lâm Quang Lân.</li><li>Le Centre Vovinam-Viet Vo Dao de Qui Nhon, province Binh Dinh, sous la responsabilité du maître Nguyễn Văn Chiếu.</li><li>Le Centre Vovinam-Viet Vo Dao de Phan Rang, province Ninh Thuan, dirigé par les enseignants Nguyễn Châu Hùng, Đặng Ngọc Thọ, puis placé sous la direction du maître Đặng Hữu Hào.</li><li>Le Centre Vovinam-Viet Vo Dao de Da Nang créé et dirigé par maître Trần Tấn Vũ.</li><li>Le Centre Vovinam-Viet Vo Dao de Ban Me Thuot sous la direction de l’enseignant Nguyễn văn Bính.</li></ul>",
                     "Au début de l’année 1971, le Vovinam-Viet Vo Dao est présent dans la majorité des provinces du Centre du Vietnam, de Phan Thiet en remontant vers Phan Rang, Ninh Thuan, Khanh Hoa, Tuy Hoa, Binh Dinh, Lam Dong, Da Lat, Ban Me Thuot, Pleiku, Kontum, Dac Lac, etc. De nombreux maîtres et enseignants du Vovinam-Viet Vo Dao sont issus de ces centres :",
-                    "<ul><li><b>Au Vietnam: </b>Nguyễn Bá Thuận (1950-1992), Nguyễn Văn Chiến, Tăng Hữu Cảnh, Trầm Kiết, Phạm Văn Nguyên, Nguyễn Lương Bằng, Lương Công Anh Tuấn, Trần Thọ Thảo, Trần Công Lý, Đoàn Văn Làm, Võ Hải, Đặng Ngọc Thọ, Phạm Văn  n, Nguyễn Trương Hoạt, Mai Xuân Tú, Đoàn Trị, Đinh Điện, Lê Kim Tường, Lý Văn Lục, Phan Chánh Tiêu, Đỗ Đình Thạnh, Nguyễn Văn Nhâm, Nguyễn Hùng Việt, Trần Văn Phước, Đặng Ngọc Thọ, Lư Quang Đức (1953-2017), Hồ Hữu Vui, Hoàng Tiến Đăng, Nguyễn Tấn Nghị, Trương Sĩ Anh</li><li><b>En Suisse: </b>Hà Chí Thành</li><li><b>En Belgique: </b>Huỳnh Hữu Quý</li><li><b>Au Canada :</b> Nguyễn Cao Khanh</li><li>Aux États-Unis :</li> Tôn Thất Lăng, Nguyễn Văn Phụng, Lâm Quang Lân, Lê Huy Chương, Trần Mỹ Đức, Hoàng Minh Đức, Trần Văn Hoài, Nguyễn Văn Giàu, Võ Ước</li></ul>",
+                    "<ul><li><b>Au Vietnam: </b>Nguyễn Bá Thuận (1950-1992), Nguyễn Văn Chiến, Tăng Hữu Cảnh, Trầm Kiết, Phạm Văn Nguyên, Nguyễn Lương Bằng, Lương Công Anh Tuấn, Trần Thọ Thảo, Trần Công Lý, Đoàn Văn Làm, Võ Hải, Đặng Ngọc Thọ, Phạm Văn  n, Nguyễn Trương Hoạt, Mai Xuân Tú, Đoàn Trị, Đinh Điện, Lê Kim Tường, Lý Văn Lục, Phan Chánh Tiêu, Đỗ Đình Thạnh, Nguyễn Văn Nhâm, Nguyễn Hùng Việt, Trần Văn Phước, Đặng Ngọc Thọ, Lư Quang Đức (1953-2017), Hồ Hữu Vui, Hoàng Tiến Đăng, Nguyễn Tấn Nghị, Trương Sĩ Anh</li><li><b>En Suisse: </b>Hà Chí Thành</li><li><b>En Belgique: </b>Huỳnh Hữu Quý</li><li><b>Au Canada:</b> Nguyễn Cao Khanh</li><li><b>Aux États-Unis:</b> Tôn Thất Lăng, Nguyễn Văn Phụng, Lâm Quang Lân, Lê Huy Chương, Trần Mỹ Đức, Hoàng Minh Đức, Trần Văn Hoài, Nguyễn Văn Giàu, Võ Ước</li></ul>",
                     "En avril 1975, lorsque le Vovinam-Viet Vo Dao a été interdit par le nouveau régime politique, maître Trịnh Ngọc Minh est retourné vivre à Saigon en laissant à ses disciples Nguyễn Bá Thuận et Trần Công Lý le soin d’assurer la gestion des centres d’entraînement de Nha Trang. Avant son départ, il leur a demandé de continuer à développer le Vovinam-Viet Vo Dao dès que possible.",
                     "En 1995, après la suite d’une hausse de tension artérielle, il est partiellement paralysé. Toutefois, sa santé s\'est améliorée grâce à sa volonté et à l’entraînement.",
                     "Maître Trịnh Ngọc Minh décède le 30 décembre 1998, à l’âge de 60 ans à son domicile, suites à un accident vasculaire cérébral.",
@@ -478,8 +478,7 @@ $greatMasters = ['
             "Premier Song Luyện avec son condisciple Nguyễn Văn Thái.",
             "La dynastie des rois Hung Vuong est une dynastie de 17 rois entre 2888 av. J.-C. et 258 av. J.-C. Considérés comme les fondateurs du pays et célébrés chaque année le dixième jour du troisième mois lunaire (au mois d\'avril du calendrier grégorien).",
             "Trưng Trắc et Trưng Nhị (12-43 après J.C.) sont deux personnages historiques qui se sont opposés victorieusement à la domination chinoise au Viêt Nam. Elles sont vénérées comme des héroïnes nationales, instigatrices du premier mouvement de résistance antichinois, après 247 ans de domination. Beaucoup de temples leur sont dédiés et un jour de congé annuel est accordé en février pour commémorer leur disparition. Un district de Hanoï porte leur nom, tout comme de nombreuses rues et de nombreuses écoles à travers le pays.",
-            "« Việt Nam Thời Nay » est le 1er journal quotidien en langue vietnamienne, subventionné par l\'État de Victoria.",
-            "
+            "« Việt Nam Thời Nay » est le 1er journal quotidien en langue vietnamienne, subventionné par l\'État de Victoria."
         ],
         "content": [
             {
@@ -506,7 +505,7 @@ $greatMasters = ['
                     "/tranhuyquyen/photo3.png&Photo 3:",
                     "Il a également rassemblé les autres maîtres d’Australie pour former la direction du Vovinam-Viet Vo Dao afin de gérer des milliers de pratiquants à travers l’Australie. Cette organisation compte notamment les maîtres Nguyễn Văn Thông, Lê Thành Nhân, Diệp Khôi à Melbourne, maître Phạm Thị Loan à Adelaïde et maître Lê Công Danh à Sydney.",
                     "En 1986, il créé la Fédération Australienne de Vovinam-Viet Vo Dao. Dix ans plus tard, cette fédération fait partie des six fédérations fondatrices de la Fédération Mondiale de Vovinam-Viet Vo Dao en 1996 à Paris, dont il est élu vice-président.",
-                    " Parallèlement au Vovinam-Viet Vo Dao, il participe aussi aux activités de la communauté vietnamienne comme les cérémonies de commémoration de l’empereur [Hung Vuong], des deux [Sœurs Trưng] et les célébrations des fêtes des différents peuples (Moomba).",
+                    " Parallèlement au Vovinam-Viet Vo Dao, il participe aussi aux activités de la communauté vietnamienne comme les cérémonies de commémoration de [l’empereur Hung Vuong, des deux Sœurs Trưng] et les célébrations des fêtes des différents peuples (Moomba).",
                     "Il est aussi rédacteur en chef du journal [« Vietnam aujourd\'hui »] sous différents pseudonymes littéraires comme Bao Bất Đồng, Chu Văn, Vương Ngọc Yến, etc., et responsable des programmes de radio FM 97.4 sous les noms de Đông A Cư Sĩ, Mộ Dung Tiên Sinh, Trần Huy et Trần Văn.",
                     "A travers ses activités culturelles, il a dynamisé les forums sur la démocratie vietnamienne, acquérant ainsi le respect de nombreuses personnalités politiques australiennes qui lui demandent souvent son avis sur les problématiques relatives au Vietnam.",
                     "Le 12 janvier 2001, maître Trần Huy Quyền est décédé à son domicile, dans la commune de Sprinvale, état de Victoria, Australie, à l’âge de 56 ans.",
@@ -534,7 +533,7 @@ $greatMasters = ['
                     "/lesang/photo1.png&Photo 1:",
                     "Possédant une grande force physique, talentueux et persévérant, maître Lê Sáng a très vite retrouvé la santé et progressé de façon fulgurante dans la pratique du Vovinam.",
                     "Cinq ans plus tard, en 1945, le maître fondateur l’a nommé enseignant aux côtés de ses aînés Nguyễn Mỹ, Nguyễn Khải et Nguyễn Bích pour dispenser des entraînements à Hanoï, au centre Bac Qua, à la maison Dau Sao et au centre Quan Ngua. Ensuite, il a souvent accompagné le maître fondateur pour parcourir de nombreuses provinces du Nord du Vietnam telles que Hai Phong, Thach That (Son Tay), Phu Tho, Che Luu, Dan Ha, Dan Thuong, Me Doi, Phat Diem.",
-                    "En 1948, la [guerre franco-vietnamienne] (1946-1954) faisant rage, il a provisoirement arrêté le Vovinam pour s’orienter vers des activités économiques. Toutefois, il est toujours resté disponible à chaque fois que le maître fondateur a besoin de lui."
+                    "En 1948, la [guerre franco-vietnamienne] (1946-1954) faisant rage, il a provisoirement arrêté le Vovinam pour s’orienter vers des activités économiques. Toutefois, il est toujours resté disponible à chaque fois que le maître fondateur a besoin de lui.",
                     "/lesang/photo2.png&Photo 2:"
                 ]
             },
@@ -581,7 +580,7 @@ $greatMasters = ['
                     "En qualité de patriarche, maître Lê Sáng a apporté sa contribution à l’enrichissement du Vovinam-Viet Vo Dao dans les domaines techniques et philosophiques suivants :",
                     "<h5>Dans le domaine technique</h5><ol><li>Les techniques de stratégie de combat (Chien Luoc) n° 21 à 30.</li><li>Les techniques de lutte (Vat) n° 16 à 28.</li><li>Les recherches et études des Quyen comme le Long Ho Quyen (le Dragon et le Tigre), le Lao Mai Quyen (le Vieux Prunier), le Ngoc Tran Quyen (la coupe de jade), les Quyen de Sabre, de Bâton long et d\'Hallebarde.</li></ol>",
                     "/lesang/photo5.png&Photo 5:",
-                    "<h5>Dans les domaines philosophique et pédagogique<h5>Maître Lê Sáng est à l\'origine des livres et des revues du Vovinam de 1965 à 1975. Les plus représentatives sont les dix revues publiées et diffusées dans le Vovinam-Viet Vo Dao, toujours conservées de nos jours par de très nombreux maîtres et pratiquants. Ces documents contiennent des essais, des études théoriques, de la philosophie, des orientations, des idées de développement, etc., Ils sont rédigés par des maîtres de renom tels que Lê Sáng, Trần Huy Phong, Nguyễn Văn Thư, Lê Văn Phúc, Phan Quỳnh, Ngô Hữu Liễn Trịnh Ngọc Minh, etc. S’y trouvent également des articles sur le théâtre, des poèmes, des récits et des mémoires des pratiquants, enseignants et sympathisants."
+                    "<h5>Dans les domaines philosophique et pédagogique</h5>Maître Lê Sáng est à l\'origine des livres et des revues du Vovinam de 1965 à 1975. Les plus représentatives sont les dix revues publiées et diffusées dans le Vovinam-Viet Vo Dao, toujours conservées de nos jours par de très nombreux maîtres et pratiquants. Ces documents contiennent des essais, des études théoriques, de la philosophie, des orientations, des idées de développement, etc., Ils sont rédigés par des maîtres de renom tels que Lê Sáng, Trần Huy Phong, Nguyễn Văn Thư, Lê Văn Phúc, Phan Quỳnh, Ngô Hữu Liễn Trịnh Ngọc Minh, etc. S’y trouvent également des articles sur le théâtre, des poèmes, des récits et des mémoires des pratiquants, enseignants et sympathisants."
                 ]
             },
             {
@@ -742,7 +741,7 @@ $greatMasters = ['
                     "Durant l\'été 2019, la santé du maître Phan Dương Bình, âgé de 90 ans, se détériore rapidement. Il a perdu sa parole et sa mobilité, mais son esprit est resté toujours lucide. Lorsque la délégation internationale est venue lui rendre visite au mois d’août 2019, il a même exécuté quelques gestes techniques avec maître Trần Nguyên Đạo, sous les yeux étonnés [des maîtres présents].",
                     "Le 15 mai 2020, le grand maître Phan Dương Bình a quitté ce monde paisiblement avec satisfaction et soulagement.",
                     "Son départ n\'est pas une surprise, mais la douleur est très intense pour tous ceux qui le connaissent.",
-                    "Le grand maître Phan Dương Binh est une étoile brillante du Vovinam-Viet Vo Dao. Sa disparition a laissé un grand vide dans le cœur de tous les pratiquants. C\'est une grande perte, non seulement pour le Vovinam-Viet Vo Dao, mais aussi pour tous les arts martiaux vietnamiens.",
+                    "Le grand maître Phan Dương Binh est une étoile brillante du Vovinam-Viet Vo Dao. Sa disparition a laissé un grand vide dans le cœur de tous les pratiquants. C\'est une grande perte, non seulement pour le Vovinam-Viet Vo Dao, mais aussi pour tous les arts martiaux vietnamiens."
                 ]
             }
         ]
@@ -755,7 +754,7 @@ $greatMasters = ['
             "Extrait des mémoires du grand maître Lê Văn Phúc: « Mémoires des jours de pratique avec le maître fondateur », revue spéciale du Vovinam-Viet Vo Dao, 1971, pages 76, 77 (Hồi ký những ngày theo học võ sư sáng tổ, đặc san Vovinam-Viet Vo Dao, 1971).",
             "L\'Académie militaire Thu Duc ou Thu Duc Infantry School. Une école de formation d\'officiers de l\'armée de la République du Sud Vietnam.",
             "Une école de la haute administration de la République du Sud Vietnam, équivalente à l\'ENA en France.",
-            "Disciple direct du maître fondateur ou/et membre du premier Conseil des Maîtres en 1964.",
+            "Disciple direct du maître fondateur ou/et membre du premier Conseil des Maîtres en 1964."
         ],
         "content": [
             {
@@ -764,7 +763,7 @@ $greatMasters = ['
                     "Maître Lê Văn Phúc est non seulement un grand maître du Vovinam-Viet Vo Dao, mais aussi un poète, un écrivain, un journaliste pour de nombreux journaux et radios dans des pays comme États-Unis, Canada, Australie et Grande Bretagne (station de radio BBC).",
                     "Dans le Vovinam-Viet Vo Dao, il occupe une place très particulière dans le cœur des pratiquants. Il est aimé et respecté de tous, non pas parce qu\'il est un maître ou un écrivain célèbre, mais par sa simplicité et son ouverture d’esprit.",
                     "Maître Lê Văn Phúc est né le 14 décembre 1934 à Hải Dương, au Nord Vietnam. Il débute le Vovinam à l’âge de 17 ans, au moment où il s’est installé à Hanoï pour suivre ses études au lycée Nguyen Trai. Il s’entraîne sous la direction du maître Nguyễn Lộc à rue Hang Trong en 1951.",
-                    "Il a raconté l’enseignement du maître Nguyễn Lộc comme suit : « … Un an après m\'être renseigné et inscrit, je commence à apprendre réellement le Vovinam en 1951... Dans toute ma vie de pratiquant du Vovinam, je n’ai eu l’honneur d’être corrigé par maître Nguyễn Lộc qu’environ une dizaine de fois, mais chaque technique corrigée s\'est imprégnée au plus profond de moi-même. Les corrections sont très rapides, très fortes, très tranchantes et aussi très douloureuses. Et je ne peux que subir.",*
+                    "Il a raconté l’enseignement du maître Nguyễn Lộc comme suit : « … Un an après m\'être renseigné et inscrit, je commence à apprendre réellement le Vovinam en 1951... Dans toute ma vie de pratiquant du Vovinam, je n’ai eu l’honneur d’être corrigé par maître Nguyễn Lộc qu’environ une dizaine de fois, mais chaque technique corrigée s\'est imprégnée au plus profond de moi-même. Les corrections sont très rapides, très fortes, très tranchantes et aussi très douloureuses. Et je ne peux que subir.",
                     "En général, maître Nguyễn Lộc explique pour que nous travaillions nous-mêmes. Parfois, maître [Binh] dispense les cours, pendant que maître Nguyễn Lộc nous observe. L’entraînement avec maître Binh est également très dur. A chaque faute technique, il nous corrige tout de suite de manière très énergique, une vraie correction pour ainsi dire. Comment pouvons-nous supporter ses coups de bottes écrasées [sur nos petites poitrines ?]. Après l’entraînement, lorsque nous nous massons la poitrine, ses bottes ont laissé une belle trace rouge comme souvenir et nous ressentons une très forte douleur. Je n’ai toujours pas compris comment nous avons fait pour être encore plus motivés au lieu de tout abandonner[... »].",
                     "/levanphuc/photo1.png&Photo 1:",
                     "En 1954, il a migré avec sa famille dans le Sud du Vietnam et a enseigné le Vovinam-Viet Vo Dao à la garde royale de Da Lat sous le règne de l’empereur Bao Dai jusqu’en 1955. Ensuite, maître Phuc a reçu l\'ordre de mobilisation générale pour entrer à l\'école des officiers de [Thu Duc] et reste militaire jusqu\'à sa démobilisation avec le grade de capitaine. Pendant cette période, il a toujours enseigné le Vovinam-Viet Vo Dao aux militaires où il a servi ainsi qu\'aux pratiquants civils jusqu\'en 1975.",
@@ -776,7 +775,7 @@ $greatMasters = ['
                     "Maître Lê Văn Phúc a été élu pour deux mandats successifs (1996-2000 et 2000-2004) comme membre du bureau permanent du Conseil Mondial des Maîtres. En 2004, il a décidé de se retirer pour laisser la place à la jeune génération. Il est devenu alors membre du Conseil Suprême des Maîtres.",
                     "/levanphuc/photo3.png&Photo 3:",
                     "Maître Lê Văn Phúc est décédé le 7 août 2020 (18 juin de l\'année Canh Ty) à Reston, l\'État de Virginie, aux États-Unis, à 86 ans. Lors de son enterrement, conformément à ses souhaits, au moment de la mise en bière, sa famille a placé l’écusson Vovinam-Viet Vo Dao sur sa poitrine tandis que son Vo Phuc et sa Ceinture Blanche Suprême sont déposés à ses côtés.",
-                    "Le grand maître Lê Văn Phúc est une étoile brillante du Vovinam-Viet Vo Dao. Sa disparition a laissé beaucoup de chagrin et de regrets pour ses proches. C’est une grande perte, non seulement pour le Vovinam-Viet Vo Dao, mais aussi pour le monde littéraire et culturel de la communauté vietnamienne.",
+                    "Le grand maître Lê Văn Phúc est une étoile brillante du Vovinam-Viet Vo Dao. Sa disparition a laissé beaucoup de chagrin et de regrets pour ses proches. C’est une grande perte, non seulement pour le Vovinam-Viet Vo Dao, mais aussi pour le monde littéraire et culturel de la communauté vietnamienne."
                 ]
             }
         ]
@@ -869,13 +868,11 @@ $fondatorData = $greatMasters[0];
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
 
-                    <!-- Modal Header -->
                     <div class="modal-header">
                         <h3 class="modal-title"><?php echo $fondatorData['name']?><small class="profession"> <?php echo $fondatorData['date']?></small></h3>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
-                    <!-- Modal body -->
                     <div class="modal-body">
                         <?php 
                         $hint =0;
@@ -921,7 +918,6 @@ $fondatorData = $greatMasters[0];
                         }
                     </script>
 
-                    <!-- Modal footer -->
                     <div class="modal-footer">
                         <p class="praise"><small>Extrait du livre « Histoire du Vovinam-Viet Vo Dao » rédigé et publié par le Grand-maitre TRAN Nguyen Dao.</small></p>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -944,7 +940,6 @@ $fondatorData = $greatMasters[0];
                 <!-- Une carte -->
                 <div class="card-container manual-flip" >
                     <div class="card">
-                        <!-- Coté frontal -->
                         <div class="front">
                             <div class="content">
                                 <!-- Photo -->
@@ -953,8 +948,7 @@ $fondatorData = $greatMasters[0];
                                 </div>
                                 <!-- Contenu -->
                                 <div class="main">
-                                    <h3 class="name" style="display:inline-block">Maître <?php echo $greatMastersDB[$i]['name']?></h3>
-                                    <p class="profession" style="padding-bottom: 10px;display:inline-block;"><?php echo $greatMastersDB[$i]['birthday'].' - '.$greatMastersDB[$i]['deathDate']?></p>
+                                    <h3 class="name">Maître <?php echo $greatMastersDB[$i]['name']?> <small class="profession"><?php echo $greatMastersDB[$i]['birthday'].' - '.$greatMastersDB[$i]['deathDate']?></small></h3>
                                     <?php 
                                     $functions = explode(',', $greatMastersDB[$i]["function"]);
                                     for ($a=0; $a<count($functions); $a++){
@@ -964,37 +958,76 @@ $fondatorData = $greatMasters[0];
                                 </div>
                                 <!-- Boutton de rotation -->
                                 <div class="footer" style="float: right;">
-                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                        En savoir +
-                                    </button>
+                                    <button class="btn btn-simple" data-toggle="modal" data-target="#m-<?php echo $greatMastersDB[$i]['id']?>">En savoir +</button>
                                 </div>
                             </div>
-                        </div> <!-- Fin du coté frontal -->
-                        <!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5><b>Biographie de <?php echo $greatMastersDB[$i]['name']?></b></h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p><?php echo $greatMastersDB[$i]['biographyShort']?></p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    <- Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->
-                    </div> <!-- Fin d'une carte -->
+                        </div>
+                    </div> 
                 </div>
+                <!-- Fin d'une carte -->
             </div>
             <?php 
             } ?>
         </div>
+        <?php 
+        for($i=0;$i<count($greatMastersDB);$i++) {
+        ?>
+        <div class="modal fade" id="m-<?php echo $greatMastersDB[$i]['id']?>">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h3 class="modal-title">Maître <?php echo $greatMastersDB[$i]['name']?><small class="profession"> <?php echo $greatMastersDB[$i]['birthday'].' - '.$greatMastersDB[$i]['deathDate']?></small></h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                        <?php 
+                        $hint =0;                        
+                        for ($a=0;$a<count($greatMasters[$i+1]['content']);$a++){
+                            $part = $greatMasters[$i+1]['content'][$a];
+                        ?>
+                        <div id=<?php echo $a?>>
+                            <div class="subtitle pl-3">
+                                <h4><?php echo $part['title']?></h4>
+                            </div>
+                            <div class="content pl-4 pr-4">
+                            <?php 
+                            foreach ($part['paragraphes'] as $sentence){
+                                if ($sentence[0] == '/'){
+                                    $sentence = explode("&",$sentence);
+                                    echo '<img src="#">';
+                                    $sentence = $sentence[1];
+                                    echo '<p> <b>'.$sentence.'</b> </p>';
+                                    continue;
+                                }
+                                for ($o=0;$o<strlen($sentence);$o++){
+                                    if ($sentence[$o] == '['){
+                                        $sentence = str_replace_first("[","<span class=\"hint\" rel=\"tooltip\" title=\"".$greatMasters[$i+1]['note'][$hint]."\">",$sentence);
+                                        $sentence = str_replace_first("]","</span>","$sentence");
+                                        $hint++;
+                                    }
+                                }
+                                echo '<p>'.$sentence.'</p>';
+                            }
+                            ?>  
+                            </div>
+                        </div>
+                        <?php
+                        }
+                        ?>
+                        </div>
+
+                        <div class="modal-footer">
+                            <p class="praise"><small>Extrait du livre « Histoire du Vovinam-Viet Vo Dao » rédigé et publié par le Grand-maitre TRAN Nguyen Dao.</small></p>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
     </div>                        
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -1012,4 +1045,23 @@ $fondatorData = $greatMasters[0];
             $card.addClass('hover');
         }
     }
+    /*<!-- Coté dos de la carte -->
+                        <div class="back">
+                            <!-- Titre -->
+                            <div class="header">
+                                <h5><b>Biographie de <?php echo $greatMastersDB[$i]['name']?></b></h5>
+                            </div>
+                            <!-- Contenu -->
+                            <div class="content">
+                                <div class="main">
+                                    <p><?php echo $greatMastersDB[$i]['biographyShort']?></p>
+                                </div>
+                            </div>
+                            <!-- Boutton de rotation -->
+                            <div class="footer">
+                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
+                                    <- Retour
+                                </button>
+                            </div>
+                        </div> <!-- Fin du dos de la carte -->*/
 </script>
