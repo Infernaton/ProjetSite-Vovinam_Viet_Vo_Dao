@@ -1,44 +1,35 @@
-<link rel="stylesheet" href="css/add1.css">
+<link rel="stylesheet" href="css/add.css">
 
 <form action="php/management/addMasterDB.php">
   <div id="container" class="container">
     <div class="text-center">
       <h1 id="addGM" class="content-title-red" >Ajout un Grand Maître à la Galerie</h1>
+      <br><br>
+      <h5> <span class="note">*</span> : Champs Obligatoire</h5>
     </div>
     <div class="row" id="master-row">
       <div class="content col-sm-5">
-        <div class = "nom">
-          <label class="data" for="name"><b>Nom Complet</b></label>
-          <input class="inputData" type="text" placeholder="Nom" name="name" id="name" required>
-        </div>
+        <label class="data" for="name"><b>Nom Complet</b><span class="note">*</span></label>
+        <input class="inputData" type="text" placeholder="Nom" name="name" id="name" required>
 
-        <div class = "img">
-          <label class="data" for="image"><b>Photo</b></label>
-          <input class="inputData" type="text" placeholder="Lien d'une Image" name="image" id="image" required>
-        </div>
+        <label class="data" for="image"><b>Photo</b><span class="note">*</span></label>
+        <input class="inputData" type="text" placeholder="Lien d'une Image" name="image" id="image" required>
 
-        <div class = "naiss">
-          <label class="data" for="birth"><b>Date de Naissance</b></label>
-          <input class="inputData" type="text" placeholder="Naissance" name="birth" id="birth" required>
-        </div>
+        <label class="data" for="birth"><b>Date de Naissance</b><span class="note">*</span></label>
+        <input class="inputData" type="text" placeholder="'jj/mm/aaaa' ou 'aaaa'" name="birth" id="birth" required>
 
-        <div class = "deces">
-          <label class="data" for="tags"><b>Date du Décès</b></label>
-          <input class="inputData" type="text" placeholder="Décès (optionnel)" name="death" id="death">
-        </div>
+        <label class="data" for="tags"><b>Date du Décès</b></label>
+        <input class="inputData" type="text" placeholder="(Optionnel)" name="death" id="death">
 
+        <label class="data" for="currFunction"><b>Fonction Actuelle</b><span class="note">*</span></label>
+        <textarea class="inputData" cols="40" placeholder="Fonction occupé actuellement par la personne" name="currFunction" id="currFunction" required></textarea>
       </div>
       <div class="content col-sm-7">
+        <label class="data" for="biography"><b>Courte Biographie</b></label>
+        <textarea class="inputData" rows="6" cols="50" placeholder="(Optionnel)" name="biography" id="biography"></textarea>
 
-        <div class = "bio">
-          <label class="data" for="biography"><b>Courte Biographie</b></label>
-          <textarea class="inputData" rows="4" cols="50" placeholder="Biographie.." name="biography" id="biography" required></textarea>
-        </div>
-
-        <div class = "fonction">
-          <label class="data" for="function"><b>Fonction(s) (séparées d'une virgule)</b></label>
-          <textarea class="inputData" cols="50" placeholder="Liste des Fonctions qu'il a occupé durant sa vie" name="function" id="function"></textarea>
-        </div>
+        <label class="data" for="paFunction"><b>Ancienne Fonction(s) occupée(s) <br>(séparées d'une virgule, si plusieurs)</b></label>
+        <textarea class="inputData" cols="50" placeholder="Optionnel si aucune fonction effectuée dans le passé" name="paFunction" id="paFunction"></textarea>
       </div>
     </div>
     <div class="d-flex justify-content-between mb-3">

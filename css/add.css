@@ -1,41 +1,41 @@
 .data{
     display: flex;
-    margin-bottom: 5px;
+    text-align: center;
+    margin-top: 5%;
 }
-
-#btn-Action{
-    margin-left: 5%;
-}
-label{
-margin: 5%;
-}
-input{
+.inputData{
     border: none;
-    border-bottom: 2px solid rgb(41, 44, 209);
+    border-bottom: 2px solid #1c55a3;
+    background-color: rgb(250, 250, 250);
+    border-radius: 5px;
 }
-textarea{
-    border: none;
-    border-bottom: 2px solid rgb(41, 44, 209);
-}
+/*.container {
+    padding-right:-50%;
+}*/
 button {
-    border: 2px solid rgb(41, 44, 209);
-    color:rgb(41, 44, 209);
+    border: 2px solid #1c55a3;
+    color:#1c55a3;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     transition-duration: 0.4s;
- }
-  button:hover {
-    background-color: rgb(41, 44, 209); /* Green */
+}
+button:hover {
+    background-color: #1c55a3; /* Blue */
     color: white;
 }
-.boutton{
-    display: flex;
-    margin-top: 20px;
-    
+#confirm:hover{
+    background-color: green !important;
+    color: white;
+    border: 2px solid green;
+}
+#undo:hover{
+    background-color: #e82226 !important;
+    color: white;
+    border: 2px solid #e82226;
 }
 #panel{
-    text-decoration: underline rgb(41, 44, 209);
+    text-decoration: underline #1c55a3;
     width: 1000px;
     text-align: center;
     margin-left: 5%;
@@ -44,15 +44,25 @@ button {
 .btn-redirect {
     display: block;
     margin-bottom: 10%;
-
-    
 }
 .btn-panel{
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 5%;
-    padding: 100px 240px;
+    padding: 50px 240px;
     width:1000px;
     font-size: 30px;
     text-align: center;
+}
+.content{
+    margin-bottom: 30px
+}
+#master-row{
+    margin-bottom: 5%;
+    margin-left: 5%;
+    font-size: 20px;
+}
+.note {
+    color: #e82226;
+    vertical-align: top;
 }

@@ -10,15 +10,16 @@ $result["death"] == null? $deathValue = "---" : $deathValue = $result["death"];
 
 //Prepare to add the object
 $req = $db->prepare('INSERT INTO specialist (
-    name, image, biographyShort, birthday, deathDate, function
-    ) VALUES (:name, :image, :biography, :birthday, :deathDate, :function)');
+    name, pictureProfile, biographyShort, birthday, deathDate, pa_function, curr_function
+    ) VALUES (:name, :image, :biography, :birthday, :deathDate, :pa_function, :curr_function)');
 
-$req->bindValue(':name' , $result["name"]); 
+$req->bindValue(':name' , $result["name"]);
 $req->bindValue(':image' , $result["image"]);
 $req->bindValue(':biography', $result["biography"]);
 $req->bindValue(':birthday' , $result["birth"]);
 $req->bindValue(':deathDate' , $deathValue);
-$req->bindValue(':function' , $result["function"]);
+$req->bindValue(':pa_function' , $result["paFunction"]);
+$req->bindValue(':curr_function' , $result["currFunction"]);
 
 $req->execute();
 
