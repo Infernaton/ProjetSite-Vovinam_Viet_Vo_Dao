@@ -14,7 +14,7 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=federation&p=1" id="clubs">Les Régions et Clubs</a>
                     <a class="dropdown-item" href="?c=federation&p=2" id="contact-federation">Contacts</a>
                     <a class="dropdown-item" href="?c=federation&p=3" id="lien">Lien</a>
-                    <a class="dropdown-item" href="?c=federation&p=4" id="label">Label-Légal-régularité</a>
+                    <a class="dropdown-item" href="?c=federation&p=4" id="label">Logo-Légal</a>
                 </div>
             </li>
             <li class="nav-item dropdown" id="directionTech">
@@ -24,7 +24,7 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=directionTech&p=1" id="liste-ME">Liste officielle des maîtres et ceintures noires</a>
                     <a class="dropdown-item" href="?c=directionTech&p=2" id="calendrier-tech">Calendrier technique</a>
                     <a class="dropdown-item" href="?c=directionTech&p=3" id="stage-GRT">Stages GRT</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=4" id="competition">Compétition</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=4" id="competition">Compétitions</a>
                     <a class="dropdown-item" href="?c=directionTech&p=5" id="grades">Passage de grades</a>
                     <a class="dropdown-item" href="?c=directionTech&p=6" id="formation">Formations</a>
                 </div>

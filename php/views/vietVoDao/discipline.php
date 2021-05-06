@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/discipline.css">
+<link rel="stylesheet" href="css/discipline1.css">
 
 <div class="container-fluid section-fade" id="banner">
         <style>           
