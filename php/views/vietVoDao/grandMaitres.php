@@ -8,7 +8,6 @@ function str_replace_first($from, $to, $content){
 
 $greatMastersBeforeFetch = $db->query('SELECT * FROM specialist ORDER BY id');
 $greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
-
 //var_dump($greatMasters);
 
 $path = 'assets/img/Maitres';
