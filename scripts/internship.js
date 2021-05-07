@@ -12,25 +12,26 @@ function multiCollapseButton(idWrite, idRead){
     })
 }
 function selectYear(selection){
-    newSelect = selection.split("-");
+    newSelect = selection.split("/");
     //Console: ["aaaa","aaaa"]
     let a, txtValue;
 
-    let listClubs = document.getElementById("listClub");
-    let clubs = listClubs.getElementsByClassName("club");
+    let second = document.getElementById("compete");
+    let compete = second.getElementsByClassName("date");
     
     let subtitle = document.getElementById("select");
     subtitle.innerHTML = '('+selection[1]+')';
 
-    for (let i=0; i< clubs.length; i++){
+    for (let i=0; i< compete.length; i++){
         
-        a = clubs[i].getElementsByClassName("comite")[0];
-        txtValue = a.textContent || a.innerText; //To get the complete title of the object
+        a = compete[i].getElementsByClassName("date")[0];
+        newSelect = field [3];
 
         if (txtValue.indexOf(selection[0]) <= -1) { //The test if the research and the title match
-            clubs[i].classList.add("hide");
+            compete[i].classList.add("hide");
         } else {
-            clubs[i].classList.remove("hide");
+            compete[i].classList.remove("hide");
         }
     }
 }
+

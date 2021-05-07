@@ -39,64 +39,66 @@
                         </div>
                 </div>
                 <h3 id = "venir" >Précédente compétitions</h3>
-                <div id="compete">
-                    <h4>Compétition 1</h4>
-                    <p class = "date"> 04/05/2023 - 05/05/2023</p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 1</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 1</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 1</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
+                <div class="compete">
+                    <div class = "listCompete">
+                        <h4>Compétition 1</h4>
+                        <p class = "date"> 04/05/2017 - 05/05/2017</p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 1</h4>
+                        <p class = "date"> 05/05/2017 - 05/05/2017 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 1</h4>
+                        <p class = "date"> 05/05/2017 - 05/05/2017 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 1</h4>
+                        <p class = "date"> 05/05/2017 - 05/05/2017 </p>
+                        <p class= "lieux"> Bordeaux</p>
 
-                    <h4>Compétition 2</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 2</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 2</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 2</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 2</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 2</h4>
+                        <p class = "date"> 05/05/2013 - 05/05/2013 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 2</h4>
+                        <p class = "date"> 05/05/2013 - 05/05/2013 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 2</h4>
+                        <p class = "date"> 05/05/2013 - 05/05/2013 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 2</h4>
+                        <p class = "date"> 05/05/2013 - 05/05/2013 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 2</h4>
+                        <p class = "date"> 05/05/2013 - 05/05/2013 </p>
+                        <p class= "lieux"> Bordeaux</p>
 
-                    <h4>Compétition 3</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 3</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 3</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 3</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 3</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 3</h4>
+                        <p class = "date"> 05/05/2007 - 05/05/2007 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 3</h4>
+                        <p class = "date"> 05/05/2007 - 05/05/2007 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 3</h4>
+                        <p class = "date"> 05/05/2007 - 05/05/2007 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 3</h4>
+                        <p class = "date"> 05/05/2007 - 05/05/2007 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 3</h4>
+                        <p class = "date"> 05/05/2007 - 05/05/2007 </p>
+                        <p class= "lieux"> Bordeaux</p>
 
-                    <h4>Compétition 4</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 4</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 4</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                    <h4>Compétition 4</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 4</h4>
+                        <p class = "date"> 05/05/2003 - 05/05/2003 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 4</h4>
+                        <p class = "date"> 05/05/2003 - 05/05/2003 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 4</h4>
+                        <p class = "date"> 05/05/2003 - 05/05/2003 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                        <h4>Compétition 4</h4>
+                        <p class = "date"> 05/05/2003 - 05/05/2003 </p>
+                        <p class= "lieux"> Bordeaux</p>
+                    </div>
                 </div>
             </div>
         </div>
