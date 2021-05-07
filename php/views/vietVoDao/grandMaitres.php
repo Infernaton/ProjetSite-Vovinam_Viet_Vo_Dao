@@ -172,8 +172,7 @@ $fondatorData = $greatMasters[0];
                                 <div class="main">
                                     <h3 class="name">Maître <?php echo $greatMastersDB[$i]['name']?> <small class="profession"><?php echo $greatMastersDB[$i]['birthday'].' - '.$greatMastersDB[$i]['deathDate']?></small></h3>
                                     <?php 
-                                    $greatMastersDB[$i]['curr_function']==null ? $currFonction='' : $currFonction=','.$greatMastersDB[$i]['curr_function'];
-                                    $functions = explode(',', $greatMastersDB[$i]["pa_function"].$currFonction);
+                                    $functions = explode(',', $greatMastersDB[$i]["function"]);
                                     for ($a=0; $a<count($functions); $a++){
                                         echo '<p>'.$functions[$a].'</p>';
                                     }

@@ -1,9 +1,9 @@
 <?php
 require_once "../init.php";
-/*
+
 var_dump($_POST);
 var_dump($_FILES);
-*/
+
 $target_dir = "../../assets/img/maitres/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $uploadOk = 1;
@@ -40,22 +40,35 @@ $target_file = str_replace("../","",$target_file);
 
 $_POST["death"] == null? $deathValue = "---" : $deathValue = $_POST["death"];
 
-//Prepare to add the object
-$req = $db->prepare('INSERT INTO specialist (
-    name, pictureProfile, biographyShort, birthday, deathDate, function, hierarchy
-    ) VALUES (:name, :image, :biography, :birthday, :deathDate, :function, :hierarchy)');
+switch ($_POST['submit']){
+    case 'valid':
+        //Prepare to add the object
+        $req = $db->prepare('INSERT INTO specialist (
+            name, pictureProfile, biographyShort, birthday, deathDate, function, hierarchy
+            ) VALUES (:name, :image, :biography, :birthday, :deathDate, :function, :hierarchy)');
 
-$req->bindValue(':name' , $_POST["name"]);
-$req->bindValue(':image' , $target_file);
-$req->bindValue(':biography', $_POST["biography"]);
-$req->bindValue(':birthday' , $_POST["birth"]);
-$req->bindValue(':deathDate' , $deathValue);
-$req->bindValue(':function' , $_POST["function"]);
-$req->bindValue(':hierarchy' , $_POST["hierarchy"]);
+        $req->bindValue(':name' , $_POST["name"]);
+        $req->bindValue(':image' , $target_file);
+        $req->bindValue(':biography', $_POST["biography"]);
+        $req->bindValue(':birthday' , $_POST["birth"]);
+        $req->bindValue(':deathDate' , $deathValue);
+        $req->bindValue(':function' , $_POST["function"]);
+        $req->bindValue(':hierarchy' , $_POST["hierarchy"]);
 
-//$req->execute();
+        //$req->execute();
+        //echo "\n Envoie réussi";
 
-//echo "\n Envoie réussi";
+        break;
+    case 'modify':
+        $request = 'UPDATE specialist SET'.' name="'.$_POST["name"].'", pictureProfile="'.$target_file.'", biographyShort="'.$_POST["biography"].'", birthday="'.$_POST["birth"].'", deathDate="'.$deathValue.'", function="'.$_POST["function"].'", hierarchy="'.$_POST["hierarchy"].'"'.' WHERE id='.(int)$_POST['currentMaster'].'';
+        var_dump($request);
+        $req = $db->prepare($request);
+        $req->execute();
+        break;
+    case 'delete':
+        break;
+}
+
 //echo "<script type='text/javascript'> history.go(-1); </script>";
 die;
 
