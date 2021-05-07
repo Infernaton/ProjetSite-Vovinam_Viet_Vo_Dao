@@ -12,12 +12,12 @@ function multiCollapseButton(idWrite, idRead){
     })
 }
 function selectYear(selection){
-    newSelect = selection.split("-");
+    newSelect = selection.split("-"); //Make an Array from the year input which look like this: '2000-2005'
     for (let o=0; o< newSelect.length;o++){
-        newSelect[o]= parseInt(newSelect[o]);
+        newSelect[o]= parseInt(newSelect[o]); //make all the value into an integer, for the comparison l.30
     }
     let listCompete = document.getElementById("compete");
-    let competitions = listCompete.getElementsByTagName("div");
+    let competitions = listCompete.getElementsByTagName("div"); //Get the list of all Competition from the document
     /*
     let subtitle = document.getElementById("select");
     subtitle.innerHTML = '('+selection[1]+')';
@@ -25,7 +25,7 @@ function selectYear(selection){
     for (let i=0; i< competitions.length; i++){
         
         let txtValue = competitions[i].getElementsByClassName("date")[0].innerHTML;
-        txtValue = parseInt(a.substring(a.length-4));
+        txtValue = parseInt(txtValue.substring(txtValue.length-4));
         
         if (txtValue>newSelect[0] && txtValue<newSelect[1]) { //The test if the research and the title match
             competitions[i].classList.remove("hide");
@@ -34,4 +34,3 @@ function selectYear(selection){
         }
     }
 }
-

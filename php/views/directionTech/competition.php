@@ -1,3 +1,27 @@
+<?php
+require_once 'php/init.php';
+
+$eventBefFetch = $db->query('SELECT * FROM event WHERE type LIKE "Compétition" Order by id');
+$eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
+
+date_default_timezone_set('Europe/Paris');
+$date = explode("/",date('d/m/Y', time()));
+
+function printTournament($index){
+    global $eventComp;
+    
+    $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
+
+    echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
+    '<h4>'.$eventComp[$index]['title'].'</h4>',
+    '<p class="date">'.$eventComp[$index]['dateDebut'].' - '.$eventComp[$index]['dateFin'].'</p>',
+    '<p class="descr">'.$eventComp[$index]['description'].'</p>',
+    '<p class="prerequis">'.$prerequis.'</p>',
+    '</div>';
+}
+
+?>
+
 <link rel="stylesheet" href="css/directionTech.css">
 
 <div class="container mt-5">
@@ -15,18 +39,19 @@
         </div>
         <div class="hide">
             <div id="first">
-                <h3 id = "venir" > Compétitions à venir</h3>
-                <div class = "compet_new" id ="new-1">
-                    <h4>Compétition 1</h4>
-                    <p class = "date"> 22 mai 2022 - 23 mai 2022 </p>
-                    <p class= "lieux"> Paris</p>
-                </div>
-                <br>
-                <div class = "compet_new" id ="new-2">
-                    <h4>Compétition 2</h4>
-                    <p class = "date"> 04 mai 2023 - 05 mai 2023 </p>
-                    <p class= "lieux"> Bordeaux</p>
-                </div>
+            <h3> Compétitions à venir</h3>
+            <?php 
+            for ($i=0;$i<count($eventComp);$i++){
+                $dateDebut= explode("/",$eventComp[$index]['dateDebut']);
+                if ($dateDebut[2] >= $date[2]){ //Comparaison de l'année
+                    if ($dateDebut[1] >= $date[1]){ //Comparaison du mois
+                        if($dateDebut[0] > $date[0]) { //Comparaison du jour
+                            printTournament($i);
+                        }
+                    }
+                }
+            }
+            ?>
             </div>
             <div id="second">
                 <div class="dropdown">
@@ -38,98 +63,20 @@
                             <button class="dropdown-item" type="button"onclick="selectYear('2000-2004')">2000-2004</button>
                         </div>
                 </div>
-                <h3 id = "venir" >Précédente compétitions</h3>
+                <h3>Précédentes compétitions</h3>
                 <div id="compete">
-                    <div>
-                        <h4>Compétition 1</h4>
-                        <p class = "date"> 04/05/2017 - 05/05/2017</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 1</h4>
-                        <p class = "date"> 05/05/2017 - 05/05/2017</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 1</h4>
-                        <p class = "date"> 05/05/2017 - 05/05/2017</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 1</h4>
-                        <p class = "date"> 05/05/2017 - 05/05/2017</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 2</h4>
-                        <p class = "date"> 05/05/2013 - 05/05/2013</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 2</h4>
-                        <p class = "date"> 05/05/2013 - 05/05/2013</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 2</h4>
-                        <p class = "date"> 05/05/2013 - 05/05/2013</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 2</h4>
-                        <p class = "date"> 05/05/2013 - 05/05/2013</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 2</h4>
-                        <p class = "date"> 05/05/2013 - 05/05/2013</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 3</h4>
-                        <p class = "date"> 05/05/2007 - 05/05/2007</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 3</h4>
-                        <p class = "date"> 05/05/2007 - 05/05/2007</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 3</h4>
-                        <p class = "date"> 05/05/2007 - 05/05/2007</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 3</h4>
-                        <p class = "date"> 05/05/2007 - 05/05/2007</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 3</h4>
-                        <p class = "date"> 05/05/2007 - 05/05/2007</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 4</h4>
-                        <p class = "date"> 05/05/2003 - 05/05/2003</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 4</h4>
-                        <p class = "date"> 05/05/2003 - 05/05/2003</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 4</h4>
-                        <p class = "date"> 05/05/2003 - 05/05/2003</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
-                    <div>
-                        <h4>Compétition 4</h4>
-                        <p class = "date"> 05/05/2003 - 05/05/2003</p>
-                        <p class= "lieux"> Bordeaux</p>
-                    </div>
+                <?php 
+                for ($i=0;$i<count($eventComp);$i++){
+                    $dateDebut= explode("/",$eventComp[$index]['dateDebut']);
+                    if ($dateDebut[2] <= $date[2]){ //Comparaison de l'année
+                        if ($dateDebut[1] <= $date[1]){ //Comparaison du mois
+                            if($dateDebut[0] < $date[0]) { //Comparaison du jour
+                                printTournament($i);
+                            }
+                        }
+                    }
+                }
+                ?>
                 </div>
             </div>
         </div>
