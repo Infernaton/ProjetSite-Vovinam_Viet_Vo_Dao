@@ -46,7 +46,7 @@ $fondatorData = $greatMasters[0];
         <!-- Photo du ME Fondateur -->
         <div class="row">
             <div class="col-sm-4">
-                <img style="width: 85%; margin-top:5px" src="assets/img/Maitres/ME_Fondateur.png" alt="">
+                <img style="width: 85%; margin-top:5px" src="assets/img/maitres/ME_Fondateur.png" alt="">
             </div>
             <!-- Carte avec un effet de rotation -->
             <div class="col-sm-8">
@@ -166,7 +166,7 @@ $fondatorData = $greatMasters[0];
                             <div class="content">
                                 <!-- Photo -->
                                 <div class="user">
-                                    <img class="img-circle" src=" assets/img/Maitres/ME_Fondateur.png"/>
+                                    <img class="img-circle" src="<?php echo $greatMastersDB[$i]['pictureProfile']?>"/>
                                 </div>
                                 <!-- Contenu -->
                                 <div class="main">

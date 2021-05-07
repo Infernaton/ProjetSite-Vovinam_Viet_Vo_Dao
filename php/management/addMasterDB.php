@@ -4,7 +4,7 @@ require_once "../init.php";
 var_dump($_POST);
 var_dump($_FILES);
 */
-$target_dir = "../../assets/img/";
+$target_dir = "../../assets/img/maitres/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -42,16 +42,16 @@ $_POST["death"] == null? $deathValue = "---" : $deathValue = $_POST["death"];
 
 //Prepare to add the object
 $req = $db->prepare('INSERT INTO specialist (
-    name, pictureProfile, biographyShort, birthday, deathDate, pa_function, curr_function
-    ) VALUES (:name, :image, :biography, :birthday, :deathDate, :pa_function, :curr_function)');
+    name, pictureProfile, biographyShort, birthday, deathDate, function, hierarchy
+    ) VALUES (:name, :image, :biography, :birthday, :deathDate, :function, :hierarchy)');
 
 $req->bindValue(':name' , $_POST["name"]);
 $req->bindValue(':image' , $target_file);
 $req->bindValue(':biography', $_POST["biography"]);
 $req->bindValue(':birthday' , $_POST["birth"]);
 $req->bindValue(':deathDate' , $deathValue);
-$req->bindValue(':pa_function' , $_POST["paFunction"]);
-$req->bindValue(':curr_function' , $_POST["currFunction"]);
+$req->bindValue(':function' , $_POST["function"]);
+$req->bindValue(':hierarchy' , $_POST["hierarchy"]);
 
 //$req->execute();
 
