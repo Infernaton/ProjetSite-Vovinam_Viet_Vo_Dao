@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/add1.css">
+<link rel="stylesheet" href="css/add.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -6,16 +6,40 @@
 
 <div id="container" class="container">
     <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
-        <div class="btn-redirect">
-            <a href="?c=admin&p=1">
-                <button class = "btn-panel">Ajouter un Grand Maître</button>
-            </a>
-            <a href="?c=admin&p=2">
-                <button class = "btn-panel">Ajouter un club</button>
-            </a>
-
-            <a href="?c=admin&p=3">
-                <button class = "btn-panel">Ajouter un évènement</button>
-            </a>
+        <button class="collapsible">Maître</button>
+            <div class="content">
+                
+                <a href="?c=admin&p=1">
+                    <button class = "btn-panel">Ajouter un Grand Maître</button>
+                </a>
+            </div>  
+        <button class="collapsible">Club</button>
+            <div class="content"> 
+                <a href="?c=admin&p=2">
+                    <button class = "btn-panel">Ajouter un club</button>
+                </a>
+            </div> 
+        <button class="collapsible">Evènement</button>
+            <div class="content"> 
+                <a href="?c=admin&p=3">
+                    <button class = "btn-panel">Ajouter un évènement</button>
+                </a>
         </div>
 </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
