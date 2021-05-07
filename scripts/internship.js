@@ -12,25 +12,25 @@ function multiCollapseButton(idWrite, idRead){
     })
 }
 function selectYear(selection){
-    newSelect = selection.split("/");
-    //Console: ["aaaa","aaaa"]
-    let a, txtValue;
-
-    let second = document.getElementById("compete");
-    let compete = second.getElementsByClassName("date");
-    
+    newSelect = selection.split("-");
+    for (let o=0; o< newSelect.length;o++){
+        newSelect[o]= parseInt(newSelect[o]);
+    }
+    let listCompete = document.getElementById("compete");
+    let competitions = listCompete.getElementsByTagName("div");
+    /*
     let subtitle = document.getElementById("select");
     subtitle.innerHTML = '('+selection[1]+')';
-
-    for (let i=0; i< compete.length; i++){
+    */
+    for (let i=0; i< competitions.length; i++){
         
-        a = compete[i].getElementsByClassName("date")[0];
-        newSelect = field [3];
-
-        if (txtValue.indexOf(selection[0]) <= -1) { //The test if the research and the title match
-            compete[i].classList.add("hide");
+        let txtValue = competitions[i].getElementsByClassName("date")[0].innerHTML;
+        txtValue = parseInt(a.substring(a.length-4));
+        
+        if (txtValue>newSelect[0] && txtValue<newSelect[1]) { //The test if the research and the title match
+            competitions[i].classList.remove("hide");
         } else {
-            compete[i].classList.remove("hide");
+            competitions[i].classList.add("hide");
         }
     }
 }
