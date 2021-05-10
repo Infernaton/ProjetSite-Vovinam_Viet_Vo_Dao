@@ -24,9 +24,14 @@ if (isset($_GET['m'])) {
     </div>
     <div class="row" id="master-row">
       <div class="col-sm-5">
-        <img id="previewImg" src="#" onerror="this.onerror=null;this.src='assets/img/no-picture.png';" alt="Not Found" style="width: 100%; max-width: 350px; height: auto;">
 
-        <input class="inputData" type="file" name="image" id="image" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);">
+        <div id="previewImgDiv" class="responsive">
+          <div class="hoverEle">Changer l'image</div>
+          <input class="hide" type="text" name="oldImage" id="oldImage">
+          <input class="inputData input-file" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);">
+        </div>
+        <!--<img id="previewImg" src="#" onerror="this.onerror=null;this.src='assets/img/no-picture.png';" alt="Not Found" style="width: 100%; max-width: 350px; height: auto;">-->
+        
 
         <label class="data" for="name"><b>Nom Complet</b><span class="note">*</span></label>
         <input class="inputData" type="text" placeholder="Nom" name="name" id="name" required>
@@ -89,7 +94,9 @@ if (<?php echo $index?> != -1){
     document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
     document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>";
     document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
-    document.getElementById("previewImg").src = "<?php echo $currentMaster['pictureProfile'] ?>";
+    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo $currentMaster['pictureProfile'] ?>);";
+    document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
+    document.getElementById("newImage").required = false;
 
     //Pouvoir modifier une image dans la DB
     /**
@@ -109,7 +116,7 @@ if (<?php echo $index?> != -1){
         var reader = new FileReader();
  
         reader.onload = function(){
-          $("#previewImg").attr("src", reader.result);
+          $("#previewImgDiv").attr("style", "background-image:url("+reader.result+");");
         }
  
         reader.readAsDataURL(file);
