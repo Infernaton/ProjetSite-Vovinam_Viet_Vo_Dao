@@ -29,31 +29,32 @@
     <div class="text-center"><h1 class="content-title-red">Ajouter un Club</h1></div>
   
     <div class="row pt-5">
-    <div class="col-sm-8">
+    <div class="col-12 col-md-8">
       <div id="coordonee"></div>
-      <div id=map></div>
+      <div id="map" style="height:400px; max-height:100%"></div>
     </div>
-    <div class="col-sm-4 ">
-      
-      <div class="form">
+    <div class="col-12 col-md-4">
+      <div class="row mt-3">
+      <div class="col-12">
         <label class="data" for="titre"><b>Titre</b></label>
-        <input class="inputData" type="text" placeholder="Nom du club" name="titre" id="titre" required>
+        <input class="inputData form-control" type="text" placeholder="Nom du club" name="titre" id="titre" required>
       </div>
-      <div class="form">
+      <div class="col-12">
         <label class="data" for="Enseignant"><b>Enseignant Principal</b></label>
-        <input class="inputData" type="text" placeholder="Nom de l'enseignant" name="enseignant" id="enseignant" >
+        <input class="inputData form-control" type="text" placeholder="Nom de l'enseignant" name="enseignant" id="enseignant" >
       </div>
-      <div class="form">
+      <div class="col-12">
         <label class="data" for="Contact"><b>Contacter le club</b></label>
-        <input class="inputData" type="text" placeholder="Contact" name="contact" id="contact">
+        <input class="inputData form-control" type="text" placeholder="Contact" name="contact" id="contact">
       </div>
-      <div class="form">
+      <div class="col-12">
         <label class="data" for="lien"><b>Lien du site Web</b></label>
-        <input class="inputData" type="text" placeholder="Lien du site" name="lien" id="lien">
+        <input class="inputData form-control" type="text" placeholder="Lien du site" name="lien" id="lien">
       </div>
-      <div class="form">
+      <div class="col-12">
         <label class="data disabled" for="result"> <b>Coordonée GPS</b></label>
-        <input class="list-group-item disabled" type="text" name="result" id="coo" placeholder="GPS" required>
+        <input class="list-group-item form-control" type="text" name="result" id="coo" placeholder="GPS" required readonly>
+      </div>
       </div>
           
       <div class ="d-flex justify-content-between mb-3">

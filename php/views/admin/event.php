@@ -5,20 +5,17 @@
             <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1>
         </div>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-12 col-md-4">
             <label class="data" for="title"><b>Titre</b></label>
-            <input class="inputData" type="text" placeholder="Titre" name="title" id="title" required>
+            <input class="inputData form-control" type="text" placeholder="Titre" name="title" id="title" required>
 
             <label class="data" for="debut"><b>Date de Début de l'évènement</b></label>
-            <input class="inputData" type="text" placeholder="jj/mm/aaaa" name="debut" id="dateDebut"required>
+            <input class="inputData form-control" type="date" placeholder="jj/mm/aaaa" name="debut" id="dateDebut"required>
             <label class="data" for="fin"><b>Date de Fin de l'évènement</b></label>
-            <input class="inputData" type="text" placeholder="jj/mm/aaaa" name="fin" id="dateFin"required>
-        </div>
-
-        <div class="col-sm-6">
+            <input class="inputData form-control" type="date" placeholder="jj/mm/aaaa" name="fin" id="dateFin"required>
             <div id="categoryContainer">
                 <label class="data" for="event"><b>Type d'évènement</b></label>
-                <input class="inputData" list="list" type="text" placeholder="  -" name="event" id="event" required>
+                <input class="inputData form-control" list="list" type="text" placeholder="  -" name="event" id="event" required>
                 <datalist id="list">
                     <option value="Compétition">
                     <option value="Stage">
@@ -27,13 +24,14 @@
                 </datalist>
             </div>
             <label class="data" for="prerequis"><b>Prérequis (Optionnel, comme dans le cas d'un stage)</b></label>
-            <input class="inputData" type="text" placeholder="Prérequis" name="prerequis" id="prerequis">
+            <input class="inputData form-control" type="text" placeholder="Prérequis" name="prerequis" id="prerequis">
         </div>
-    </div> 
-        <div class="col-sm-12">
+
+        <div class="col-12 col-md-8">
             <label class="data" for="description"><b>Description</b></label>
-            <textarea class="inputData" rows="4" cols="100" name="description" placeholder="Description.." id="description"></textarea>
-        </div>        
+            <textarea class="inputData form-control" rows="10" cols="100" name="description" placeholder="Description.." id="description"></textarea>
+        </div>
+    </div>        
 
         <div class="d-flex justify-content-between mb-3">
             <div id="btn-reset" class="p-2">
