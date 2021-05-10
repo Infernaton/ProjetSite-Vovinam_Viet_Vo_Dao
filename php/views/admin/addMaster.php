@@ -1,5 +1,6 @@
 <?php
 //Get the index of the current master in the url
+$currentMaster = null;
 if (isset($_GET['m'])) {
   if ($_GET['m'] != null) {
     $index = $_GET['m'];
@@ -23,27 +24,34 @@ if (isset($_GET['m'])) {
     </div>
     <div class="row" id="master-row">
       <div class="col-sm-5">
+        <img id="previewImg" src="#" onerror="this.onerror=null;this.src='assets/img/no-picture.png';" alt="Not Found" style="width: 100%; max-width: 350px; height: auto;">
+
+        <input class="inputData" type="file" name="image" id="image" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);">
+
         <label class="data" for="name"><b>Nom Complet</b><span class="note">*</span></label>
         <input class="inputData" type="text" placeholder="Nom" name="name" id="name" required>
+        
+        <div class="row">
+        <div class="col-sm-6">
+          <label class="data" for="birth"><b>Date de Naissance</b><span class="note">*</span></label>
+          <input class="inputData" type="text" placeholder="'jj/mm/aaaa' ou 'aaaa'" name="birth" id="birth" required style="width:105%">    
+        </div>
+        <div class="col-sm-6">
+          <label class="data" for="death"><b>Date du Décès</b></label>
+          <input class="inputData" type="text" placeholder="(Optionnel)" name="death" id="death" style="width:70%">        
+        </div>
+        </div>
+      </div>
 
-        <label class="data" for="image"><b>Photo</b><span class="note">*</span></label>
-        <input class="inputData" type="file" placeholder="Lien d'une Image" name="image" id="image" accept="image/png, image/jpeg" required>
+      <div class="col-sm-7">
 
-        <label class="data" for="birth"><b>Date de Naissance</b><span class="note">*</span></label>
-        <input class="inputData" type="text" placeholder="'jj/mm/aaaa' ou 'aaaa'" name="birth" id="birth" required>
-
-        <label class="data" for="death"><b>Date du Décès</b></label>
-        <input class="inputData" type="text" placeholder="(Optionnel)" name="death" id="death">
-
-        <label class="data" for="currFunction"><b>Hierarchy</b><span class="note">*</span></label>
+        <label class="data" for="currFunction"><b>Hiérarchie</b><span class="note">*</span></label>
         <input class="inputData" list="list" placeholder="----" name="hierarchy" id="hierarchy" required>
         <datalist id="list">
           <option value="Grand Maître">
           <option value="Maître">
         </datalist>
-      </div>
 
-      <div class="col-sm-7">
         <label class="data" for="biography"><b>Courte Biographie</b></label>
         <textarea class="inputData" rows="6" cols="60" placeholder="(Optionnel)" name="biography" id="biography"></textarea>
 
@@ -81,6 +89,8 @@ if (<?php echo $index?> != -1){
     document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
     document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>";
     document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
+    document.getElementById("previewImg").src = "<?php echo $currentMaster['pictureProfile'] ?>";
+
     //Pouvoir modifier une image dans la DB
     /**
      * https://www.tutorialrepublic.com/faq/how-to-preview-an-image-before-it-is-uploaded-using-jquery.php
@@ -92,4 +102,17 @@ if (<?php echo $index?> != -1){
      */
   }
 }
+    function previewFile(input){
+      var file = $("input[type=file]").get(0).files[0];
+ 
+      if(file){
+        var reader = new FileReader();
+ 
+        reader.onload = function(){
+          $("#previewImg").attr("src", reader.result);
+        }
+ 
+        reader.readAsDataURL(file);
+      }
+    }
 </script>
