@@ -38,10 +38,11 @@
 
 <div class="container">
   <br>
-  <div class="text-center"><h1 class="content-title-yellow">Ici sera présent un résumé du Vovinam Viet Vo Dao</h1></div>
-  
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint quia suscipit laudantium dolorem eos, soluta numquam eligendi quo libero illum aspernatur quisquam ea dignissimos error iure. Unde iure adipisci</p>
-  <p>ipsum dolor sit amet consectetur adipisicing elit. Nesciunt facere, velit voluptates iste commodi ipsa! Corrupti ullam voluptatem, sit laboriosam dolorem, saepe ex velit illum ducimus esse suscipit architecto mollitia?</p>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non nam repudiandae natus placeat omnis eos inventore sequi quis in fugiat explicabo molestiae itaque odit corrupti minima doloremque iure, incidunt aut!</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, natus fugiat? Ducimus aut itaque similique sint fugiat necessitatibus nulla laborum nostrum iure error asperiores quam, illo quod consectetur aliquid rerum.</p>
+  <div class="text-center mb-5">
+    <h1 class="content-title-yellow">Le Vovinam-Viet Vo Dao</h1>
+    <h2> Son principe « HARMONIE ENTRE LA FORCE ET LA SOUPLESSE »</h2>
+  </div>
+  <h3 class="mt-5">Présentation</h3>
+  <p>Le Vovinam-Viet Vo Dao présente tout un système technique et philosophique riche et structuré.</p>
+  <p>Que vous soyez un enfant ou un adulte, un débutant ou un expert en arts martiaux, l'enseignement est adapté à votre âge, à vos capacités physiques et à votre niveau technique. La pratique vous conduit à rechercher en permanence, l'équilibre, la perfection du mouvement, et l'efficacité des enchaînements.</p>
 </div>
