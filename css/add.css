@@ -133,3 +133,12 @@ button:hover {
     margin-bottom: 30px;
     margin-top: 30px;
   }
+
+.collapsible::after{
+    content: "+";
+    float: right;
+}
+.active::after{
+    content: "-";
+    float: right;
+}
