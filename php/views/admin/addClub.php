@@ -24,7 +24,6 @@
   #coordonee {
     position: absolute;
     z-index: 1;
-    margin-left: 35%;
   }
 </style>
 
@@ -34,8 +33,15 @@
   
     <div class="row pt-5">
     <div class="col-12 col-md-8">
-      <div id="coordonee"></div>
-      <div id="map" style="height:400px; max-height:100%"></div>
+      <div class="row">
+        <div class="col-12">
+          <div id="coordonee" style=></div>
+        </div>
+        <div class="col-12">
+          <div id="map" style="height:400px; max-height:100%"></div>
+        </div>
+      </div>
+      
     </div>
     <div class="col-12 col-md-4">
       <div class="row mt-3">
