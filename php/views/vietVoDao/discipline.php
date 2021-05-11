@@ -5,6 +5,8 @@
                 #banner{
                     background-image: url('assets/img/le-vvd/banner1.jpg')!important;
                     background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
                 }
         </style>
         <!-- Fin de l'image -->
@@ -23,9 +25,9 @@
         <!-- Section avec intégration facebook -->
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="row" style="padding: 20px;">
-                <div class="col-sm-8" >
+                <div class="col-12 col-md-8" >
                     <div class="fb-video" data-href="https://www.facebook.com/229885840921077/videos/261154291127565" data-width="600" data-show-text="false"><blockquote cite="https://developers.facebook.com/FederationVovinamVietVoDaoFrance/videos/261154291127565/" class="fb-xfbml-parse-ignore"><a href="https://developers.facebook.com/FederationVovinamVietVoDaoFrance/videos/261154291127565/">Démonstration - Bercy Arena en 2017</a><p>La démonstration du Vovinam Viet Vo Dao à Bercy Arena en 2017</p>Publiée par <a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance/">Fédération Vovinam Viet Vo Dao France</a> sur Mercredi 20 juin 2018</blockquote></div>                </div>
-                <div class="col-sm-4">
+                <div class="col-12 col-md-4">
                     <div>
                         <h3 class="content-title-yellow">Le Vovinam-VietVoDao</h3>
                         <p style="padding-top: 20px;">Art Martial Traditionnel Vietnamien, il est l'œuvre de tout un peuple engagé tout au long de son histoire dans une lutte pour la définition et la préservation de son identité.
@@ -42,7 +44,7 @@
                 </div>
             </div>
             <div class="row m-4">
-                <div class="col">
+                <div class="col-12 col-md-5">
                     <h5> 
                         <span style="color:#e82226;">Vovinam</span> = <span style="color:#1c55a3;">Art Martial Vietnamien</span>
                     </h5>
@@ -53,8 +55,8 @@
                     <p> <span style="color:#1c55a3;"><b>DAO</b></span>: La voie, la philosophie.</p> <br>
                     <p> <span style="color:#1c55a3;"><b>La voie de l'art martial Vietnamien</b></span> </p>
                 </div>
-                <div class="col">
-                    <img src="assets/img/le-vvd/signification.png">
+                <div class="col-12 col-md-7">
+                    <img src="assets/img/le-vvd/signification.png" width="100%" height="100%">
                 </div>
             </div>
         </section>
@@ -88,6 +90,8 @@
                 </tr>
                 </table>
             </div>
+        </section>
+        <section class="section-fade" style="padding-bottom: 20px;">
             <div class="mt-5">
                 <h4 class="pl-5 pb-2"> Les 9 Principes </h4>
                 <ol class="list-group list-group-flush"> 
