@@ -34,7 +34,7 @@ function partials_header($categorie,$page){
         </div>
     </header>
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-md sticky-top bg navbar-dark" id="navbar">
+    <nav class="navbar navbar-expand-md sticky-top bg navbar-lightgray" id="navbar">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -105,17 +105,22 @@ function partials_header($categorie,$page){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 <script>
-$(function(){
-
-$(window).bind("resize",function(){
-    console.log($(this).width())
-    if($(this).width() <768){
-    $('#navbar').removeClass('navbar-lightgray').addClass('navbar-dark')
+$(document).ready(function(){
+    if($(window).width() <768){
+        $('#navbar').removeClass('navbar-lightgray').addClass('navbar-dark')
     }
     else{
-    $('#navbar').removeClass('navbar-dark').addClass('navbar-lightgray')
+        $('#navbar').removeClass('navbar-dark').addClass('navbar-lightgray')
     }
-})
+    $(window).bind("resize",function(){
+        console.log($(this).width())
+        if($(this).width() <768){
+            $('#navbar').removeClass('navbar-lightgray').addClass('navbar-dark')
+        }
+        else{
+            $('#navbar').removeClass('navbar-dark').addClass('navbar-lightgray')
+        }
+    })
 })
 </script>
 <?php
