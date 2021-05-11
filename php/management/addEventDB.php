@@ -5,6 +5,9 @@ require_once "../init.php";
 $url = parse_url($_SERVER['REQUEST_URI']);
 parse_str($url["query"],$result);
 var_dump($result);
+//Just in case we have to stock a date with the form dd/mm/yyyy
+$result['debut'] = str_replace("-","/",$result['debut']);
+$result['fin'] = str_replace("-","/",$result['fin']);
 
 //Prepare to add the object
 $req = $db->prepare('INSERT INTO `event` (

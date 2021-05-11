@@ -1,8 +1,8 @@
 <?php
 require_once "../init.php";
 
-var_dump($_POST);
-var_dump($_FILES);
+//var_dump($_POST);
+//var_dump($_FILES);
 
 //If we want to upload a new image for the current Master
 if ($_FILES['newImage']['error']==0){
@@ -16,7 +16,7 @@ if ($_FILES['newImage']['error']==0){
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["newImage"]["tmp_name"]);
         if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
+            //echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
         } else {
             echo "File is not an image.";
@@ -34,7 +34,7 @@ if ($_FILES['newImage']['error']==0){
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["newImage"]["tmp_name"], $target_file)) {
-            echo "The file ". htmlspecialchars( basename( $_FILES["newImage"]["name"])). " has been uploaded.";
+            //echo "The file ". htmlspecialchars( basename( $_FILES["newImage"]["name"])). " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
@@ -71,13 +71,13 @@ switch ($_POST['submit']){
         $request = 'UPDATE specialist SET'.' name="'.$_POST["name"].'", pictureProfile="'.$target_file.'", biographyShort="'.$_POST["biography"].'", birthday="'.$_POST["birth"].'", deathDate="'.$deathValue.'", function="'.$_POST["function"].'", hierarchy="'.$_POST["hierarchy"].'"'.' WHERE id='.(int)$_POST['currentMaster'].'';
         var_dump($request);
         $req = $db->prepare($request);
-        //$req->execute();
+        $req->execute();
         break;
     case 'delete':
         break;
 }
 
-//echo "<script type='text/javascript'> history.go(-1); </script>";
+echo "<script type='text/javascript'> history.go(-2); </script>";
 die;
 
 ?>

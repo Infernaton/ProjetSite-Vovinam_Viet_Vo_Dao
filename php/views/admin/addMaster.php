@@ -32,11 +32,7 @@ if (isset($_GET['m'])) {
           <input class="hide" type="text" name="oldImage" id="oldImage">
           <input class="inputData input-file" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);">
         </div>
-        <!--<img id="previewImg" src="#" onerror="this.onerror=null;this.src='assets/img/no-picture.png';" alt="Not Found" style="width: 100%; max-width: 350px; height: auto;">-->
-        
 
-        
-        
         <div class="row">
           <div class="col-12">
             <label class="data" for="name"><b>Nom Complet</b><span class="note">*</span></label>
@@ -70,16 +66,20 @@ if (isset($_GET['m'])) {
 
         <input class="hide" name="currentMaster" value="<?php echo $index?>" id="currentMaster">
         
-        <div class="d-flex justify-content-between mt-4">
+      </div>
 
-          <div id="btn-object">
+      <div class="col-12">
+
+        <div class="d-flex justify-content-between mt-4">
+          <div id="btn-object" class="p-2">
             <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
           </div>
 
-          <div id="btn-Action" style="margin-right: 5%;">
+          <div id="btn-Action" class="p-2">
             <button type="submit" class="btn-modObject annim" value="valid" name="submit" id="confirm">Valider</button>
           </div>
         </div>
+
       </div>
     </div>
   </div> 

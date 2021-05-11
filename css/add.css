@@ -50,7 +50,8 @@
     position: relative;
     max-width: 350px;
     height: 300px;
-    border-bottom: 1px solid #1c55a3;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #previewImgDiv:hover .hoverEle{
     position: absolute;
@@ -99,9 +100,7 @@ button:hover {
     text-align: center;
 }
 
-
 #master-row{
-    margin-left: 5%;
     font-size: 20px;
 }
 .note {
