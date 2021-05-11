@@ -55,12 +55,22 @@
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
     border-left-color: #e82226;
     }
-
+.inline-flex {
+    display: inline-flex;
+}
+@media screen and (max-width: 767px) {
+    .inline-flex{
+        display: block;
+    }
+    h4 small{
+        font-size:65%;
+    }
+}
 </style>
 <div class="container mt-5">
         <!-- Titre -->
         <div class="text-center">
-            <div style="padding: 50px; display: inline-flex;">
+            <div class="mt-5 mb-5 inline-flex">
                 <h1 class="content-title-blue">Les Régions</h1><h1>&nbsp;et&nbsp;</h1><h1 class="content-title-red">Clubs</h1>
             </div>
         </div>
@@ -75,7 +85,7 @@
         <!-- Liste des Comités Régionaux -->
         <div class="text-center">
             <!-- Titre -->
-            <div style="padding: 50px; display: inline-flex;" class="row">
+            <div class="row mt-5 mb-5">
                 <div class="col-sm-12"> <h2 class="content-title-blue">Les Régions</h2> </div>
                 <div class="col-sm-12"> <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Comité ci-dessous pour voir les clubs se trouvant dans la même région</small></h4></div>
             </div>
@@ -116,7 +126,7 @@
         <!-- Liste des clubs -->
         <div class="text-center">
             <!-- Titre -->
-            <div id="titleClub" style="padding: 50px; display: inline-flex;" class="row">
+            <div id="titleClub" class="row mt-5 mb-5">
                 <div class="col-sm-12"><h2 class="content-title-red">Les clubs</h2></div>
                 <div class="col-sm-12"><h3 id="select"><small></small></h3></div>
                 <div class="col-sm-12"> <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Club pour connaître sa position sur la carte.</small></h4></div>

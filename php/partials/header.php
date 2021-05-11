@@ -15,7 +15,7 @@ function partials_header($categorie,$page){
 .navbar-toggler-icon{
     color: white;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
     .bg{
         background-color: #343a40 !important;
     }
@@ -28,13 +28,13 @@ function partials_header($categorie,$page){
     <header>
         <div class="container-fluid header">
             <div class="row">
-                <div class="col-2"><a href="?c=home"><img src="assets/img/logo.png" width="45%" height="100%"></a></div>
+                <div class="col-2"><a href="?c=home"><img src="assets/img/logo.png" width="51%" height="100%"></a></div>
                 <div class="col-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
             </div>
         </div>
     </header>
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-md sticky-top bg navbar-lightgray" id="navbar">
+    <nav class="navbar navbar-expand-lg sticky-top bg navbar-lightgray" id="navbar">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -106,15 +106,14 @@ function partials_header($categorie,$page){
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 <script>
 $(document).ready(function(){
-    if($(window).width() <768){
+    if($(window).width() <991){
         $('#navbar').removeClass('navbar-lightgray').addClass('navbar-dark')
     }
     else{
         $('#navbar').removeClass('navbar-dark').addClass('navbar-lightgray')
     }
     $(window).bind("resize",function(){
-        console.log($(this).width())
-        if($(this).width() <768){
+        if($(this).width() < 991){
             $('#navbar').removeClass('navbar-lightgray').addClass('navbar-dark')
         }
         else{

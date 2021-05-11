@@ -3,7 +3,7 @@
 function partials_footer(){
 ?>   
     
-    <footer>
+    <footer class="fixed-bottom">
         <div class="col-sm-1">
             <div class="d-flex flex-row">
                 <div class="p-2 ">
