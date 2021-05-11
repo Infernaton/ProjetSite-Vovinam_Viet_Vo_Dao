@@ -184,7 +184,7 @@
     <!-- Configurations de la map -->
     <script>
     // Génération de la map
-    mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
+    mapboxgl.accessToken = '<?php echo getAccessToken()?>';
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',

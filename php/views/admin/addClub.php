@@ -1,3 +1,7 @@
+<?php 
+
+?>
+
 <link rel="stylesheet" href="css/add.css">
 <!-- The map-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
@@ -51,13 +55,12 @@
         <label class="data" for="lien"><b>Lien du site Web</b></label>
         <input class="inputData form-control" type="text" placeholder="Lien du site" name="lien" id="lien">
       </div>
-      <div class="col-12">
-        <label class="data disabled" for="result"> <b>Coordonée GPS</b></label>
-        <input class="list-group-item form-control" type="text" name="result" id="coo" placeholder="GPS" required readonly>
+      <div class="col-12 mt-3">
+        <input class="list-group-item form-control" type="text" name="result" id="coo" placeholder="Coordonée GPS" required readonly>
       </div>
       </div>
           
-      <div class ="d-flex justify-content-between mb-3">
+      <div class ="d-flex justify-content-between mt-3">
         <div id="btn-object" class="p-2">
           <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
         </div>
@@ -72,7 +75,7 @@
   
   
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
+mapboxgl.accessToken = '<?php echo getAccessToken()?>';
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',

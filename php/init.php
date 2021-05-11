@@ -8,6 +8,9 @@ function console_log( $data ){
     echo 'console.log('. json_encode( $data ) .');';
     echo '</script>';
 }
+function getAccessToken() {
+    return 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
+}
 
 //The different status
 $pages = [
