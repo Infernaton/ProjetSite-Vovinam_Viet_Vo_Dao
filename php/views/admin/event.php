@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/add.css">
 <form action="php/management/addEventDB.php">
-    <div id="container" class="container mt-5">
+    <div id="container" class="container mt-2 mt-md-5">
         <div class="text-center"> 
             <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1>
         </div>

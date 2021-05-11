@@ -28,7 +28,7 @@
 </style>
 
 <form action="php/management/addLocationDB.php">
-  <div id="container" class="container mt-5">
+  <div id="container" class="container mt-2 mt-md-5">
     <div class="text-center"><h1 class="content-title-red">Ajouter un Club</h1></div>
   
     <div class="row pt-5">
