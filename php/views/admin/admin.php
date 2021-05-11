@@ -10,7 +10,7 @@ $greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
 
 <div id="container" class="container">
     <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
-        <button class="collapsible">Maître</button>
+        <button class="collapsible icon">Maître</button>
             <div class="content">
                 <a href="?c=admin&p=1">
                     <button class = "btn-panel">Ajouter un Grand Maître</button>
