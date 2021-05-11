@@ -11,17 +11,35 @@ function partials_header($categorie,$page){
     <link rel="stylesheet" href="css/font_title.css">
     <title>Vovinam Viet Vodao</title>
 </head>
+<style>
+.navbar-toggler-icon{
+    color: white;
+}
+@media screen and (max-width: 768px) {
+    .bg{
+        background-color: #343a40 !important;
+    }
+}
+.bg {
+    background-color: #f8f9fa;
+}
+</style>
 <body>
     <header>
         <div class="container-fluid header">
             <div class="row">
-                <div class="col-sm-2"><a href="?c=home"><img src="assets/img/logo.png" width="45%" height="100%"></a></div>
-                <div class="col-sm-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
+                <div class="col-2"><a href="?c=home"><img src="assets/img/logo.png" width="45%" height="100%"></a></div>
+                <div class="col-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
             </div>
         </div>
     </header>
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-sm justify-content-center sticky-top navbar-lightgray">
+    <nav class="navbar navbar-expand-md sticky-top bg navbar-dark" id="navbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item" id="home">
                 <a class="nav-link" href="?c=home">Accueil</a>
@@ -79,11 +97,27 @@ function partials_header($categorie,$page){
                 </div>
             </li>
         </ul>
+        </div>
+        
     </nav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+<script>
+$(function(){
+
+$(window).bind("resize",function(){
+    console.log($(this).width())
+    if($(this).width() <768){
+    $('#navbar').removeClass('navbar-lightgray').addClass('navbar-dark')
+    }
+    else{
+    $('#navbar').removeClass('navbar-dark').addClass('navbar-lightgray')
+    }
+})
+})
+</script>
 <?php
     if ($categorie!='admin'){
         ?>

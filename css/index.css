@@ -86,7 +86,7 @@ footer{
 }
 
 .red{
-    color:#e82226;
+    color:#e82226 !important;
 }
 
 .currentHover {
