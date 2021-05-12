@@ -8,7 +8,7 @@ $histoire = file_get_contents("assets/json/history.json");
 $histoire = json_decode($histoire, true, JSON_UNESCAPED_UNICODE);
 ?>
 <link rel="stylesheet" href="css/discipline1.css">
-<link rel="stylesheet" href="css/mobileNav.css">
+
 <style>
 body{
     overflow-x:hidden;
