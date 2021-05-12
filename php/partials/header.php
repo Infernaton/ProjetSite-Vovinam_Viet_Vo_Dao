@@ -7,7 +7,7 @@ function partials_header($categorie,$page){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index1.css">
     <link rel="stylesheet" href="css/font_title.css">
     <title>Vovinam-Viet Vodao</title>
 </head>
@@ -38,8 +38,17 @@ function partials_header($categorie,$page){
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div id="collapsibleNavbar" class="collapse navbar-collapse">
+            <ul id="navbar-nav">
+              <li><a class="nav-item" href="#">Home</a></li>
+              <li><a class="nav-item" href="#">About</a></li>
+              <li><a class="nav-item" href="#">Info</a></li>
+              <li><a class="nav-item" href="#">Contact</a></li>
+            </ul>
+        </div>
 
-        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+
+        <div class="collapse navbar-collapse justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item" id="home">
                 <a class="nav-link" href="?c=home">Accueil</a>

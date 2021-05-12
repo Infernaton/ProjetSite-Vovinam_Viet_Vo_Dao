@@ -29,6 +29,7 @@ body{
     background-color: #1c55a3;
     position:relative;
     padding-bottom: 65px;
+    overflow-x: hidden;
 }
 .header{
     border-bottom: 1px solid #1c55a3; 

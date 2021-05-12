@@ -21,22 +21,6 @@ body{
     overflow-y: scroll;
 }
 </style>
-
-<div class="content">
-    <nav role="navigation">
-        <div id="menuToggle">
-            <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-            <ul id="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Info</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
     <div class="container-fluid p-1">
     <div class="mt-1 mt-md-5" id="main">
         <?php 
@@ -82,8 +66,6 @@ body{
         } 
         ?>
     </div>
-</div>
-
 <!--
     <div class="container col-12 col-md-3 p-3 fixed-right" id='resume'>
         <div class="text-center"><h3 class="content-title-blue">Sommaire</h3></div>

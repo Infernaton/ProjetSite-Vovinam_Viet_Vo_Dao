@@ -2,7 +2,6 @@
 
 function partials_footer(){
 ?>   
-    
     <footer class="mt-3">
         <div class="fixed-bottom">
             <div class="d-flex flex-row">
