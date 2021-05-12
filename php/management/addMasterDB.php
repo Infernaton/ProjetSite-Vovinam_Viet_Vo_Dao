@@ -63,8 +63,8 @@ switch ($_POST['submit']){
         $req->bindValue(':function' , $_POST["function"]);
         $req->bindValue(':hierarchy' , $_POST["hierarchy"]);
 
-        //$req->execute();
-        //echo "\n Envoie réussi";
+        $req->execute();
+        echo "\n Envoie réussi";
 
         break;
     case 'modify':

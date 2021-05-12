@@ -10,7 +10,7 @@ $greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
             <div class="content">
                 <div class="in">
                 <a href="?c=admin&p=1">
-                    <button class = "btn-panel">Ajouter un Grand Maître</button>
+                    <button class = "btn-panel">Ajouter un Maître</button>
                 </a>
                 <?php 
                 for ($i=0;$i<count($greatMastersDB);$i++){
