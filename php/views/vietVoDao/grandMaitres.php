@@ -35,25 +35,28 @@ $fondatorData = $greatMasters[0];
 .tooltip-inner{
     max-width: 500px; 
 }
+.fondator{
+    height:470px;
+}
 </style>
 <div class="container mt-2 mt-md-5">
         <!-- Titre de la page -->
         <div class="text-center">
-            <div style="padding-bottom: 50px;">
+            <div class="mb-5">
                 <h1 class="content-title-blue">Le Maître fondateur</h1>
             </div>
         </div>
         <!-- Photo du ME Fondateur -->
         <div class="row">
-            <div class="col-sm-4">
-                <img style="width: 85%; margin-top:5px" src="assets/img/maitres/ME_Fondateur.png" alt="">
+            <div class="col-12 col-md-4 justify-content-center">
+                <img class="p-2" style="width: 100%;" src="assets/img/maitres/ME_Fondateur.png" alt="">
             </div>
             <!-- Carte avec un effet de rotation -->
-            <div class="col-sm-8">
+            <div class="col-12 col-md-8">
                 <div class="card-container manual-flip">
                     <div class="card">
                         <!-- Coté frontal de la carte -->
-                        <div class="front">
+                        <div class="front fondator">
                             
                             <div class="header"> 
                                 <h3 class="name"><?php echo $fondatorData['name'] ?><small class="profession"> <?php echo $fondatorData['date']?></small></h3>
@@ -158,7 +161,7 @@ $fondatorData = $greatMasters[0];
             <?php
             for ($i=0;$i<count($greatMastersDB);$i++){
             ?>
-            <div class="col-sm-6">
+            <div class="col-12 col-md-6">
                 <!-- Une carte -->
                 <div class="card-container manual-flip" >
                     <div class="card">
