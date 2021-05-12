@@ -3,8 +3,8 @@
 function partials_footer(){
 ?>   
     
-    <footer class="fixed-bottom">
-        <div class="col-sm-1">
+    <footer class="mt-3">
+        <div class="fixed-bottom">
             <div class="d-flex flex-row">
                 <div class="p-2 ">
                     <a href="https://www.youtube.com/channel/UC87j8G2WRUQur4VCHjF3OKQ" target="_blank" ><img src="assets/img/logo-youtube2.png" id = "yt"></a>

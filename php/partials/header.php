@@ -9,7 +9,7 @@ function partials_header($categorie,$page){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font_title.css">
-    <title>Vovinam Viet Vodao</title>
+    <title>Vovinam-Viet Vodao</title>
 </head>
 <style>
 .navbar-toggler-icon{
