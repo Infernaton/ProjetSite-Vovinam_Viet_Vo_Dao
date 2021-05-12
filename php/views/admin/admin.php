@@ -2,12 +2,13 @@
 $greatMastersBeforeFetch = $db->query('SELECT * FROM specialist ORDER BY id');
 $greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<link rel="stylesheet" href="css/add.css">
+<link rel="stylesheet" href="css/add1.css">
 
 <div id="container" class="container mt-2 mt-md-5">
     <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
         <button class="collapsible icon">Maître</button>
             <div class="content">
+                <div class="in">
                 <a href="?c=admin&p=1">
                     <button class = "btn-panel">Ajouter un Grand Maître</button>
                 </a>
@@ -16,6 +17,7 @@ $greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
                     echo '<a href="?c=admin&p=1&m='.$greatMastersDB[$i]['id'].'">'.$greatMastersDB[$i]['name'].'</a> <br>';
                 }
                 ?>
+            </div>  
             </div>  
         <button class="collapsible">Club</button>
             <div class="content"> 
