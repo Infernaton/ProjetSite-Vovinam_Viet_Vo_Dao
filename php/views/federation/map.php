@@ -67,7 +67,7 @@
     }
 }
 </style>
-<div class="container mt-5">
+<div class="container mt-2 mt-md-5">
         <!-- Titre -->
         <div class="text-center">
             <div class="mt-5 mb-5 inline-flex">
@@ -77,7 +77,7 @@
 
         <!-- Chargement de la map grande taille -->
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-12">
                 <div id='map' style='width: auto; height: 600px;'></div>
                 <div class='map-overlay' id='legend'></div>
             </div>
@@ -98,7 +98,7 @@
                     $tooltipContent = "<p>Président de ce Comité : <br><strong>".$pdt[0]."</strong><br> (Contact: ".$pdt[1].")</p>".
                                     "<p>Responsable Technique : <br><strong>".$rt[0]."</strong><br> (Contact: ".$rt[1].")</p>"
                     ?>
-                        <button class="col-sm-4 btn clickable" 
+                        <button class="col-12 col-sm-6 col-md-4 btn clickable" 
                             onClick='selectClub(["<?php echo $comite['Comite'].'","'.$comite['titre']?>"])' 
                             data-toggle="tooltip" title='<?php echo $tooltipContent?>'>
                             <h4><strong>Comité <?php echo $comite['titre']?> </strong></h4>
@@ -127,9 +127,9 @@
         <div class="text-center">
             <!-- Titre -->
             <div id="titleClub" class="row mt-5 mb-5">
-                <div class="col-sm-12"><h2 class="content-title-red">Les clubs</h2></div>
-                <div class="col-sm-12"><h3 id="select"><small></small></h3></div>
-                <div class="col-sm-12"> <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Club pour connaître sa position sur la carte.</small></h4></div>
+                <div class="col-12"><h2 class="content-title-red">Les clubs</h2></div>
+                <div class="col-12"><h3 id="select"><small></small></h3></div>
+                <div class="col-12"> <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Club pour connaître sa position sur la carte.</small></h4></div>
                 
             </div>
             <!-- Liste -->
@@ -155,7 +155,7 @@
                         $coo = [null, null];
                     }
                     ?>
-                    <div class="club clickable col-sm-4" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])
+                    <div class="club clickable col-12 col-sm-6 col-md-4" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])
                         data-toggle="tooltip" title='<?php echo $tooltipClub?>'>
                             <div class="mt-4">
                                 <!--<h5><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></h5>
