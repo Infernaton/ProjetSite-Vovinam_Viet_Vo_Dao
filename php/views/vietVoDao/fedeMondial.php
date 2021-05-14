@@ -16,13 +16,13 @@
                     <p>➢ Site Officiel: <a href="https://vovinamworldfederation.eu/fr/" class="link">https://vovinamworldfederation.eu/fr/</a></p>
                 </div>
                 <div>
-                    <p>➢ Conseil des Maîtres Mondial: <a href="#" class="link">https://</a></p>
+                    <p>➢ Conseil des Maîtres Mondial: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html" class="link">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html</a></p>
                 </div>
                 <div>
-                    <p>➢ Liste des Maîtres Internationaux: <a href="#" class="link">https://</a></p>
+                    <p>➢ Diplôme International: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html" class="link">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html</a></p>
                 </div>
                 <div>
-                    <p>➢ Résultats Coupes du Monde: <a href="#" class="link">https://</a></p>
+                    <p>➢ Résultats Coupes du Monde: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html" class="link">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html</a></p>
                 </div>
             </div>
         </div>
