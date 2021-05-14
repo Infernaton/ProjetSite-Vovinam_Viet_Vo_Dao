@@ -14,7 +14,12 @@ div.link:hover{
     background-color: #DC3634;
     /*transform: scale(1.2);*/
 }
-
+.border-rad-3{
+    border-radius: 3px;
+}
+.red{
+    color:#e82226 !important;
+}
 /*Mise en Page avec Footer*/
 header{
     background-color: white;
@@ -85,10 +90,6 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: row;
-}
-
-.red{
-    color:#e82226 !important;
 }
 
 .currentHover {

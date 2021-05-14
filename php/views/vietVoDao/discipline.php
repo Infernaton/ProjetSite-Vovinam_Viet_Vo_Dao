@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="row m-4">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-lg-5">
                     <h5> 
                         <span style="color:#e82226;">Vovinam</span> = <span style="color:#1c55a3;">Art Martial Vietnamien</span>
                     </h5>
@@ -55,7 +55,7 @@
                     <p> <span style="color:#1c55a3;"><b>DAO</b></span>: La voie, la philosophie.</p> <br>
                     <p> <span style="color:#1c55a3;"><b>La voie de l'art martial Vietnamien</b></span> </p>
                 </div>
-                <div class="col-12 col-md-7">
+                <div class="col-12 col-lg-7">
                     <img src="assets/img/le-vvd/signification.png" width="100%" height="100%">
                 </div>
             </div>
@@ -94,7 +94,7 @@
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="mt-5">
                 <h4 class="pl-5 pb-2"> Les 9 Principes </h4>
-                <ol class="list-group list-group-flush"> 
+                <ol class="list-group list-group-flush border-rad-3"> 
                     <li class="list-group-item"><b>1.</b> Se forger dans la voie du Vovinam Viet Vo Dao pour servir ses prochains.</li>
                     <li class="list-group-item"><b>2.</b> Développer le Vovinam Viet Vo Dao, bâtir une génération de l’homme vrai pour être utile à la société.</li>
                     <li class="list-group-item"><b>3.</b> Respecter l’éthique et la loi, placer l’honneur du Vovinam Viet Vo Dao au-dessus de tout.</li>

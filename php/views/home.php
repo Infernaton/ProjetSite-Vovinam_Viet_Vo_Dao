@@ -36,7 +36,7 @@
   </a>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-3 mt-md-5">
   <br>
   <div class="text-center  mb-5">
     <h1 class="content-title-yellow">Le Vovinam-Viet Vo Dao</h1>

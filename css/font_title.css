@@ -2,12 +2,12 @@
     /* The intrinsic width of the underline stroke (in pixels). This is 
      * the same as the height of the cap images. Don't specify the
      * units! This is because of some of the calculations we do later on. */
-    --underline-intrinsic-width: 8;
+    --underline-intrinsic-width: 9;
     
     /* The actual width of the underline stroke we want to render (in pixels).
      * You can modify this, and the sizing and positioning should be calculated
      * accordingly. Again, Don't specify the units! */
-    --underline-width: 12;
+    --underline-width: 10;
     
     /* The colour used to draw the underline. It should match the colour
      * used in the cap images... unfortunately we can't modify the SVG

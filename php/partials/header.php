@@ -7,7 +7,7 @@ function partials_header($categorie,$page){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index1.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font_title.css">
     <link rel="stylesheet" href="css/mobileNav.css">
     <title>Vovinam-Viet Vodao</title>
@@ -256,7 +256,6 @@ navExpand.forEach(item => {
 
 const ham = [].slice.call(document.getElementsByClassName('navbar-toggler-icon'))
 ham.forEach(button => button.addEventListener('click', () => document.body.classList.toggle('nav-is-toggled')))
-
 </script>
 <?php
     if ($categorie!='admin'){
