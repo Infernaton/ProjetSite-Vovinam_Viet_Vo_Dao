@@ -42,7 +42,7 @@ function partials_header($categorie,$page){
         <!-- Menu version Mobile -->
         <div class="nav-drill">
             <ul class="nav-items">
-                <li class="nav-item"><h3>Sommaire <span id="ham" class="navbar-toggler-icon"></span></h3></li>
+                <li class="nav-item"><h3 class="content-title-yellow">Sommaire<span id="ham"></span></h3><span id="ham" class="navbar-toggler-icon"></span></li>
                 <li class="nav-item" id="home">
                     <a class="nav-link" href="?c=home">Accueil</a>
                 </li>
