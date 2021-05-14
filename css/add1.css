@@ -69,12 +69,12 @@ button:hover {
     background-color: #1c55a3;
     color: white;
 }
-#confirm:hover{
+.confirm:hover{
     background-color: green !important;
     color: white;
     border: 2px solid green;
 }
-#undo:hover{
+.undo:hover{
     background-color: #e82226 !important;
     color: white;
     border: 2px solid #e82226;
@@ -90,15 +90,9 @@ button:hover {
     margin-bottom: 10%;
 }
 .btn-panel{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    padding: 35px 40px;
     width:200px;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
-    float: right;
 }
 
 #master-row{

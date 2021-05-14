@@ -72,11 +72,11 @@ if (isset($_GET['m'])) {
 
         <div class="d-flex justify-content-between mt-4">
           <div id="btn-object" class="p-2">
-            <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
+            <a onclick="history.go(-1);"><button class="btn-annul annim undo" type="button" id='undo'>Annuler</button></a>
           </div>
 
           <div id="btn-Action" class="p-2">
-            <button type="submit" class="btn-modObject annim" value="valid" name="submit" id="confirm">Valider</button>
+            <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
           </div>
         </div>
 
@@ -84,6 +84,7 @@ if (isset($_GET['m'])) {
     </div>
   </div> 
 </form> 
+<script src="scripts/previewPicture.js"></script>
 <script>
 if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentMaster)?> != null){
@@ -100,29 +101,6 @@ if (<?php echo $index?> != -1){
     document.getElementById("previewImgDiv").style = "background-image:url(<?php echo $currentMaster['pictureProfile'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
     document.getElementById("newImage").required = false;
-
-    //Pouvoir modifier une image dans la DB
-    /**
-     * https://www.tutorialrepublic.com/faq/how-to-preview-an-image-before-it-is-uploaded-using-jquery.php
-     * pour tester
-     * 
-     * changer l'input de base de l'image en no-require
-     * mettre la prévisualisation de l'image actuelle
-     * mettre un input require invisible qui prend en entrer le chemin de l'image
-     */
   }
 }
-    function previewFile(input){
-      var file = $("input[type=file]").get(0).files[0];
- 
-      if(file){
-        var reader = new FileReader();
- 
-        reader.onload = function(){
-          $("#previewImgDiv").attr("style", "background-image:url("+reader.result+");");
-        }
- 
-        reader.readAsDataURL(file);
-      }
-    }
 </script>

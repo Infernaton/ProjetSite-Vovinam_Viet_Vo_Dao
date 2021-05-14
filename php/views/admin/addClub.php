@@ -1,5 +1,17 @@
-<?php 
-
+<?php
+//Get the index of the current master in the url
+$currentClub = null;
+if (isset($_GET['club'])) {
+  if ($_GET['club'] != null) {
+    $index = $_GET['club'];
+    $req = $db->query('SELECT * FROM marqueur as s WHERE s.id = '.$index.'');
+    $currentClub = $req->fetch(PDO::FETCH_ASSOC);
+  } else {
+    $index = -1;
+  }
+} else {
+  $index = -1;
+}
 ?>
 
 <link rel="stylesheet" href="css/add.css">
