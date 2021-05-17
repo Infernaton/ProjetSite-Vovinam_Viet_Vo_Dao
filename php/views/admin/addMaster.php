@@ -6,6 +6,20 @@ if (isset($_GET['m'])) {
     $index = $_GET['m'];
     $req = $db->query('SELECT * FROM specialist as s WHERE s.id = '.$index.'');
     $currentMaster = $req->fetch(PDO::FETCH_ASSOC);
+    
+    $currentMaster['biographyShort'] = str_replace(array("\r","\n"),array("","{n}"),$currentMaster['biographyShort']);
+    $currentMaster['function'] = str_replace(array("\r","\n"),array("","{n}"),$currentMaster['function']);
+
+    switch ($currentMaster['hierarchy']){
+      case 'great-master':
+        $currentMaster['hierarchy'] = 'Grand Maître';
+        break;
+      case 'master':
+        $currentMaster['hierarchy'] = 'Maître';
+        break;
+      default:
+        $currentMaster['hierarchy'] = 'none';
+    }
   } else {
     $index = -1;
   }
@@ -93,10 +107,10 @@ if (<?php echo $index?> != -1){
 
     //if we click on an existant master, we have to fill all the cointainer with data
     document.getElementById("name").value = "<?php echo $currentMaster['name'] ?>";
-    document.getElementById("biography").value = "<?php echo $currentMaster['biographyShort'] ?>";
+    document.getElementById("biography").value = "<?php echo $currentMaster['biographyShort'] ?>".replaceAll('{n}', '\n');
     document.getElementById("birth").value = "<?php echo $currentMaster['birthday'] ?>";
     document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
-    document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>";
+    document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>".replaceAll('{n}', '\n');
     document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
     document.getElementById("previewImgDiv").style = "background-image:url(<?php echo $currentMaster['pictureProfile'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"

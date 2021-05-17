@@ -25,12 +25,17 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
     </div>
         <div class="content">
             <div class="in">
-                <div class="row">
+                <select name="masterSelect" class="custom-select mb-3" onchange="select('masterList',this.value)">
+                    <option value="all">Tout les Maîtres</option>
+                    <option value="great-master">Grands Maîtres</option>
+                    <option value="master">Maîtres</option>
+                </select>
+                <div class="row" id="masterList">
                     <?php 
                     for ($i=0;$i<count($greatMastersDB);$i++){
-                        echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel">',
+                        echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$greatMastersDB[$i]['hierarchy'].'">',
                             '<a href="?c=admin&p=1&m='.$greatMastersDB[$i]['id'].'">',
-                            '<button class="">'.$greatMastersDB[$i]['name'].'</button>',
+                            '<button class="list-object">'.$greatMastersDB[$i]['name'].'</button>',
                             '</a> </div>';
                     }
                     ?>
@@ -53,7 +58,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
                     for ($i=0;$i<count($clubsDB);$i++){
                         echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel">',
                             '<a href="?c=admin&p=2&club='.$clubsDB[$i]['id'].'">',
-                            '<button class="">'.$clubsDB[$i]['titre'].'</button>',
+                            '<button class="list-object">'.$clubsDB[$i]['titre'].'</button>',
                             '</a> </div>';
                     }
                     ?>
@@ -70,12 +75,20 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
     </div>
         <div class="content"> 
             <div class="in">
-                <div class="row">
+                <select name="eventSelect" class="custom-select mb-3" onchange="select('eventList',this.value)">
+                    <option value="all">Tout les Evènements</option>
+                    <option value="stage">Stage</option>
+                    <option value="competition">Compétition</option>
+                    <option value="formation">Formation</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <div class="row" id="eventList">
                     <?php 
                     for ($i=0;$i<count($eventDB);$i++){
-                        echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel">',
+                        $eventDB[$i]["type"] = strtolower(str_replace(array('é','è','ë','ê','à','â','ä','î','ï'), "e", $eventDB[$i]["type"]));
+                        echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$eventDB[$i]['type'].'">',
                             '<a href="?c=admin&p=3&e='.$eventDB[$i]['id'].'">',
-                            '<button class="">'.$eventDB[$i]['title'].'</button>',
+                            '<button class="list-object">'.$eventDB[$i]['title'].'</button>',
                             '</a> </div>';
                     }
                     ?>
@@ -83,7 +96,6 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
             </div>  
         </div>
 </div>
-
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -98,5 +110,24 @@ for (i = 0; i < coll.length; i++) {
       content.style.maxHeight = content.scrollHeight + "px";
     } 
   });
+}
+</script>
+<script>
+function select(list,value){
+    let currentList = document.getElementById(list);
+    let objects = Array.from(currentList.getElementsByClassName('btn-panel'));
+    if (value != 'all'){
+        objects.forEach(object => {
+            if (!object.classList.contains(value)){
+                object.classList.add('hide');
+            }else {
+                object.classList.remove('hide');
+            }
+        })
+    }else {
+        objects.forEach(object => {
+            object.classList.remove('hide');
+        })
+    }
 }
 </script>

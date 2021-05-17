@@ -47,6 +47,16 @@ if ($_FILES['newImage']['error']==0){
 
 
 $_POST["death"] == null? $deathValue = "---" : $deathValue = $_POST["death"];
+switch ($_POST['hierarchy']){
+    case 'Grand Maître':
+        $_POST['hierarchy'] = 'great-master';
+        break;
+    case 'Maître':
+        $_POST['hierarchy'] = 'master';
+        break;
+    default:
+        $_POST['hierarchy'] = 'none';
+}
 
 switch ($_POST['submit']){
     case 'valid':
