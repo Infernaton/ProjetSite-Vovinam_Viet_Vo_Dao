@@ -9,15 +9,15 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 <link rel="stylesheet" href="css/add1.css">
 <style>
 .p-2{
-    padding: 0;
+    padding: 0!important;
 }
 </style>
 
 <div id="container" class="container mt-2 mt-md-5">
     <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
     <div class="collapsible d-flex justify-content-between">
-        <div class="p-2">Maître</div>
-        <div class="p-2">
+        <div class="p-2">Maîtres</div>
+        <div class="p-2 text-center">
             <a href="?c=admin&p=1">
                 <button class="confirm">+ Ajouter un Maître</button>
             </a>
@@ -43,7 +43,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
             </div>  
         </div>  
     <div class="collapsible d-flex justify-content-between">
-        <div class="p-2">Club</div>
+        <div class="p-2">Clubs</div>
         <div class="p-2">
             <a href="?c=admin&p=1">
                 <button class="confirm">+ Ajouter un club</button>
@@ -66,7 +66,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
             </div>  
         </div> 
     <div class="collapsible d-flex justify-content-between">
-        <div class="p-2">Evènement</div>
+        <div class="p-2">Evènements</div>
         <div class="p-2">
             <a href="?c=admin&p=3">
                 <button class="confirm">+ Ajouter un évènement</button>
