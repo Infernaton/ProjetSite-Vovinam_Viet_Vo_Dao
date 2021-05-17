@@ -30,7 +30,7 @@ function partials_header($categorie,$page){
         <div class="container-fluid header">
             <div class="row">
                 <div class="col-2"><a href="?c=home"><img src="assets/img/logo.png" width="51%" height="100%"></a></div>
-                <div class="col-9"><a href=""><img src="assets/img/header.png" width="95%"></a></div>
+                <div class="col-9"><img src="assets/img/header.png" width="100%"></div>
             </div>
         </div>
     </header>
@@ -42,7 +42,7 @@ function partials_header($categorie,$page){
         <!-- Menu version Mobile -->
         <div class="nav-drill">
             <ul class="nav-items">
-                <li class="nav-item"><h3 class="content-title-yellow">Sommaire<span id="ham"></span></h3><span id="ham" class="navbar-toggler-icon"></span></li>
+                <li class="nav-item" style="border:none;"><h3 class="mobile-title">Sommaire<i class="fas fa-times navbar-toggler-icon"></i></h3></li>
                 <li class="nav-item" id="home">
                     <a class="nav-link" href="?c=home">Accueil</a>
                 </li>
@@ -167,7 +167,7 @@ function partials_header($categorie,$page){
             <li class="nav-item dropdown" id="directionTech">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Direction Technique</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=directionTech&p=0">Le Conseil des ME</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=0">Le Conseil des Maîtres</a>
                     <a class="dropdown-item" href="?c=directionTech&p=1">Liste officielle des maîtres et ceintures noires</a>
                     <a class="dropdown-item" href="?c=directionTech&p=2">Calendrier technique</a>
                     <a class="dropdown-item" href="?c=directionTech&p=3">Stages GRT</a>
@@ -236,8 +236,8 @@ $(document).ready(function(){
 <script>
 const navExpand = [].slice.call(document.querySelectorAll('.nav-expand'))
 
-const backLink = `<li class="nav-item">
-	<a class="nav-link nav-back-link" href="javascript:;">
+const backLink = `<li class="nav-item nav-back-link">
+	<a class="nav-link" href="javascript:;">
 		Back
 	</a>
 </li>`

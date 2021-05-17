@@ -6,7 +6,7 @@ function str_replace_first($from, $to, $content){
     return preg_replace($from, $to, $content, 1);
 }
 
-$greatMastersBeforeFetch = $db->query('SELECT * FROM specialist WHERE hierarchy LIKE "Grand Maître" ORDER BY id');
+$greatMastersBeforeFetch = $db->query('SELECT * FROM specialist WHERE hierarchy LIKE "great-master" ORDER BY id');
 $greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
 //var_dump($greatMasters);
 

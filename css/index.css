@@ -61,6 +61,7 @@ body{
 /* ------ */
 .navbar-lightgray{
     background-color: rgb(238, 238, 238);
+    font-size: 18px;
 }
 
 #yt{

@@ -45,7 +45,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Clubs</div>
         <div class="p-2">
-            <a href="?c=admin&p=1">
+            <a href="?c=admin&p=2">
                 <button class="confirm">+ Ajouter un club</button>
             </a>
         </div>

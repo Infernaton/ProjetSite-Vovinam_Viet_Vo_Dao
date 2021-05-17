@@ -7,7 +7,7 @@
     /* The actual width of the underline stroke we want to render (in pixels).
      * You can modify this, and the sizing and positioning should be calculated
      * accordingly. Again, Don't specify the units! */
-    --underline-width: 10;
+    --underline-width: 5;
     
     /* The colour used to draw the underline. It should match the colour
      * used in the cap images... unfortunately we can't modify the SVG
