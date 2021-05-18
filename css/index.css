@@ -2,6 +2,11 @@
 * --underline-color-blue: #1c55a3; (fédération)
 * --underline-color-yellow: #ffe600; (information utilisateur)
 */
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1440px;
+    }
+}
 .hide{display: none;}
 
 a{  

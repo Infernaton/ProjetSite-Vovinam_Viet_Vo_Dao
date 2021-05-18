@@ -266,7 +266,6 @@ currentCategory = [].slice.call(document.getElementsByClassName('<?php echo $cat
 currentCategory.forEach(cat => {
     cat.getElementsByClassName("nav-link")[0].classList.add('red');
     specCategory = cat.getElementsByClassName("dropdown-item")[<?php echo (int)$page?>] || cat.getElementsByClassName("nav-link")[<?php echo ((int)$page+2)?>];
-    console.log(specCategory, cat.getElementsByClassName("nav-link"));
     if (typeof(specCategory) != 'undefined' && specCategory != null){
         specCategory.classList.add("red");
     }

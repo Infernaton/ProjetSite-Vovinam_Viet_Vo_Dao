@@ -19,19 +19,6 @@ $fondatorData = $greatMasters[0];
 
 <link rel="stylesheet" href="css/maitre.css">
 <style>
-.dirr {
-    display: flex;
-    justify-content: center;
-}
-.carousel-control-next, .carousel-control-prev {
-    position: relative;
-    width: auto;
-    z-index: 1;
-    align-items: center;
-    color: black;
-    text-align: center;
-    transition: opacity .15s ease;
-}
 .tooltip-inner{
     max-width: 500px; 
 }
@@ -58,11 +45,11 @@ $fondatorData = $greatMasters[0];
                         <!-- Coté frontal de la carte -->
                         <div class="front fondator">
                             
-                            <div class="header"> 
-                                <h3 class="name"><?php echo $fondatorData['name'] ?><small class="profession"> <?php echo $fondatorData['date']?></small></h3>
-                            </div>
                             <div class="content">
                                 <!-- Contenu de la carte -->
+                                <div class="header"> 
+                                    <h3 class="name"><?php echo $fondatorData['name'] ?><small class="profession"> <?php echo $fondatorData['date']?></small></h3>
+                                </div>
                                 <div class="main">
                                     <?php 
                                     /*<span class="hint" rel="tooltip" title="<?php echo $note[0]?>">$le_message<span class="note">$nb</span></span>*/
@@ -80,10 +67,11 @@ $fondatorData = $greatMasters[0];
                                     }
                                     ?>
                                 </div>
+                                <div class="footer">
+                                    <button class="btn btn-simple" data-toggle="modal" data-target="#fondator">En savoir +</button>
+                                </div>
                             </div>
-                            <div class="footer">
-                                <button class="btn btn-simple" data-toggle="modal" data-target="#fondator">En savoir +</button>
-                            </div>
+                            
                         </div> <!-- Fin du coté frontal -->
                     </div> <!-- Fin de la carte -->
                 </div>
@@ -172,8 +160,25 @@ $fondatorData = $greatMasters[0];
                                     <img class="img-circle" src="<?php echo $greatMastersDB[$i]['pictureProfile']?>"/>
                                 </div>
                                 <!-- Contenu -->
-                                <div class="main">
+                                <div class="header">
                                     <h3 class="name">Maître <?php echo $greatMastersDB[$i]['name']?> <small class="profession"><?php echo $greatMastersDB[$i]['birthday'].' - '.$greatMastersDB[$i]['deathDate']?></small></h3>
+                                </div>
+                                <div class="main">
+                                    <style>
+                                    /* width */
+                                    .main::-webkit-scrollbar {
+                                        width: 8px;
+                                    }
+                                    /* Handle */
+                                    .main::-webkit-scrollbar-thumb {
+                                        background: #BBBBBB;
+                                        border-radius: 20px; 
+                                    }
+                                    /* Handle on hover */
+                                    .main::-webkit-scrollbar-thumb:hover {
+                                        background: #888888; 
+                                    }
+                                    </style>
                                     <?php 
                                     $functions = explode(',', $greatMastersDB[$i]["function"]);
                                     for ($a=0; $a<count($functions); $a++){
@@ -182,7 +187,7 @@ $fondatorData = $greatMasters[0];
                                     ?>
                                 </div>
                                 <!-- Boutton de rotation -->
-                                <div class="footer" style="float: right;">
+                                <div class="footer" style="">
                                     <button class="btn btn-simple" data-toggle="modal" data-target="#m-<?php echo $greatMastersDB[$i]['id']?>">En savoir +</button>
                                 </div>
                             </div>
@@ -270,23 +275,4 @@ $fondatorData = $greatMasters[0];
             $card.addClass('hover');
         }
     }
-    /*<!-- Coté dos de la carte -->
-                        <div class="back">
-                            <!-- Titre -->
-                            <div class="header">
-                                <h5><b>Biographie de <?php echo $greatMastersDB[$i]['name']?></b></h5>
-                            </div>
-                            <!-- Contenu -->
-                            <div class="content">
-                                <div class="main">
-                                    <p><?php echo $greatMastersDB[$i]['biographyShort']?></p>
-                                </div>
-                            </div>
-                            <!-- Boutton de rotation -->
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Retourner la carte" onclick="rotateCard(this)">
-                                    <- Retour
-                                </button>
-                            </div>
-                        </div> <!-- Fin du dos de la carte -->*/
 </script>
