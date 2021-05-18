@@ -43,10 +43,10 @@ function partials_header($categorie,$page){
         <div class="nav-drill">
             <ul class="nav-items">
                 <li class="nav-item" style="border:none;"><h3 class="mobile-title">Sommaire<i class="fas fa-times navbar-toggler-icon"></i></h3></li>
-                <li class="nav-item" id="home">
+                <li class="nav-item home" id="">
                     <a class="nav-link" href="?c=home">Accueil</a>
                 </li>
-                <li class="nav-item nav-expand">
+                <li class="nav-item nav-expand federation">
 			        <a class="nav-link nav-expand-link" href="#">La Fédération</a>
 			        <ul class="nav-items nav-expand-content">
 				        <li class="nav-item">
@@ -66,7 +66,7 @@ function partials_header($categorie,$page){
 				        </li>
 			        </ul>
 		        </li>
-                <li class="nav-item nav-expand">
+                <li class="nav-item nav-expand directionTech">
 			        <a class="nav-link nav-expand-link" href="#">Direction Technique</a>
                     <ul class="nav-items nav-expand-content">
                         <li class="nav-item">
@@ -92,7 +92,7 @@ function partials_header($categorie,$page){
 				        </li>
                     </ul>
 		        </li>
-                <li class="nav-item nav-expand">
+                <li class="nav-item nav-expand vietVoDao">
 			        <a class="nav-link nav-expand-link" href="#">Le Vovinam-Viet Vo Dao</a>
                     <ul class="nav-items nav-expand-content">
                         <li class="nav-item">
@@ -109,7 +109,7 @@ function partials_header($categorie,$page){
 				        </li>
                     </ul>
 		        </li>
-                <li class="nav-item nav-expand">
+                <li class="nav-item nav-expand affiliation">
 	    	    	<a class="nav-link nav-expand-link" href="#">Affiliation/licenciés</a>
                     <ul class="nav-items nav-expand-content">
                         <li class="nav-item">
@@ -129,10 +129,10 @@ function partials_header($categorie,$page){
 				        </li>
                     </ul>
 	    	    </li>
-                <li class="nav-item">
+                <li class="nav-item actualite">
 		        	<a class="nav-link" href="?c=actualite">Actualités</a>
 		        </li>
-                <li class="nav-item nav-expand">
+                <li class="nav-item nav-expand contacts">
 		        	<a class="nav-link nav-expand-link" href="#">Contact</a>
                     <ul class="nav-items nav-expand-content">
                         <li class="nav-item">
@@ -151,10 +151,10 @@ function partials_header($categorie,$page){
         <!--Menu Version PC et Tablette-->
         <div class="collapse navbar-collapse justify-content-center">
         <ul class="navbar-nav">
-            <li class="nav-item" id="home">
+            <li class="nav-item home" id="">
                 <a class="nav-link" href="?c=home">Accueil</a>
             </li>
-            <li class="nav-item dropdown" id="federation">
+            <li class="nav-item dropdown federation" id="">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">La Fédération</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=federation&p=0">La Fédération</a>
@@ -164,7 +164,7 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=federation&p=4">Logo-Légal</a>
                 </div>
             </li>
-            <li class="nav-item dropdown" id="directionTech">
+            <li class="nav-item dropdown directionTech" id="">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Direction Technique</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=directionTech&p=0">Le Conseil des Maîtres</a>
@@ -176,7 +176,7 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=directionTech&p=6">Formations</a>
                 </div>
             </li>
-            <li class="nav-item dropdown" id="vietVoDao">
+            <li class="nav-item dropdown vietVoDao" id="">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Le Vovinam-Viet Vo Dao</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=vietVoDao&p=0">La discipline et ses valeurs</a>
@@ -185,7 +185,7 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=vietVoDao&p=3">La Fédération mondiale</a>
                 </div>
             </li>
-            <li class="nav-item dropdown" id="affiliation">
+            <li class="nav-item dropdown affiliation" id="">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Affiliation/licenciés</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=affiliation&p=0">Documentation</a>
@@ -195,10 +195,10 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=affiliation&p=4">Passeport</a>
                 </div>
             </li>
-            <li class="nav-item" id="actualite">
+            <li class="nav-item actualite" id="">
                 <a class="nav-link" href="?c=actualite">Actualités</a>
             </li>
-            <li class="nav-item dropdown" id="contacts">
+            <li class="nav-item dropdown contacts" id="">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=contacts&p=0">Contact</a>
@@ -262,14 +262,15 @@ ham.forEach(button => button.addEventListener('click', () => document.body.class
         ?>
 <script> 
 //To print in red the current Page
-currentCategory= document.getElementById('<?php echo $categorie?>');
-categoryName = currentCategory.getElementsByClassName("nav-link")[0];
-categoryName.classList.add("red");
-
-specCategory = currentCategory.getElementsByClassName("dropdown-item")[<?php echo (int)$page?>];
-if (typeof(specCategory) != 'undefined' && specCategory != null){
-    specCategory.classList.add("red");
-}
+currentCategory = [].slice.call(document.getElementsByClassName('<?php echo $categorie?>'));
+currentCategory.forEach(cat => {
+    cat.getElementsByClassName("nav-link")[0].classList.add('red');
+    specCategory = cat.getElementsByClassName("dropdown-item")[<?php echo (int)$page?>] || cat.getElementsByClassName("nav-link")[<?php echo ((int)$page+2)?>];
+    console.log(specCategory, cat.getElementsByClassName("nav-link"));
+    if (typeof(specCategory) != 'undefined' && specCategory != null){
+        specCategory.classList.add("red");
+    }
+})
 </script>
         <?php
     }
