@@ -1,3 +1,26 @@
+<?php
+require_once 'php/init.php';
+
+$eventBefFetch = $db->query('SELECT * FROM event WHERE type LIKE "Stage" Order by id');
+$eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
+
+date_default_timezone_set('Europe/Paris');
+$date = explode("/",date('d/m/Y', time()));
+
+function printStage($index){
+    global $eventComp;
+    
+    $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
+
+    echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
+    '<h4>'.$eventComp[$index]['title'].'</h4>',
+    '<p class="date">'.$eventComp[$index]['dateDebut'].' - '.$eventComp[$index]['dateFin'].'</p>',
+    '<p class="descr">'.$eventComp[$index]['description'].'</p>',
+    '<p class="prerequis">'.$prerequis.'</p>',
+    '</div>';
+}
+
+?>
 <link rel="stylesheet" href="css/directionTech.css">
 
     <div class="container">
@@ -6,83 +29,45 @@
             <h2 class="content-title-yellow">Stages GRT Coupes</h2>
         </div>
         <!-- Sommaire -->
-        <h4 class="ml-3">Sommaire</h4>
-        <table class="table">
-            <tbody>
-                <tr>
-                    <th>
-                        <ul>
-                            <li><a href="#tech"class="link">Stage Technique</a></li>
-                            <li><a href="#arbi"class="link">Stage Arbitrage</a></li>
-                        </ul>
-                    </th>
-                    <th>
-                        <ul>
-                            <li><a href="#lead"class="link">Stage Dirigeant</a></li>
-                            <li><a href="#superv"class="link">Stage Encadrant</a></li>
-                        </ul>
-                    </th>
-                </tr>
-                
-            </tbody>
-            <!-- Présentation stage technique -->
-            <div id="tech"></div>
-        </table>
-        <div>
-            <div>
+        <div class="container mt-5">
+    <br>
+    <div class="text-center"><h1 class="content-title-blue">Stage</h1></div>
+    
+    <!--Drawer for all season-->
+    <div class="inline">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filtre
+            </button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div id="subfilterNamesContainer">
+                <label>
+                    <input type="checkbox" value="A" class="default"> Technique
+                </label>
+                <label>
+                    <input type="checkbox" value="B" class="default"> Arbitrage
+                </label>
                 <br>
-                <h3><span class="ml-3">Stage Technique</span></h3>
-                <p>Stage Régional Combat - <b>IDF du 8 décembre.</b> <br>
-                    Sous la Direction des Maîtres: 
-                    <ul>
-                        <li>Me LAMA David</li>
-                        <li>Me TRAN David</li>
-                        <li>Me NGUYỄN Đình Hoàng</li>
-                    </ul>
-                    <br>
-                    Après une présentation théorique, les Vo Shin ont pu Pratiquer d'une façon précise et intense un entraînement complet de Préparation Physique Spécifique aux Combats en Compétition.<div id="arbi"></div>
-                    La suite du stage étant une mise en pratique permettant à chacun des pratiquants de définir plutôt quel type de combattants ils/elles étaient.
-                    La galerie photo complète est disponible 
-                    <a href="http://vietvodao.photos/galerie/20191208/index.html"class="link"><b>ici</b></a>.
-                    
-                </p>
-            </div>
-            <div>
-                <br>
-                <h3><span class="ml-3">Stage Arbitrage</span></h3>
-                <p>-LOREM IPSUM-
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint quia suscipit laudantium dolorem eos, soluta numquam eligendi quo libero illum aspernatur quisquam ea dignissimos error iure. Unde iure adipisci
-
-                    ipsum dolor sit amet consectetur adipisicing elit. Nesciunt facere, velit voluptates iste commodi ipsa! Corrupti ullam voluptatem, sit laboriosam dolorem, saepe ex velit illum ducimus esse suscipit architecto mollitia?
-
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non nam repudiandae natus placeat omnis eos inventore sequi quis in fugiat explicabo molestiae itaque odit corrupti minima doloremque iure, incidunt aut!
-                    <div id="lead"></div>
-
-                </p>
-            </div>
-            <div>
-                <br>
-                <h3><span class="ml-3">Stage Dirigeant</span></h3>
-                <p>-LOREM IPSUM-
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint quia suscipit laudantium dolorem eos, soluta numquam eligendi quo libero illum aspernatur quisquam ea dignissimos error iure. Unde iure adipisci
-
-                    ipsum dolor sit amet consectetur adipisicing elit. Nesciunt facere, velit voluptates iste commodi ipsa! Corrupti ullam voluptatem, sit laboriosam dolorem, saepe ex velit illum ducimus esse suscipit architecto mollitia?
-
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non nam repudiandae natus placeat omnis eos inventore sequi quis in fugiat explicabo molestiae itaque odit corrupti minima doloremque iure, incidunt aut!
-                    <div id="superv"></div>
-
-                </p>
-            </div>
-            <div>
-                <br>
-                <h3><span class="ml-3">Stage Encadrant</span></h3>
-                <p>Prochain stage de formation des cadres
-                    Qui aura lieu le 14 et 15 mars 2020 à Poitiers.
-                    Ce stage a pour but de bien préparer votre prochain passage de garde au mois de mai 2020.
-                    <div id="comp"></div>
-                </p>
+                <label>
+                    <input type="checkbox" value="C" class="default"> Dirigeant
+                </label>
+                <label>
+                    <input type="checkbox" value="D" class="default"> Encadrant
+                </label>
             </div>
         </div>
     </div>
-
+    <div class="container pt-2 my-3 border">
+        <div id="season"></div>
+        </div>
+        <div class="hide">
+            <div id="first">
+            <?php 
+            
+            printStage($i);
+            ?>
+            </div>
+         </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="scripts/internship.js"></script>

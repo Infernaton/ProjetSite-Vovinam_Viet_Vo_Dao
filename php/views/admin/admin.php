@@ -2,7 +2,7 @@
 $req = $db->query('SELECT * FROM specialist ORDER BY id');
 $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM marqueur ORDER BY id');
-$clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
+//$clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM event ORDER BY id');
 $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
