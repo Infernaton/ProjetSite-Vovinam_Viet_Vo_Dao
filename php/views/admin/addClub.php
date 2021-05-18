@@ -39,7 +39,7 @@ if (isset($_GET['club'])) {
   }
 </style>
 
-<form action="php/management/addLocationDB.php">
+<form action="php/management/addLocationDB.php" method="post" enctype="multipart/form-data">
   <div id="container" class="container mt-2 mt-md-5">
     <div class="text-center"><h1 class="content-title-red">Ajouter un Club</h1></div>
   
@@ -57,6 +57,7 @@ if (isset($_GET['club'])) {
     </div>
     <div class="col-12 col-md-4">
       <div class="row mt-3">
+
       <div class="col-12">
         <label class="data" for="titre"><b>Titre</b></label>
         <input class="inputData form-control" type="text" placeholder="Nom du club" name="titre" id="titre" required>
@@ -76,8 +77,10 @@ if (isset($_GET['club'])) {
       <div class="col-12 mt-3">
         <input class="list-group-item form-control" type="text" name="result" id="coo" placeholder="Coordonée GPS" required readonly>
       </div>
-      </div>
-          
+
+      <input class="hide" name="currentClub" value="<?php echo $index?>" id="currentClub">
+
+      </div> 
       <div class ="d-flex justify-content-between mt-3">
         <div id="btn-object" class="p-2">
           <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
@@ -122,4 +125,20 @@ geocoder.on('result', function (e) {
 geocoder.on('clear', function () {
 results.value = '';
 });
+</script>
+<script>
+if (<?php echo $index?> != -1){
+  if (<?php echo json_encode($currentClub)?> != null){
+    document.getElementsByTagName("h1")[0].innerHTML = "Modifier le Club";
+    document.getElementById("confirm").value = "modify";
+
+    document.getElementById("titre").value = "<?php echo $currentClub["titre"]?>";
+    document.getElementById("enseignant").value = "<?php echo $currentClub["enseignant"]?>";
+    document.getElementById("contact").value = "<?php echo $currentClub["contact"]?>";
+    document.getElementById("lien").value = "<?php echo $currentClub["lien"]?>";
+    
+
+    document.getElementById("coo").value = "<?php echo unserialize(base64_decode($currentClub['coordonee']))[1].','.unserialize(base64_decode($currentClub['coordonee']))[0]?>";
+  }
+}
 </script>
