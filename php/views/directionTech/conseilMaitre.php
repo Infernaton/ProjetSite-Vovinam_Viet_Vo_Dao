@@ -13,7 +13,7 @@
         <div>
             <br>
             <h3><span class="ml-3">Qu'est ce que le Conseil des Maîtres ?</span></h3>
-            <div class="pt-2 my-3 border">
+            <div class="p-2 m-3 border">
             <ol>
                 <li class="pt-1">
                     Le Conseil National des Maîtres est l’organisation suprême chargée d’organiser, développer et 
@@ -35,7 +35,7 @@
         <div>
             <br>
             <h3><span class="ml-3">Président du Conseil</span></h3>
-            <div class="pt-2 my-3 border">
+            <div class="p-2 m-3 border">
                 <ol> 
                     <li class="pt-1"> 
                         Le mandat du Président du Conseil des Maîtres est de 4 ans.
@@ -74,7 +74,7 @@
         <div>
             <br>
             <h3><span class="ml-3">Les Membres du Conseil</span></h3>
-            <div class="pt-2 my-3 border">
+            <div class="p-3 m-3 border">
                 <ol>
                     <li class="pt-1">
                         Il y a 3 catégories de membre :

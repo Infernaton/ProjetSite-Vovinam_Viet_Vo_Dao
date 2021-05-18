@@ -5,6 +5,7 @@
 @media (min-width: 1200px) {
     .container{
         max-width: 1440px;
+        padding: 0 5%;
     }
 }
 .hide{display: none;}
