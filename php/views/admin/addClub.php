@@ -43,14 +43,18 @@ if (isset($_GET['club'])) {
 </style>
 
 <form action="php/management/addLocationDB.php" method="post" enctype="multipart/form-data">
-  <div id="container" class="container mt-2 mt-md-5">
+  <div id="container" class="container mt-2 mt-md-4">
+    
     <div class="text-center">
+      <div id="btn-object" class="p-2" style="float:left;">
+        <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>← Retour</button></a>
+      </div>
       <h1 class="content-title-red">Ajouter un Club</h1>
       <br><br>
       <h5> <span class="note">*</span> : Champs Obligatoire</h5>
     </div>
   
-    <div class="row pt-5">
+    <div class="row pt-3">
     <div class="col-12 col-md-8">
       <div class="row">
         <div class="col-12">

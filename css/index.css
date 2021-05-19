@@ -110,3 +110,12 @@ div.clickable {
     background-color: #e4e4e4;
     border-radius: 5px;
 }
+.clickable .link {
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 2s ease;
+}
+.clickable .link:hover{
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
