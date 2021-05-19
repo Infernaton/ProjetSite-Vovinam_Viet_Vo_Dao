@@ -52,12 +52,22 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
     </div>
         <div class="content"> 
             <div class="in">
-                <div class="row">
+                <select name="clubSelect" class="custom-select mb-3" onchange="select('clubList',this.value)">
+                    <option value="all">Tout les Clubs</option>
+                <?php 
+                    foreach ($clubsDB as $comite){
+                        if ($comite['club_comite'] == "comite"){
+                            echo '<option value="'.$comite['Comite'].'">'.$comite['titre'].'</option>';
+                        }
+                    }
+                ?>
+                </select>
+                <div class="row" id="clubList">
                 <?php //var_dump($clubsDB) ?>
                     <?php 
                     for ($i=0;$i<count($clubsDB);$i++){
                         if ($clubsDB[$i]["club_comite"] == "club"){
-                            echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel">',
+                            echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$clubsDB[$i]['Comite'].'">',
                                 '<a href="?c=admin&p=2&club='.$clubsDB[$i]['id'].'">',
                                 '<button class="list-object">'.$clubsDB[$i]['titre'].'</button>',
                                 '</a> </div>';
