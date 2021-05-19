@@ -6,6 +6,7 @@ if (isset($_GET['club'])) {
     $index = $_GET['club'];
     $req = $db->query('SELECT * FROM marqueur as s WHERE s.id = '.$index.'');
     $currentClub = $req->fetch(PDO::FETCH_ASSOC);
+    $currentClub['coordonee'] = [unserialize(base64_decode($currentClub['coordonee']))[1],unserialize(base64_decode($currentClub['coordonee']))[0]];
   } else {
     $index = -1;
   }
@@ -41,13 +42,17 @@ if (isset($_GET['club'])) {
 
 <form action="php/management/addLocationDB.php" method="post" enctype="multipart/form-data">
   <div id="container" class="container mt-2 mt-md-5">
-    <div class="text-center"><h1 class="content-title-red">Ajouter un Club</h1></div>
+    <div class="text-center">
+      <h1 class="content-title-red">Ajouter un Club</h1>
+      <br><br>
+      <h5> <span class="note">*</span> : Champs Obligatoire</h5>
+    </div>
   
     <div class="row pt-5">
     <div class="col-12 col-md-8">
       <div class="row">
         <div class="col-12">
-          <div id="coordonee" style=></div>
+          <div id="coordonee"></div>
         </div>
         <div class="col-12">
           <div id="map" style="height:400px; max-height:100%"></div>
@@ -59,7 +64,7 @@ if (isset($_GET['club'])) {
       <div class="row mt-3">
 
       <div class="col-12">
-        <label class="data" for="titre"><b>Titre</b></label>
+        <label class="data" for="titre"><b>Titre</b><span class="note">*</span></label>
         <input class="inputData form-control" type="text" placeholder="Nom du club" name="titre" id="titre" required>
       </div>
       <div class="col-12">
@@ -83,31 +88,76 @@ if (isset($_GET['club'])) {
       </div> 
       <div class ="d-flex justify-content-between mt-3">
         <div id="btn-object" class="p-2">
-          <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>Annuler</button></a>
+          <a onclick="history.go(-1);"><button class="btn-annul annim undo" type="button" id='undo'>Annuler</button></a>
         </div>
         <div id="btn-Action" class="p-2">
-          <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
+          <button type="submit" class="btn-modObject annim confirm" value="valide" name="submit" id="confirm">Valider</button>
         </div>
       </div>
     </div>
     </div>
   </div>
 </form> 
-  
-  
+
 <script>
+let centerMap, zoomMap;
+if (<?php echo $index ?>!= -1){
+  centerMap = <?php echo json_encode($currentClub['coordonee'])?>; 
+  zoomMap = 10;
+}else {
+  centerMap = [2, 47]; 
+  zoomMap = 5;
+}
+console.log(centerMap, zoomMap);
 mapboxgl.accessToken = '<?php echo getAccessToken()?>';
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
-  center: [2, 47],
-  zoom: 4
+  center: centerMap,
+  zoom: zoomMap
 });
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
-  //types: 'country,region,place,postcode,locality,neighborhood',
   mapboxgl: mapboxgl
 });
+
+if (<?php echo $index?> != -1){
+  map.on('load', function () {
+    const marker = {url: 'assets/img/markers/red_marker1.png', id: 'red_marker'};
+    map.loadImage(marker.url, function(error,image){
+      map.addImage(marker.id,image, {
+        pixelRatio : 0.8,
+      });
+    });
+
+    map.addSource('club', {
+      'type': 'geojson',
+      'data': {
+        'type': 'FeatureCollection',
+        'features': [
+          {
+            'type': 'Feature',
+            'properties': {
+              'title': 'Ancien Point'
+            },
+            'geometry': {
+              'type': 'Point',
+              'coordinates': centerMap
+            }
+          }
+        ]
+      }
+    })
+    map.addLayer({
+      'id': 'clubs',
+      'type': 'symbol',
+      'source': 'club',
+      'layout': {
+        'icon-image': 'red_marker',
+      }   
+    });
+  })
+}
 
 //geocoder.addTo('#coordonee')
 document.getElementById('coordonee').appendChild(geocoder.onAdd(map));
@@ -119,11 +169,6 @@ var results = document.getElementById('coo');
 geocoder.on('result', function (e) {
   value = e.result.geometry.coordinates
   results.value = value
-});
- 
-// Clear results container when search is cleared.
-geocoder.on('clear', function () {
-results.value = '';
 });
 </script>
 <script>
@@ -138,7 +183,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("lien").value = "<?php echo $currentClub["lien"]?>";
     
 
-    document.getElementById("coo").value = "<?php echo unserialize(base64_decode($currentClub['coordonee']))[1].','.unserialize(base64_decode($currentClub['coordonee']))[0]?>";
+    document.getElementById("coo").value = "<?php echo $currentClub['coordonee'][1].','.$currentClub['coordonee'][0]?>";
   }
 }
 </script>

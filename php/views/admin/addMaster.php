@@ -115,5 +115,6 @@ if (<?php echo $index?> != -1){
     document.getElementById("previewImgDiv").style = "background-image:url(<?php echo $currentMaster['pictureProfile'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
     document.getElementById("newImage").required = false;
+  }
 }
 </script>

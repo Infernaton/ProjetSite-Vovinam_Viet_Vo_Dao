@@ -64,10 +64,10 @@ if (isset($_GET['e'])) {
 
         <div class="d-flex justify-content-between mb-3">
             <div id="btn-reset" class="p-2">
-                <a onclick="history.go(-1);"><button class="btn-annul hidden annim" type="button" id='undo'>Annuler</button></a>
+                <a onclick="history.go(-1);"><button class="btn-annul hidden annim undo" type="button" id='undo'>Annuler</button></a>
             </div>
             <div id="btn-Action" class="p-2">
-                <button type="submit" class="btn-modObject annim" value="valide" name="submit" id="confirm">Valider</button>
+                <button type="submit" class="btn-modObject annim confirm" value="valide" name="submit" id="confirm">Valider</button>
             </div>
         </div>
 </form> 
