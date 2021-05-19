@@ -21,7 +21,7 @@
         <!-- Fin de la citation -->
 </div>
 <!-- Page container -->
-    <div class="container">
+    <div class="container mt-3">
         <!-- Section avec intégration facebook -->
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="row" style="padding: 20px;">
@@ -61,6 +61,7 @@
             </div>
         </section>
         <!-- Section -->
+        <div class="">
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="text-center">
                 <h2 class="content-title-yellow">Valeurs et Principes du Vovinam-Viet Vo Dao</h2>
@@ -107,6 +108,7 @@
                 </ol>
             </div>
         </section>
+        </div>
     </div>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v10.0" nonce="HGJmvvyg"></script>

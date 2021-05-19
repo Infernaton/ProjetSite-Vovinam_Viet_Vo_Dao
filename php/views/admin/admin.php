@@ -2,7 +2,7 @@
 $req = $db->query('SELECT * FROM specialist ORDER BY id');
 $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM marqueur ORDER BY id');
-//$clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
+$clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM event ORDER BY id');
 $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -26,7 +26,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
         <div class="content">
             <div class="in">
                 <select name="masterSelect" class="custom-select mb-3" onchange="select('masterList',this.value)">
-                    <option value="all">Tout les Maîtres</option>
+                    <option value="all">Tous les Maîtres</option>
                     <option value="great-master">Grands Maîtres</option>
                     <option value="master">Maîtres</option>
                 </select>
@@ -53,7 +53,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
         <div class="content"> 
             <div class="in">
                 <select name="clubSelect" class="custom-select mb-3" onchange="select('clubList',this.value)">
-                    <option value="all">Tout les Clubs</option>
+                    <option value="all">Tous les Clubs</option>
                 <?php 
                     foreach ($clubsDB as $comite){
                         if ($comite['club_comite'] == "comite"){
@@ -87,7 +87,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
         <div class="content"> 
             <div class="in">
                 <select name="eventSelect" class="custom-select mb-3" onchange="select('eventList',this.value)">
-                    <option value="all">Tout les Evènements</option>
+                    <option value="all">Tous les Evènements</option>
                     <option value="stage">Stage</option>
                     <option value="competition">Compétition</option>
                     <option value="formation">Formation</option>

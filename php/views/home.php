@@ -41,8 +41,7 @@
   <div class="text-center  mb-5">
     <h1 class="content-title-yellow">Le Vovinam-Viet Vo Dao</h1>
     <h2> Son principe « HARMONIE ENTRE LA FORCE ET LA SOUPLESSE »</h2>
+    <p>Le Vovinam-Viet Vo Dao présente tout un système technique et philosophique riche et structuré.</p>
+    <p>Que vous soyez un enfant ou un adulte, un débutant ou un expert en arts martiaux, l'enseignement est adapté à votre âge, à vos capacités physiques et à votre niveau technique. La pratique vous conduit à rechercher en permanence, l'équilibre, la perfection du mouvement, et l'efficacité des enchaînements.</p>
   </div>
-  <h3 class="mt-5">Présentation</h3>
-  <p>Le Vovinam-Viet Vo Dao présente tout un système technique et philosophique riche et structuré.</p>
-  <p>Que vous soyez un enfant ou un adulte, un débutant ou un expert en arts martiaux, l'enseignement est adapté à votre âge, à vos capacités physiques et à votre niveau technique. La pratique vous conduit à rechercher en permanence, l'équilibre, la perfection du mouvement, et l'efficacité des enchaînements.</p>
 </div>
