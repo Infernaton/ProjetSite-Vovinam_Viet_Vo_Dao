@@ -58,16 +58,16 @@ function printStage($index){
             </div>
         </div>
     </div>
-    <div class="container pt-2 my-3 border">
+    
         <div id="season"></div>
-        </div>
-        <div class="hide">
+        
+        
             <div id="first">
             <?php 
             
-            printStage($i);
+            printStage($index);
             ?>
             </div>
-         </div>
+    </div>     
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="scripts/internship.js"></script>
