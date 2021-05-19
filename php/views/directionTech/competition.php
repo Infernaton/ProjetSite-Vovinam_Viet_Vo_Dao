@@ -5,7 +5,13 @@ $eventBefFetch = $db->query('SELECT * FROM event WHERE type LIKE "Compétition" 
 $eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
 
 date_default_timezone_set('Europe/Paris');
-$date = explode("/",date('d/m/Y', time()));
+$date = explode("/",date('Y/m/d', time()));
+
+function dateFR($date){
+    //date format yyyy/mm/dd => dd/mm/yyyy
+    $date = explode("/", $date);
+    return $date[2]."/".$date[1]."/".$date[0];
+}
 
 function printTournament($index){
     global $eventComp;
@@ -14,7 +20,7 @@ function printTournament($index){
 
     echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
     '<h4>'.$eventComp[$index]['title'].'</h4>',
-    '<p class="date">'.$eventComp[$index]['dateDebut'].' - '.$eventComp[$index]['dateFin'].'</p>',
+    '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
     '<p class="descr">'.$eventComp[$index]['description'].'</p>',
     '<p class="prerequis">'.$prerequis.'</p>',
     '</div>';
@@ -42,10 +48,16 @@ function printTournament($index){
             <h3> Compétitions à venir</h3>
             <?php 
             for ($i=0;$i<count($eventComp);$i++){
-                $dateDebut= explode("/",$eventComp[$index]['dateDebut']);
-                if ($dateDebut[2] >= $date[2]){ //Comparaison de l'année
-                    if ($dateDebut[1] >= $date[1]){ //Comparaison du mois
-                        if($dateDebut[0] > $date[0]) { //Comparaison du jour
+                $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
+                if ($dateDebut[0] > $date[0]){ //Comparaison de l'année
+                    printTournament($i);
+                }
+                else if($dateDebut[0] == $date[0]){ 
+                    if($dateDebut[1] > $date[1]){//Comparaison du mois
+                        printTournament($i);
+                    }
+                    elseif($dateDebut[1] == $date[1]){
+                        if($dateDebut[2] >= $date[2]) { //Comparaison du jour
                             printTournament($i);
                         }
                     }
@@ -67,10 +79,16 @@ function printTournament($index){
                 <div id="compete">
                 <?php 
                 for ($i=0;$i<count($eventComp);$i++){
-                    $dateDebut= explode("/",$eventComp[$index]['dateDebut']);
-                    if ($dateDebut[2] <= $date[2]){ //Comparaison de l'année
-                        if ($dateDebut[1] <= $date[1]){ //Comparaison du mois
-                            if($dateDebut[0] < $date[0]) { //Comparaison du jour
+                    $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
+                    if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
+                        printTournament($i);
+                    }
+                    else if($dateDebut[0] == $date[0]){ 
+                        if($dateDebut[1] < $date[1]){//Comparaison du mois
+                            printTournament($i);
+                        }
+                        elseif($dateDebut[1] == $date[1]){
+                            if($dateDebut[2] < $date[2]) { //Comparaison du jour
                                 printTournament($i);
                             }
                         }
