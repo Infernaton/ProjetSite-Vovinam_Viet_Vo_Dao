@@ -1,6 +1,8 @@
 <?php
 //Get the index of the current master in the url
 $currentClub = null;
+$req = $db->query('SELECT * FROM marqueur WHERE club_comite LIKE "comite" ORDER BY id');
+$comiteDB =$req->fetchAll(PDO::FETCH_ASSOC);
 if (isset($_GET['club'])) {
   if ($_GET['club'] != null) {
     $index = $_GET['club'];
@@ -69,20 +71,35 @@ if (isset($_GET['club'])) {
       </div>
       <div class="col-12">
         <label class="data" for="Enseignant"><b>Enseignant Principal</b></label>
-        <input class="inputData form-control" type="text" placeholder="Nom de l'enseignant" name="enseignant" id="enseignant" >
+        <input class="inputData form-control" type="text" placeholder="Nom" name="enseignant" id="enseignant" >
       </div>
       <div class="col-12">
         <label class="data" for="Contact"><b>Contacter le club</b></label>
-        <input class="inputData form-control" type="text" placeholder="Contact" name="contact" id="contact">
+        <input class="inputData form-control" type="text" placeholder="Nom - Tél - Mail (si fournis)" name="contact" id="contact">
       </div>
       <div class="col-12">
-        <label class="data" for="lien"><b>Lien du site Web</b></label>
-        <input class="inputData form-control" type="text" placeholder="Lien du site" name="lien" id="lien">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <label class="data" for="lien"><b>Lien du site Web</b></label>
+            <input class="inputData form-control" type="text" placeholder="http:\\ ..." name="lien" id="lien">
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="data" for="comite"><b>Comite</b><span class="note">*</span></label>
+            <!--<input class="inputData form-control" list="list" type="text" placeholder="---" name="comite" id="comite" onchange="comiteData(this.value)">-->
+            <select style="overflow-y:auto;" name="list" id="comite" onchange="comiteData(this.value)" class="custom-select inputData form-control">
+              <?php 
+                foreach ($comiteDB as $comite){
+                  echo '<option value="'.$comite["titre"].'">'.$comite["titre"].'</option>';
+                }
+              ?>
+            </datalist>
+            <input class="hide" type="text" name="comiteValue" id="comiteValue" value="" required>
+          </div>
+        </div>
       </div>
       <div class="col-12 mt-3">
         <input class="list-group-item form-control" type="text" name="result" id="coo" placeholder="Coordonée GPS" required readonly>
       </div>
-
       <input class="hide" name="currentClub" value="<?php echo $index?>" id="currentClub">
 
       </div> 
@@ -108,7 +125,6 @@ if (<?php echo $index ?>!= -1){
   centerMap = [2, 47]; 
   zoomMap = 5;
 }
-console.log(centerMap, zoomMap);
 mapboxgl.accessToken = '<?php echo getAccessToken()?>';
 var map = new mapboxgl.Map({
   container: 'map',
@@ -171,6 +187,34 @@ geocoder.on('result', function (e) {
   results.value = value
 });
 </script>
+
+<script>
+function comiteData(value) {
+  //Name of a region -> Name of his symbole
+  let comiteDB = <?php echo json_encode($comiteDB)?>;
+  let input = document.getElementById("comiteValue");
+  let isComiteExist = false;
+  comiteDB.forEach(comite => {
+    if (comite['titre'] == value) {
+      isComiteExist = true;
+      input.value = comite['Comite'];
+    }
+  })
+}
+function comiteDataReverse(value) {
+  //Name of the symbole -> Name of his region
+  let comiteDB = <?php echo json_encode($comiteDB)?>;
+  let input = document.getElementById("comite");
+  let isComiteExist = false;
+  comiteDB.forEach(comite => {
+    if (comite['Comite'] == value) {
+      isComiteExist = true;
+      input.value = comite['titre'];
+    }
+  })
+}
+</script>
+
 <script>
 if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentClub)?> != null){
@@ -181,8 +225,9 @@ if (<?php echo $index?> != -1){
     document.getElementById("enseignant").value = "<?php echo $currentClub["enseignant"]?>";
     document.getElementById("contact").value = "<?php echo $currentClub["contact"]?>";
     document.getElementById("lien").value = "<?php echo $currentClub["lien"]?>";
+    document.getElementById("comiteValue").value = "<?php echo $currentClub["Comite"]?>";
+    comiteDataReverse("<?php echo $currentClub["Comite"]?>")
     
-
     document.getElementById("coo").value = "<?php echo $currentClub['coordonee'][1].','.$currentClub['coordonee'][0]?>";
   }
 }
