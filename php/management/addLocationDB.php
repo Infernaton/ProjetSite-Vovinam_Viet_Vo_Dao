@@ -15,7 +15,7 @@ switch ($_POST["submit"]){
         $req->bindValue(':contact' , $_POST["contact"]);
         $req->bindValue(':club_comite', "club");
         $req->bindValue(':lien' , $_POST["lien"]);
-        $req->bindValue(':Comite' , $_POST["comiteValue"])
+        $req->bindValue(':Comite' , $_POST["comiteValue"]);
 
         $coo = explode(",", ($_POST["result"]));
         $req->bindValue(':coordonee' , base64_encode(serialize($coo)));

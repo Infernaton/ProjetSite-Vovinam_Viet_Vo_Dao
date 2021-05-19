@@ -155,9 +155,9 @@
                         $coo = [null, null];
                     }
                     ?>
-                    <div class="club clickable col-12 col-sm-6 col-md-4" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])
+                    <div class="club col-12 col-sm-6 col-md-4 clickable" 
                         data-toggle="tooltip" title='<?php echo $tooltipClub?>'>
-                            <div class="mt-4">
+                            <div class="m-1">
                                 <!--<h5><a href=<?php echo $club['lien']?> target=_blank style=color:#e82226;><?php echo $club['titre']?></a></h5>
                                 <p class="hide comite"> <?php echo $club['Comite']?></p>-->
                                 <h5><strong><?php echo $club['titre']?> </strong></h5>
@@ -173,8 +173,9 @@
                                 if ($count==25) { $printLien .= '...';}
 
                                 echo $printLien; ?>
-                            </a></p>
-                            <p class="hide comite"> <?php echo $club['Comite']?></p>
+                                </a></p>
+                                <a class="link" onClick=zoomTo([<?php echo $coo[1].','.$coo[0]?>])>Montrer sur la carte</a>
+                                <p class="hide comite"> <?php echo $club['Comite']?></p>
                             </div>
                     </div>
                     <?php
@@ -417,7 +418,6 @@
             let scrollPageState = document.documentElement.scrollTop;
             for (let i=scrollPageState; i>210; i-=50){
                 document.documentElement.scrollTop = i;
-                console.log(i);
             }
             map.flyTo({
                 center: coord,
