@@ -208,6 +208,8 @@ a:hover{
     padding: 0 3%;
     position: relative;
     height: 10%;
+    box-shadow: none;
+    background-color: white;
 }
 .card .footer .social-links{
     font-size: 18px;
