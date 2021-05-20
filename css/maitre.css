@@ -211,15 +211,6 @@ a:hover{
     box-shadow: none;
     background-color: white;
 }
-.card .footer .social-links{
-    font-size: 18px;
-}
-.card .footer .social-links a{
-    margin: 0 7px;
-}
-.card .footer .btn-simple{
-    margin-top: -6px;
-}
 @media (max-width: 990px) {
     .card .header .name{
         font-size: 1.25rem;
