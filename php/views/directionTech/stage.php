@@ -7,6 +7,11 @@ $eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
 date_default_timezone_set('Europe/Paris');
 $date = explode("/",date('d/m/Y', time()));
 
+function dateFR($date){
+    //date format yyyy/mm/dd => dd/mm/yyyy
+    $date = explode("/", $date);
+    return $date[2]."/".$date[1]."/".$date[0];
+}
 function printStage($index){
     global $eventComp;
     
@@ -14,7 +19,7 @@ function printStage($index){
 
     echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
     '<h4>'.$eventComp[$index]['title'].'</h4>',
-    '<p class="date">'.$eventComp[$index]['dateDebut'].' - '.$eventComp[$index]['dateFin'].'</p>',
+    '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
     '<p class="descr">'.$eventComp[$index]['description'].'</p>',
     '<p class="prerequis">'.$prerequis.'</p>',
     '</div>';
@@ -61,13 +66,28 @@ function printStage($index){
     
         <div id="season"></div>
         
-        
-            <div id="first">
-            <?php 
+     
+           <?php 
+            for ($i=0;$i<count($eventComp);$i++){
+                $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
+                if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
+                    printStage($i);
+                }
+                else if($dateDebut[0] == $date[0]){ 
+                    if($dateDebut[1] < $date[1]){//Comparaison du mois
+                        printStage($i);
+                    }
+                    elseif($dateDebut[1] == $date[1]){
+                        if($dateDebut[2] < $date[2]) { //Comparaison du jour
+                            printStage($i);
+                        }
+                    }
+                }
+            }
             
-            printStage($index);
+            
             ?>
-            </div>
-    </div>     
+           
+        </div>     
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="scripts/internship.js"></script>
