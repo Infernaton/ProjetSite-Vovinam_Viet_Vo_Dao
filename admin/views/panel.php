@@ -6,7 +6,6 @@ $clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM event ORDER BY id');
 $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<link rel="stylesheet" href="css/add.css">
 <style>
 .p-2{
     padding: 0!important;
@@ -14,11 +13,10 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 </style>
 
 <div id="container" class="container">
-    <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Maîtres</div>
         <div class="p-2 text-center">
-            <a href="?c=admin&p=1">
+            <a href="?p=addMaster">
                 <button class="confirm">+ Ajouter un Maître</button>
             </a>
         </div>
@@ -45,7 +43,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Clubs</div>
         <div class="p-2">
-            <a href="?c=admin&p=2">
+            <a href="?p=addClub">
                 <button class="confirm">+ Ajouter un club</button>
             </a>
         </div>
@@ -79,7 +77,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Evènements</div>
         <div class="p-2">
-            <a href="?c=admin&p=3">
+            <a href="?p=event">
                 <button class="confirm">+ Ajouter un évènement</button>
             </a>
         </div>

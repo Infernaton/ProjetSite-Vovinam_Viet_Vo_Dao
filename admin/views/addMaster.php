@@ -27,8 +27,6 @@ if (isset($_GET['m'])) {
   $index = -1;
 }
 ?>
-<link rel="stylesheet" href="css/add.css">
-
 <form action="php/management/addMasterDB.php" method="post" enctype="multipart/form-data">
   <div id="container" class="container">
     <div class="text-center">

@@ -1,5 +1,5 @@
 <?php 
-require_once "management/db.php";
+require_once "../admin/management/db.php";
 
 session_start();
 
@@ -22,7 +22,7 @@ $pages = [
     'actualite' => ['actualite'],
     'contacts' => ['/contacts','/faq','/personnaliteFede'],
     'login' => ['/login','/register'],
-    'admin' => ['/admin','/addMaster','/addClub','/event'],
+    /*'admin' => ['/admin','/addMaster','/addClub','/event'],*/
 ];
 $del = ['logOut'];
 ?>

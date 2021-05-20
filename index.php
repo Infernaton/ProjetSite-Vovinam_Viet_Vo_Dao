@@ -2,8 +2,6 @@
 <html lang="fr_FR">
 
 <?php
-// check auth
-
 require_once 'php/init.php';
 require_once 'php/partials/header.php';
 require_once 'php/partials/footer.php';

@@ -17,7 +17,6 @@ if (isset($_GET['e'])) {
   $index = -1;
 }
 ?>
-<link rel="stylesheet" href="css/add.css">
 <form action="php/management/addEventDB.php" method="post" enctype="multipart/form-data">
     <div id="container" class="container">
         <div class="text-center"> 
