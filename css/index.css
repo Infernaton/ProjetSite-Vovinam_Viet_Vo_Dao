@@ -66,13 +66,12 @@ body{
     border-radius: 5px;
 }
 .container {
-    padding-bottom: 1%;
     border-radius: 5px;
     box-shadow: 0 1px 10px black;
     background-color: #F5F6FA;
     margin: 2% 5%;
     width: 90%;
-    padding: 0 5%;
+    padding: 0 5% 1%;
 }
 .footer{
     left: 0 ; right: 0; bottom: 0; 
@@ -114,38 +113,9 @@ body{
     background-color: rgb(238, 238, 238);
     font-size: 18px;
 }
-#yt{
-    width: 50px;
-    margin-right: 5%;  
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-#insta{
-    width:52px;
-    margin-right: 5%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-#fb{
-    width:50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-#galerie{
-    width:52px;
-    margin-right: 5%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
 .currentHover {
     background-color: #e4e4e4;
 }
-
 div.clickable {
     padding-top: 0.5%;
 }
