@@ -43,7 +43,7 @@ if (isset($_GET['club'])) {
 </style>
 
 <form action="php/management/addLocationDB.php" method="post" enctype="multipart/form-data">
-  <div id="container" class="container mt-2 mt-md-4">
+  <div id="container" class="container">
     
     <div class="text-center">
       <div id="btn-object" class="p-2" style="float:left;">

@@ -53,6 +53,7 @@ body{
     border-radius: 5px;
     box-shadow: 0 1px 10px black;
     background-color: #F5F6FA;
+    margin: 2% 5%;
 }
 .footer{
     left: 0 ; right: 0; bottom: 0; 

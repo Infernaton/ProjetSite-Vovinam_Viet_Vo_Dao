@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/federation1.css">
 
 <body>
-    <div class="container info mt-5">
+    <div class="container info">
         <div class="pb-3 text-center">
             <h1 class="content-title-yellow"> Liens </h1>
         </div>

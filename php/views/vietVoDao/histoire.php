@@ -22,7 +22,7 @@ body{
 }
 </style>
     <div class="container-fluid p-1">
-    <div class="mt-1 mt-md-5" id="main">
+    <div class="" id="main">
         <?php 
         foreach ($histoire as $partHistoire) {       
         ?>

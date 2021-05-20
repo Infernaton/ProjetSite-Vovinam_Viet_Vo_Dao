@@ -26,7 +26,7 @@ $fondatorData = $greatMasters[0];
     height:470px;
 }
 </style>
-<div class="container mt-2 mt-md-5">
+<div class="container">
         <!-- Titre de la page -->
         <div class="text-center">
             <div class="mb-5">

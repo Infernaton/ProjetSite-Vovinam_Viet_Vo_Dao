@@ -19,12 +19,13 @@ if (isset($_GET['e'])) {
 ?>
 <link rel="stylesheet" href="css/add.css">
 <form action="php/management/addEventDB.php" method="post" enctype="multipart/form-data">
-    <div id="container" class="container mt-2 mt-md-5">
+    <div id="container" class="container">
         <div class="text-center"> 
             <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1>
         </div>
     <div class="row">
         <div class="col-12 col-md-4">
+
             <div id="previewImgDiv" class="responsive" style="background-image:url(assets/img/no-picture.png);";>
                 <div class="hoverEle">
                     <p class="center">Changer l'image</p>
@@ -43,6 +44,7 @@ if (isset($_GET['e'])) {
         </div>
 
         <div class="col-12 col-md-8">
+
             <div id="categoryContainer">
                 <label class="data" for="event"><b>Type d'évènement</b></label>
                 <input class="inputData form-control" list="list" type="text" placeholder="  -" name="event" id="event" required>
@@ -59,6 +61,7 @@ if (isset($_GET['e'])) {
             <textarea class="inputData form-control" rows="10" cols="100" name="description" placeholder="Description.." id="description"></textarea>
 
             <input class="hide" name="currentEvent" value="<?php echo $index?>" id="currentEvent">
+            
         </div>
     </div>        
 

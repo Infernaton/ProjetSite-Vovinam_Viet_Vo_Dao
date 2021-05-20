@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/federation1.css">
 
-<div class="container info mt-5">
+<div class="container info">
     <div class="text-center">
         <h1 class="content-title-yellow text-center"> Logo Légal </h1>
     </div>

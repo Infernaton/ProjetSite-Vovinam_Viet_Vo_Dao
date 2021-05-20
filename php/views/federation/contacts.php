@@ -1,10 +1,9 @@
 <link rel="stylesheet" href="css/federation1.css">
 
-<div class="container info mt-5">
-        <div class="text-center mt-5 pb-3">
+<div class="container info">
+        <div class="text-center pb-3">
                 <h1 class="content-title-yellow"> Contacts </h1>
         </div>
-
 
         <p> <strong> Maitre blabla</strong> 
                 Lorem ipsum dolor sit amet 

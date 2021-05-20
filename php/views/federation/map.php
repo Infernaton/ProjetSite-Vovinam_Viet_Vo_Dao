@@ -67,7 +67,7 @@
     }
 }
 </style>
-<div class="container mt-2 mt-md-5">
+<div class="container">
         <!-- Titre -->
         <div class="text-center">
             <div class="mt-5 mb-5 inline-flex">

@@ -21,7 +21,7 @@
         <!-- Fin de la citation -->
 </div>
 <!-- Page container -->
-    <div class="container mt-3">
+    <div class="container">
         <!-- Section avec intégration facebook -->
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="row" style="padding: 20px;">
