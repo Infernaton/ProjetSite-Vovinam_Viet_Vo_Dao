@@ -2,35 +2,30 @@
 * --underline-color-blue: #1c55a3; (fédération)
 * --underline-color-yellow: #ffe600; (information utilisateur)
 */
-.hide{display: none;}
-.will-hide{display: none;}
+.only-sm-hide, .only-md-hide, .only-lg-hide, .only-xl-hide {display: block;}
+.hide, .sm-hide, .md-hide, .lg-hide {display: none;}
 @media (min-width:576px) {
-    .container{
-        max-width: 740px;
-        padding: 0 5%;
-    }
+    /*sm*/
+    .container{max-width: 740px;}
+    .only-sm-hide{display: none;}
 }
 @media (min-width:768px) {
-    .container{
-        max-width: 920px;
-        padding: 0 5%;
-    }
-    .will-hide{
-        display: block;
-    }
+    /*md*/
+    .container{max-width: 920px;}
+    .only-sm-hide, .sm-hide{display: block;}
+    .only-md-hide{display: none;}
 }
 @media (min-width:992px) {
-    .container{
-        max-width: 1260px;
-        padding: 0 5%;
-    }
+    /*lg*/
+    .container{max-width: 1260px;}
+    .only-md-hide, .md-hide{display: block;}
+    .only-lg-hide{display: none;}
 }
 @media (min-width: 1200px) {
-    .container{
-        max-width: 1440px;
-        padding: 0 5%;
-    }
-    
+    /*xl*/
+    .container{max-width: 1440px;}
+    .only-lg-hide, .lg-hide {display: block;}
+    .only-xl-hide{display: none;}
 }
 a{  
     color:#6565a7;
@@ -71,12 +66,12 @@ body{
     border-radius: 5px;
 }
 .container {
-    padding-bottom: 1%;
     border-radius: 5px;
     box-shadow: 0 1px 10px black;
     background-color: #F5F6FA;
     margin: 2% 5%;
     width: 90%;
+    padding: 0 5% 1%;
 }
 .footer{
     left: 0 ; right: 0; bottom: 0; 
@@ -87,6 +82,7 @@ body{
 }
 .footer .row {
     margin-right: 0;
+    margin-left: 0;
 }
 .footer .social-links{
     font-size: 18px;
@@ -94,53 +90,32 @@ body{
 .footer .social-links a{
     margin: 0 7px;
     display: flex;
+    transition: all 0.5s ease;
+}
+.footer .social-links a:hover{
+    text-decoration: none;
+    transform: scale(1.01);
 }
 .footer .social-links img{
     margin-right: 10px;
     width:25px;
     height: 25px;
 }
-.footer .social-links p{
+.footer p{
     margin-bottom: 0;
     color: #cacaca;
+}
+.footer hr{
+    border-top: 1px solid rgba(0,0,0,0.3);
 }
 /* ------ */
 .navbar-lightgray{
     background-color: rgb(238, 238, 238);
     font-size: 18px;
 }
-#yt{
-    width: 50px;
-    margin-right: 5%;  
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-#insta{
-    width:52px;
-    margin-right: 5%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-#fb{
-    width:50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-#galerie{
-    width:52px;
-    margin-right: 5%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
 .currentHover {
     background-color: #e4e4e4;
 }
-
 div.clickable {
     padding-top: 0.5%;
 }
