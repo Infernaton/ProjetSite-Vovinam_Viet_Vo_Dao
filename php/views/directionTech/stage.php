@@ -40,7 +40,7 @@ function printStage($index){
     
     <!--Drawer for all season-->
     <div class="inline">
-        <div class="dropdown">
+        <div class="dropdown"> </div>
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Filtre
             </button>
