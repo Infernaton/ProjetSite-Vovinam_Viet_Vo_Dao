@@ -35,6 +35,6 @@ switch ($_POST["submit"]){
         break;
 }
 
-echo "<script type='text/javascript'> history.go(-1); </script>";
+echo "<script type='text/javascript'> history.go(-2); </script>";
 die;
 ?>

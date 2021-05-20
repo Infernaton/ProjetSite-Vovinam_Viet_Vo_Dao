@@ -35,8 +35,8 @@
     max-width: 250px;
     box-shadow: 3px 3px 2px #8B5D33,
         inset 0 -3em 3em rgba(0,0,0,0.1),
-             0 0  0 2px rgb(255,255,255),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
+            0 0  0 2px rgb(255,255,255),
+            0.3em 0.3em 1em rgba(0,0,0,0.3);
     font-family: 'Oswald';
 }
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
@@ -87,7 +87,9 @@
             <!-- Titre -->
             <div class="row mt-5 mb-5">
                 <div class="col-sm-12"> <h2 class="content-title-blue">Les Régions</h2> </div>
-                <div class="col-sm-12"> <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Comité ci-dessous pour voir les clubs se trouvant dans la même région</small></h4></div>
+                <div class="col-sm-12"> 
+                    <h4 class="text-info font-italic"><small><i class="fas fa-question-circle"></i> Cliquez sur un Comité ci-dessous pour voir les clubs se trouvant dans la même région</small></h4>
+                </div>
             </div>
             <!-- Liste -->
             <div class="row">
@@ -96,7 +98,7 @@
                     $rt = explode(" : ", $comite['contact']);
                     $pdt = explode(" : ",$comite["enseignant"]);
                     $tooltipContent = "<p>Président de ce Comité : <br><strong>".$pdt[0]."</strong><br> (Contact: ".$pdt[1].")</p>".
-                                    "<p>Responsable Technique : <br><strong>".$rt[0]."</strong><br> (Contact: ".$rt[1].")</p>"
+                                    "<p>Responsable Technique : <br><strong>".$rt[0]."</strong><br> (Contact: ".$rt[1].")</p>";
                     ?>
                         <button class="col-12 col-sm-6 col-md-4 btn clickable" 
                             onClick='selectClub(["<?php echo $comite['Comite'].'","'.$comite['titre']?>"])' 

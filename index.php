@@ -28,6 +28,9 @@ if (isset($_GET['c'])) {
                 $page = '';
             }
         }
+        else{
+            $pageCate = '404';
+        }
     }
     else {
         $pageCate = '404';
