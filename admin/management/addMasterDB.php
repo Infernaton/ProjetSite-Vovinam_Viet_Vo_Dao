@@ -7,7 +7,7 @@ require_once 'init.php';
 //If we want to upload a new image for the current Master
 if ($_FILES['newImage']['error']==0){
     //If there no new file, $_FILES['newImage']['error'] = 4;
-    $target_dir = getSaveDirr()."maitres/";
+    $target_dir = getSaveDirr('forDB')."maitres/";
     $target_file = $target_dir . basename($_FILES["newImage"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

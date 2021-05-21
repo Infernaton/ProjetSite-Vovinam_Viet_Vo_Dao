@@ -111,7 +111,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
     document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>".replaceAll('{n}', '\n');
     document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
-    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo "../".$currentMaster['pictureProfile'] ?>);";
+    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo getSaveDirr("forPreview").$currentMaster['pictureProfile'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
     document.getElementById("newImage").required = false;
   }

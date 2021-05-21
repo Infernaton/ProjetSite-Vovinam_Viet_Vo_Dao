@@ -89,7 +89,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("dateFin").value = "<?php echo reformatDate($currentEvent['dateFin'])?>";
     document.getElementById("event").value = "<?php echo $currentEvent['type'] ?>";
     document.getElementById("prerequis").value = "<?php echo $currentEvent['prerequis'] ?>";
-    document.getElementById("previewImgDiv").style = "background-image:url(<?php "../".echo $currentEvent['image'] ?>);";
+    document.getElementById("previewImgDiv").style = "background-image:url(<?php getSaveDirr("forPreview").echo $currentEvent['image'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentEvent['image']?>"
     document.getElementById("newImage").required = false;
   }

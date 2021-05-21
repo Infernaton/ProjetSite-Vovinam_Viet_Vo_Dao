@@ -3,7 +3,7 @@ require_once "init.php";
 
 if ($_FILES['newImage']['error']==0){
     //If there no new file, $_FILES['newImage']['error'] = 4;
-    $target_dir = getSaveDirr()."events/";
+    $target_dir = getSaveDirr('forDB')."events/";
     $target_file = $target_dir . basename($_FILES["newImage"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
