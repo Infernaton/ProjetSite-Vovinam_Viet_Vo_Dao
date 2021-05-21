@@ -74,8 +74,8 @@
                     <div class="p-2">
                         <table class="table">
                             <tr>
-                                <td><span style="color:#1c55a3;">But</span></td>
-                                <td>La formation de l'homme vrai sur deux plan: Esprit et Technique.</td>
+                                <td style="border:none;"><span style="color:#1c55a3;">But</span></td>
+                                <td style="border:none;">La formation de l'homme vrai sur deux plan: Esprit et Technique.</td>
                             </tr>
                             <tr>
                                 <td><span style="color:#1c55a3;">Devise</span</td>
