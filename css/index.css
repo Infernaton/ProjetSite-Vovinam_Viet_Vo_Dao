@@ -2,8 +2,15 @@
 * --underline-color-blue: #1c55a3; (fédération)
 * --underline-color-yellow: #ffe600; (information utilisateur)
 */
-.only-sm-hide, .only-md-hide, .only-lg-hide, .only-xl-hide {display: block!important;}
+.only-before-sm-hide, .only-sm-hide, .only-md-hide, .only-lg-hide, .only-xl-hide {display: block!important;}
 .hide, .sm-hide, .md-hide, .lg-hide {display: none!important;}
+@media (max-width:576px) {
+    /*before sm*/
+    .only-before-sm-hide{display:none!important;}
+    .footer .social-links p{
+        font-size: 14px;
+    }
+}
 @media (min-width:576px) {
     /*sm*/
     .container{max-width: 740px;}

@@ -5,25 +5,34 @@ function partials_footer(){
 <style>
 .list-group-item{
     background-color: rgba(0,0,0,0);
+    padding: .75rem 0;
 }
 </style>
     <footer class="footer">
         <div class="pt-3">
             <div class="row">
-                <div class="col-2 col-md-7 col-lg-5 col-xl-3">
+                <div class="sm-hide col-md-7 col-lg-5 col-xl-3">
                     <ul class="list-group list-group-flush social-links">
                     <li class="list-group-item">
-                        <a href="https://www.youtube.com/channel/UC87j8G2WRUQur4VCHjF3OKQ" target="_blank" ><img src="assets/img/logo/yt.png"><p class="sm-hide">Chaîne Officielle de la Fédération</p></a>
+                        <a href="https://www.youtube.com/channel/UC87j8G2WRUQur4VCHjF3OKQ" target="_blank" ><img src="assets/img/logo/yt.png"><p>Chaîne Officielle de la Fédération</p></a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance" target="_blank"><img src="assets/img/logo/fb.png"><p class="sm-hide">Page Facebook Officielle</p></a>
+                        <a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance" target="_blank"><img src="assets/img/logo/fb.png"><p>Page Facebook Officielle</p></a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://www.instagram.com/federationvovinamvietvodaofr/" target="_blank" ><img src="assets/img/logo/insta.png"><p class="sm-hide">Compte Instagram Officiel</p></a>
+                        <a href="https://www.instagram.com/federationvovinamvietvodaofr/" target="_blank" ><img src="assets/img/logo/insta.png"><p>Compte Instagram Officiel</p></a>
                     </li>
                     </ul>
                 </div>
-                <div class="col-6 only-md-hide col-lg-4 col-xl-3 d-flex justify-content-center">
+                <div class="col-4 only-md-hide only-lg-hide only-xl-hide">
+                    <div class="list-group list-group-flush social-links">
+                        <div class="list-group-item"><a href="https://www.youtube.com/channel/UC87j8G2WRUQur4VCHjF3OKQ" target="_blank" ><img src="assets/img/logo/yt.png"><p>Youtube</p></a></div>
+                        <div class="list-group-item"><a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance" target="_blank"><img src="assets/img/logo/fb.png"><p>Facebook</p></a></div>
+                        <div class="list-group-item"><a href="https://www.instagram.com/federationvovinamvietvodaofr/" target="_blank" ><img src="assets/img/logo/insta.png"><p>Instagram</p></a></div>
+                        <div class="list-group-item"><a href="http://vietvodao.photos/" target="_blank" ><img src="assets/img/logo/galerie.png"><p>Galerie Photo</p></a></div>
+                    </div>
+                </div>
+                <div class="col-8 col-sm-8 only-md-hide col-lg-4 col-xl-3 d-flex justify-content-center">
                     <div class="p-2">
                         <h5>Fédération VOVINAM-Viet Vo Dao France</h5>
                         <p><i class="fas fa-map-marker-alt"></i> 6 allée des Agrions 91160, Ballainvilliers – France</p>
@@ -44,7 +53,7 @@ function partials_footer(){
                     </div>
                     
                 </div>
-                <div class="col-3 col-md-5 col-lg-3 col-xl-2 text-center">
+                <div class="sm-hide col-md-5 col-lg-3 col-xl-2 text-center">
                     <a href="http://vietvodao.photos/" target="_blank" ><img src="assets/img/logo/galerie.png" width=150px></a>
                 </div>
                 <div class="sm-hide col-md-12 only-lg-hide only-xl-hide d-flex justify-content-center">

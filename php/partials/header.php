@@ -152,7 +152,7 @@ function partials_header($categorie,$page){
         <div class="collapse navbar-collapse justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item home" id="">
-                <a class="nav-link" href="?c=home">Accueil</a>
+                <a class="nav-link" href="/ProjetSite-Vovinam_Viet_Vo_Dao/">Accueil</a>
             </li>
             <li class="nav-item dropdown federation" id="">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">La Fédération</a>

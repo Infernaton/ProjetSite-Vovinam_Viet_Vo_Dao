@@ -27,7 +27,11 @@ if (isset($_GET['c'])) {
             }
         }
         else{
-            $pageCate = '404';
+            if (count($pages[$pageCate]) == 1){
+                $page = '';
+            }else {
+                $pageCate = '404';
+            }
         }
     }
     else {
