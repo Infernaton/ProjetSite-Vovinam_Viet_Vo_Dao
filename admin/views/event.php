@@ -17,7 +17,7 @@ if (isset($_GET['e'])) {
   $index = -1;
 }
 ?>
-<form action="php/management/addEventDB.php" method="post" enctype="multipart/form-data">
+<form action="management/addEventDB.php" method="post" enctype="multipart/form-data">
     <div id="container" class="container">
         <div class="text-center"> 
             <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1>
@@ -25,7 +25,7 @@ if (isset($_GET['e'])) {
     <div class="row">
         <div class="col-12 col-md-4">
 
-            <div id="previewImgDiv" class="responsive" style="background-image:url(assets/img/no-picture.png);";>
+            <div id="previewImgDiv" class="responsive" style="background-image:url(../assets/img/no-picture.png);";>
                 <div class="hoverEle">
                     <p class="center">Changer l'image</p>
                 </div>
@@ -89,7 +89,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("dateFin").value = "<?php echo reformatDate($currentEvent['dateFin'])?>";
     document.getElementById("event").value = "<?php echo $currentEvent['type'] ?>";
     document.getElementById("prerequis").value = "<?php echo $currentEvent['prerequis'] ?>";
-    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo $currentEvent['image'] ?>);";
+    document.getElementById("previewImgDiv").style = "background-image:url(<?php "../".echo $currentEvent['image'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentEvent['image']?>"
     document.getElementById("newImage").required = false;
   }

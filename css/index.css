@@ -39,9 +39,8 @@ div.link:hover{
 .border-rad-3{
     border-radius: 3px;
 }
-.red{
-    color:#e82226 !important;
-}
+.red{color:#e82226 !important;}
+
 /*Mise en Page avec Footer*/
 header{
     background-color: white;

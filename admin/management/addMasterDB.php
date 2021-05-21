@@ -1,5 +1,5 @@
 <?php
-require_once "../init.php";
+require_once 'init.php';
 
 //var_dump($_POST);
 //var_dump($_FILES);
@@ -7,7 +7,7 @@ require_once "../init.php";
 //If we want to upload a new image for the current Master
 if ($_FILES['newImage']['error']==0){
     //If there no new file, $_FILES['newImage']['error'] = 4;
-    $target_dir = "../../assets/img/maitres/";
+    $target_dir = getSaveDirr()."maitres/";
     $target_file = $target_dir . basename($_FILES["newImage"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -44,7 +44,6 @@ if ($_FILES['newImage']['error']==0){
     //If we want to stay with the current image
     $target_file = $_POST['oldImage'];
 }
-
 
 $_POST["death"] == null? $deathValue = "---" : $deathValue = $_POST["death"];
 switch ($_POST['hierarchy']){

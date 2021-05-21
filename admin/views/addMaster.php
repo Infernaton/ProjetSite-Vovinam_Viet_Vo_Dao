@@ -20,6 +20,7 @@ if (isset($_GET['m'])) {
       default:
         $currentMaster['hierarchy'] = 'none';
     }
+    //var_dump($currentMaster);
   } else {
     $index = -1;
   }
@@ -27,17 +28,17 @@ if (isset($_GET['m'])) {
   $index = -1;
 }
 ?>
-<form action="php/management/addMasterDB.php" method="post" enctype="multipart/form-data">
+<form action="management/addMasterDB.php" method="post" enctype="multipart/form-data">
   <div id="container" class="container">
     <div class="text-center">
       <h1 id="addGM" class="content-title-red" >Ajouter un Maître</h1>
       <br><br>
       <h5> <span class="note">*</span> : Champs Obligatoire</h5>
     </div>
-    <div class="row" id="master-row">
+    <div class="row">
       <div class="col-md-5 col-12">
 
-        <div id="previewImgDiv" class="responsive" style="background-image:url(assets/img/no-picture.png);";>
+        <div id="previewImgDiv" class="responsive" style="background-image:url(../assets/img/no-picture.png);";>
           <div class="hoverEle">
             <p class="center">Changer l'image</p>
           </div>
@@ -110,7 +111,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
     document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>".replaceAll('{n}', '\n');
     document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
-    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo $currentMaster['pictureProfile'] ?>);";
+    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo "../".$currentMaster['pictureProfile'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
     document.getElementById("newImage").required = false;
   }

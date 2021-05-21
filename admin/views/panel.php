@@ -32,7 +32,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
                     <?php 
                     for ($i=0;$i<count($greatMastersDB);$i++){
                         echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$greatMastersDB[$i]['hierarchy'].'">',
-                            '<a href="?c=admin&p=1&m='.$greatMastersDB[$i]['id'].'">',
+                            '<a href="?p=addMaster&m='.$greatMastersDB[$i]['id'].'">',
                             '<button class="list-object">'.$greatMastersDB[$i]['name'].'</button>',
                             '</a> </div>';
                     }
@@ -66,7 +66,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
                     for ($i=0;$i<count($clubsDB);$i++){
                         if ($clubsDB[$i]["club_comite"] == "club"){
                             echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$clubsDB[$i]['Comite'].'">',
-                                '<a href="?c=admin&p=2&club='.$clubsDB[$i]['id'].'">',
+                                '<a href="?p=addClub&club='.$clubsDB[$i]['id'].'">',
                                 '<button class="list-object">'.$clubsDB[$i]['titre'].'</button>',
                                 '</a> </div>';
                         }
@@ -96,7 +96,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
                     for ($i=0;$i<count($eventDB);$i++){
                         $eventDB[$i]["type"] = strtolower(str_replace(array('é','è','ë','ê','à','â','ä','î','ï'), "e", $eventDB[$i]["type"]));
                         echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$eventDB[$i]['type'].'">',
-                            '<a href="?c=admin&p=3&e='.$eventDB[$i]['id'].'">',
+                            '<a href="?p=event&e='.$eventDB[$i]['id'].'">',
                             '<button class="list-object">'.$eventDB[$i]['title'].'</button>',
                             '</a> </div>';
                     }
