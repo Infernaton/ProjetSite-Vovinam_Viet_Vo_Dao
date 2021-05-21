@@ -21,13 +21,13 @@ body{
     overflow-y: scroll;
 }
 </style>
-    <div class="container-fluid p-1">
+    <div class="container p-1">
     <div class="" id="main">
         <?php 
         foreach ($histoire as $partHistoire) {       
         ?>
         <section class="section-fade" style="padding-bottom: 20px;">
-            <div class="container" id="<?php echo $partHistoire['id'] ?>">
+            <div class="" id="<?php echo $partHistoire['id'] ?>">
                 <div class="text-center">
                     <div style="padding: 20px;">
                         <h2 class="content-title-yellow"><?php echo $partHistoire['title']?></h1>
@@ -65,12 +65,25 @@ body{
         <?php 
         } 
         ?>
+        <a id="sommaire" href="#" class="dropdown-toggle menu-init" data-toggle="dropdown" style="display: inline;"><i class="fas fa-bars"></i> Sommaire</a>
+        <div id="sommaire">
+            <div class="dropdown-menu">
+            <?php 
+                for ($i=0; $i<count($histoire);$i++){
+                    echo '<a href="#'.$histoire[$i]['id'].'" class="dropdown-item">'.$histoire[$i]['title'].'</a>';
+                }
+            ?>
+            </div>
+        </div>
+        
     </div>
 <!--
     <div class="container col-12 col-md-3 p-3 fixed-right" id='resume'>
         <div class="text-center"><h3 class="content-title-blue">Sommaire</h3></div>
         <hr>
         <ul>
+            <a class="dropdown-item" href="?c=federation&p=0">La Fédération</a>
+
         <?php 
             for ($i=0; $i<count($histoire);$i++){
                 echo '<li style="margin-bottom:'.(100/count($histoire)).'%"><a href="#'.$histoire[$i]['id'].'" class="link">'.$histoire[$i]['title'].'</a></li>';
@@ -79,6 +92,14 @@ body{
         <ul>
     </div>-->
 </div>
-<!--
-<script src="scripts/la-discipline.js"></script>
--->
+<script>
+window.addEventListener("scroll", (event) => {
+    let scroll = this.scrollY;
+    console.log(scroll)
+    if (scroll >= 200){
+        document.getElementById("sommaire").classList.add("menu")
+    }else {
+        document.getElementById("sommaire").classList.remove("menu")
+    }
+});
+</script>

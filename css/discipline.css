@@ -75,3 +75,34 @@ a:hover{
 .fixed{
   position: fixed;
 }
+.menu-init{
+    margin-left: -100px;
+    transition: all 0.5s ease;
+    z-index: 100000;
+    border: 1px solid #ccc;
+    border-left: none;
+    color: #ccc;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 20px;
+    padding: 4px 10px 7px 12px;
+}
+.menu {
+    position: fixed;
+    top: 3em;
+    left: 0;
+    margin-left: 0;
+}
+.menu:hover{
+    color: #ccc;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.8);
+}
+#sommaire .dropdown-menu{
+    background-color: rgba(0,0,0,0.8);
+}
+#sommaire .dropdown-menu .dropdown-item{
+    color: #ccc;
+}
+#sommaire .dropdown-menu .dropdown-item:hover{
+    background-color: rgba(255,255,255,0.2);
+}
