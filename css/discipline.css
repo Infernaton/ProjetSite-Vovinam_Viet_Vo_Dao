@@ -63,7 +63,6 @@ a{
 a:hover{
     color: red;
 }
-
 .centered {
   margin-top: 40%;
   margin-left: auto;
@@ -91,6 +90,9 @@ a:hover{
     top: 3em;
     left: 0;
     margin-left: 0;
+}
+@media (min-width) {
+    
 }
 .menu:hover{
     color: #ccc;

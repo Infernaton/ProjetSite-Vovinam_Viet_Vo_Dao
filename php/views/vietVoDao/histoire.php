@@ -1,8 +1,4 @@
 <?php 
-/**
- * https://freefrontend.com/css-mobile-menus/
- * Pour le Mobile Menu
- */
 $path = 'assets/img/le-vvd';
 $histoire = file_get_contents("assets/json/history.json");
 $histoire = json_decode($histoire, true, JSON_UNESCAPED_UNICODE);
@@ -95,7 +91,6 @@ body{
 <script>
 window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
-    console.log(scroll)
     if (scroll >= 200){
         document.getElementById("sommaire").classList.add("menu")
     }else {

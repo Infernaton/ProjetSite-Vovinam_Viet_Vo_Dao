@@ -6,7 +6,6 @@
         <h1 class="content-title-blue">La Fédération</h2>
     </div>
         <img class="mx-auto d-block" src="assets/img/le-vvd/groupe_fondateur.jpg">
-        <h3> Présentation</h3>
         <p class="alignLeft">
             Fondé en août 1985, la fédération de Vovinam-Viêt Võ Ðao France est une association à but non lucratif régie 
             par la loi du 1er juillet 1901. Depuis sa création, la Fédération gère et coordonne les nombreuses activités 
