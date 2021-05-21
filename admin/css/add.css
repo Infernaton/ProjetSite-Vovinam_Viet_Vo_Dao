@@ -10,19 +10,34 @@ body{
     border-radius: 5px;
     box-shadow: 0 1px 10px black;
     background-color: #F5F6FA;
-    margin: 2% 5%;
     width: 90%;
     padding: 0 5% 1%;
+    margin-top: 5%;
 }
+@media (min-width:576px) {
+    /*sm*/
+    .container{max-width: 740px;}
+}
+@media (min-width:768px) {
+    /*md*/
+    .container{max-width: 920px;}
+}
+@media (min-width:992px) {
+    /*lg*/
+    .container{max-width: 1260px;}
+}
+@media (min-width: 1200px) {
+    /*xl*/
+    .container{max-width: 1440px;}
+}
+
 .note {
     color: #e82226;
     vertical-align: top;
 }
 .hide{display:none;}
 h1{
-    width: 1000px;
     text-align: center;
-    margin-left: 5%; 
     font-size: 60px;
 }
 button {

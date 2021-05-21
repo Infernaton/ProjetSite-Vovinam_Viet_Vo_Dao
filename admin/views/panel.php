@@ -13,6 +13,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 </style>
 
 <div id="container" class="container">
+    <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Maîtres</div>
         <div class="p-2 text-center">

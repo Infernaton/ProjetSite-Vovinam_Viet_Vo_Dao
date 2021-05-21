@@ -9,6 +9,7 @@ if (isset($_GET['club'])) {
     $req = $db->query('SELECT * FROM marqueur as s WHERE s.id = '.$index.'');
     $currentClub = $req->fetch(PDO::FETCH_ASSOC);
     $currentClub['coordonee'] = [unserialize(base64_decode($currentClub['coordonee']))[1],unserialize(base64_decode($currentClub['coordonee']))[0]];
+    //var_dump($currentClub);
   } else {
     $index = -1;
   }
@@ -141,7 +142,7 @@ var geocoder = new MapboxGeocoder({
 
 if (<?php echo $index?> != -1){
   map.on('load', function () {
-    const marker = {url: 'assets/img/markers/red_marker1.png', id: 'red_marker'};
+    const marker = {url: '../assets/img/markers/red_marker1.png', id: 'red_marker'};
     map.loadImage(marker.url, function(error,image){
       map.addImage(marker.id,image, {
         pixelRatio : 0.8,

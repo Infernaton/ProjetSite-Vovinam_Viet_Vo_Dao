@@ -12,12 +12,15 @@ function getSaveDirr($target){
             break;
         case 'forPreview':
             $toReturn = '';
-            for ($i=1;$i<substr_count($target_dirr,'../')){
+            for ($i=1;$i<substr_count($target_dirr,'../'); $i++){
                 $toReturn .= "../";
             }
             return $toReturn;
             break;
-    }
-    
+    }  
+}
+
+function getAccessToken() {
+    return 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
 }
 ?>

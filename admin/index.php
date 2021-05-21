@@ -12,9 +12,8 @@
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 </head>
 <body>
-    <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
 <?php
-require_once 'management/db.php';
+require_once 'management/init.php';
 $pages = ['panel','addClub','addMaster','event'];
 
 $page = 'panel';
