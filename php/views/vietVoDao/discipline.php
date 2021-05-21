@@ -67,45 +67,57 @@
                 <h2 class="content-title-yellow">Valeurs et Principes du Vovinam-Viet Vo Dao</h2>
             </div>
             <div class="mt-5">
-                <h4 class="pl-5 pb-2">Les Valeurs </h4>
-                <table class="table">
-                <tr>
-                    <td><span style="color:#1c55a3;">But</span></td>
-                    <td>La formation de l'homme vrai sur deux plan: Esprit et Technique.</td>
-                </tr>
-                <tr>
-                    <td><span style="color:#1c55a3;">Devise</span</td>
-                    <td>Être fort pour être utile.</td>
-                </tr>
-                <tr>
-                    <td><span style="color:#1c55a3;">Symbole</span</td>
-                    <td>Le bambou, image de droiture et de souplesse.</td>
-                </tr>
-                <tr>
-                    <td><span style="color:#1c55a3;">Principe</span</td>
-                    <td>Harmonie entre force et souplesse.</td>
-                </tr>
-                <tr>
-                    <td><span style="color:#1c55a3;">Son Salut</span</td>
-                    <td>La main d'acier sur le coeur de bonté.</td>
-                </tr>
-                </table>
+                <div class="text-center">
+                    <h4 class="pb-2">Les Valeurs </h4>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="p-2">
+                        <table class="table">
+                            <tr>
+                                <td><span style="color:#1c55a3;">But</span></td>
+                                <td>La formation de l'homme vrai sur deux plan: Esprit et Technique.</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:#1c55a3;">Devise</span</td>
+                                <td>Être fort pour être utile.</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:#1c55a3;">Symbole</span</td>
+                                <td>Le bambou, image de droiture et de souplesse.</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:#1c55a3;">Principe</span</td>
+                                <td>Harmonie entre force et souplesse.</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:#1c55a3;">Son Salut</span</td>
+                                <td>La main d'acier sur le coeur de bonté.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section-fade" style="padding-bottom: 20px;">
             <div class="mt-5">
-                <h4 class="pl-5 pb-2"> Les 9 Principes </h4>
-                <ol class="list-group list-group-flush border-rad-3"> 
-                    <li class="list-group-item"><b>1.</b> Se forger dans la voie du Vovinam Viet Vo Dao pour servir ses prochains.</li>
-                    <li class="list-group-item"><b>2.</b> Développer le Vovinam Viet Vo Dao, bâtir une génération de l’homme vrai pour être utile à la société.</li>
-                    <li class="list-group-item"><b>3.</b> Respecter l’éthique et la loi, placer l’honneur du Vovinam Viet Vo Dao au-dessus de tout.</li>
-                    <li class="list-group-item"><b>4.</b> Respecter les aînés, aider les faibles, vivre en harmonie avec ses condisciples et ses prochains.</li>
-                    <li class="list-group-item"><b>5.</b> Respecter les autres arts martiaux et n’utiliser le Vovinam Viet Vo Dao qu’en cas de légitime défense et pour une juste cause.</li>
-                    <li class="list-group-item"><b>6.</b> Ne jamais se soumettre à la tyrannie ou à la répression.</li>
-                    <li class="list-group-item"><b>7.</b> Vivre avec pureté, sobriété, loyauté et intégrité.</li>
-                    <li class="list-group-item"><b>8.</b> Être lucide, persévérant et agir avec discernement.</li>
-                    <li class="list-group-item"><b>9.</b> Être maître de soi, modeste, tolérant et généreux.</li>
-                </ol>
+                <div class="text-center">
+                    <h4 class="pb-2">Les 9 Principes</h4>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="p-2">
+                        <ol class="list-group list-group-flush border-rad-3"> 
+                            <li class="list-group-item"><b>1.</b> Se forger dans la voie du Vovinam Viet Vo Dao pour servir ses prochains.</li>
+                            <li class="list-group-item"><b>2.</b> Développer le Vovinam Viet Vo Dao, bâtir une génération de l’homme vrai pour être utile à la société.</li>
+                            <li class="list-group-item"><b>3.</b> Respecter l’éthique et la loi, placer l’honneur du Vovinam Viet Vo Dao au-dessus de tout.</li>
+                            <li class="list-group-item"><b>4.</b> Respecter les aînés, aider les faibles, vivre en harmonie avec ses condisciples et ses prochains.</li>
+                            <li class="list-group-item"><b>5.</b> Respecter les autres arts martiaux et n’utiliser le Vovinam Viet Vo Dao qu’en cas de légitime défense et pour une juste cause.</li>
+                            <li class="list-group-item"><b>6.</b> Ne jamais se soumettre à la tyrannie ou à la répression.</li>
+                            <li class="list-group-item"><b>7.</b> Vivre avec pureté, sobriété, loyauté et intégrité.</li>
+                            <li class="list-group-item"><b>8.</b> Être lucide, persévérant et agir avec discernement.</li>
+                            <li class="list-group-item"><b>9.</b> Être maître de soi, modeste, tolérant et généreux.</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </section>
         </div>
