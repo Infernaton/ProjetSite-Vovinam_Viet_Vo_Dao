@@ -78,7 +78,7 @@ if (isset($_GET['e'])) {
 <script>
 if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentEvent)?> != null){
-    document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos du Maître";
+    document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos de l'évènement";
     document.getElementById("confirm").value = "modify";
     
     //if we click on an existant master, we have to fill all the cointainer with data
@@ -89,7 +89,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("dateFin").value = "<?php echo reformatDate($currentEvent['dateFin'])?>";
     document.getElementById("event").value = "<?php echo $currentEvent['type'] ?>";
     document.getElementById("prerequis").value = "<?php echo $currentEvent['prerequis'] ?>";
-    document.getElementById("previewImgDiv").style = "background-image:url(<?php getSaveDirr("forPreview").echo $currentEvent['image'] ?>);";
+    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo getSaveDirr("forPreview").$currentEvent['image'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentEvent['image']?>"
     document.getElementById("newImage").required = false;
   }
