@@ -2,6 +2,7 @@
 require_once 'php/init.php';
 
 $eventBefFetch = $db->query('SELECT * FROM event WHERE type LIKE "Stage" Order by id');
+$eventBefFetch2 = $db->query('SELECT * FROM event WHERE category LIKE "Technique" Order by id');
 $eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
 
 date_default_timezone_set('Europe/Paris');
@@ -14,7 +15,7 @@ function dateFR($date){
 }
 function printStage($index){
     global $eventComp;
-    
+
     $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
 
     echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
@@ -22,8 +23,11 @@ function printStage($index){
     '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
     '<p class="descr">'.$eventComp[$index]['description'].'</p>',
     '<p class="prerequis">'.$prerequis.'</p>',
+    '<img src=>'
     '</div>';
 }
+
+
 
 ?>
 <link rel="stylesheet" href="css/directionTech.css">
@@ -48,17 +52,17 @@ function printStage($index){
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div id="subfilterNamesContainer">
                 <label>
-                    <input type="checkbox" value="A" class="default"> Technique
+                    <input type="checkbox" value="A" class="default"> Technique</input>
                 </label>
                 <label>
-                    <input type="checkbox" value="B" class="default"> Arbitrage
+                    <input type="checkbox" value="B" class="default"> Arbitrage</input>
                 </label>
                 <br>
                 <label>
-                    <input type="checkbox" value="C" class="default"> Dirigeant
+                    <input type="checkbox" value="C" class="default"> Dirigeant</input>
                 </label>
                 <label>
-                    <input type="checkbox" value="D" class="default"> Encadrant
+                    <input type="checkbox" value="D" class="default"> Encadrant</input>
                 </label>
             </div>
         </div>
@@ -66,12 +70,13 @@ function printStage($index){
     
         <div id="season"></div>
         
-     
+    
            <?php 
             for ($i=0;$i<count($eventComp);$i++){
                 $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
                 if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
                     printStage($i);
+                    
                 }
                 else if($dateDebut[0] == $date[0]){ 
                     if($dateDebut[1] < $date[1]){//Comparaison du mois

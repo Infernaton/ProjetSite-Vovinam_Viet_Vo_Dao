@@ -54,6 +54,16 @@ if (isset($_GET['e'])) {
                     <option value="Autre">
                 </datalist>
             </div>
+            <div id="categoryContainer">
+                <label class="data" for="event"><b>Catégorie de l'évènement</b></label>
+                <input class="inputData form-control" list="list" type="text" placeholder="  -" name="event" id="event" required>
+                <datalist id="list">
+                    <option value="Technique">
+                    <option value="Arbitrage">
+                    <option value="Dirigeant">
+                    <option value="Encadrant">
+                </datalist>
+            </div>
             <label class="data" for="prerequis"><b>Prérequis (Optionnel, comme dans le cas d'un stage)</b></label>
             <input class="inputData form-control" type="text" placeholder="Prérequis" name="prerequis" id="prerequis">
             <label class="data" for="description"><b>Description</b></label>
