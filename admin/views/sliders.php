@@ -43,6 +43,11 @@ if ($_POST){
     }
 }
 ?>
+<style>
+    .padding-right-0{
+        padding-right: 0!important;
+    }
+</style>
 
 <div class="container">
     <div id="btn-object" class="p-2" style="">
@@ -66,7 +71,7 @@ if ($_POST){
             <?php
             }
             ?>
-            <div class="modal" id="remove-confirm">
+            <div class="modal fade" id="remove-confirm">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -89,12 +94,13 @@ if ($_POST){
     </form>
     <form action="" method="post" enctype="multipart/form-data">
         <h5>Ajouter une image</h5>
-        <div id="previewImgDiv" class="responsive">
-            <div class="hoverEle">
-                <p class="center">Ajouter une image</p>
+        <div class="row">
+            <div class="col-3" >
+                <button type="button"style="position: relative;">Ajouter une Image<input class="inputData input-file" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);" require></button>
             </div>
-            <input class="inputData input-file" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);" require>
+            <div id="previewImgDiv" class="responsive col-6"></div>
         </div>
+
         <div class="d-flex justify-content-between mb-3">
             <div id="btn-reset" class="p-2">
                 <a href="../admin"><button type="button" class="btn-annul annim undo" id='undo'>Annuler</button></a>
@@ -111,4 +117,5 @@ if ($_POST){
     function deletePicture(currentPicture){
         document.getElementById('currentPicture').value = currentPicture;
     }
+    document.getElementsByTagName('body')[0].classList.add("padding-right-0")
 </script>
