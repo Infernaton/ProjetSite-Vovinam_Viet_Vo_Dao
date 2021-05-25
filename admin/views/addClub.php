@@ -111,7 +111,7 @@ if (isset($_GET['club'])) {
           <a onclick="history.go(-1);"><button class="btn-annul annim undo" type="button" id='undo'>Annuler</button></a>
         </div>
         <div id="btn-Action" class="p-2">
-          <button type="submit" class="btn-modObject annim confirm" value="valide" name="submit" id="confirm">Valider</button>
+          <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
         </div>
       </div>
     </div>

@@ -23,7 +23,6 @@ function printStage($index){
     '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
     '<p class="descr">'.$eventComp[$index]['description'].'</p>',
     '<p class="prerequis">'.$prerequis.'</p>',
-    '<img src=>'
     '</div>';
 }
 

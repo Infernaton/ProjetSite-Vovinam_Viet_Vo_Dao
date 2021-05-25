@@ -19,7 +19,7 @@ if (isset($_GET['e'])) {
 ?>
 <form action="management/addEventDB.php" method="post" enctype="multipart/form-data">
     <div id="container" class="container">
-        <div class="text-center"> 
+        <div class="text-center">
             <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1>
         </div>
     <div class="row">

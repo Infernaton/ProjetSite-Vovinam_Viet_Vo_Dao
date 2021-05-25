@@ -52,7 +52,7 @@ switch ($_POST['submit']){
         //Prepare to add the object
         $req = $db->prepare('INSERT INTO `event` (
             type, title, description, dateDebut, dateFin, prerequis,image
-            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis,category :image)');
+            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis, :category :image)');
 
         $req->bindValue(':type' , $_POST["event"]); 
         $req->bindValue(':title' , $_POST["title"]);

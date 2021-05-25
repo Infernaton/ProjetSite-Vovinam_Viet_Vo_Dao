@@ -146,10 +146,8 @@ form .row{
 #previewImgDiv{
     background-position: center;
     position: relative;
-    max-width: 350px;
     height: 300px;
-    left: 50%;
-    transform: translateX(-50%);
+
 }
 #previewImgDiv:hover .hoverEle{
     position: absolute;
