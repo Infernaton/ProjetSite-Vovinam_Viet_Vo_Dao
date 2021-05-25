@@ -14,7 +14,7 @@
 <body>
 <?php
 require_once 'management/init.php';
-$pages = ['panel','addClub','addMaster','event'];
+$pages = ['panel','addClub','addMaster','event','sliders'];
 
 $page = 'panel';
 if (isset($_GET['p'])) {

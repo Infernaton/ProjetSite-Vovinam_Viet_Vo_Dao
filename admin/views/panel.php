@@ -105,6 +105,35 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>  
         </div>
+    <div class="collapsible d-flex justify-content-between">
+        <div class="p-2">Modifier le site</div>
+    </div>
+        <div class="content"> 
+            <div class="in">
+                <div class="row" id="eventList">
+                    <div class="col-12 col-md-6 btn-panel">
+                        <a href="?p=sliders">
+                            <button class="list-object">Modifier les Sliders</button>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 btn-panel">
+                        <a href="#">
+                            <button class="list-object">Modifier/Ajouter une Actualité</button>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 btn-panel">
+                        <a href="#">
+                            <button class="list-object">dummy</button>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 btn-panel">
+                        <a href="#">
+                            <button class="list-object">dummy</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 <script>
 var coll = document.getElementsByClassName("collapsible");

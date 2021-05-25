@@ -23,4 +23,7 @@ function getSaveDirr($target){
 function getAccessToken() {
     return 'pk.eyJ1IjoieWFuaXNqIiwiYSI6ImNrbHZlajB4ajB2dGUzMW13cmllNGc3YzkifQ.4dAbWneZCPCv8o2MidDbyQ';
 }
+function getSliderDirr() {
+    return '../assets/img/caroussel/';
+}
 ?>
