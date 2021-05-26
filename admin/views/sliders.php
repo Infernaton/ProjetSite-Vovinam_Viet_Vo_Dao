@@ -24,7 +24,6 @@ if ($_POST){
             // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["newImage"]["tmp_name"], $target_file)) {
-                    var_dump($_POST);
                     //echo "The file ". htmlspecialchars( basename( $_FILES["newImage"]["name"])). " has been uploaded.";
                     echo "<script type='text/javascript'> location.reload(); console.log('aa')</script>";
                     $_POST = [];
@@ -58,6 +57,9 @@ if ($_POST){
     <hr>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
+            <div class="col-6 col-md-3 col-lg-2">
+                <button class="center" type="button" data-toggle="modal" data-target="#add-picture">Ajouter une Image</button>
+            </div>
             <input type="text" class="hide" name="currentPicture" id="currentPicture" value require>
             <?php
             //Because $photos takes the folder as an element and we don't want it in our loop
@@ -93,9 +95,6 @@ if ($_POST){
         </div>
     </form>
 
-    <div>
-        <button type="button" data-toggle="modal" data-target="#add-picture">Ajouter une Image</button>
-    </div>
     <div class="modal fade" id="add-picture">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -103,8 +102,11 @@ if ($_POST){
                 <div class="modal-header">
                     <h4 class="modal-title">Ajouter une Image</h4>
                 </div>
-                <div class="modal-body">
-                    <input class="inputData" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);" require>
+                <div class="modal-body text-center">
+                    <label for="newImage" class="custom-file-upload">
+                        <i class="fas fa-file-import"></i> Importer ici
+                    </label>
+                    <input type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);" require>
                     <div id="previewImgDiv" class="responsive col-6"></div>
                 </div>
                 <div class="modal-footer">
@@ -120,27 +122,9 @@ if ($_POST){
             </form>
             </div>
         </div>
-    </div>
-    
-
-    
-        <div class="row">
-            <div class="col-3" >
-            </div>
-            
-        </div>
-
-        <div class="d-flex justify-content-between mb-3">
-            <div id="btn-reset" class="p-2">
-                <a href="../admin"><button type="button" class="btn-annul annim undo" id='undo'>Annuler</button></a>
-            </div>
-            <div id="btn-Action" class="p-2">
-                <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
-            </div>
-        </div>
-    
-    
+    </div>    
 </div>
+
 <script src="scripts/previewPicture.js"></script>
 <script>
     function deletePicture(currentPicture){
