@@ -2,11 +2,10 @@
 require_once 'php/init.php';
 
 $eventBefFetch = $db->query('SELECT * FROM event WHERE type LIKE "Stage" Order by id');
-$eventBefFetch2 = $db->query('SELECT * FROM event WHERE category LIKE "Technique" Order by id');
 $eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
 
 date_default_timezone_set('Europe/Paris');
-$date = explode("/",date('d/m/Y', time()));
+$date = explode("/",date('Y/m/d', time()));
 
 function dateFR($date){
     //date format yyyy/mm/dd => dd/mm/yyyy
@@ -31,51 +30,37 @@ function printStage($index){
 ?>
 <link rel="stylesheet" href="css/directionTech.css">
 
-    <div class="container">
-        <!-- Titre -->
-        <div class="text-center mt-5">
-            <h2 class="content-title-yellow">Stages GRT Coupes</h2>
-        </div>
-        <!-- Sommaire -->
-        <div class="container mt-5">
-    <br>
-    <div class="text-center"><h1 class="content-title-blue">Stage</h1></div>
-    
-    <!--Drawer for all season-->
-    <div class="inline">
-        <div class="dropdown"> </div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Filtre
-            </button>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <div id="subfilterNamesContainer">
-                <label>
-                    <input type="checkbox" value="A" class="default"> Technique</input>
-                </label>
-                <label>
-                    <input type="checkbox" value="B" class="default"> Arbitrage</input>
-                </label>
-                <br>
-                <label>
-                    <input type="checkbox" value="C" class="default"> Dirigeant</input>
-                </label>
-                <label>
-                    <input type="checkbox" value="D" class="default"> Encadrant</input>
-                </label>
-            </div>
-        </div>
+<div class="container">
+    <!-- Titre -->
+    <div class="text-center mt-5">
+        <h1 class="content-title-blue">Stage</h1>
     </div>
+    <!-- Sommaire -->
+    <div class="mt-5">
+        <br>
     
-        <div id="season"></div>
-        
+            <!--Drawer for all season-->
+            <div class="inline">
+                <div class="dropdown"> </div>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filtre</button>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div id="subfilterNamesContainer">
+                            <input type="checkbox" value="A" class="default"> Technique</input>
+                            <input type="checkbox" value="B" class="default"> Arbitrage</input>
+                            <br>
+                            <input type="checkbox" value="C" class="default"> Dirigeant</input>
+                            <input type="checkbox" value="D" class="default"> Encadrant</input>
+                        </div>
+                    </div>
+                </div>
     
+            <div id="season"></div>
            <?php 
             for ($i=0;$i<count($eventComp);$i++){
                 $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
                 if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
                     printStage($i);
-                    
                 }
                 else if($dateDebut[0] == $date[0]){ 
                     if($dateDebut[1] < $date[1]){//Comparaison du mois
@@ -88,10 +73,8 @@ function printStage($index){
                     }
                 }
             }
-            
-            
             ?>
-           
-        </div>     
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="scripts/internship.js"></script>
