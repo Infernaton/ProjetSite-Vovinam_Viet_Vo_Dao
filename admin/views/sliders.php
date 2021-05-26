@@ -56,14 +56,14 @@ if ($_POST){
     <hr>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2" style="min-height: 50px;">
                 <button class="center" type="button" data-toggle="modal" data-target="#add-picture">Ajouter une Image</button>
             </div>
             <input type="text" class="hide" name="currentPicture" id="currentPicture" value require>
             <?php
             //Because $photos takes the folder as an element and we don't want it in our loop
             for ($i=0; $i<count($photos)-2;$i++){ ?>
-                <div class="col-6 col-md-3 col-lg-2 responsive">
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2 responsive">
                     <div class="hoverEle no-background">
                         <button onClick="deletePicture('<?php echo $dir.$photos[$i] ?>')" type="button" data-toggle="modal" data-target="#remove-confirm"><i class="fas fa-trash"></i></button>
                     </div>

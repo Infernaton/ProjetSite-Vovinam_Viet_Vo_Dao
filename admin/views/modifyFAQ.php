@@ -1,5 +1,17 @@
 <?php
-    $faq = json_decode(file_get_contents("../assets/json/faq.json"), true, JSON_UNESCAPED_UNICODE);
+    $json_file = "../assets/json/faq.json";
+    $faq = json_decode(file_get_contents($json_file), true, JSON_UNESCAPED_UNICODE);
+    if ($_POST){
+        switch ($_POST['submit']){
+            case 'valid':
+                $faq[$_POST['index']]['ask'] = $_POST['question'];
+                $faq[$_POST['index']]['rep'] = $_POST['answer'];
+                break;
+            case 'delete':
+                break;
+        }
+        file_put_contents($json_file,json_encode($faq, JSON_PRETTY_PRINT));
+    }
 ?>
 <style>
     .QnA {
@@ -62,12 +74,15 @@
                         <div class="modal-header">
                             <h4 class="modal-title">Modifier la Question/Réponse</h4>
                         </div>
-        
+
                         <div class="modal-body">
-                            <textarea class="inputData" name="question" id="question" cols="30" rows="10"><?php echo $faq[$i]['ask'];?></textarea>
-                            <textarea class="inputData" name="answer" id="answer" cols="30" rows="10"><?php echo $faq[$i]['rep'];?></textarea>
+                            <input type="text" name="index" id="index" class="hide" value="<?php echo $i?>">
+                            <h5>Question</h5>
+                            <textarea class="inputData form-control" name="question" id="question"><?php echo $faq[$i]['ask'];?></textarea>
+                            <h5>Réponse</h5>
+                            <textarea class="inputData form-control" name="answer" id="answer"><?php echo $faq[$i]['rep'];?></textarea>
                         </div>
-        
+
                         <div class="modal-footer">
                             <div class="d-flex justify-content-between mb-3">
                                 <div id="btn-reset" class="p-2">
@@ -88,5 +103,5 @@
             ?>
         </div>
     </div>
-    
+
 </div>
