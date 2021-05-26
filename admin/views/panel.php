@@ -128,7 +128,7 @@ $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="col-12 col-md-6 btn-panel">
                         <a href="#">
-                            <button class="list-object">dummy</button>
+                            <button class="list-object">///</button>
                         </a>
                     </div>
                 </div>

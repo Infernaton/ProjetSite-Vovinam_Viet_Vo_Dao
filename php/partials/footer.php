@@ -34,6 +34,7 @@ function partials_footer(){
                 </div>
                 <div class="col-8 col-sm-8 only-md-hide col-lg-4 col-xl-3 d-flex justify-content-center">
                     <div class="p-2">
+                        <h4>Mentions Légales</h4>
                         <h5>Fédération VOVINAM-Viet Vo Dao France</h5>
                         <p><i class="fas fa-map-marker-alt"></i> 6 allée des Agrions 91160, Ballainvilliers – France</p>
                         <p><i class="fas fa-user-alt"></i> Directeur de la publication : Amar GUERRIB</p>
@@ -59,6 +60,7 @@ function partials_footer(){
                 <div class="sm-hide col-md-12 only-lg-hide only-xl-hide d-flex justify-content-center">
                     <div class="p-2">
                         <hr>
+                        <h4>Mentions Légales</h4>
                         <h5>Fédération VOVINAM-Viet Vo Dao France</h5>
                         <p><i class="fas fa-map-marker-alt"></i> 6 allée des Agrions 91160, Ballainvilliers – France</p>
                         <p><i class="fas fa-user-alt"></i> Directeur de la publication : Amar GUERRIB</p>
