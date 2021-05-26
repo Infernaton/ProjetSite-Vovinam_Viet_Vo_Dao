@@ -90,6 +90,9 @@ function partials_header($categorie,$page){
                         <li class="nav-item">
 					        <a class="nav-link" href="?c=directionTech&p=6">Formations</a>
 				        </li>
+                        <li class="nav-item">
+					        <a class="nav-link" href="?c=directionTech&p=7">Evènement</a>
+				        </li>
                     </ul>
 		        </li>
                 <li class="nav-item nav-expand vietVoDao">
