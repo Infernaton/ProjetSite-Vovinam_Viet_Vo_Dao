@@ -25,7 +25,7 @@ if ($_POST){
             } else {
                 if (move_uploaded_file($_FILES["newImage"]["tmp_name"], $target_file)) {
                     //echo "The file ". htmlspecialchars( basename( $_FILES["newImage"]["name"])). " has been uploaded.";
-                    echo "<script type='text/javascript'> location.reload(); console.log('aa')</script>";
+                    echo "<script type='text/javascript'> location.reload()</script>";
                     $_POST = [];
                 }
             }
@@ -34,11 +34,10 @@ if ($_POST){
             $target_file = $_POST['currentPicture'];
             if (file_exists($target_file)) {
                 unlink($target_file);
-                echo "<script type='text/javascript'> location.reload(); console.log('aa')</script>";
+                echo "<script type='text/javascript'> location.reload()</script>";
                 $_POST = [];
             }
             break;
-            
     }
 }
 ?>
