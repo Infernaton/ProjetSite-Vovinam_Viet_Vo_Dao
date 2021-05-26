@@ -59,7 +59,12 @@
                         <h4><?php echo $faq[$i]['ask'];?></h4>
                     </div>
                     <div class="body">
-                        <p><?php echo $faq[$i]['rep'];?></p>
+                        <p>
+                            <?php 
+                            $para = $faq[$i]['rep'];
+                            echo str_replace("\n","<br>", $para);
+                            ?>
+                        </p>
                     </div>
                     <div class="footer text-right">
                         <button type="button" class="modify" data-toggle="modal" data-target="#question-<?php echo $i?>">Modifier</button>
@@ -67,7 +72,7 @@
                 </div>
             </div>
             <div class="modal" id="question-<?php echo $i?>">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <form action="" method="post" enctype="multipart/form-data">
 
                     <div class="modal-content">
@@ -80,7 +85,7 @@
                             <h5>Question</h5>
                             <textarea class="inputData form-control" name="question" id="question"><?php echo $faq[$i]['ask'];?></textarea>
                             <h5>Réponse</h5>
-                            <textarea class="inputData form-control" name="answer" id="answer"><?php echo $faq[$i]['rep'];?></textarea>
+                            <textarea class="inputData form-control" name="answer" rows="10" id="answer"><?php echo $faq[$i]['rep'];?></textarea>
                         </div>
 
                         <div class="modal-footer">
@@ -103,5 +108,4 @@
             ?>
         </div>
     </div>
-
 </div>
