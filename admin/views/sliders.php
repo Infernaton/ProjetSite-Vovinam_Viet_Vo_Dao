@@ -92,13 +92,42 @@ if ($_POST){
             </div>
         </div>
     </form>
-    <form action="" method="post" enctype="multipart/form-data">
-        <h5>Ajouter une image</h5>
+
+    <div>
+        <button type="button" data-toggle="modal" data-target="#add-picture">Ajouter une Image</button>
+    </div>
+    <div class="modal fade" id="add-picture">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ajouter une Image</h4>
+                </div>
+                <div class="modal-body">
+                    <input class="inputData" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);" require>
+                    <div id="previewImgDiv" class="responsive col-6"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div id="btn-reset" class="p-2">
+                            <button type="button" class="btn-annul annim undo" id="undo" data-dismiss="modal">Annuler</button>
+                        </div>
+                        <div id="btn-Action" class="p-2">
+                            <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+
+    
         <div class="row">
             <div class="col-3" >
-                <button type="button"style="position: relative;">Ajouter une Image<input class="inputData input-file" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);" require></button>
             </div>
-            <div id="previewImgDiv" class="responsive col-6"></div>
+            
         </div>
 
         <div class="d-flex justify-content-between mb-3">
@@ -109,7 +138,7 @@ if ($_POST){
                 <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
             </div>
         </div>
-    </form>
+    
     
 </div>
 <script src="scripts/previewPicture.js"></script>
