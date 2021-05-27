@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="css/federation1.css">
+<link rel="stylesheet" href="css/federation.css">
 
 <div class="container">
     <!-- Image du groupe fondateur -->
     <div class="text-center pb-3">
         <h1 class="content-title-blue">La Fédération</h2>
     </div>
-        <img class="mx-auto d-block" src="assets/img/le-vvd/groupe_fondateur.jpg">
+        <img class="mx-auto d-block" src="assets/img/federation/groupe_fondateur.jpg">
         <p class="alignLeft">
             Fondé en août 1985, la fédération de Vovinam-Viêt Võ Ðao France est une association à but non lucratif régie 
             par la loi du 1er juillet 1901. Depuis sa création, la Fédération gère et coordonne les nombreuses activités 
@@ -20,4 +20,9 @@
             internationaux (Coupe d’Europe, Congrès Mondial, Coupe du Monde…).
         </p>
         <br>
+        <div class="border text-center p-2">
+            <img class="img_fill" src="assets/img/federation/plaquette1.png" alt="PlaquetteVVDpart1">
+            <hr>
+            <img class="img_fill" src="assets/img/federation/plaquette2.png" alt="PlaquetteVVDpart2">
+        </div>
 </div>
