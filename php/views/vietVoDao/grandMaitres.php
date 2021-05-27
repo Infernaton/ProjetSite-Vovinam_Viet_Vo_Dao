@@ -109,7 +109,7 @@ $fondatorData = $greatMasters[0];
                                 for ($a=0;$a<strlen($sentence);$a++){
                                     if ($sentence[$a] == '['){
                                         $sentence = str_replace_first("[","<span class=\"hint\" rel=\"tooltip\" title=\"".$fondatorData['note'][$hint]."\">",$sentence);
-                                        $sentence = str_replace_first("]","</span>","$sentence");
+                                        $sentence = str_replace_first("]","</span>",$sentence);
                                         $hint++;
                                     }
                                 }

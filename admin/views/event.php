@@ -56,7 +56,7 @@ if (isset($_GET['e'])) {
             </div>
             <div id="ObjContainer">
                 <label class="data" for="event"><b>Objéctif de l'évènement</b></label>
-                <input class="inputData form-control" list="list" type="text" placeholder="  -" name="event" id="event" required>
+                <input class="inputData form-control" list="listObj" type="text" placeholder="  -" name="event" id="event" required>
                 <datalist id="listObj">
                     <option value="Technique">
                     <option value="Arbitrage">
