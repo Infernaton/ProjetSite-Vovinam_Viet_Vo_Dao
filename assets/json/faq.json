@@ -1,15 +1,15 @@
 [
     {
         "ask": "Comment s'inscrire ?",
-        "rep": "On fait comme \u00e7a :\r\n..."
+        "rep": "Comme ceci : <br><b><i>\\o\/<\/b><\/i>"
     },
     {
         "ask": "Aaa?",
-        "rep": "Bonjour.\r\nadad"
+        "rep": "Bonjour.<br><i>adad<\/i>"
     },
     {
         "ask": "A?",
-        "rep": "B."
+        "rep": "<mark class='bg-danger'>C'est tr\u00e8s important<\/mark><br><i>Ah bon ?<\/i><br><br><ins>Oui.<\/ins>"
     },
     {
         "ask": "A?",
