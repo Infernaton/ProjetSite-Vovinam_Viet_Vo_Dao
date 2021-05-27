@@ -3,7 +3,12 @@
         $from = '/'.preg_quote($from, '/').'/';
         return preg_replace($from, $to, $content, 1);
     }
+    function plainToHyperlinks($string){
+        $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i';
+        return preg_replace($url, '<a href="$0" target="_blank">$0</a>', $string);
+    }
 
+    //#26121e #21172a
     $json_file = "../assets/json/faq.json";
     $faq = json_decode(file_get_contents($json_file), true, JSON_UNESCAPED_UNICODE);
     if ($_POST){
@@ -11,21 +16,28 @@
         $_POST['answer'] = str_replace("\r\n","<br>", $_POST['answer']);
         $_POST['answer'] = str_replace("[", "<mark class='bg-danger'>", $_POST['answer']);
         $_POST['answer'] = str_replace("]", "</mark>", $_POST['answer']);
-        for ($a=0; $a < substr_count($_POST['answer'], "**")/2; $a++) {
+
+        //Count the number of symbole there is in the text
+        $uses = [substr_count($_POST['answer'], "**")/2, substr_count($_POST['answer'], "*")/2, substr_count($_POST['answer'], "_")/2, substr_count($_POST['answer'], "--")/2, substr_count($_POST['answer'], "http")];
+
+        for ($a=0; $a < $uses[0]; $a++) {
             $_POST['answer'] = str_replace_first("**", "<b>", $_POST['answer']);
             $_POST['answer'] = str_replace_first("**", "</b>", $_POST['answer']);
         }
-        for ($a=0; $a < substr_count($_POST['answer'], "*")/2; $a++) {
+        for ($a=0; $a < $uses[1]; $a++) {
             $_POST['answer'] = str_replace_first("*", "<i>", $_POST['answer']);
             $_POST['answer'] = str_replace_first("*", "</i>", $_POST['answer']);
         }
-        for ($a=0; $a < substr_count($_POST['answer'], "_")/2; $a++) {
+        for ($a=0; $a < $uses[2]; $a++) {
             $_POST['answer'] = str_replace_first("_", "<ins>", $_POST['answer']);
             $_POST['answer'] = str_replace_first("_", "</ins>", $_POST['answer']);
         }
-        for ($a=0; $a < substr_count($_POST['answer'], "--")/2; $a++) {
+        for ($a=0; $a < $uses[3]; $a++) {
             $_POST['answer'] = str_replace_first("--", "<del>", $_POST['answer']);
             $_POST['answer'] = str_replace_first("--", "</del>", $_POST['answer']);
+        }
+        for ($a=0; $a < $uses[4]; $a++) {
+            $_POST['answer'] = plainToHyperlinks($_POST['answer']);
         }
         switch ($_POST['submit']){
             case 'delete':
@@ -41,7 +53,6 @@
         }
         file_put_contents($json_file,json_encode($faq, JSON_PRETTY_PRINT));
     }
-    
 ?>
 <style>
     .QnA {
@@ -147,7 +158,9 @@
                                     //Edit the response to make it easy to design in edit mode
                                     $para = str_replace("<br>", "\r\n", $para);
                                     $para = str_replace("<mark class='bg-danger'>", "[", $para);
-                                    $para = str_replace("</mark>", "]", $para);
+                                    $para = str_replace("</mark>", "]", $para); 
+                                    //To delete the <a> tag to the link
+                                    $para = str_replace([substr($para, strpos($para,"<a"), strpos($para, "\">")-strpos($para,"<a")),"</a>", "\">"], "", $para);
 
                                     $para = str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $para);
                                     

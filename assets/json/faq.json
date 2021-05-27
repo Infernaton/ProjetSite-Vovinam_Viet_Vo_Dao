@@ -1,11 +1,11 @@
 [
     {
         "ask": "Comment s'inscrire ?",
-        "rep": "Comme ceci : <br><b><i>\\o\/<\/b><\/i>"
+        "rep": "<b>Comme ceci :<\/b><br><i>\\o\/<\/i> -<i>Je suis inscrit !<\/i>"
     },
     {
         "ask": "Aaa?",
-        "rep": "Bonjour.<br><i>adad<\/i>"
+        "rep": "<i>Bonjour.<\/i><br><del>Message Supprim\u00e9<\/del>"
     },
     {
         "ask": "A?",
