@@ -32,27 +32,19 @@ function partials_footer(){
                         <div class="list-group-item"><a href="http://vietvodao.photos/" target="_blank" ><img src="assets/img/logo/galerie.png"><p>Galerie Photo</p></a></div>
                     </div>
                 </div>
-                <div class="col-8 col-sm-8 only-md-hide col-lg-4 col-xl-3 d-flex justify-content-center">
-                    <div class="p-2">
+                <div class="lg-hide col-xl-2 d-flex justify-content-center">
+                    <div class="p-2 center">
                         <h4>Mentions Légales</h4>
+                    </div>
+                </div>
+                <div class="col-8 col-sm-8 only-md-hide col-lg-4 col-xl-5 d-flex justify-content-center">
+                    <div class="p-2">
                         <h5>Fédération VOVINAM-Viet Vo Dao France</h5>
                         <p><i class="fas fa-map-marker-alt"></i> 6 allée des Agrions 91160, Ballainvilliers – France</p>
                         <p><i class="fas fa-user-alt"></i> Directeur de la publication : Amar GUERRIB</p>
                         <p><i class="fas fa-envelope"></i> vovinamfr@vietvodao.com</p>
                         <p><i class="fas fa-phone"></i> 01.64.49.60.10</p>
                     </div>
-                </div>
-                <div class="lg-hide col-xl-4 d-flex justify-content-center">
-                    <div class="p-2">
-                        <h5>Hébergeur: GANDI SAS</h5>
-                        <p>SAS au capital de 2 300 000 €</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 63-65 boulevard de Masséna – France</p>
-                        <p>RCS Paris 423 093 459</p>
-                        <p>Code APE 7740Z</p>
-                        <p>N° TVA : FR 81423093459</p>
-                        <p><i class="fas fa-phone"></i> 01.70.37.76.61</p>
-                    </div>
-                    
                 </div>
                 <div class="sm-hide col-md-5 col-lg-3 col-xl-2 text-center">
                     <a href="http://vietvodao.photos/" target="_blank" ><img src="assets/img/logo/galerie.png" width=150px></a>

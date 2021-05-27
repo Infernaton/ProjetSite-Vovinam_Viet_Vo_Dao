@@ -26,5 +26,9 @@
     {
         "ask": "A?",
         "rep": "B."
+    },
+    {
+        "ask": "Pourquoi ?",
+        "rep": "Parce que."
     }
 ]
