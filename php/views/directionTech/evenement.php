@@ -133,11 +133,12 @@ function printStage($index){
                 </div>
             </div>
         </div>
-    </div>
+    
+    
 
     
     <div class="collapse" id="stages">
-    <div class="container pt-2 my-3 border">
+    
     <div class="text-center"><h1 class="content-title-blue">Stage</h1></div>
     
     
@@ -189,8 +190,8 @@ function printStage($index){
             ?>
            
         </div>  
-</div>     
-<div class="container pt-2 my-3 border">
+   
+
     <div class="collapse" id="forma">
     <div class="inline">
     <div class="text-center mt-5">
