@@ -94,14 +94,14 @@ body{
 .footer .social-links{
     font-size: 18px;
 }
-.footer .social-links a{
+.footer a{
     margin: 0 7px;
     display: flex;
     transition: all 0.5s ease;
 }
-.footer .social-links a:hover{
+.footer a:hover{
     text-decoration: none;
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
 .footer .social-links img{
     margin-right: 10px;

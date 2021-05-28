@@ -35,6 +35,7 @@ function partials_footer(){
                 <div class="lg-hide col-xl-2 d-flex justify-content-center">
                     <div class="p-2 center">
                         <h4>Mentions Légales</h4>
+                        <a href="?c=federation&p=4"><p>Autres Mentions Légales</p></a>
                     </div>
                 </div>
                 <div class="col-8 col-sm-8 only-md-hide col-lg-4 col-xl-5 d-flex justify-content-center">
