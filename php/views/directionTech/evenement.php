@@ -52,26 +52,31 @@ function printStage($index){
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#compet" aria-expanded="false" aria-controls="collapseExample">
     Compétition
     </button>
+    
+
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#stages" aria-expanded="false" aria-controls="collapseExample">
         Stages
     </button>
+
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#forma" aria-expanded="false" aria-controls="collapseExample">
         Formations
     </button>
+    
+   
 
-<div class="collapse" id="compet">
-        <div class="container mt-5">
+    <div class="collapse" id="compet">
+        
         <br>
         <div class="text-center"><h1 class="content-title-blue">Compétitions</h1></div>
         
-        <!--Drawer for all season-->
+    
         <div class="inline">
             <a class="btn btn-outline-secondary" onclick="multiCollapseButton('season', 'first')">A venir</a>
             <a class="btn btn-outline-secondary" onclick="multiCollapseButton('season', 'second')">Précédente compétitions</a>
-                <!--Apply the information from the button we push-->
+              
         </div>
-        <div class="container pt-2 my-3 border">
-            <div id="season"></div>
+            
+                <div id="season"></div>
             </div>
             <div class="hide">
                 <div id="first">
@@ -125,17 +130,13 @@ function printStage($index){
                         }
                     }
                     ?>
-                    </div>
                 </div>
             </div>
-</div>
-<div class="collapse" id="stages">
-    <div class="text-center mt-5">
-            <h2 class="content-title-yellow">Stages GRT Coupes</h2>
         </div>
-        
-        <div class="container mt-5">
-    <br>
+    </div>
+
+    
+    <div class="collapse" id="stages">
     <div class="text-center"><h1 class="content-title-blue">Stage</h1></div>
     
     
@@ -164,9 +165,6 @@ function printStage($index){
         </div>
     </div>
     
-        <div id="season"></div>
-        
-    
            <?php 
             for ($i=0;$i<count($eventComp);$i++){
                 $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
@@ -190,12 +188,15 @@ function printStage($index){
             ?>
            
         </div>  
-</div>     
+    </div>     
 
-<div class="collapse" id="forma">
+    <div class="collapse" id="forma">
+    <div class="inline">
     <div class="text-center mt-5">
             <h2 class="content-title-yellow">Formations</h2>
-        </div>
+
+    </div>
+    
         <div>
             <h3><span class="ml-3">Formations des Maîtres</span></h3>
             <p>
@@ -226,9 +227,9 @@ function printStage($index){
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
         </div>   
-</div>        
+    </div>        
 </div>
-
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="scripts/internship.js"></script>
