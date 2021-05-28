@@ -7,6 +7,9 @@ $req = $db->query('SELECT * FROM event ORDER BY id');
 $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <style>
+body {
+    overflow-y: scroll;
+}
 .p-2{
     padding: 0!important;
 }

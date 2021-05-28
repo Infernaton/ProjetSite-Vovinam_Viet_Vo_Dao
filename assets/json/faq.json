@@ -1,7 +1,7 @@
 [
     {
         "ask": "Comment s'inscrire ?",
-        "rep": "<b>Comme ceci :<\/b><br><i>\\o\/<\/i> -<i>Je suis inscrit !<\/i>"
+        "rep": "<b>Comme ceci :<\/b><br><i>\\o\/<\/i> -<ins><i>Je suis inscrit !<\/i><\/ins><br><br>adada<br><br><a href=\"https:\/\/www.youtube.com\/\" target=\"_blank\">https:\/\/www.youtube.com\/<\/a>"
     },
     {
         "ask": "Aaa?",
@@ -21,7 +21,7 @@
     },
     {
         "ask": "A?",
-        "rep": "B."
+        "rep": "B.<br><br><br><br><br><br><br>a"
     },
     {
         "ask": "A?",
