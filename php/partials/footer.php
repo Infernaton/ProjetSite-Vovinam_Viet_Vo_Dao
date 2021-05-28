@@ -59,15 +59,6 @@ function partials_footer(){
                         <p><i class="fas fa-envelope"></i> vovinamfr@vietvodao.com</p>
                         <p><i class="fas fa-phone"></i> 01.64.49.60.10</p>
                     </div>
-                    <!--
-                    <br>
-                    <h5>Hébergeur: GANDI SAS</h5>
-                    <h5>SAS au capital de 2 300 000 €</h5>
-                    <h5>RCS Paris 423 093 459</h5>
-                    <h5>Code APE 7740Z</h5>
-                    <h5>N° TVA : FR 81423093459</h5>
-                    <h5>Siège social : 63-65 boulevard de Masséna – France</h5>
-                    <h5>Tél: 01.70.37.76.61</h5>-->
                 </div>
             </div>
         </div>
