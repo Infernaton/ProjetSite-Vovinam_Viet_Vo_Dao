@@ -108,3 +108,144 @@ a:hover{
 #sommaire .dropdown-menu .dropdown-item:hover{
     background-color: rgba(255,255,255,0.2);
 }
+/* Page Grands Maîtres */
+/* center the blockquote in the page */
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
+.btn:hover,
+.btn:focus,
+.btn:active{
+    outline: 0 !important;
+}
+/* entire container, keeps perspective */
+.card-container {
+    margin-bottom: 30px;
+}
+/*        Style       */
+
+.card{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px;
+    color: #444444;
+}
+.front {
+    z-index: 2;
+	width: 100%;
+	height: 420px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+}
+.card .user{
+    border-radius: 50%;
+    display: block;
+    height: 25%;
+    margin: -35px auto 0;
+    overflow: hidden;
+    width: 120px;
+    box-shadow: 0px -5px 30px 0px #9c9c9c;
+}
+.card .user img{
+    background: none repeat scroll 0 0;
+    width: 100%;
+}
+.card .content{
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    padding: 0px 20px;
+    height: 455px;
+}
+.card .content .main {
+    height: 50%;
+    overflow-y: auto;
+    padding-top: 10px;
+    padding-left: 25px;
+}
+.fondator .content .main {
+    height: 75%;
+}
+.card h5{
+    font-weight: 400;
+    line-height: 20px;
+}
+.card .profession{
+    color: #999999;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.card .footer {
+    border-top: 1px solid #EEEEEE;
+    padding: 0 3%;
+    position: relative;
+    height: 10%;
+    box-shadow: none;
+    background-color: white;
+}
+.card .header {
+    padding: 15px 20px;
+    height: 15%;
+}
+@media (max-width: 990px) {
+    .card .header .name{
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 1200px) {
+    .card .header .name{
+        font-size: 1.5rem;
+    }
+}
+.btn-simple{
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    opacity: .8;
+    color: #666666;
+    background-color: transparent;
+}
+
+.btn-simple:hover,
+.btn-simple:focus{
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 1;
+}
+.btn-simple i{
+    font-size: 16px;
+}
+.hint{
+    border-bottom: 1px solid #1c55a3;
+}
+.subtitle {
+    color:#1c55a3;
+}
+.praise-sub {
+    padding-left: 4%;
+}
+.praise {
+    margin-top: 3%;
+    color: #333333;
+    font-style:oblique;
+}
+.praise .catch-phrase {
+    margin-left: -1%;
+    color:#111111;
+    font-size: 110%;
+}
+/*       Fix bug for IE      */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .front, .back{
+        -ms-backface-visibility: visible;
+        backface-visibility: visible;
+    }
+
+    .front{
+        z-index: 4;
+    }
+    .card-container:not(.manual-flip):hover .back,
+    .card-container.manual-flip.hover .back{
+        z-index: 5;
+        visibility: visible;
+    }
+}
