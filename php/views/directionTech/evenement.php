@@ -47,7 +47,7 @@ function printStage($index){
 
 <div class="container mt-5">
     <br>
-    <div class="text-center"><h1 class="content-title-blue">Tout les évènements</h1></div>
+    <div class="text-center"><h1 class="content-title-blue">Tous les évènements</h1></div>
 
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#compet" aria-expanded="false" aria-controls="collapseExample">
     Compétition
@@ -137,6 +137,7 @@ function printStage($index){
 
     
     <div class="collapse" id="stages">
+    <div class="container pt-2 my-3 border">
     <div class="text-center"><h1 class="content-title-blue">Stage</h1></div>
     
     
@@ -188,8 +189,8 @@ function printStage($index){
             ?>
            
         </div>  
-    </div>     
-
+</div>     
+<div class="container pt-2 my-3 border">
     <div class="collapse" id="forma">
     <div class="inline">
     <div class="text-center mt-5">
@@ -228,7 +229,6 @@ function printStage($index){
             </p>
         </div>   
     </div>        
-</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
