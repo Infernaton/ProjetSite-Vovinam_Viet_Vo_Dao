@@ -1,7 +1,7 @@
 [
     {
         "ask": "Comment s'inscrire ?",
-        "rep": "<b>Comme ceci :<\/b><br><i>\\o\/<\/i> -<ins><i>Je suis inscrit !<\/i><\/ins><br><br>adada<br><br><a href=\"https:\/\/www.youtube.com\/\" target=\"_blank\">https:\/\/www.youtube.com\/<\/a>"
+        "rep": "<b>Comme ceci :<\/b><br><i>\\o\/<\/i> -<ins><i>Je suis inscrit !<\/i><\/ins><br><br><i>adada<br><br><a href=\"https:\/\/www.youtube.com\/\" target=\"_blank\">https:\/\/www.youtube.com\/<\/a>"
     },
     {
         "ask": "Aaa?",
@@ -13,11 +13,11 @@
     },
     {
         "ask": "A?",
-        "rep": "B."
+        "rep": "B.<br><i>texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte <b>texte<\/b> texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte texte "
     },
     {
-        "ask": "A?adad",
-        "rep": "B."
+        "ask": "C'est une longue question que voil\u00e0, est-ce normal ?",
+        "rep": "<ins><b>Oui.<\/b><\/ins>"
     },
     {
         "ask": "A?",

@@ -35,6 +35,7 @@ function partials_footer(){
                 <div class="lg-hide col-xl-2 d-flex justify-content-center">
                     <div class="p-2 center">
                         <h4>Mentions Légales</h4>
+                        <a href="?c=federation&p=4"><p>Autres Mentions Légales</p></a>
                     </div>
                 </div>
                 <div class="col-8 col-sm-8 only-md-hide col-lg-4 col-xl-5 d-flex justify-content-center">
@@ -59,15 +60,6 @@ function partials_footer(){
                         <p><i class="fas fa-envelope"></i> vovinamfr@vietvodao.com</p>
                         <p><i class="fas fa-phone"></i> 01.64.49.60.10</p>
                     </div>
-                    <!--
-                    <br>
-                    <h5>Hébergeur: GANDI SAS</h5>
-                    <h5>SAS au capital de 2 300 000 €</h5>
-                    <h5>RCS Paris 423 093 459</h5>
-                    <h5>Code APE 7740Z</h5>
-                    <h5>N° TVA : FR 81423093459</h5>
-                    <h5>Siège social : 63-65 boulevard de Masséna – France</h5>
-                    <h5>Tél: 01.70.37.76.61</h5>-->
                 </div>
             </div>
         </div>

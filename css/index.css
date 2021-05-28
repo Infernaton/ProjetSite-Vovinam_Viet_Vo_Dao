@@ -36,9 +36,10 @@
 }
 a{  
     color:#6565a7;
-}
-.link{
     transition: all 0.5s ease;
+}
+a:hover {
+    color:#e82226;
 }
 div.link:hover{
     background-color: #DC3634;
@@ -46,7 +47,7 @@ div.link:hover{
 .border-rad-3{
     border-radius: 3px;
 }
-.red{color:#e82226 !important;}
+.red{color:#e82226!important;}
 
 /*Mise en Page avec Footer*/
 header{
@@ -93,14 +94,14 @@ body{
 .footer .social-links{
     font-size: 18px;
 }
-.footer .social-links a{
+.footer a{
     margin: 0 7px;
     display: flex;
     transition: all 0.5s ease;
 }
-.footer .social-links a:hover{
+.footer a:hover{
     text-decoration: none;
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
 .footer .social-links img{
     margin-right: 10px;

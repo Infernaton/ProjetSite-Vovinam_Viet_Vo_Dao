@@ -5,9 +5,6 @@ body::after {
 	opacity: 0;
 	visibility: hidden;
 }
-a {
-	text-decoration: none;
-}
 .nav-top {
 	/* z-index: 2101;*/
 	padding: 10px 20px;

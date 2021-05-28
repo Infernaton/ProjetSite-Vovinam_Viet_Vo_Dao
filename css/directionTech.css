@@ -1,7 +1,7 @@
-h3{
+.selection h3{
     border-bottom: 1px solid black;
 }
-h5{
+.selection h5{
     border-bottom: 1px solid black;
     padding: 1%;
     padding-left: 3%;

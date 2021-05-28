@@ -17,7 +17,7 @@ $greatMasters = json_decode($greatMasters, true, JSON_UNESCAPED_UNICODE);
 $fondatorData = $greatMasters[0];
 ?>
 
-<link rel="stylesheet" href="css/maitre.css">
+<link rel="stylesheet" href="css/discipline.css">
 <style>
 .tooltip-inner{
     max-width: 500px; 
