@@ -83,9 +83,10 @@ body{
 .footer{
     left: 0 ; right: 0; bottom: 0; 
     height: auto;
-    background-color: #656565;
-    box-shadow: 0px -1px 10px 0px black;
+    background-color: #1a498a;
+    /*box-shadow: 0px -1px 10px 0px black;*/
     z-index: 1000;
+    border-top: 1px solid #183a69;
 }
 .footer .row {
     margin-right: 0;
