@@ -3,8 +3,13 @@ require_once 'php/init.php';
 
 $eventBefFetch = $db->query('SELECT * FROM event WHERE type LIKE "Compétition" Order by id');
 $eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
+
 $eventBefFetch2 = $db->query('SELECT * FROM event WHERE type LIKE "Stage" Order by id');
 $eventComp2 = $eventBefFetch2->fetchAll(PDO::FETCH_ASSOC);
+
+
+$eventBefFetch3 = $db->query('SELECT * FROM event WHERE type LIKE "Formation" Order by id');
+$eventComp3 = $eventBefFetch3->fetchAll(PDO::FETCH_ASSOC);
 
 date_default_timezone_set('Europe/Paris');
 $date = explode("/",date('Y/m/d', time()));
@@ -31,6 +36,19 @@ function printTournament($index){
 function printStage($index){
     global $eventComp;
 
+    $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
+
+    echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
+    '<h4>'.$eventComp[$index]['title'].'</h4>',
+    '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
+    '<p class="descr">'.$eventComp[$index]['description'].'</p>',
+    '<p class="prerequis">'.$prerequis.'</p>',
+    '</div>';
+}
+
+function printFormation($index){
+    global $eventComp;
+    
     $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
 
     echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
@@ -193,43 +211,74 @@ function printStage($index){
    
 
     <div class="collapse" id="forma">
-    <div class="inline">
-    <div class="text-center mt-5">
-            <h2 class="content-title-yellow">Formations</h2>
-
-    </div>
+    <br>
+        <div class="text-center"><h1 class="content-title-blue">Formations</h1></div>
+        
     
-        <div>
-            <h3><span class="ml-3">Formations des Maîtres</span></h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+        <div class="inline">
+            <a class="btn btn-outline-secondary" onclick="multiCollapseButton('season', 'first')">A venir</a>
+            <a class="btn btn-outline-secondary" onclick="multiCollapseButton('season', 'second')">Précédente compétitions</a>
+              
         </div>
-        <div>
-            <h3><span class="ml-3">Formations des Cadres</span></h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            
+                <div id="season"></div>
+            </div>
+            <div class="hide">
+                <div id="first">
+                <h3> Formations à venir</h3>
+                <?php 
+                for ($i=0;$i<count($eventComp);$i++){
+                    $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
+                    if ($dateDebut[0] > $date[0]){ //Comparaison de l'année
+                        printTournament($i);
+                    }
+                    else if($dateDebut[0] == $date[0]){ 
+                        if($dateDebut[1] > $date[1]){//Comparaison du mois
+                            printTournament($i);
+                        }
+                        elseif($dateDebut[1] == $date[1]){
+                            if($dateDebut[2] >= $date[2]) { //Comparaison du jour
+                                printTournament($i);
+                            }
+                        }
+                    }
+                }
+                ?>
+                </div>
+                <div id="second">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="deroulantb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Année</button>
+                            <div class="dropdown-menu" aria-labelledby="deroulantb">
+                                <button class="dropdown-item" type="button"onclick="selectYear('2016-2020')">2016-2020</button>
+                                <button class="dropdown-item" type="button"onclick="selectYear('2011-2015')">2011-2015</button>
+                                <button class="dropdown-item" type="button"onclick="selectYear('2005-2010')">2005-2010</button>
+                                <button class="dropdown-item" type="button"onclick="selectYear('2000-2004')">2000-2004</button>
+                            </div>
+                    </div>
+                    <h3>Précédentes Formations</h3>
+                    <div id="format">
+                    <?php 
+                    for ($i=0;$i<count($eventComp);$i++){
+                        $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
+                        if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
+                            printTournament($i);
+                        }
+                        else if($dateDebut[0] == $date[0]){ 
+                            if($dateDebut[1] < $date[1]){//Comparaison du mois
+                                printTournament($i);
+                            }
+                            elseif($dateDebut[1] == $date[1]){
+                                if($dateDebut[2] < $date[2]) { //Comparaison du jour
+                                    printTournament($i);
+                                }
+                            }
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
-        <div>
-            <h3><span class="ml-3">Séminaires</span></h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>   
-    </div>        
+           
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
