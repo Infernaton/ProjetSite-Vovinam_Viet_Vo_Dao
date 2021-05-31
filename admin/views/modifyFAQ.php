@@ -3,10 +3,12 @@
         $from = '/'.preg_quote($from, '/').'/';
         return preg_replace($from, $to, $content, 1);
     }
+    //Transformer des strings ressemblant à des liens en liens hypertextes
     function plainToHyperlinks($string){
         $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i';
         return preg_replace($url, '<a href="$0" target="_blank">$0</a>', $string);
     }
+    //Transformer les symboles de styles vers des balises HTML
     function translateToHTML($string){
         //Edit the response to make it easy to design in edit mode
         $string = str_replace("\r\n","<br>", $string);
@@ -38,6 +40,7 @@
         return $string;
     }
 
+    //Afficher une carte de question, comprennant les différents boutons et son contenu
     function printCardFAQ($cardContent){
         ?>
         <div class="QnA">
@@ -128,9 +131,9 @@
         <?php
     }
 
-    //#26121e #21172a
     $json_file = "../assets/json/faq.json";
     $faq = json_decode(file_get_contents($json_file), true, JSON_UNESCAPED_UNICODE);
+    //Requête du front vers le back
     if ($_POST){
         switch ($_POST['submit']){
             case 'delete':
@@ -190,6 +193,7 @@
     <hr>
     <div>
         <h3>Liste des questions <i class="fas fa-question-circle" data-toggle="modal" data-target="#useSymbols" style="cursor: pointer;"></i></h3>
+        <!--Tuto Stylisation de texte-->
         <div class="modal fade" id="useSymbols">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -254,9 +258,11 @@
                 <h4>+ Ajouter une nouvelle question</h3>
             </button>
         </div>
+        <!--Ajouter une nouvelle question-->
         <div class="modal fade" id="add-question">
                 <div class="modal-dialog modal-lg">
                     <form action="" method="post" enctype="multipart/form-data">
+
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Ajouter nouvelle Question/Réponse</h4>
@@ -284,6 +290,8 @@
                     </form>
                 </div>
         </div>
+
+        <!--Liste des questions-->
         <div class="row">
             <div class="col-12 col-md-6">
             <?php
