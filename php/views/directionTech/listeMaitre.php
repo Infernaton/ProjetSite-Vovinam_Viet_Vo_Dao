@@ -48,9 +48,8 @@ $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
 
                             <div class="modal-body">
                                 <div class="text-center">
-                                    <img src="<?php echo $master['pictureProfile']?>" height="400" alt="<?php echo $master['name']?>">
+                                    <img style="border-radius:50%;" src="<?php echo $master['pictureProfile']?>" height="400" alt="<?php echo $master['name']?>">
                                 </div>
-                                <h3>Fonction(s) Occupée(s)</h3>
                                 <ul>
                                     <?php 
                                     $functions = explode(",",$master['function']);

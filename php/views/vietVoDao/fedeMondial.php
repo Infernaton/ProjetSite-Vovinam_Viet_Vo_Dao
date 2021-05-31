@@ -16,13 +16,21 @@
                     <p>➢ Site Officiel: <a href="https://vovinamworldfederation.eu/fr/" class="link">https://vovinamworldfederation.eu/fr/</a></p>
                 </div>
                 <div>
-                    <p>➢ Conseil des Maîtres Mondial: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html" class="link">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html</a></p>
+                    <p>➢ Conseil des Maîtres Mondial: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html</a></p>
                 </div>
                 <div>
-                    <p>➢ Diplôme International: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html" class="link">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html</a></p>
+                    <p>➢ Diplôme International: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html</a></p>
                 </div>
                 <div>
-                    <p>➢ Résultats Coupes du Monde: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html" class="link">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html</a></p>
+                    <p>➢ Résultats Coupes du Monde: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html</a></p>
+                    <ul>
+                        <li>
+                            <p>➢ Résultats Coupes d'Europe: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupe-europe-2020.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupe-europe-2020.html</a></p>
+                        </li>
+                        <li>
+                            <p>➢ Résultats Coupes d'Afrique: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-continentales.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-continentales.html</a></p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
