@@ -7,6 +7,36 @@
         $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i';
         return preg_replace($url, '<a href="$0" target="_blank">$0</a>', $string);
     }
+    function translateToHTML($string){
+        //Edit the response to make it easy to design in edit mode
+        $string = str_replace("\r\n","<br>", $string);
+        $string = str_replace("[", "<mark class='bg-danger'>", $string);
+        $string = str_replace("]", "</mark>", $string);
+
+        //Count the number of symbole there is in the text
+        $uses = [substr_count($string, "**")/2, substr_count($string, "*")/2, substr_count($string, "_")/2, substr_count($string, "--")/2, substr_count($string, "http")];
+
+        for ($a=0; $a < $uses[0]; $a++) {
+            $string = str_replace_first("**", "<b>", $string);
+            $string = str_replace_first("**", "</b>", $string);
+        }
+        for ($a=0; $a < $uses[1]; $a++) {
+            $string = str_replace_first("*", "<i>", $string);
+            $string = str_replace_first("*", "</i>", $string);
+        }
+        for ($a=0; $a < $uses[2]; $a++) {
+            $string = str_replace_first("_", "<ins>", $string);
+            $string = str_replace_first("_", "</ins>", $string);
+        }
+        for ($a=0; $a < $uses[3]; $a++) {
+            $string = str_replace_first("--", "<del>", $string);
+            $string = str_replace_first("--", "</del>", $string);
+        }
+        for ($a=0; $a < $uses[4]; $a++) {
+            $string = plainToHyperlinks($string);
+        }
+        return $string;
+    }
 
     function printCardFAQ($cardContent){
         ?>
@@ -69,8 +99,11 @@
                 </div>
             </div>
             <div class="modal fade" id="remove-<?php echo $cardContent['id']?>">
-            <div class="modal-dialog modal-lg">
+                <div class="modal-dialog modal-lg">
                     <form action="" method="post" enctype="multipart/form-data">
+
+                    <input type="text" name="index" id="index" class="hide" value="<?php echo $cardContent['id']?>">
+                    <input type="text" name="question" id="index" class="hide" value="<?php echo $cardContent['ask']?>">
 
                     <div class="modal-content">
                         <div class="modal-header">
@@ -99,44 +132,23 @@
     $json_file = "../assets/json/faq.json";
     $faq = json_decode(file_get_contents($json_file), true, JSON_UNESCAPED_UNICODE);
     if ($_POST){
-        //Edit the response to make it easy to design in edit mode
-        $_POST['answer'] = str_replace("\r\n","<br>", $_POST['answer']);
-        $_POST['answer'] = str_replace("[", "<mark class='bg-danger'>", $_POST['answer']);
-        $_POST['answer'] = str_replace("]", "</mark>", $_POST['answer']);
-
-        //Count the number of symbole there is in the text
-        $uses = [substr_count($_POST['answer'], "**")/2, substr_count($_POST['answer'], "*")/2, substr_count($_POST['answer'], "_")/2, substr_count($_POST['answer'], "--")/2, substr_count($_POST['answer'], "http")];
-
-        for ($a=0; $a < $uses[0]; $a++) {
-            $_POST['answer'] = str_replace_first("**", "<b>", $_POST['answer']);
-            $_POST['answer'] = str_replace_first("**", "</b>", $_POST['answer']);
-        }
-        for ($a=0; $a < $uses[1]; $a++) {
-            $_POST['answer'] = str_replace_first("*", "<i>", $_POST['answer']);
-            $_POST['answer'] = str_replace_first("*", "</i>", $_POST['answer']);
-        }
-        for ($a=0; $a < $uses[2]; $a++) {
-            $_POST['answer'] = str_replace_first("_", "<ins>", $_POST['answer']);
-            $_POST['answer'] = str_replace_first("_", "</ins>", $_POST['answer']);
-        }
-        for ($a=0; $a < $uses[3]; $a++) {
-            $_POST['answer'] = str_replace_first("--", "<del>", $_POST['answer']);
-            $_POST['answer'] = str_replace_first("--", "</del>", $_POST['answer']);
-        }
-        for ($a=0; $a < $uses[4]; $a++) {
-            $_POST['answer'] = plainToHyperlinks($_POST['answer']);
-        }
         switch ($_POST['submit']){
             case 'delete':
+                if ($faq[$_POST['index']]['ask']==$_POST['question']){
+                    array_splice($faq, $_POST['index'], 1);
+                    for ($i=$_POST['index']; $i<count($faq);$i++){
+                        $faq[$i]['id'] = (int)($faq[$i]['id'])-1;
+                    }
+                }
                 break;
             case 'valid':
                 $faq[$_POST['index']]['ask'] = $_POST['question'];
-                $faq[$_POST['index']]['rep'] = $_POST['answer'];
+                $faq[$_POST['index']]['rep'] = translateToHTML($_POST['answer']);
                 break;
             case 'add':
                 $newQuestionID = count($faq);
                 if ($_POST['question'] != $faq[$newQuestionID-1]['ask']) {
-                    $new = '{"id":'.$newQuestionID.',"ask":"'.$_POST['question'].'","rep":"'.$_POST['answer'].'"}';
+                    $new = '{"id":'.$newQuestionID.',"ask":"'.$_POST['question'].'","rep":"'.translateToHTML($_POST['answer']).'"}';
                     array_push($faq, json_decode($new, true, JSON_UNESCAPED_UNICODE));
                 }
                 break;
