@@ -25,4 +25,7 @@
             <hr>
             <img class="img_fill" src="assets/img/federation/plaquette2.png" alt="PlaquetteVVDpart2">
         </div>
+        <div class="text-right">
+            <p><i>Format PDF: <a href="assets/download_file/Plaquette FVVNVVDFrance.pdf">Plaquette FVVNVVDFrance.pdf</a></i></p>
+        </div>
 </div>
