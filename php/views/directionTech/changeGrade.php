@@ -33,10 +33,10 @@
                 </select>
                 <div class="text-center">
                     <p>Pour toutes informations sur le Passage des différents grades :</p>
-                    <a href="assets/download_file/3.2.1_Les_grades_Internationaux.pdf" class="link">Voir "Les_grades_Internationaux.pdf"</a><br>
-                    <a href="assets/download_file/3.2.2_Les grades du Vovinam-Viàt Vo Dao.pdf" class="link">Voir "Les grades du Vovinam-Viàt Vo Dao.pdf"</a> <br>
-                    <a href="assets/download_file/3.3_Organisation des examens des grades.pdf" class="link">Voir "Organisation des examens des grades.pdf"</a> <br>
-                    <a href="assets/download_file/3.4_Programmes d'examens.pdf" class="link">Voir "Programmes d'examens.pdf"</a>
+                    <a href="assets/download_file/3.2.1_Les_grades_Internationaux.pdf">Voir "Les_grades_Internationaux.pdf"</a><br>
+                    <a href="assets/download_file/3.2.2_Les grades du Vovinam-Viàt Vo Dao.pdf">Voir "Les grades du Vovinam-Viàt Vo Dao.pdf"</a> <br>
+                    <a href="assets/download_file/3.3_Organisation des examens des grades.pdf">Voir "Organisation des examens des grades.pdf"</a> <br>
+                    <a href="assets/download_file/3.4_Programmes d'examens.pdf">Voir "Programmes d'examens.pdf"</a>
                 </div>
                 <div>
                     <br>
