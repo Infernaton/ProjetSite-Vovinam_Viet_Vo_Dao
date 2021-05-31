@@ -8,6 +8,93 @@
         return preg_replace($url, '<a href="$0" target="_blank">$0</a>', $string);
     }
 
+    function printCardFAQ($cardContent){
+        ?>
+        <div class="QnA">
+                <div class="header">
+                    <h4><?php echo $cardContent['ask'];?></h4>
+                </div>
+                <div class="body">
+                    <p><?php echo $cardContent['rep']."</mark></del></ins></i></b>";?></p>
+                </div>
+                <div class="footer">
+                    <div class="d-flex justify-content-between">
+                        <button class="undo" type="button" data-toggle="modal" data-target="#remove-<?php echo $cardContent['id']?>">Supprimer</button>
+                        <button class="" type="button" data-toggle="modal" data-target="#question-<?php echo $cardContent['id']?>">Modifier</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="question-<?php echo $cardContent['id']?>">
+                <div class="modal-dialog modal-lg">
+                    <form action="" method="post" enctype="multipart/form-data">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modifier la Question/Réponse</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <input type="text" name="index" id="index" class="hide" value="<?php echo $cardContent['id']?>">
+                            <h5>Question</h5>
+                            <textarea class="inputData form-control" name="question" id="question"><?php echo $cardContent['ask'];?></textarea>
+                            <h5>Réponse</h5>
+                            <textarea class="inputData form-control" name="answer" rows="10" id="answer"><?php 
+                                    $para = $cardContent['rep'];
+                                    //Edit the response to make it easy to design in edit mode
+                                    $para = str_replace("<br>", "\r\n", $para);
+                                    $para = str_replace("<mark class='bg-danger'>", "[", $para);
+                                    $para = str_replace("</mark>", "]", $para); 
+                                    //To delete the <a> tag to the link
+                                    $para = str_replace([substr($para, strpos($para,"<a"), strpos($para, "\">")-strpos($para,"<a")),"</a>", "\">"], "", $para);
+
+                                    $para = str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $para);
+                                    
+                                    echo $para;
+                                ?></textarea>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div id="btn-reset" class="p-2">
+                                    <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+                                </div>
+                                <div id="btn-Action" class="p-2">
+                                    <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="modal fade" id="remove-<?php echo $cardContent['id']?>">
+            <div class="modal-dialog modal-lg">
+                    <form action="" method="post" enctype="multipart/form-data">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Supprimer la Question</h4>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div id="btn-reset" class="p-2">
+                                    <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+                                </div>
+                                <div id="btn-Action" class="p-2">
+                                    <button type="submit" class="btn-modObject annim confirm" value="delete" name="submit">Valider la suppression</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+        <?php
+    }
+
     //#26121e #21172a
     $json_file = "../assets/json/faq.json";
     $faq = json_decode(file_get_contents($json_file), true, JSON_UNESCAPED_UNICODE);
@@ -47,8 +134,11 @@
                 $faq[$_POST['index']]['rep'] = $_POST['answer'];
                 break;
             case 'add':
-                $new = '{"ask":"'.$_POST['question'].'","rep":"'.$_POST['answer'].'"}';
-                array_push($faq, json_decode($new, true, JSON_UNESCAPED_UNICODE));
+                $newQuestionID = count($faq);
+                if ($_POST['question'] != $faq[$newQuestionID-1]['ask']) {
+                    $new = '{"id":'.$newQuestionID.',"ask":"'.$_POST['question'].'","rep":"'.$_POST['answer'].'"}';
+                    array_push($faq, json_decode($new, true, JSON_UNESCAPED_UNICODE));
+                }
                 break;
         }
         file_put_contents($json_file,json_encode($faq, JSON_PRETTY_PRINT));
@@ -79,6 +169,7 @@
         resize: none;
     }
 </style>
+
 <div class="container">
     <div id="btn-object" class="p-2" style="">
         <a href="../admin"><button class="btn-annul annim" type="button" id='undo'>← Retour</button></a>
@@ -86,7 +177,7 @@
     <h1>Page FAQ</h1>
     <hr>
     <div>
-        <h3>Liste des questions <i class="fas fa-question-circle" data-toggle="modal" data-target="#useSymbols"></i></h3>
+        <h3>Liste des questions <i class="fas fa-question-circle" data-toggle="modal" data-target="#useSymbols" style="cursor: pointer;"></i></h3>
         <div class="modal fade" id="useSymbols">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -169,10 +260,10 @@
                         <div class="modal-footer">
                             <div class="d-flex justify-content-between mb-3">
                                 <div id="btn-reset" class="p-2">
-                                    <button type="button" class="btn-annul annim undo" id="undo" data-dismiss="modal">Annuler</button>
+                                    <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
                                 </div>
                                 <div id="btn-Action" class="p-2">
-                                    <button type="submit" class="btn-modObject annim confirm" value="add" name="submit" id="confirm">Valider</button>
+                                    <button type="submit" class="btn-modObject annim confirm" value="add" name="submit">Valider</button>
                                 </div>
                             </div>
                         </div>
@@ -180,136 +271,19 @@
 
                     </form>
                 </div>
-            </div>
+        </div>
         <div class="row">
             <div class="col-12 col-md-6">
             <?php
-            for ($i=0; $i < count($faq); $i++) { 
-                if ($i%2==0){
+            for ($i=0; $i < count($faq); $i+=2) { 
+                echo printCardFAQ($faq[$i]);
+            } 
             ?>
-            
-            <div class="QnA">
-                <div class="header">
-                    <h4><?php echo $faq[$i]['ask'];?></h4>
-                </div>
-                <div class="body">
-                    <p><?php echo $faq[$i]['rep']."</mark></del></ins></i></b>";?></p>
-                </div>
-                <div class="footer text-right">
-                    <button type="button" data-toggle="modal" data-target="#question-<?php echo $i?>">Modifier</button>
-                </div>
-            </div>
-            <div class="modal fade" id="question-<?php echo $i?>">
-                <div class="modal-dialog modal-lg">
-                    <form action="" method="post" enctype="multipart/form-data">
-
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Modifier la Question/Réponse</h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <input type="text" name="index" id="index" class="hide" value="<?php echo $i?>">
-                            <h5>Question</h5>
-                            <textarea class="inputData form-control" name="question" id="question"><?php echo $faq[$i]['ask'];?></textarea>
-                            <h5>Réponse</h5>
-                            <textarea class="inputData form-control" name="answer" rows="10" id="answer"><?php 
-                                    $para = $faq[$i]['rep'];
-                                    //Edit the response to make it easy to design in edit mode
-                                    $para = str_replace("<br>", "\r\n", $para);
-                                    $para = str_replace("<mark class='bg-danger'>", "[", $para);
-                                    $para = str_replace("</mark>", "]", $para); 
-                                    //To delete the <a> tag to the link
-                                    $para = str_replace([substr($para, strpos($para,"<a"), strpos($para, "\">")-strpos($para,"<a")),"</a>", "\">"], "", $para);
-
-                                    $para = str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $para);
-                                    
-                                    echo $para;
-                                ?></textarea>
-                        </div>
-
-                        <div class="modal-footer">
-                            <div class="d-flex justify-content-between mb-3">
-                                <div id="btn-reset" class="p-2">
-                                    <button type="button" class="btn-annul annim undo" id="undo" data-dismiss="modal">Annuler</button>
-                                </div>
-                                <div id="btn-Action" class="p-2">
-                                    <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    </form>
-                </div>
-            </div>
-            <?php
-                }
-            } ?>
             </div>
             <div class="col-12 col-md-6">
             <?php
-            for ($i=0; $i < count($faq); $i++) { 
-                if ($i%2==1){
-            ?>
-            
-            <div class="QnA">
-                <div class="header">
-                    <h4><?php echo $faq[$i]['ask'];?></h4>
-                </div>
-                <div class="body">
-                    <p><?php echo $faq[$i]['rep']."</mark></del></ins></i></b>";?></p>
-                </div>
-                <div class="footer text-right">
-                    <button type="button" data-toggle="modal" data-target="#question-<?php echo $i?>">Modifier</button>
-                </div>
-            </div>
-            <div class="modal" id="question-<?php echo $i?>">
-                <div class="modal-dialog modal-lg">
-                    <form action="" method="post" enctype="multipart/form-data">
-
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Modifier la Question/Réponse</h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <input type="text" name="index" id="index" class="hide" value="<?php echo $i?>">
-                            <h5>Question</h5>
-                            <textarea class="inputData form-control" name="question" id="question"><?php echo $faq[$i]['ask'];?></textarea>
-                            <h5>Réponse</h5>
-                            <textarea class="inputData form-control" name="answer" rows="10" id="answer"><?php 
-                                    $para = $faq[$i]['rep'];
-                                    //Edit the response to make it easy to design in edit mode
-                                    $para = str_replace("<br>", "\r\n", $para);
-                                    $para = str_replace("<mark class='bg-danger'>", "[", $para);
-                                    $para = str_replace("</mark>", "]", $para); 
-                                    //To delete the <a> tag to the link
-                                    $para = str_replace([substr($para, strpos($para,"<a"), strpos($para, "\">")-strpos($para,"<a")),"</a>", "\">"], "", $para);
-
-                                    $para = str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $para);
-                                    
-                                    echo $para;
-                                ?></textarea>
-                        </div>
-
-                        <div class="modal-footer">
-                            <div class="d-flex justify-content-between mb-3">
-                                <div id="btn-reset" class="p-2">
-                                    <button type="button" class="btn-annul annim undo" id="undo" data-dismiss="modal">Annuler</button>
-                                </div>
-                                <div id="btn-Action" class="p-2">
-                                    <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    </form>
-                </div>
-            </div>
-            <?php
-                }
+            for ($i=1; $i < count($faq); $i+=2) { 
+                echo printCardFAQ($faq[$i]);
             }
             ?>
             </div>
