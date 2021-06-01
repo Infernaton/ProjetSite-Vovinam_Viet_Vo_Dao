@@ -115,11 +115,6 @@ body {
             <div class="in">
                 <div class="row" id="eventList">
                     <div class="col-12 col-md-6 btn-panel">
-                        <a href="?p=sliders">
-                            <button class="list-object">Modifier les Sliders</button>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 btn-panel">
                         <a href="#">
                             <button class="list-object">Actualité</button>
                         </a>
@@ -130,8 +125,13 @@ body {
                         </a>
                     </div>
                     <div class="col-12 col-md-6 btn-panel">
-                        <a href="#">
-                            <button class="list-object">///</button>
+                        <a href="?p=calendars">
+                            <button class="list-object">Calendriers Fédéraux</button>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 btn-panel">
+                        <a href="?p=sliders">
+                            <button class="list-object">Modifier les Sliders</button>
                         </a>
                     </div>
                 </div>

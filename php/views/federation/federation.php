@@ -47,14 +47,21 @@
 
         <h4>Calendriers Fédéraux</h4>
         <div id="calendriers_fédéraux" class="row">
-            
+            <?php 
+            $json_file = "assets/json/calendar.json";
+            $calendars = json_decode(file_get_contents($json_file), true, JSON_UNESCAPED_UNICODE);
+            foreach($calendars as $calendar){
+            ?>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="text-center">
-                    <a href="assets/img/federation/calendars/Calendrier Federal_saison 2020-2021.pdf" target="_blank">
-                        <img class="img_fill" src="assets/img/federation/calendars/preview/Calendrier Federal_saison 2020-2021-preview.png" alt="preview2020-2021">
-                        <p>2020-2021</p>
+                    <a href="<?php echo $calendar['pdf']?>" target="_blank">
+                        <img class="img_fill" src="<?php echo $calendar['img_preview'] ?>" alt="preview">
+                        <p><?php echo $calendar['title'] ?></p>
                     </a>
                 </div>
             </div>
+            <?php 
+            }
+            ?>
         </div>
 </div>

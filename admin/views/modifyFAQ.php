@@ -260,9 +260,8 @@
         </div>
         <!--Ajouter une nouvelle question-->
         <div class="modal fade" id="add-question">
-                <div class="modal-dialog modal-lg">
-                    <form action="" method="post" enctype="multipart/form-data">
-
+            <div class="modal-dialog modal-lg">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Ajouter nouvelle Question/Réponse</h4>
@@ -286,9 +285,8 @@
                             </div>
                         </div>
                     </div>
-
-                    </form>
-                </div>
+                </form>
+            </div>
         </div>
 
         <!--Liste des questions-->

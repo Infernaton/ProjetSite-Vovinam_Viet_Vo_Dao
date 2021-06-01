@@ -185,6 +185,7 @@ form .row{
     cursor: pointer;
 }
 .custom-file-upload {
+    margin: 20px;
     border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
@@ -207,4 +208,9 @@ form .row{
 }
 #add-picture .modal-footer {
     display: block;
+}
+.img_fill{
+    object-fit: cover;
+    width:100%;
+    height:100%;
 }
