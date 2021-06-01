@@ -54,7 +54,7 @@ if (isset($_GET['e'])) {
                 </datalist>
             </div>
 
-            <div class="row hide">
+            <div id="infoStage" class="row hide">
                 <div class="col-12 col-md-6">
                     <div id="ObjContainer">
                         <label class="data" for="event"><b>Objectif du Stage</b></label>
@@ -93,7 +93,11 @@ if (isset($_GET['e'])) {
 <script src="scripts/previewPicture.js"></script>
 <script>
 function isAStage() {
-    console.log('change');
+    if (document.getElementById('event').value == 'Stage'){
+        document.getElementById('infoStage').classList.remove('hide');
+    }else{
+        document.getElementById('infoStage').classList.add('hide');
+    }
 }
 if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentEvent)?> != null){
@@ -112,6 +116,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("previewImgDiv").style = "background-image:url(<?php echo getSaveDirr("forPreview").$currentEvent['image'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentEvent['image']?>"
     document.getElementById("newImage").required = false;
+    isAStage();
   }
 }
 </script>

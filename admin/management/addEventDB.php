@@ -52,7 +52,7 @@ switch ($_POST['submit']){
         //Prepare to add the object
         $req = $db->prepare('INSERT INTO `event` (
             type, title, description, dateDebut, dateFin, prerequis, objectif, image
-            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis, :category, :objectif, :image)');
+            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis, :objectif, :image)');
 
         $req->bindValue(':type' , $_POST["event"]); 
         $req->bindValue(':title' , $_POST["title"]);
@@ -60,8 +60,8 @@ switch ($_POST['submit']){
         $req->bindValue(':dateDebut' , $_POST["debut"]);
         $req->bindValue(':dateFin' , $_POST["fin"]);
         $req->bindValue(':prerequis' , $_POST["prerequis"]);
-        $req->bindValue(':objectif' , $_POST["prerequis"]);
-        $req->bindValue(':category' , $_POST["category"]);
+        $req->bindValue(':objectif' , $_POST["objectif"]);
+        $req->bindValue(':image' , $target_file);
 
         $req->execute();
         echo "\n Envoie réussi";
