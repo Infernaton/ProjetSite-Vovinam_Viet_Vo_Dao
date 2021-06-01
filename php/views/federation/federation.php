@@ -20,12 +20,41 @@
             internationaux (Coupe d’Europe, Congrès Mondial, Coupe du Monde…).
         </p>
         <br>
-        <div class="border text-center p-2">
-            <img class="img_fill" src="assets/img/federation/plaquette1.png" alt="PlaquetteVVDpart1">
-            <hr>
-            <img class="img_fill" src="assets/img/federation/plaquette2.png" alt="PlaquetteVVDpart2">
+        
+        <div id="demo" class="carousel slide border text-center p-2" data-ride="carousel" data-interval="0" id="plaquette">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="img_fill" src="assets/img/federation/plaquette1.png" alt="PlaquetteVVDpart1">
+                </div>
+                <div class="carousel-item">
+                    <img class="img_fill" src="assets/img/federation/plaquette2.png" alt="PlaquetteVVDpart2">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
         <div class="text-right">
             <p><i>Format PDF: <a href="assets/download_file/Plaquette FVVNVVDFrance.pdf">Plaquette FVVNVVDFrance.pdf</a></i></p>
+        </div>
+
+        <h4>Calendriers Fédéraux</h4>
+        <div id="calendriers_fédéraux" class="row">
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="text-center">
+                    <a href="assets/img/federation/calendars/Calendrier Federal_saison 2020-2021.pdf" target="_blank">
+                        <img class="img_fill" src="assets/img/federation/calendars/preview/Calendrier Federal_saison 2020-2021-preview.png" alt="preview2020-2021">
+                        <p>2020-2021</p>
+                    </a>
+                </div>
+            </div>
         </div>
 </div>
