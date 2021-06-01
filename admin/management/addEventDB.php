@@ -51,8 +51,8 @@ switch ($_POST['submit']){
     case 'valid':
         //Prepare to add the object
         $req = $db->prepare('INSERT INTO `event` (
-            type, title, description, dateDebut, dateFin, prerequis,image
-            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis, :category :image)');
+            type, title, description, dateDebut, dateFin, prerequis, objectif, image
+            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis, :category, :objectif, :image)');
 
         $req->bindValue(':type' , $_POST["event"]); 
         $req->bindValue(':title' , $_POST["title"]);
@@ -60,6 +60,7 @@ switch ($_POST['submit']){
         $req->bindValue(':dateDebut' , $_POST["debut"]);
         $req->bindValue(':dateFin' , $_POST["fin"]);
         $req->bindValue(':prerequis' , $_POST["prerequis"]);
+        $req->bindValue(':objectif' , $_POST["prerequis"]);
         $req->bindValue(':category' , $_POST["category"]);
 
         $req->execute();
@@ -67,7 +68,7 @@ switch ($_POST['submit']){
         break;
 
     case 'modify':
-        $request = 'UPDATE event SET'.' type="'. $_POST["event"].'", title="'.$_POST["title"].'", description="'.$_POST["description"].'", dateDebut="'.$_POST["debut"].'", dateFin="'.$_POST["fin"].'", prerequis="'.$_POST["prerequis"].'", image="'.$target_file.'" WHERE id='.(int)$_POST['currentEvent'].'';
+        $request = 'UPDATE event SET'.' type="'. $_POST["event"].'", title="'.$_POST["title"].'", description="'.$_POST["description"].'", dateDebut="'.$_POST["debut"].'", dateFin="'.$_POST["fin"].'", prerequis="'.$_POST["prerequis"].'", objectif="'.$_POST["objectif"].'", image="'.$target_file.'" WHERE id='.(int)$_POST['currentEvent'].'';
         $req = $db->prepare($request);
         $req->execute();
         break;

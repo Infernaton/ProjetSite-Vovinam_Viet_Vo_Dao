@@ -43,10 +43,9 @@ if (isset($_GET['e'])) {
         </div>
 
         <div class="col-12 col-md-8">
-
             <div id="categoryContainer">
                 <label class="data" for="event"><b>Type d'évènement</b></label>
-                <input class="inputData form-control" list="list" type="text" placeholder="  -" name="event" id="event" required>
+                <input class="inputData form-control" list="list" type="text" placeholder="  -" name="event" id="event" onchange="isAStage()" required>
                 <datalist id="list">
                     <option value="Compétition">
                     <option value="Stage">
@@ -54,23 +53,30 @@ if (isset($_GET['e'])) {
                     <option value="Autre">
                 </datalist>
             </div>
-            <div id="ObjContainer">
-                <label class="data" for="event"><b>Objéctif de l'évènement</b></label>
-                <input class="inputData form-control" list="listObj" type="text" placeholder="  -" name="event" id="event" required>
-                <datalist id="listObj">
-                    <option value="Technique">
-                    <option value="Arbitrage">
-                    <option value="Dirigeant">
-                    <option value="Encadrant">
-                </datalist>
+
+            <div class="row hide">
+                <div class="col-12 col-md-6">
+                    <div id="ObjContainer">
+                        <label class="data" for="event"><b>Objectif du Stage</b></label>
+                        <input class="inputData form-control" list="listObj" type="text" placeholder="  -" name="objectif" id="objectif">
+                        <datalist id="listObj">
+                            <option value="Technique">
+                            <option value="Arbitrage">
+                            <option value="Dirigeant">
+                            <option value="Encadrant">
+                        </datalist>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label class="data" for="prerequis"><b>Prérequis</b></label>
+                    <input class="inputData form-control" type="text" placeholder="Prérequis" name="prerequis" id="prerequis">
+                </div>
             </div>
-            <label class="data" for="prerequis"><b>Prérequis (Optionnel, comme dans le cas d'un stage)</b></label>
-            <input class="inputData form-control" type="text" placeholder="Prérequis" name="prerequis" id="prerequis">
+
             <label class="data" for="description"><b>Description</b></label>
             <textarea class="inputData form-control" rows="10" cols="100" name="description" placeholder="Description.." id="description"></textarea>
 
             <input class="hide" name="currentEvent" value="<?php echo $index?>" id="currentEvent">
-            
         </div>
     </div>        
 
@@ -86,12 +92,15 @@ if (isset($_GET['e'])) {
 
 <script src="scripts/previewPicture.js"></script>
 <script>
+function isAStage() {
+    console.log('change');
+}
 if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentEvent)?> != null){
     document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos de l'évènement";
     document.getElementById("confirm").value = "modify";
     
-    //if we click on an existant master, we have to fill all the cointainer with data
+    //if we click on an existant master, we have to fill all the cointainer with his data
     document.getElementById("title").value = "<?php echo $currentEvent['title'] ?>";
     let desc = "<?php echo $currentEvent['description'] ?>";
     document.getElementById("description").value = desc.replaceAll('{n}', '\n');
@@ -99,6 +108,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("dateFin").value = "<?php echo reformatDate($currentEvent['dateFin'])?>";
     document.getElementById("event").value = "<?php echo $currentEvent['type'] ?>";
     document.getElementById("prerequis").value = "<?php echo $currentEvent['prerequis'] ?>";
+    document.getElementById("objectif").value = "<?php echo $currentEvent['objectif'] ?>";
     document.getElementById("previewImgDiv").style = "background-image:url(<?php echo getSaveDirr("forPreview").$currentEvent['image'] ?>);";
     document.getElementById("oldImage").value = "<?php echo $currentEvent['image']?>"
     document.getElementById("newImage").required = false;
