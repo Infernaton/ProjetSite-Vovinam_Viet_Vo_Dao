@@ -33,21 +33,24 @@ if ($_POST){
     //var_dump($_POST, $_FILES);
     switch ($_POST['submit']){
         case 'delete':
-            $id_target_file = $_POST['currentFile'];
+            $title_target_file = $_POST['currentFile'];
             foreach ($calendars as $calendar){
-                if ($calendar['id']==$id_target_file){
-                    array_splice($calendars, count($calendars)-$id_target_file-1, 1);
-                    for ($i=count($calendars)-$id_target_file-1; $i>0;$i--){
+                //Ressearch the correct calendar with the given ID
+                if ($calendar['title']==$title_target_file){
+                    //remove the json linked with
+                    array_splice($calendars, count($calendars)-$title_target_file-1, 1);
+                    for ($i=count($calendars)-$title_target_file-1; $i>0;$i--){
                         $calendars[$i]['id'] = (int)($calendars[$i]['id'])-1;
+                    }
+                    //remove the file linked with
+                    $target_file = getSaveDirr('forPreview').$calendar['pdf'];
+                    if (file_exists($target_file)) {
+                        unlink($target_file);
+                        echo "<script type='text/javascript'> location.reload()</script>";
+                        $_POST = [];
                     }
                     break;
                 }
-            }
-            $target_file = getSaveDirr('forPreview').$calendar['pdf'];
-            if (file_exists($target_file)) {
-                unlink($target_file);
-                echo "<script type='text/javascript'> location.reload()</script>";
-                $_POST = [];
             }
             break;
         case 'valid':
@@ -59,7 +62,6 @@ if ($_POST){
             if ($_POST['title'] != $calendars[0]['title']) {
                 $new = '{"id":'.$newQuestionID.', "title":"'.$_POST['title'].'", "img_preview":"assets\/img\/federation\/calendars\/pdf-logo.png", "pdf":"'.uploadFile($_FILES['pdf']).'"}';
                 array_unshift($calendars, json_decode($new, true, JSON_UNESCAPED_UNICODE));
-                //array_unshift
             }
             break;
     }
@@ -124,7 +126,7 @@ if ($_POST){
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="text-center responsive">
                     <div class="hoverEle no-background size-0">
-                        <button onClick="deleteFile('<?php echo $calendar['id'] ?>')" type="button" data-toggle="modal" data-target="#remove-confirm"><i class="fas fa-trash"></i></button>
+                        <button onClick="deleteFile('<?php echo $calendar['title'] ?>')" type="button" data-toggle="modal" data-target="#remove-confirm"><i class="fas fa-trash"></i></button>
                     </div>
                     <a href="<?php echo getSaveDirr('forPreview').$calendar['pdf']?>" target="_blank">
                         <img class="img_fill" src="<?php echo getSaveDirr('forPreview').$calendar['img_preview']?>" alt="preview">
