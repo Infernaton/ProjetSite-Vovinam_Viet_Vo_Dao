@@ -230,15 +230,15 @@ function printFormation($index){
                 for ($i=0;$i<count($eventComp);$i++){
                     $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
                     if ($dateDebut[0] > $date[0]){ //Comparaison de l'année
-                        printTournament($i);
+                        printFormation($index);
                     }
                     else if($dateDebut[0] == $date[0]){ 
                         if($dateDebut[1] > $date[1]){//Comparaison du mois
-                            printTournament($i);
+                            printFormation($index);
                         }
                         elseif($dateDebut[1] == $date[1]){
                             if($dateDebut[2] >= $date[2]) { //Comparaison du jour
-                                printTournament($i);
+                                printFormation($index);
                             }
                         }
                     }
@@ -261,15 +261,15 @@ function printFormation($index){
                     for ($i=0;$i<count($eventComp);$i++){
                         $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
                         if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
-                            printTournament($i);
+                            printFormation($index);
                         }
                         else if($dateDebut[0] == $date[0]){ 
                             if($dateDebut[1] < $date[1]){//Comparaison du mois
-                                printTournament($i);
+                                printFormation($index);
                             }
                             elseif($dateDebut[1] == $date[1]){
                                 if($dateDebut[2] < $date[2]) { //Comparaison du jour
-                                    printTournament($i);
+                                    printFormation($index);
                                 }
                             }
                         }
@@ -278,7 +278,7 @@ function printFormation($index){
                 </div>
             </div>
         </div>
-           
+    </div>       
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

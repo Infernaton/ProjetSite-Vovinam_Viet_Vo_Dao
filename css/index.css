@@ -13,7 +13,7 @@
 }
 @media (min-width:576px) {
     /*sm*/
-    .container{max-width: 740px;}
+    .container{max-widt0: 740px;}
     .only-sm-hide{display: none!important;}
 }
 @media (min-width:768px) {

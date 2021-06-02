@@ -34,15 +34,15 @@ function partials_footer(){
                 </div>
                 <div class="lg-hide col-xl-2 d-flex justify-content-center">
                     <div class="p-2 center">
-                        <h4>Mentions Légales</h4>
-                        <a href="?c=federation&p=4"><p>Autres Mentions Légales</p></a>
+                    <a href="?c=federation&p=4"><h4>Mentions Légales</h4></a>
+                        
                     </div>
                 </div>
                 <div class="col-8 col-sm-8 only-md-hide col-lg-4 col-xl-5 d-flex justify-content-center">
                     <div class="p-2">
                         <h5>Fédération VOVINAM-Viet Vo Dao France</h5>
                         <p><i class="fas fa-map-marker-alt"></i> 6 allée des Agrions 91160, Ballainvilliers – France</p>
-                        <p><i class="fas fa-user-alt"></i> Directeur de la publication : Amar GUERRIB</p>
+                        
                         <p><i class="fas fa-envelope"></i> vovinamfr@vietvodao.com</p>
                         <p><i class="fas fa-phone"></i> 01.64.49.60.10</p>
                     </div>
