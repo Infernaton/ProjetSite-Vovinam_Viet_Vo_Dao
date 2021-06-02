@@ -22,7 +22,6 @@ $pages = [
     'actualite' => ['actualite'],
     'contacts' => ['/contacts','/faq','/personnaliteFede'],
     'login' => ['/login','/register'],
-    /*'admin' => ['/admin','/addMaster','/addClub','/event'],*/
 ];
 $del = ['logOut'];
 ?>

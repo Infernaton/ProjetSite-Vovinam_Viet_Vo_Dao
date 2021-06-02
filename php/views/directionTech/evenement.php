@@ -1,122 +1,113 @@
 <?php
 require_once 'php/init.php';
 
-$eventBefFetch = $db->query('SELECT * FROM event WHERE type LIKE "Compétition" Order by id');
-$eventComp = $eventBefFetch->fetchAll(PDO::FETCH_ASSOC);
+$req = $db->query('SELECT * FROM event Order by `dateDebut` DESC');
+$eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
 
-$eventBefFetch2 = $db->query('SELECT * FROM event WHERE type LIKE "Stage" Order by id');
-$eventComp2 = $eventBefFetch2->fetchAll(PDO::FETCH_ASSOC);
-
-
-$eventBefFetch3 = $db->query('SELECT * FROM event WHERE type LIKE "Formation" Order by id');
-$eventComp3 = $eventBefFetch3->fetchAll(PDO::FETCH_ASSOC);
+$yearList = array();
+foreach($eventAll as $event){
+    //Event sort by year
+    $year = explode("/", $event['dateDebut'])[0];
+    //If a year is already in the table, we put the event in it
+    if (array_key_exists($year, $yearList)){
+        array_push($yearList[$year], $event);
+    }
+    //If not, we create that year
+    else {
+        $yearList[$year] = [$event];
+    }
+}
 
 date_default_timezone_set('Europe/Paris');
 $date = explode("/",date('Y/m/d', time()));
 
 function dateFR($date){
     //date format yyyy/mm/dd => dd/mm/yyyy
+    $months = cal_info(0)['abbrevmonths'];
     $date = explode("/", $date);
-    return $date[2]."/".$date[1]."/".$date[0];
+    return "<span class='day'>".$date[2]."</span> <span class='month'>".$months[(int)$date[1]]."</span> <br>".$date[0];
 }
+function printEvent($currentEvent){
+    //global $eventAll;
+    //$currentEvent = $eventAll[$index];
+    $currentEvent['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$currentEvent['prerequis'];
 
-function printTournament($index){
-    global $eventComp;
-    
-    $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
-
-    echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
-    '<h4>'.$eventComp[$index]['title'].'</h4>',
-    '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
-    '<p class="descr">'.$eventComp[$index]['description'].'</p>',
+    echo '<div class="compet_new" id="t-'.$currentEvent['id'].'">',
+    '<div class="row">',
+    '<div class="col-1"><p class="date text-center">'.dateFR($currentEvent['dateDebut']).'</p></div>',
+    '<div class="col-11"><h4>'.$currentEvent['title'].'</h4>',
+    '<p class="descr">'.$currentEvent['description'].'</p>',
     '<p class="prerequis">'.$prerequis.'</p>',
-    '</div>';
+    '</div></div></div>';
 }
-
-function printStage($index){
-    global $eventComp;
-
-    $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
-
-    echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
-    '<h4>'.$eventComp[$index]['title'].'</h4>',
-    '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
-    '<p class="descr">'.$eventComp[$index]['description'].'</p>',
-    '<p class="prerequis">'.$prerequis.'</p>',
-    '</div>';
-}
-
-function printFormation($index){
-    global $eventComp;
-    
-    $eventComp[$index]['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$eventComp[$index]['prerequis'];
-
-    echo '<div class="compet_new" id="t-'.$eventComp[$index]['id'].'">',
-    '<h4>'.$eventComp[$index]['title'].'</h4>',
-    '<p class="date">'.dateFR($eventComp[$index]['dateDebut']).' - '.dateFR($eventComp[$index]['dateFin']).'</p>',
-    '<p class="descr">'.$eventComp[$index]['description'].'</p>',
-    '<p class="prerequis">'.$prerequis.'</p>',
-    '</div>';
-}
-
 ?>
 
 <link rel="stylesheet" href="css/directionTech.css">
-
+<div class="container">
+    <div class="text-center">
+        <h1 class="content-title-blue">Tous les évènements</h1>
+    </div>
+    <div class="row">
+        <div id="filter" class="col-12 col-md-3">
+            <button class="btn btn-primary" type="button">filtre</button>
+        </div>
+        <div id="content" class="col-12 col-md-9">
+            <div id="date" class="selectMonth text-center">
+                <div class="month">
+                    Mois Choisi
+                </div>
+            </div>
+            <?php
+            foreach ($yearList as $year){
+                for ($i=0; $i < count($year); $i++) { 
+                    printEvent($year[$i]);
+                }
+            }
+            ?>
+        </div>
+    </div>
+</div>
+<!--
 <div class="container mt-5">
     <br>
-    <div class="text-center"><h1 class="content-title-blue">Tous les évènements</h1></div>
-
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#compet" aria-expanded="false" aria-controls="collapseExample">
-    Compétition
-    </button>
-    
-
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#stages" aria-expanded="false" aria-controls="collapseExample">
-        Stages
-    </button>
-
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#forma" aria-expanded="false" aria-controls="collapseExample">
-        Formations
-    </button>
-    
-   
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#compet" aria-expanded="false" aria-controls="collapseExample">Compétition</button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#stages" aria-expanded="false" aria-controls="collapseExample">Stages</button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#forma" aria-expanded="false" aria-controls="collapseExample">Formations</button>
 
     <div class="collapse" id="compet">
-        
         <br>
-        <div class="text-center"><h1 class="content-title-blue">Compétitions</h1></div>
+        <div class="text-center">
+            <h1 class="content-title-blue">Compétitions</h1>
+        </div>
         
-    
         <div class="inline">
             <a class="btn btn-outline-secondary" onclick="multiCollapseButton('season', 'first')">A venir</a>
             <a class="btn btn-outline-secondary" onclick="multiCollapseButton('season', 'second')">Précédente compétitions</a>
-              
         </div>
             
-                <div id="season"></div>
-            </div>
+        <div id="season"></div>
+            
             <div class="hide">
                 <div id="first">
-                <h3> Compétitions à venir</h3>
-                <?php 
-                for ($i=0;$i<count($eventComp);$i++){
-                    $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
-                    if ($dateDebut[0] > $date[0]){ //Comparaison de l'année
-                        printTournament($i);
-                    }
-                    else if($dateDebut[0] == $date[0]){ 
-                        if($dateDebut[1] > $date[1]){//Comparaison du mois
+                    <h3> Compétitions à venir</h3>
+                    <?php 
+                    for ($i=0;$i<count($eventComp);$i++){
+                        $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
+                        if ($dateDebut[0] > $date[0]){ //Comparaison de l'année
                             printTournament($i);
                         }
-                        elseif($dateDebut[1] == $date[1]){
-                            if($dateDebut[2] >= $date[2]) { //Comparaison du jour
+                        else if($dateDebut[0] == $date[0]){ 
+                            if($dateDebut[1] > $date[1]){//Comparaison du mois
                                 printTournament($i);
+                            }
+                            elseif($dateDebut[1] == $date[1]){
+                                if($dateDebut[2] >= $date[2]) { //Comparaison du jour
+                                    printTournament($i);
+                                }
                             }
                         }
                     }
-                }
-                ?>
+                    ?>
                 </div>
                 <div id="second">
                     <div class="dropdown">
@@ -130,60 +121,46 @@ function printFormation($index){
                     </div>
                     <h3>Précédentes compétitions</h3>
                     <div id="compete">
-                    <?php 
-                    for ($i=0;$i<count($eventComp);$i++){
-                        $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
-                        if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
-                            printTournament($i);
-                        }
-                        else if($dateDebut[0] == $date[0]){ 
-                            if($dateDebut[1] < $date[1]){//Comparaison du mois
+                        <?php 
+                        for ($i=0;$i<count($eventComp);$i++){
+                            $dateDebut= explode("/",$eventComp[$i]['dateDebut']);
+                            if ($dateDebut[0] < $date[0]){ //Comparaison de l'année
                                 printTournament($i);
                             }
-                            elseif($dateDebut[1] == $date[1]){
-                                if($dateDebut[2] < $date[2]) { //Comparaison du jour
+                            else if($dateDebut[0] == $date[0]){ 
+                                if($dateDebut[1] < $date[1]){//Comparaison du mois
                                     printTournament($i);
+                                }
+                                elseif($dateDebut[1] == $date[1]){
+                                    if($dateDebut[2] < $date[2]) { //Comparaison du jour
+                                        printTournament($i);
+                                    }
                                 }
                             }
                         }
-                    }
-                    ?>
+                        ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-    
+    </div>
 
-    
     <div class="collapse" id="stages">
-    
-    <div class="text-center"><h1 class="content-title-blue">Stage</h1></div>
-    
-    
-    <div class="inline">
-        <div class="dropdown"> </div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Filtre
-            </button>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <div id="subfilterNamesContainer">
-                <label>
-                    <input type="checkbox" value="A" class="default"> Technique</input>
-                </label>
-                <label>
-                    <input type="checkbox" value="B" class="default"> Arbitrage</input>
-                </label>
-                <br>
-                <label>
-                    <input type="checkbox" value="C" class="default"> Dirigeant</input>
-                </label>
-                <label>
-                    <input type="checkbox" value="D" class="default"> Encadrant</input>
-                </label>
+        <div class="text-center">
+            <h1 class="content-title-blue">Stage</h1>
+        </div>
+        <div class="inline">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filtre</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div id="subfilterNamesContainer">
+                            <input type="checkbox" value="A" class="default"> Technique</input>
+                            <input type="checkbox" value="B" class="default"> Arbitrage</input>
+                            <input type="checkbox" value="C" class="default"> Dirigeant</input>
+                            <input type="checkbox" value="D" class="default"> Encadrant</input>
+                        </div>
+                    </div>
             </div>
         </div>
-    </div>
     
            <?php 
             for ($i=0;$i<count($eventComp);$i++){
@@ -203,8 +180,6 @@ function printFormation($index){
                     }
                 }
             }
-            
-            
             ?>
            
         </div>  
@@ -279,7 +254,7 @@ function printFormation($index){
             </div>
         </div>
     </div>       
-</div>
+</div>-->
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="scripts/internship.js"></script>
