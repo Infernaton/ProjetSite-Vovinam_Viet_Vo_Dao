@@ -3,7 +3,8 @@
 <div class="container">
     <!-- Image du groupe fondateur -->
     <div class="text-center pb-3">
-        <h1 class="content-title-blue">La Fédération</h2>
+        <h1 class="content-title-blue">La Fédération</h1>
+        <p class="pt-2"><a href="#calendrier"><i>Voir les Calendriers</i></a></p>
     </div>
         <img class="mx-auto d-block" src="assets/img/federation/groupe_fondateur.jpg">
         <p>
@@ -41,11 +42,11 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
-        <div class="text-right">
-            <p><i>Format PDF: <a href="assets/download_file/Plaquette FVVNVVDFrance.pdf">Plaquette FVVNVVDFrance.pdf</a></i></p>
+        <div class="text-right" id="calendrier">
+            <p><i>Format PDF: <a href="assets/download_file/Plaquette FVVNVVDFrance.pdf" target="_blank">Plaquette FVVNVVDFrance.pdf</a></i></p>
         </div>
 
-        <h4>Calendriers Fédéraux</h4>
+        <h4 class="text-center">Calendriers Fédéraux</h4> <br>
         <div id="calendriers_fédéraux" class="row">
             <?php 
             $json_file = "assets/json/calendar.json";
