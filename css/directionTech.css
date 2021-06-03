@@ -12,23 +12,29 @@ li{
 .btn-secondary{
   float: right;
 }
-.compet_new{
+.event_new{
   border: none;
   border-bottom: 2px solid #1c55a3;
   margin-top: 2%;
 }
-.compet_new .date{
+.event_new .date{
   background-color: #31333e;
   color: white;
   border-radius: 5px;
 }
-.compet_new .date .day{
+.event_new .date .day{
   font-size: 35px;
 }
-.compet_new .date .month{
+.event_new .date .month{
   font-size: 18px;
 }
-
+.event_new .data .justify-content-between p{
+  font-style: italic;
+  font-size: 14px;
+}
+#filter {
+  border-right: 1px solid;
+}
 .selectYear{
   padding: 10px 0px;
 }
