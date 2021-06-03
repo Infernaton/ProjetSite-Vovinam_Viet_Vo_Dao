@@ -29,6 +29,15 @@ li{
   font-size: 18px;
 }
 
-.selectMonth{
+.selectYear{
   padding: 10px 0px;
+}
+.selectYear .btn-toolbar{
+  justify-content: space-around;
+}
+.selectYear .btn {
+  font-size: 30px;
+}
+.btn-group #prev, .btn-group #next{
+  font-size: 18px;
 }

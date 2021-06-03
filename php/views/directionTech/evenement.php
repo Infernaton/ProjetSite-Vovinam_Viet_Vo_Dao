@@ -1,22 +1,11 @@
 <?php
 require_once 'php/init.php';
-
-$req = $db->query('SELECT * FROM event Order by `dateDebut` DESC');
-$eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
-
-$yearList = array();
-foreach($eventAll as $event){
-    //Event sort by year
-    $year = explode("/", $event['dateDebut'])[0];
-    //If a year is already in the table, we put the event in it
-    if (array_key_exists($year, $yearList)){
-        array_push($yearList[$year], $event);
-    }
-    //If not, we create that year
-    else {
-        $yearList[$year] = [$event];
-    }
+$selectedYear = 2020;
+if($_POST){
+    $selectedYear = $_POST['newYear'];
 }
+$req = $db->query('SELECT * FROM event WHERE dateDebut like "'.$selectedYear.'%" Order by `dateDebut` DESC');
+$eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
 
 date_default_timezone_set('Europe/Paris');
 $date = explode("/",date('Y/m/d', time()));
@@ -28,8 +17,6 @@ function dateFR($date){
     return "<span class='day'>".$date[2]."</span> <span class='month'>".$months[(int)$date[1]]."</span> <br>".$date[0];
 }
 function printEvent($currentEvent){
-    //global $eventAll;
-    //$currentEvent = $eventAll[$index];
     $currentEvent['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$currentEvent['prerequis'];
 
     echo '<div class="compet_new" id="t-'.$currentEvent['id'].'">',
@@ -52,17 +39,21 @@ function printEvent($currentEvent){
             <button class="btn btn-primary" type="button">filtre</button>
         </div>
         <div id="content" class="col-12 col-md-9">
-            <div id="date" class="selectMonth text-center">
-                <div class="month">
-                    Mois Choisi
-                </div>
+            <div id="date" class="selectYear">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <button id="prev" name="newYear" type="submit" value="<?php echo $selectedYear-1?>" class="btn btn-secondary">← <?php echo $selectedYear-1?></button></a>
+                            <button id="current" type="submit" class="btn btn-light"><?php echo $selectedYear?></button>
+                            <button id="next" name="newYear" type="submit" value="<?php echo $selectedYear+1?>" class="btn btn-secondary"><?php echo $selectedYear+1?>→</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <?php
-            foreach ($yearList as $year){
-                for ($i=0; $i < count($year); $i++) { 
-                    printEvent($year[$i]);
+                for ($i=0; $i < count($eventAll); $i++) {
+                    printEvent($eventAll[$i]);
                 }
-            }
             ?>
         </div>
     </div>
