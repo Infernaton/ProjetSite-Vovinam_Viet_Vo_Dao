@@ -12,6 +12,7 @@ if($_POST){
         }
     }else {
         $selectedYear = $_POST['newYear'];
+        //l.97 la décision de l'année
     }
 }
 
@@ -20,6 +21,8 @@ $request = 'SELECT * FROM event '.$someFilter.' Order by `dateDebut` DESC';
 
 $req = $db->query($request);
 $eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
+
+//var_dump($eventAll);
 
 function dateFR($date,$seeYear = False){
     //date format yyyy/mm/dd => dd/mm/yyyy
@@ -64,9 +67,21 @@ function printEvent($currentEvent){
     </div>
 <?php
 }
+function no_event(){
+?>
+    <div class="text-center">
+        <p><i>Aucun évènement de trouvé avec ces critères de recherche</i></p>
+    </div>
+<?php
+}
 ?>
 
 <link rel="stylesheet" href="css/directionTech.css">
+<style>
+    html{
+        overflow-y:scroll;
+    }
+</style>
 <div class="container">
     <div class="text-center">
         <h1 class="content-title-blue">Tous les évènements</h1>
@@ -76,16 +91,35 @@ function printEvent($currentEvent){
             <h3>Filtre</h3>
             <hr>
             <form action="" method="post" enctype="multipart/form-data">
-                <h5>Méthode d'affichage</h5>
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="sortAll" name="sortYear" value="all">
-                    <label for="sortAll" class="custom-control-label">Tout les évènements</label>
-                    
+                <div>
+                    <h5>Méthode d'affichage</h5>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="sortAll" name="sortYear" value="all">
+                        <label for="sortAll" class="custom-control-label">Tout les évènements</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="year" checked="checked">
+                        <label for="sortByYear" class="custom-control-label">Trie par Année</label>
+                    </div>
                 </div>
-                <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="year" checked="checked">
-                    <label for="sortByYear" class="custom-control-label">Trie par Année</label>
+                <hr>
+                <div>
+                    <h5>Rechercher les Evénements</h5>
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="championship" name="type[]">
+                        <label class="custom-control-label" for="championship">Compétition</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="training" name="type[]">
+                        <label class="custom-control-label" for="training">Formation</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="internship" name="type[]">
+                        <label class="custom-control-label" for="internship">Stage</label>
+                    </div>
                 </div>
+                <hr>
+                
                 <button type="submit" class="btn btn-secondary">Rechercher</button>
             </form>
         </div>
@@ -102,9 +136,13 @@ function printEvent($currentEvent){
                 </form>
             </div>
             <?php
+            if (count($eventAll)>0){
                 for ($i=0; $i < count($eventAll); $i++) {
                     printEvent($eventAll[$i]);
                 }
+            }else {
+                no_event();
+            }
             ?>
         </div>
     </div>
