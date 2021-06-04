@@ -1,11 +1,13 @@
 <?php
 require_once 'php/init.php';
 date_default_timezone_set('Europe/Paris');
-$date = explode("/",date('Y/m/d', time()));
+$today = ["2020","04","12"];
+$today = explode("/",date('Y/m/d', time()));
 
-$selectedYear = $date[0];
+$selectedYear = $today[0]; //On prend l'année
 $someFilter = [];
 //var_dump($_POST);
+//On ajoute des requêtes SQL dans le cas où un tri est demandé
 if($_POST){
     if (isset($_POST['sortYear'])){
         //Entre "sortAll pour faire apparaitre tous les events ou "sortByYear" pour un classement par année
@@ -52,15 +54,13 @@ if (count($someFilter)>0){
 }else {
     $allFilter = '';
 }
-
 $request = 'SELECT * FROM event '.$allFilter.' Order by `dateDebut` DESC';
-//var_dump($request);
 $req = $db->query($request);
 $eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
 
 //var_dump($eventAll);
 
-function dateFR($date,$seeYear = True){
+function dateFR($date,$seeYear = False){
     //date format yyyy/mm/dd => dd/mm/yyyy
     $months = cal_info(0)['abbrevmonths'];
     $date = explode("/", $date);
@@ -70,18 +70,37 @@ function dateFR($date,$seeYear = True){
         return "<span class='day'>".$date[2]."</span> <span class='month'>".$months[(int)$date[1]]."</span> <br>";
     }
 }
+function dateComparison($date1,$date2){
+    $isDate1_inf_Date2 = false;
+    if ($date1[0] < $date2[0]){ //Comparaison de l'année
+        $isDate1_inf_Date2 = true;
+    }
+    else if($date1[0] == $date2[0]){ 
+        if($date1[1] < $date2[1]){//Comparaison du mois
+            $isDate1_inf_Date2 = true;
+        }
+        elseif($date1[1] == $date2[1]){
+            if($date1[2] < $date2[2]) { //Comparaison du jour
+                $isDate1_inf_Date2 = true;
+            }
+        }
+    }
+    return $isDate1_inf_Date2;
+}
+
 function printEvent($currentEvent){
-    global $_POST;
+    global $_POST, $today;
     $currentEvent['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$currentEvent['prerequis'];
 
     /*background-image: url(<?php echo $currentEvent['image']?>)*/
     ?>
-    <div class="p-2" style="">
     <div class="event_new" id="t-<?php echo $currentEvent['id'] ?>" >
         <div class="row">
-            <div class="col-1">
-                <p class="date text-center">
-                    <?php 
+            <div class="col col-xl-1" style="padding-right: 0;">
+                <?php 
+                dateComparison(explode("/",$currentEvent['dateDebut']),$today) ? $datePast='past-date' : $datePast='';
+                
+                echo '<p class="date '.$datePast.' text-center">';
                         if(isset($_POST['sortYear'])){
                             if ($_POST['sortYear']=="sortAll"){
                                 echo dateFR($currentEvent['dateDebut'], true);
@@ -94,7 +113,10 @@ function printEvent($currentEvent){
                     ?>
                 </p>
             </div>
-            <div class="data col-11">
+            <div class="col col-sm-3 col-md-4 col-xl-2">
+                <img class="img_fill" src="<?php echo $currentEvent['image'] ?>" alt="evt-Img">
+            </div>
+            <div class="col-12 col-sm-7 col-md-6 col-xl-9 data">
                 <div class="d-flex justify-content-between">
                     <h4><?php echo $currentEvent['title']?></h4>
                     <p><?php echo $currentEvent['type'] ?></p>
@@ -103,7 +125,6 @@ function printEvent($currentEvent){
                 <p class="prerequis"><?php echo $prerequis?></p>
             </div>
         </div>
-    </div>
     </div>
     
     <?php
