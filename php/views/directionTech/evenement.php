@@ -139,7 +139,7 @@ function no_event(){
                         <label for="sortAll" class="custom-control-label">Tout les évènements</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="sortByYear">
+                        <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="sortByYear" checked = true>
                         <label for="sortByYear" class="custom-control-label">Trie par Année</label>
                     </div>
                 </div>
