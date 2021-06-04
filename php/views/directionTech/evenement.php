@@ -1,7 +1,15 @@
 <?php
+/*
+Popup quand on clique, image
+saut de ligne pour description
+couleur pour type d'event
++couleur par event
+tri par trimestre
+passage de grade pour nouvel event
+*/
 require_once 'php/init.php';
 date_default_timezone_set('Europe/Paris');
-$today = ["2020","04","12"];
+$today = ["2021","02","12"];
 $today = explode("/",date('Y/m/d', time()));
 
 $selectedYear = $today[0]; //On prend l'année
@@ -52,9 +60,10 @@ if (count($someFilter)>0){
     }
     $allFilter .= ')';
 }else {
-    $allFilter = '';
+    $allFilter = 'WHERE dateDebut like "'.$selectedYear.'%"';
 }
 $request = 'SELECT * FROM event '.$allFilter.' Order by `dateDebut` DESC';
+//var_dump($request);
 $req = $db->query($request);
 $eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
 
@@ -145,13 +154,13 @@ function no_event(){
     }
 </style>
 <div class="container">
-    <div class="text-center">
+    <div class="text-center" style="padding: 0 0 5%;">
         <h1 class="content-title-blue">Tous les évènements</h1>
     </div>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
             <div id="filter" class="col-12 col-md-3">
-                <h3>Filtre</h3>
+                <h3>Filtres</h3>
                 <hr>
                 <div id="sortYear">
                     <h5>Méthode d'affichage</h5>
@@ -160,7 +169,7 @@ function no_event(){
                         <label for="sortAll" class="custom-control-label">Tout les évènements</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="sortByYear" checked = true>
+                        <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="sortByYear" checked=true>
                         <label for="sortByYear" class="custom-control-label">Trie par Année</label>
                     </div>
                 </div>
