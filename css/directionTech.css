@@ -15,12 +15,15 @@ li{
 .event_new{
   border: none;
   border-bottom: 2px solid #1c55a3;
-  margin-top: 2%;
+  padding: 2% 0;
 }
 .event_new .date{
-  background-color: #31333e;
+  background-color: #2d303d;
   color: white;
   border-radius: 5px;
+}
+.event_new .past-date{
+  background-color: #929395;
 }
 .event_new .date .day{
   font-size: 35px;
