@@ -97,7 +97,7 @@ body{
 }
 .footer a{
     margin: 0 7px;
-    display: flex;
+    
     transition: all 0.5s ease;
 }
 .footer a:hover{
