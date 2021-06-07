@@ -1,35 +1,76 @@
 <?php
 /*
---- Popup quand on clique, image
---- saut de ligne pour description
+--- Popup quand on clique, image +grand
+--- saut de ligne pour description --> synthax faq
 --- couleur pour type d'event
 --+ couleur par event
 tri par trimestre
 --- passage de grade pour nouvel event => Détéction automatique de nouveau type d'event
+Tri par région.
 */
 require_once 'php/init.php';
+
 date_default_timezone_set('Europe/Paris');
+
 $today = ["2021","02","12"];
 $today = explode("/",date('Y/m/d', time()));
+
+$monthsABBREV = cal_info(0)['abbrevmonths'];
 
 $req = $db->query('SELECT DISTINCT type FROM event');
 $eventType = $req->fetchAll(PDO::FETCH_ASSOC);  //To know all the type of event, if a new appear, we don't have to add it manually
 
 $selectedYear = $today[0]; //On prend l'année
+$quarter = intdiv($today[1]-1, 3); //On indique à quel trimestre on se situe
 $someFilter = [];
+$toPrint = $selectedYear;
+$toPostMinus = $selectedYear-1;
+$toPostPlus = $selectedYear+1;
+
 //var_dump($_POST);
+
 //On ajoute des requêtes SQL dans le cas où un tri est demandé
 if($_POST){
     if (isset($_POST['sortYear'])){
         //Entre "sortAll pour faire apparaitre tous les events ou "sortByYear" pour un classement par année
-        if ($_POST['sortYear']=="sortAll"){
-            $selectedYear = null;
-        }else {
-            if (isset($_POST['newYear'])){
-                $selectedYear = $_POST['newYear'];  //l.97 la décision de l'année
-            }
+        switch ($_POST['sortYear']) {
+            case "sortAll":
+                $requ = null;
+                $toPrint = "";
+                break;
+            case "sortByQuarters":
+                if (isset($_POST['newYear'])){ 
+                    $newYear = explode(".", $_POST['newYear']);
+                    if ((int)$newYear[1]==-1){
+                        $quarter = 3;
+                        $selectedYear = $newYear[0]-1;
+                    }elseif ((int)$newYear[1]==4){
+                        $quarter = 0;
+                        $selectedYear = $newYear[0]+1;
+                    }else{
+                        $quarter = $newYear[1];
+                        $selectedYear = $newYear[0];
+                    }
+                }
+                //Préparer les 3 mois du trimestre séléctionné
+                $quarter3 = $quarter*3;
+                $quarter3 < 9 ? $quarters = ["0{$quarter3}","0{$quarter3}","0{$quarter3}"] : $quarters = ["{$quarter3}","{$quarter3}","{$quarter3}"];
+                $quarters = [substr_replace($quarters[0],$quarter3+1,-1,1),substr_replace($quarters[1],$quarter3+2,-1,1),substr_replace($quarters[2],$quarter3+3,-1,1)];
+
+                //Au lien d'ajouter plusieurs requête via boucle for, autant ajouter 1 seul requête plus longue, mais plus rapide à exécuter
+                $requ = $selectedYear.'/'.$quarters[0].'%" OR dateDebut like "'.$selectedYear.'/'.$quarters[1].'%" OR dateDebut like "'.$selectedYear.'/'.$quarters[2];
+                $toPrint = "{$selectedYear} <br> ".$monthsABBREV[(int)$quarters[0]]." - ".$monthsABBREV[(int)$quarters[2]]."";
+                $toPostMinus = $selectedYear.".".($quarter-1);
+                $toPostPlus = $selectedYear.".".($quarter+1);
+                break;
+            default:
+                if (isset($_POST['newYear'])){ $requ = explode(".",$_POST['newYear'])[0]; }
+                else {$requ = $selectedYear;}
+                $toPrint = $requ;
+                $toPostMinus = $requ-1;
+                $toPostPlus = $requ+1;
         }
-        array_push($someFilter, 'dateDebut like "'.$selectedYear.'%"');
+        array_push($someFilter, 'dateDebut like "'.$requ.'%"');
     }
     if (isset($_POST['type'])){
         foreach ($_POST['type'] as $key => $value) {
@@ -43,6 +84,9 @@ if($_POST){
             }
         }
     }
+}else {
+    $_POST['newYear'] = $selectedYear;
+    
 }
 //var_dump($someFilter);
 //On modifie la requete SQL en fonction des résultat du tri
@@ -72,12 +116,12 @@ $eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
 
 function dateFR($date,$seeYear = False){
     //date format yyyy/mm/dd => dd/mm/yyyy
-    $months = cal_info(0)['abbrevmonths'];
+    global $monthsABBREV;
     $date = explode("/", $date);
     if ($seeYear){
-        return "<span class='day'>".$date[2]."</span> <span class='month'>".$months[(int)$date[1]]."</span> <br>".$date[0];
+        return "<span class='day'>".$date[2]."</span> <span class='month'>".$monthsABBREV[(int)$date[1]]."</span> <br>".$date[0];
     }else{
-        return "<span class='day'>".$date[2]."</span> <span class='month'>".$months[(int)$date[1]]."</span> <br>";
+        return "<span class='day'>".$date[2]."</span> <span class='month'>".$monthsABBREV[(int)$date[1]]."</span> <br>";
     }
 }
 function dateComparison($date1,$date2){
@@ -197,34 +241,26 @@ function no_event(){
                         <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="sortByYear" checked=true>
                         <label for="sortByYear" class="custom-control-label">Trie par Année</label>
                     </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="sortByQuarters" name="sortYear" value="sortByQuarters">
+                        <label for="sortByQuarters" class="custom-control-label">Trie par Trimestre</label>
+                    </div>
                 </div>
                 <hr>
                 <div id="type">
                     <h5>Rechercher les Evénements</h5>
                     <?php 
-                        foreach($eventType as $key => $type){
-                            $type = $type['type'];
-                            $idType = substr(strtolower($type), 0, 4);
+                    foreach($eventType as $key => $type){
+                        $type = $type['type'];
+                        $idType = substr(strtolower($type), 0, 4);
                         ?>
                         <div class="custom-control custom-checkbox mb-3">
                             <input type="checkbox" class="custom-control-input" id="<?php echo $idType ?>" name="type[<?php echo $idType ?>]">
                             <label class="custom-control-label" for="<?php echo $idType ?>"><?php echo $type ?></label>
                         </div>
                         <?php
-                        }
-                    ?><!--
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="champ" name="type[champ]">
-                        <label class="custom-control-label" for="champ">Compétition</label>
-                    </div>
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="train" name="type[train]">
-                        <label class="custom-control-label" for="train">Formation</label>
-                    </div>
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="inter" name="type[inter]">
-                        <label class="custom-control-label" for="inter">Stage</label>
-                    </div>-->
+                    }
+                    ?>
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-secondary">Rechercher</button>
@@ -233,9 +269,9 @@ function no_event(){
                 <div id="date" class="selectYear">
                     <div class="btn-toolbar">
                         <div class="btn-group">
-                            <button id="prev" name="newYear" type="submit" value="<?php echo $selectedYear-1?>" class="btn btn-secondary">← <?php echo $selectedYear-1?></button></a>
-                            <button id="current" type="button" class="btn btn-light"><?php echo $selectedYear?></button>
-                            <button id="next" name="newYear" type="submit" value="<?php echo $selectedYear+1?>" class="btn btn-secondary"><?php echo $selectedYear+1?> →</button>
+                            <button id="prev" name="newYear" type="submit" value="<?php echo $toPostMinus //$selectedYear.".".($quarter-1)?>" class="btn btn-secondary">←</button></a>
+                            <button id="current" type="button" class="btn btn-light"><?php echo $toPrint?></button>
+                            <button id="next" name="newYear" type="submit" value="<?php echo $toPostPlus //$selectedYear.".".($quarter+1)?>" class="btn btn-secondary">→</button>
                         </div>
                     </div>
                 </div>
@@ -261,13 +297,18 @@ function no_event(){
         switch (option) {
             case "sortYear":
                 document.getElementById(research[option]).checked = true;
-                if (research[option] == "sortAll"){
-                    document.getElementById("date").classList.add('hide');
+                $('#date').removeClass('hide');
+                switch (research[option]){
+                    case "sortAll":
+                        $('#date').addClass('hide');
+                        break;
+                    case "sortByYear":
+                        
+                        break;
+                    case "sortByQuarters":
+                        
+                        break;
                 }
-                else{
-                    document.getElementById("date").classList.remove('hide');
-                }
-                break;
             case "type":
                 for(const type in research[option]) {
                     switch (type) {
