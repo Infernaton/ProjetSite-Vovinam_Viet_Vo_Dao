@@ -15,7 +15,11 @@ li{
 .event_new{
   border: none;
   border-bottom: 2px solid #1c55a3;
-  padding: 2% 0;
+  padding-top: 1px;
+  border-radius: 5px;
+}
+.event_new .row {
+  margin:2%;
 }
 .event_new .date{
   background-color: #2d303d;
@@ -31,10 +35,15 @@ li{
 .event_new .date .month{
   font-size: 18px;
 }
+.event_new .data {
+  background-color: #f2f2f2;
+  border-radius: 15px;
+}
 .event_new .data .justify-content-between p{
   font-style: italic;
   font-size: 14px;
 }
+
 #filter {
   border-right: 1px solid;
 }

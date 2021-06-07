@@ -1,16 +1,19 @@
 <?php
 /*
-Popup quand on clique, image
-saut de ligne pour description
-couleur pour type d'event
-+couleur par event
+--- Popup quand on clique, image
+--- saut de ligne pour description
+--- couleur pour type d'event
+--+ couleur par event
 tri par trimestre
-passage de grade pour nouvel event
+--- passage de grade pour nouvel event => Détéction automatique de nouveau type d'event
 */
 require_once 'php/init.php';
 date_default_timezone_set('Europe/Paris');
 $today = ["2021","02","12"];
 $today = explode("/",date('Y/m/d', time()));
+
+$req = $db->query('SELECT DISTINCT type FROM event');
+$eventType = $req->fetchAll(PDO::FETCH_ASSOC);  //To know all the type of event, if a new appear, we don't have to add it manually
 
 $selectedYear = $today[0]; //On prend l'année
 $someFilter = [];
@@ -30,16 +33,13 @@ if($_POST){
     }
     if (isset($_POST['type'])){
         foreach ($_POST['type'] as $key => $value) {
-            switch ($key) {
-                case 'train':
-                    array_push($someFilter, 'type like "Formation"');
+            foreach($eventType as $type){
+                $type = $type['type'];
+                $idType = substr(strtolower($type), 0, 4);
+                if($idType == $key){
+                    array_push($someFilter, 'type like "'.$type.'"');
                     break;
-                case 'champ':
-                    array_push($someFilter, 'type like "Compétition"');
-                    break;
-                case 'inter':
-                    array_push($someFilter, 'type like "Stage"');
-                    break;
+                }
             }
         }
     }
@@ -67,6 +67,7 @@ $request = 'SELECT * FROM event '.$allFilter.' Order by `dateDebut` DESC';
 $req = $db->query($request);
 $eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
 
+//var_dump($eventType);
 //var_dump($eventAll);
 
 function dateFR($date,$seeYear = False){
@@ -99,13 +100,13 @@ function dateComparison($date1,$date2){
 
 function printEvent($currentEvent){
     global $_POST, $today;
-    $currentEvent['prerequis']==''?$prerequis='' : $prerequis= 'Prerequis: '.$currentEvent['prerequis'];
+    $currentEvent['prerequis']==''? $prerequis='' : $prerequis= 'Prerequis: '.$currentEvent['prerequis'];
 
     /*background-image: url(<?php echo $currentEvent['image']?>)*/
     ?>
-    <div class="event_new" id="t-<?php echo $currentEvent['id'] ?>" >
+    <div class="event_new <?php echo substr(strtolower($currentEvent['type']), 0, 4);?>" id="t-<?php echo $currentEvent['id'] ?>" >
         <div class="row">
-            <div class="col col-xl-1" style="padding-right: 0;">
+            <div class="col col-xl-1 padding-right-0">
                 <?php 
                 dateComparison(explode("/",$currentEvent['dateDebut']),$today) ? $datePast='past-date' : $datePast='';
                 
@@ -123,19 +124,27 @@ function printEvent($currentEvent){
                 </p>
             </div>
             <div class="col col-sm-3 col-md-4 col-xl-2">
-                <img class="img_fill" src="<?php echo $currentEvent['image'] ?>" alt="evt-Img">
+                <img class="img_fill" src="<?php echo $currentEvent['image'] ?>" alt="evt-Img" data-toggle="modal" data-target="#e-<?php echo $currentEvent['id'] ?>">
+                
             </div>
             <div class="col-12 col-sm-7 col-md-6 col-xl-9 data">
                 <div class="d-flex justify-content-between">
                     <h4><?php echo $currentEvent['title']?></h4>
                     <p><?php echo $currentEvent['type'] ?></p>
                 </div>
-                <p class="descr"><?php echo $currentEvent['description']?></p>
+                <p class="descr"><?php echo str_replace("\r\n", "<br>", $currentEvent['description'])?></p>
                 <p class="prerequis"><?php echo $prerequis?></p>
             </div>
         </div>
+        <div class="modal fade" id="e-<?php echo $currentEvent['id'] ?>">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <img class="img_fill" src="<?php echo $currentEvent['image'] ?>" alt="evt-Img">
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <?php
 }
 function no_event(){
@@ -152,6 +161,22 @@ function no_event(){
     html{
         overflow-y:scroll;
     }
+    .padding-right-0{
+        padding-right: 0!important;
+    }
+    <?php 
+        foreach($eventType as $type){
+            $idType = substr(strtolower($type['type']), 0, 4);
+            $color = [0,0,0];
+            for($i=0;$i<strlen($idType)-1;$i++){
+                $charV = intdiv(intdiv(mb_ord($idType[$i]),4)*8,1);
+                $color[$i] += $charV;
+                echo "/*". $charV ."*/\n";
+            }
+            $color = "rgb(".$color[0].",".$color[1].",".$color[2].")";
+            echo ".".$idType."{background-color:".$color."}\n";
+        }
+    ?>
 </style>
 <div class="container">
     <div class="text-center" style="padding: 0 0 5%;">
@@ -176,6 +201,18 @@ function no_event(){
                 <hr>
                 <div id="type">
                     <h5>Rechercher les Evénements</h5>
+                    <?php 
+                        foreach($eventType as $key => $type){
+                            $type = $type['type'];
+                            $idType = substr(strtolower($type), 0, 4);
+                        ?>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="<?php echo $idType ?>" name="type[<?php echo $idType ?>]">
+                            <label class="custom-control-label" for="<?php echo $idType ?>"><?php echo $type ?></label>
+                        </div>
+                        <?php
+                        }
+                    ?><!--
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="champ" name="type[champ]">
                         <label class="custom-control-label" for="champ">Compétition</label>
@@ -187,7 +224,7 @@ function no_event(){
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="inter" name="type[inter]">
                         <label class="custom-control-label" for="inter">Stage</label>
-                    </div>
+                    </div>-->
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-secondary">Rechercher</button>
@@ -234,18 +271,18 @@ function no_event(){
             case "type":
                 for(const type in research[option]) {
                     switch (type) {
-                        case "champ":
-                            document.getElementById(type).checked = true;
-                            break;
-                        case "train":
-                            document.getElementById(type).checked = true;
-                            break;
-                        case "inter":
-                            document.getElementById(type).checked = true;
-                            break;
+                        <?php
+                        foreach($eventType as $key => $type){
+                            $idType = substr(strtolower($type['type']), 0, 4);
+                            echo "case '".$idType."': \n";
+                            echo "  document.getElementById(type).checked = true;\n";
+                            echo "  break;\n";
+                        }
+                        ?>
                     }
                 }
                 break;
         }
     };
+    document.getElementsByTagName('body')[0].classList.add("padding-right-0")
 </script>
