@@ -269,9 +269,9 @@ function no_event(){
                 <div id="date" class="selectYear">
                     <div class="btn-toolbar">
                         <div class="btn-group">
-                            <button id="prev" name="newYear" type="submit" value="<?php echo $toPostMinus //$selectedYear.".".($quarter-1)?>" class="btn btn-secondary">←</button></a>
+                            <button id="prev" name="newYear" type="submit" value="<?php echo $toPostMinus?>" class="btn btn-secondary">←</button></a>
                             <button id="current" type="button" class="btn btn-light"><?php echo $toPrint?></button>
-                            <button id="next" name="newYear" type="submit" value="<?php echo $toPostPlus //$selectedYear.".".($quarter+1)?>" class="btn btn-secondary">→</button>
+                            <button id="next" name="newYear" type="submit" value="<?php echo $toPostPlus?>" class="btn btn-secondary">→</button>
                         </div>
                     </div>
                 </div>
@@ -295,6 +295,7 @@ function no_event(){
     <?php echo "let research = ".json_encode($_POST)."; \n";?>
     for(const option in research) {
         switch (option) {
+            //hide the navigation between the year if necessary
             case "sortYear":
                 document.getElementById(research[option]).checked = true;
                 $('#date').removeClass('hide');
@@ -309,6 +310,7 @@ function no_event(){
                         
                         break;
                 }
+            //Check the checkbox when the page is loaded
             case "type":
                 for(const type in research[option]) {
                     switch (type) {

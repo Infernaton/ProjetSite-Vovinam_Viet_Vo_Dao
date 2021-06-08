@@ -9,14 +9,7 @@ p {
         <h1 class="content-title-yellow text-center"> Logo et Mentions Légales </h1>
     </div>
     <div class="border text-center p-2 mt-2">
-        <img class="img_fill" src="assets/img/federation/Extrait_Convention_Internationale_Professeur_2016-1.png" alt="ExtraitConvention1" style="width:75%;">
-        <hr>
-        <img class="img_fill" src="assets/img/federation/Extrait_Convention_Internationale_Professeur_2016-2.png" alt="ExtraitConvention2" style="width:75%;">
-        <hr>
-        <img class="img_fill" src="assets/img/federation/Extrait_Convention_Internationale_Professeur_2016-3.png" alt="ExtraitConvention3" style="width:75%;">
-    </div>
-    <div class="text-right">
-        <p><i>Format PDF: <a href="assets/download_file/Extrait de la ConventionInternationaleProgramme_Enseignement_FR_2016.pdf">Extrait de la ConventionInternationaleProgramme_Enseignement_FR_2016.pdf</a></i></p>
+        <img class="img_fill" src="assets/img/federation/Charte_Logo.png" alt="ExtraitConvention1" style="width:75%;">
     </div>
     <h3>RGPB</h3>
     <h3>Mentions Légales</h3>
