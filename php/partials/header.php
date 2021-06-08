@@ -108,7 +108,7 @@ function partials_header($categorie,$page){
 					        <a class="nav-link" href="?c=vietVoDao&p=2">Les Grands Maîtres</a>
 				        </li>
                         <li class="nav-item">
-					        <a class="nav-link" href="?c=vietVoDao&p=3">La Fédération mondiale</a>
+					        <a class="nav-link" href="https://vovinamworldfederation.eu/fr/"><i class="fas fa-external-link-alt"></i> La Fédération mondiale</a>
 				        </li>
                     </ul>
 		        </li>
@@ -185,7 +185,7 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=vietVoDao&p=0">La discipline et ses valeurs</a>
                     <a class="dropdown-item" href="?c=vietVoDao&p=1">L'Histoire</a>
                     <a class="dropdown-item" href="?c=vietVoDao&p=2">Les Grands Maîtres</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=3">La Fédération mondiale</a>
+                    <a class="dropdown-item" href="https://vovinamworldfederation.eu/fr/" target="_blank"><i class="fas fa-external-link-alt"></i> La Fédération mondiale</a>
                 </div>
             </li>
             <li class="nav-item dropdown affiliation" id="">
