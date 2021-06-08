@@ -115,8 +115,8 @@ body {
             <div class="in">
                 <div class="row" id="eventList">
                     <div class="col-12 col-md-6 btn-panel">
-                        <a href="#">
-                            <button class="list-object">Actualité</button>
+                        <a href="?p=news">
+                            <button class="list-object">Actualités</button>
                         </a>
                     </div>
                     <div class="col-12 col-md-6 btn-panel">
