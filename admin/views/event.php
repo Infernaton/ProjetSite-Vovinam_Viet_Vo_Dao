@@ -2,6 +2,17 @@
 function reformatDate($dateStringDB){
     return str_replace("/","-",$dateStringDB);
 }
+function translateToInput($string){
+    //Edit the response to make it easy to design in edit mode
+    $string = str_replace("<br>", "\r\n", $string);
+    $string = str_replace("<mark class='bg-danger'>", "[", $string);
+    $string = str_replace("</mark>", "]", $string); 
+    //To delete the <a> tag to the link
+    $string = str_replace([substr($string, strpos($string,"<a"), strpos($string, "\">")-strpos($string,"<a")),"</a>", "\">"], "", $string);
+
+    return str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $string);
+}
+
 //Get the index of the current master in the url
 $currentEvent = null;
 if (isset($_GET['e'])) {
@@ -9,7 +20,7 @@ if (isset($_GET['e'])) {
     $index = $_GET['e'];
     $req = $db->query('SELECT * FROM event as s WHERE s.id = '.$index.'');
     $currentEvent = $req->fetch(PDO::FETCH_ASSOC);
-    $currentEvent['description'] = str_replace(array("\r","\n"),array("","{n}"),$currentEvent['description']);
+    //$currentEvent['description'] = str_replace(array("\r","\n"),array("","{n}"),$currentEvent['description']);
   } else {
     $index = -1;
   }
@@ -20,7 +31,66 @@ if (isset($_GET['e'])) {
 <form action="management/addEventDB.php" method="post" enctype="multipart/form-data">
     <div id="container" class="container">
         <div class="text-center">
-            <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1>
+            <h1 id="addGM" class="content-title-red">Créer un nouvel évènement</h1> <i class="fas fa-question-circle" data-toggle="modal" data-target="#useSymbols" style="cursor: pointer;"></i>
+        </div>
+        <div class="modal fade" id="useSymbols">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Comment Styliser le texte des réponses ?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>Souligner, mettre en gras/italique ... C'est possible de le faire ici pour le rendre plus vivant !</li>
+                        </ul>
+                        <p>Mais Comment ? C'est ce que nous allons voir maintenant.</p>
+                        <h4><ins>Styliser le texte</ins></h4>
+                        <p>
+                            Tout d'abord, il n'est possible de styliser uniquement la réponse, cela ne marche pas avec la question. <br>
+                            Il est ensuite possible de styliser le texte de 5 manières différentes:<br>
+                            <b>Gras</b>, <ins>Soulignement</ins>, <i>Italique</i>, <del>Barré</del>, et <mark class='bg-danger'>Mise en Valeur</mark>. <br> <br>
+                        </p>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <p>
+                                    **Texte** → <b>Texte</b> <br>
+                                    <br>
+                                    _Texte_ → <ins>Texte</ins>
+                                </p>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <p>
+                                    *Texte* → <i>Texte</i> <br>
+                                    <br>
+                                    --Texte-- → <del>Texte</del>
+                                </p>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <p>
+                                    [Texte] => <mark class='bg-danger'>Texte</mark>
+                                </p>
+                            </div>
+                        </div>
+                        <p>
+                            On peux également fusionner des styles entre eux, par exemple faire un texte en italique et en gras: <br>
+                            ***Texte*** → <b><i>Texte</i></b> <br>
+                            Ou encore souligné et mettre en gras : <br>
+                            _**Texte**_ → <b><ins>Texte</ins></b> <br>
+                            Ou même appliquer du style à l'intérieur d'un autre style: <br>
+                            *Texte d'exemple, [texte] d'exemple* → <i>Texte d'exemple, <mark class='bg-danger'>texte</mark> d'exemple</i><br>
+                            <br>
+                            Il n'y a pas vraiment de limite au nombre de style que vous pouvez mettre dans une réponse, alors testez par vous même ! <br>
+                            <br>
+                            Pour finir, en mode Edition, le style choisit ne s'affichera pas, il ne sera montré qu'après avoir validé les nouveaux changements.
+                        </p>
+                        <h4><ins>Liens Hypertextes</ins></h4>
+                        <p>
+                            Pour créer des liens cliquables dans un réponse, rien de plus simple, vous avez juste à mettre votre liens dans votre réponse. Et comme pour la stylisation, il sera transformé en liens cliquable apres validation des changements. <br>
+                            https://www.exemple_de_liens.fr => <a href="">https://www.exemple_de_liens.fr</a> <br> (<i>Lien d'exemple, ne fonctionne pas</i>)
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     <div class="row">
         <div class="col-12 col-md-4">
@@ -106,8 +176,7 @@ if (<?php echo $index?> != -1){
     
     //if we click on an existant master, we have to fill all the cointainer with his data
     document.getElementById("title").value = "<?php echo $currentEvent['title'] ?>";
-    let desc = "<?php echo $currentEvent['description'] ?>";
-    document.getElementById("description").value = desc.replaceAll('{n}', '\n');
+    document.getElementById("description").value = "<?php echo translateToInput($currentEvent['description'])?>";
     document.getElementById("dateDebut").value = "<?php echo reformatDate($currentEvent['dateDebut'])?>";
     document.getElementById("dateFin").value = "<?php echo reformatDate($currentEvent['dateFin'])?>";
     document.getElementById("event").value = "<?php echo $currentEvent['type'] ?>";

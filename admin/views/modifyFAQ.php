@@ -39,7 +39,16 @@
         }
         return $string;
     }
+    function translateToInput($string){
+        //Edit the response to make it easy to design in edit mode
+        $string = str_replace("<br>", "\r\n", $string);
+        $string = str_replace("<mark class='bg-danger'>", "[", $string);
+        $string = str_replace("</mark>", "]", $string); 
+        //To delete the <a> tag to the link
+        $string = str_replace([substr($string, strpos($string,"<a"), strpos($string, "\">")-strpos($string,"<a")),"</a>", "\">"], "", $string);
 
+        return str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $string);
+    }
     //Afficher une carte de question, comprennant les différents boutons et son contenu
     function printCardFAQ($cardContent){
         ?>
@@ -71,19 +80,7 @@
                             <h5>Question</h5>
                             <textarea class="inputData form-control" name="question" id="question"><?php echo $cardContent['ask'];?></textarea>
                             <h5>Réponse</h5>
-                            <textarea class="inputData form-control" name="answer" rows="10" id="answer"><?php 
-                                    $para = $cardContent['rep'];
-                                    //Edit the response to make it easy to design in edit mode
-                                    $para = str_replace("<br>", "\r\n", $para);
-                                    $para = str_replace("<mark class='bg-danger'>", "[", $para);
-                                    $para = str_replace("</mark>", "]", $para); 
-                                    //To delete the <a> tag to the link
-                                    $para = str_replace([substr($para, strpos($para,"<a"), strpos($para, "\">")-strpos($para,"<a")),"</a>", "\">"], "", $para);
-
-                                    $para = str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $para);
-                                    
-                                    echo $para;
-                                ?></textarea>
+                            <textarea class="inputData form-control" name="answer" rows="10" id="answer"><?php echo translateToInput($cardContent['rep']);?></textarea>
                         </div>
 
                         <div class="modal-footer">
