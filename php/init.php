@@ -16,7 +16,7 @@ function getAccessToken() {
 $pages = [
     'home' => ['home'],
     'federation' => ['/federation','/map','/contacts','/lien','/legal'],
-    'directionTech' => ['/conseilMaitre','/listeMaitre','/calendrier','/stage','/competition','/changeGrade','/formation','/evenement'],
+    'directionTech' => ['/evenement','/conseilMaitre','/listeMaitre','/changeGrade'],
     'vietVoDao' => ['/discipline','/histoire','/grandMaitres','/fedeMondial'],
     'affiliation' => ['/doc','/modaliteAffiliation','/faq','/licencies','/passeport'],
     'actualite' => ['actualite'],

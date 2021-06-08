@@ -43,7 +43,7 @@ function partials_header($categorie,$page){
         <div class="nav-drill">
             <ul class="nav-items">
                 <li class="nav-item" style="border:none;"><h3 class="mobile-title">Sommaire<i class="fas fa-times navbar-toggler-icon"></i></h3></li>
-                <li class="nav-item home" id="">
+                <li class="nav-item home">
                     <a class="nav-link" href="?c=home">Accueil</a>
                 </li>
                 <li class="nav-item nav-expand federation">
@@ -70,29 +70,17 @@ function partials_header($categorie,$page){
 			        <a class="nav-link nav-expand-link" href="#">Direction Technique</a>
                     <ul class="nav-items nav-expand-content">
                         <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=0">Le Conseil des ME</a>
+					        <a class="nav-link" href="?c=directionTech&p=0">Evènement</a>
 				        </li>
                         <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=1">Liste officielle des maîtres et ceintures noires</a>
+					        <a class="nav-link" href="?c=directionTech&p=1">Le Conseil des Maîtres</a>
 				        </li>
                         <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=2">Calendrier technique</a>
+					        <a class="nav-link" href="?c=directionTech&p=2">Liste officielle des maîtres et ceintures noires</a>
 				        </li>
                         <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=3">Stages</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=4">Compétitions</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=5">Passage de grades</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=6">Formations</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=7">Evènement</a>
-				        </li>
+					        <a class="nav-link" href="?c=directionTech&p=3">Passage de grades</a>
+				        </li>                        
                     </ul>
 		        </li>
                 <li class="nav-item nav-expand vietVoDao">
@@ -154,10 +142,10 @@ function partials_header($categorie,$page){
         <!--Menu Version PC et Tablette-->
         <div class="collapse navbar-collapse justify-content-center">
         <ul class="navbar-nav">
-            <li class="nav-item home" id="">
+            <li class="nav-item home">
                 <a class="nav-link" href="/ProjetSite-Vovinam_Viet_Vo_Dao/">Accueil</a>
             </li>
-            <li class="nav-item dropdown federation" id="">
+            <li class="nav-item dropdown federation">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">La Fédération</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=federation&p=0">La Fédération</a>
@@ -167,19 +155,16 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=federation&p=4">Logo et Mentions Légales</a>
                 </div>
             </li>
-            <li class="nav-item dropdown directionTech" id="">
+            <li class="nav-item dropdown directionTech">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Direction Technique</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=directionTech&p=0">Le Conseil des Maîtres</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=1">Liste officielle des maîtres et ceintures noires</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=2">Calendrier technique</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=3">Stages</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=4">Compétitions</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=5">Passage de grades</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=6">Formations</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=0">Évènements</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=1">Le Conseil des Maîtres</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=2">Liste officielle des maîtres et ceintures noires</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=3">Passage de grades</a>
                 </div>
             </li>
-            <li class="nav-item dropdown vietVoDao" id="">
+            <li class="nav-item dropdown vietVoDao">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Le Vovinam-Viet Vo Dao</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=vietVoDao&p=0">La discipline et ses valeurs</a>
@@ -188,7 +173,7 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="https://vovinamworldfederation.eu/fr/" target="_blank"><i class="fas fa-external-link-alt"></i> La Fédération mondiale</a>
                 </div>
             </li>
-            <li class="nav-item dropdown affiliation" id="">
+            <li class="nav-item dropdown affiliation">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Affiliation/licenciés</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=affiliation&p=0">Documentation</a>
@@ -198,10 +183,10 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=affiliation&p=4">Passeport</a>
                 </div>
             </li>
-            <li class="nav-item actualite" id="">
+            <li class="nav-item actualite">
                 <a class="nav-link" href="?c=actualite">Actualités</a>
             </li>
-            <li class="nav-item dropdown contacts" id="">
+            <li class="nav-item dropdown contacts">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="?c=contacts&p=0">Contact</a>

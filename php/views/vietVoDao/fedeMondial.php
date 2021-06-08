@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/discipline.css">
 
-<div class="container">
+    <div class="container">
         <!-- Titre de la page -->
         <div class="text-center">
             <h1 class="content-title-blue">La Fédération Mondiale</h1>

@@ -181,7 +181,7 @@ function printEvent($currentEvent){
             </div>
         </div>
         <div class="modal fade" id="e-<?php echo $currentEvent['id'] ?>">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <img class="img_fill" src="<?php echo $currentEvent['image'] ?>" alt="evt-Img">
                 </div>
