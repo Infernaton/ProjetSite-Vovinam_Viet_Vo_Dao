@@ -15,13 +15,15 @@ function partials_footer(){
                 <div class="d-flex flex-row bd-highlight mb-3">
                 
                         <ul class="list-group list-group-flush social-links">
+                        <div class="link">
                         
-                            <a href="https://www.youtube.com/channel/UC87j8G2WRUQur4VCHjF3OKQ" target="_blank" ><img src="assets/img/logo/yt.png"><p>Chaîne Officielle de la Fédération</p></a>
+                            <a class="p-2 bd-highlight" href="https://www.youtube.com/channel/UC87j8G2WRUQur4VCHjF3OKQ" target="_blank" ><img src="assets/img/logo/yt.png"><p>Chaîne Officielle de la Fédération</p></a>
                         
-                            <a href="https://www.facebook.com/FederationVovinamVietVoDaoFrance" target="_blank"><img src="assets/img/logo/fb.png"><p>Page Facebook Officielle</p></a>
+                            <a class="p-2 bd-highlight" href="https://www.facebook.com/FederationVovinamVietVoDaoFrance" target="_blank"><img src="assets/img/logo/fb.png"><p>Page Facebook Officielle</p></a>
                         
-                            <a href="https://www.instagram.com/federationvovinamvietvodaofr/" target="_blank" ><img src="assets/img/logo/insta.png"><p>Compte Instagram Officiel</p></a>
-                       
+                           <a class="p-2 bd-highlight" href="https://www.instagram.com/federationvovinamvietvodaofr/" target="_blank" ><img src="assets/img/logo/insta.png"><p>Compte Instagram Officiel</p></a>
+
+                        </div>
                         </ul>
 
                             <a href="http://vietvodao.photos/" target="_blank" ><img src="assets/img/logo/galerie.png" width=150px></a>
