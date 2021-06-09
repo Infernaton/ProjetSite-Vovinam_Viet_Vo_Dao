@@ -21,6 +21,16 @@ switch ($_POST['submit']){
         echo "\n Envoie réussi";
 
         break;
+    case 'modify':
+        $request = 'UPDATE news SET'.' title="'. $_POST["title"].'", content="'.translateToHTML($_POST["content"]).'", category="'.$_POST["category"].'", author="'.$_POST["author"].'" WHERE id='.(int)$_POST['index'].'';
+        $req = $db->prepare($request);
+        $req->execute();
+        break;
+    case 'remove':
+        break;
 }
 //echo "<script type='text/javascript'> history.go(-1); </script>";
 ?>
+<div id="btn-object" class="p-2" style="">
+    <a href="../?p=news"><button class="btn-annul annim" type="button" id='undo'>← Retour</button></a>
+</div>

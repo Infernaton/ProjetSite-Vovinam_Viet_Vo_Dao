@@ -1,45 +1,5 @@
 <?php
 require_once "init.php";
-function str_replace_first($from, $to, $content){
-    $from = '/'.preg_quote($from, '/').'/';
-    return preg_replace($from, $to, $content, 1);
-}
-//Transformer des strings ressemblant à des liens en liens hypertextes
-function plainToHyperlinks($string){
-    $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i';
-    return preg_replace($url, '<a href="$0" target="_blank">$0</a>', $string);
-}
-//Transformer les symboles de styles vers des balises HTML
-function translateToHTML($string){
-    //Edit the response to make it easy to design in edit mode
-    $string = str_replace("\r\n","<br>", $string);
-    $string = str_replace("[", "<mark class='bg-danger'>", $string);
-    $string = str_replace("]", "</mark>", $string);
-
-    //Count the number of symbole there is in the text
-    $uses = [substr_count($string, "**")/2, substr_count($string, "*")/2, substr_count($string, "_")/2, substr_count($string, "--")/2, substr_count($string, "http")];
-
-    for ($a=0; $a < $uses[0]; $a++) {
-        $string = str_replace_first("**", "<b>", $string);
-        $string = str_replace_first("**", "</b>", $string);
-    }
-    for ($a=0; $a < $uses[1]; $a++) {
-        $string = str_replace_first("*", "<i>", $string);
-        $string = str_replace_first("*", "</i>", $string);
-    }
-    for ($a=0; $a < $uses[2]; $a++) {
-        $string = str_replace_first("_", "<ins>", $string);
-        $string = str_replace_first("_", "</ins>", $string);
-    }
-    for ($a=0; $a < $uses[3]; $a++) {
-        $string = str_replace_first("--", "<del>", $string);
-        $string = str_replace_first("--", "</del>", $string);
-    }
-    for ($a=0; $a < $uses[4]; $a++) {
-        $string = plainToHyperlinks($string);
-    }
-    return $string;
-}
 
 if ($_FILES['newImage']['error']==0){
     //If there no new file, $_FILES['newImage']['error'] = 4;
