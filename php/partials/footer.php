@@ -3,7 +3,7 @@
 function partials_footer(){
 ?>   
 <style>
-.list-group-item{
+footer .list-group-item{
     background-color: rgba(0,0,0,0);
     padding: .75rem 0;
 }
