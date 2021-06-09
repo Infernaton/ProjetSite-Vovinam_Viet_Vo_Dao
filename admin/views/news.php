@@ -63,6 +63,31 @@ function printCardNews($cardContent){
                 </form>
             </div>
         </div>
+        <div class="modal fade" id="remove-<?php echo $cardContent['id']?>">
+            <div class="modal-dialog modal-lg">
+                <form action="management/addArticle.php" method="post" enctype="multipart/form-data">
+                    <input type="text" name="index" id="index" class="hide" value="<?php echo $cardContent['id']?>">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Supprimer l'Article</h4>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div id="btn-reset" class="p-2">
+                                    <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+                                </div>
+                                <div id="btn-Action" class="p-2">
+                                    <button type="submit" class="btn-modObject annim confirm" value="remove" name="submit">Valider la suppression</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
     </div>
     <?php
 }
@@ -112,7 +137,7 @@ function printCardNews($cardContent){
                                     <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
                                 </div>
                                 <div id="btn-Action" class="p-2">
-                                    <button type="submit" class="btn-modObject annim confirm" value="modify" name="submit">Valider</button>
+                                    <button type="submit" class="btn-modObject annim confirm" value="add" name="submit">Valider</button>
                                 </div>
                             </div>
                         </div>
