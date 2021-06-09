@@ -62,7 +62,7 @@ function partials_header($categorie,$page){
 					        <a class="nav-link" href="?c=federation&p=3">Lien</a>
 				        </li>
 				        <li class="nav-item">
-					        <a class="nav-link" href="?c=federation&p=4">Logo et Mentions Légales</a>
+					        <a class="nav-link" href="?c=federation&p=4">Mentions Légales et Logo</a>
 				        </li>
 			        </ul>
 		        </li>
@@ -70,7 +70,7 @@ function partials_header($categorie,$page){
 			        <a class="nav-link nav-expand-link" href="#">Direction Technique</a>
                     <ul class="nav-items nav-expand-content">
                         <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=0">Evènement</a>
+					        <a class="nav-link" href="?c=directionTech&p=0">Calendrier</a>
 				        </li>
                         <li class="nav-item">
 					        <a class="nav-link" href="?c=directionTech&p=1">Le Conseil des Maîtres</a>
@@ -152,13 +152,13 @@ function partials_header($categorie,$page){
                     <a class="dropdown-item" href="?c=federation&p=1">Les Régions et Clubs</a>
                     <a class="dropdown-item" href="?c=federation&p=2">Contacts</a>
                     <a class="dropdown-item" href="?c=federation&p=3">Lien</a>
-                    <a class="dropdown-item" href="?c=federation&p=4">Logo et Mentions Légales</a>
+                    <a class="dropdown-item" href="?c=federation&p=4">Mentions Légales et Logo</a>
                 </div>
             </li>
             <li class="nav-item dropdown directionTech">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Direction Technique</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=directionTech&p=0">Évènements</a>
+                    <a class="dropdown-item" href="?c=directionTech&p=0">Calendrier</a>
                     <a class="dropdown-item" href="?c=directionTech&p=1">Le Conseil des Maîtres</a>
                     <a class="dropdown-item" href="?c=directionTech&p=2">Liste officielle des maîtres et ceintures noires</a>
                     <a class="dropdown-item" href="?c=directionTech&p=3">Passage de grades</a>

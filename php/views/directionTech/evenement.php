@@ -223,32 +223,30 @@ function no_event(){
     ?>
 </style>
 <div class="container">
-    <div class="text-center" style="padding: 0 0 5%;">
-        <h1 class="content-title-blue">Tous les évènements</h1>
-    </div>
+    
     <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
-            <div id="filter" class="col-12 col-md-3">
+            <div id="filter" class="col-12 col-md-3" style="padding:5% 10px">
                 <h3>Filtres</h3>
                 <hr>
                 <div id="sortYear">
                     <h5>Méthode d'affichage</h5>
                     <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" id="sortAll" name="sortYear" value="sortAll">
-                        <label for="sortAll" class="custom-control-label">Tout les évènements</label>
+                        <label for="sortAll" class="custom-control-label">Tous les évènements</label>
                     </div>
                     <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" id="sortByYear" name="sortYear" value="sortByYear" checked=true>
-                        <label for="sortByYear" class="custom-control-label">Trie par Année</label>
+                        <label for="sortByYear" class="custom-control-label">Tri par année</label>
                     </div>
                     <div class="custom-control custom-radio">
                         <input type="radio" class="custom-control-input" id="sortByQuarters" name="sortYear" value="sortByQuarters">
-                        <label for="sortByQuarters" class="custom-control-label">Trie par Trimestre</label>
+                        <label for="sortByQuarters" class="custom-control-label">Tri par trimestre</label>
                     </div>
                 </div>
                 <hr>
                 <div id="type">
-                    <h5>Rechercher les Evénements</h5>
+                    <h5>Rechercher des Evénements</h5>
                     <?php 
                     foreach($eventType as $key => $type){
                         $type = $type['type'];
@@ -266,6 +264,9 @@ function no_event(){
                 <button type="submit" class="btn btn-secondary">Rechercher</button>
             </div>
             <div id="content" class="col-12 col-md-9">
+                <div class="text-center" style="padding: 0 0 5%;">
+                    <h1 class="content-title-blue">Calendrier</h1>
+                </div>
                 <div id="date" class="selectYear">
                     <div class="btn-toolbar">
                         <div class="btn-group">

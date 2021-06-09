@@ -5,6 +5,7 @@ $req = $db->query('SELECT * FROM marqueur ORDER BY id');
 $clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM event Order by `dateDebut` DESC');
 $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
+//Sort by year event
 ?>
 <style>
 body {

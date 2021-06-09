@@ -6,14 +6,12 @@ p {
 </style>
 <div class="container info">
     <div class="text-center">
-        <h1 class="content-title-yellow text-center"> Logo et Mentions Légales </h1>
+        <h1 class="content-title-yellow text-center">Mentions Légales</h1>
     </div>
-    <div class="border text-center p-2 mt-2">
-        <img class="img_fill" src="assets/img/federation/Charte_Logo.png" alt="ExtraitConvention1" style="width:75%;">
-    </div>
-    <h3>RGPB</h3>
-    <h3>Mentions Légales</h3>
-    <div class="row">
+    <!--<div class="text-center">
+        <h3>Mentions Légales</h3>
+    </div>-->
+    <div class="row mt-4">
         <div class="col-12 col-md-6">
             <div class="text-center">
                 <h5>Fédération VOVINAM-Viet Vo Dao France</h5>
@@ -43,4 +41,11 @@ p {
             </div>
         </div>
     </div>
+    <div class="text-center mt-4">
+        <h1 class="content-title-yellow text-center">L'écusson</h1>
+    </div>
+    <div class="border text-center p-2 mt-2">
+        <img class="img_fill" src="assets/img/federation/Charte_Logo.png" alt="ExtraitConvention1" style="width:100%;">
+    </div>
+    
 </div>
