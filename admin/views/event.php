@@ -2,16 +2,6 @@
 function reformatDate($dateStringDB){
     return str_replace("/","-",$dateStringDB);
 }
-function translateToInput($string){
-    //Edit the response to make it easy to design in edit mode
-    $string = str_replace("<br>", "\r\n", $string);
-    $string = str_replace("<mark class='bg-danger'>", "[", $string);
-    $string = str_replace("</mark>", "]", $string); 
-    //To delete the <a> tag to the link
-    $string = str_replace([substr($string, strpos($string,"<a"), strpos($string, "\">")-strpos($string,"<a")),"</a>", "\">"], "", $string);
-
-    return str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $string);
-}
 
 //Get the index of the current master in the url
 $currentEvent = null;

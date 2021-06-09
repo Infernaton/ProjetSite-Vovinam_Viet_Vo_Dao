@@ -1,13 +1,95 @@
 <?php
-function translateToInput($string){
-    //Edit the response to make it easy to design in edit mode
-    $string = str_replace("<br>", "\r\n", $string);
-    $string = str_replace("<mark class='bg-danger'>", "[", $string);
-    $string = str_replace("</mark>", "]", $string); 
-    //To delete the <a> tag to the link
-    $string = str_replace([substr($string, strpos($string,"<a"), strpos($string, "\">")-strpos($string,"<a")),"</a>", "\">"], "", $string);
+$req = $db->query('SELECT * FROM news ORDER BY date DESC');
+$news = $req->fetchAll(PDO::FETCH_ASSOC);
 
-    return str_replace(["<b>","</b>", "<i>", "</i>", "<ins>", "</ins>", "<del>", "</del>"], ["**","**", "*", "*", "_", "_", "--", "--"], $string);
+function translateDate($date){
+    $date = explode("-", $date);
+    return $date[2]."/".$date[1]."/".$date[0];
+}
+function printCardNews($cardContent){
+    ?>
+    <div class="news">
+        <div class="header d-flex justify-content-between">
+            <h4><?php echo $cardContent['title'];?></h4>
+            <p><?php echo $cardContent['category'];?></p>
+        </div>
+        <div class="body text-right">
+            <p><?php echo $cardContent['author']." - ".translateDate($cardContent['date'])?></p>
+        </div>
+        <div class="footer">
+            <div class="d-flex justify-content-between">
+                <button class="undo" type="button" data-toggle="modal" data-target="#remove-<?php echo $cardContent['id']?>">Supprimer</button>
+                <button class="" type="button" data-toggle="modal" data-target="#modify-<?php echo $cardContent['id']?>">Modifier</button>
+            </div>
+        </div>
+        <div class="modal fade" id="modify-<?php echo $cardContent['id']?>">
+            <div class="modal-dialog modal-xl">
+                <form action="management/addArticle.php" method="post" enctype="multipart/form-data">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modifier l'Article</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <input type="text" name="index" id="index" class="hide" value="<?php echo $cardContent['id']?>">
+
+                            <h5>Titre de l'article</h5>
+                            <textarea class="inputData form-control" name="title"><?php echo $cardContent['title'];?></textarea>
+                            <h5 class="data">Contenu</h5>
+                            <textarea class="inputData form-control" name="content" rows="10"><?php echo translateToInput($cardContent['content']);?></textarea>
+                            <div class="row">
+                                <div class="col">
+                                    <h5 for="category" class="data">Catégorie de l'article</h5>
+                                    <input class="inputData form-control" type="text" name="category" value="<?php echo $cardContent['category']?>" placeholder="Ex: Evènement..." required>
+                                </div>
+                                <div class="col">
+                                    <h5 for="author" class="data">Auteur de l'Article</h5>
+                                    <input class="inputData form-control" type="text" name="author" value="<?php echo $cardContent['author']?>" placeholder="Signature" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div id="btn-reset" class="p-2">
+                                    <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+                                </div>
+                                <div id="btn-Action" class="p-2">
+                                    <button type="submit" class="btn-modObject annim confirm" value="modify" name="submit">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal fade" id="remove-<?php echo $cardContent['id']?>">
+            <div class="modal-dialog modal-lg">
+                <form action="management/addArticle.php" method="post" enctype="multipart/form-data">
+                    <input type="text" name="index" id="index" class="hide" value="<?php echo $cardContent['id']?>">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Supprimer l'Article</h4>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div id="btn-reset" class="p-2">
+                                    <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+                                </div>
+                                <div id="btn-Action" class="p-2">
+                                    <button type="submit" class="btn-modObject annim confirm" value="remove" name="submit">Valider la suppression</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <?php
 }
 ?>
 
@@ -19,73 +101,13 @@ function translateToInput($string){
     <hr>
     <div>
         <h3>Liste des articles <i class="fas fa-question-circle" data-toggle="modal" data-target="#useSymbols" style="cursor: pointer;"></i></h3>
-        <!--Tuto Stylisation de texte-->
-        <div class="modal fade" id="useSymbols">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3>Comment Styliser le texte des réponses ?</h3>
-                    </div>
-                    <div class="modal-body">
-                        <ul>
-                            <li>Souligner, mettre en gras/italique ... C'est possible de le faire ici pour le rendre plus vivant !</li>
-                        </ul>
-                        <p>Mais Comment ? C'est ce que nous allons voir maintenant.</p>
-                        <h4><ins>Styliser le texte</ins></h4>
-                        <p>
-                            Tout d'abord, il n'est possible de styliser uniquement la réponse, cela ne marche pas avec la question. <br>
-                            Il est ensuite possible de styliser le texte de 5 manières différentes:<br>
-                            <b>Gras</b>, <ins>Soulignement</ins>, <i>Italique</i>, <del>Barré</del>, et <mark class='bg-danger'>Mise en Valeur</mark>. <br> <br>
-                        </p>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-4">
-                                <p>
-                                    **Texte** → <b>Texte</b> <br>
-                                    <br>
-                                    _Texte_ → <ins>Texte</ins>
-                                </p>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4">
-                                <p>
-                                    *Texte* → <i>Texte</i> <br>
-                                    <br>
-                                    --Texte-- → <del>Texte</del>
-                                </p>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4">
-                                <p>
-                                    [Texte] => <mark class='bg-danger'>Texte</mark>
-                                </p>
-                            </div>
-                        </div>
-                        <p>
-                            On peux également fusionner des styles entre eux, par exemple faire un texte en italique et en gras: <br>
-                            ***Texte*** → <b><i>Texte</i></b> <br>
-                            Ou encore souligné et mettre en gras : <br>
-                            _**Texte**_ → <b><ins>Texte</ins></b> <br>
-                            Ou même appliquer du style à l'intérieur d'un autre style: <br>
-                            *Texte d'exemple, [texte] d'exemple* → <i>Texte d'exemple, <mark class='bg-danger'>texte</mark> d'exemple</i><br>
-                            <br>
-                            Il n'y a pas vraiment de limite au nombre de style que vous pouvez mettre dans une réponse, alors testez par vous même ! <br>
-                            <br>
-                            Pour finir, en mode Edition, le style choisit ne s'affichera pas, il ne sera montré qu'après avoir validé les nouveaux changements.
-                        </p>
-                        <h4><ins>Liens Hypertextes</ins></h4>
-                        <p>
-                            Pour créer des liens cliquables dans un réponse, rien de plus simple, vous avez juste à mettre votre liens dans votre réponse. Et comme pour la stylisation, il sera transformé en liens cliquable apres validation des changements. <br>
-                            https://www.exemple_de_liens.fr => <a href="">https://www.exemple_de_liens.fr</a> <br> (<i>Lien d'exemple, ne fonctionne pas</i>)
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="text-center">
             <button type="button" data-toggle="modal" data-target="#add-article">
                 <h4>+ Ajouter une nouvel article</h3>
             </button>
         </div>
         <div class="modal fade" id="add-article">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-xl">
                 <form action="management/addArticle.php" method="post" enctype="multipart/form-data">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -122,6 +144,19 @@ function translateToInput($string){
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="row">
+            <?php
+            foreach($news as $new) { 
+            ?>
+            <div class="col-6">
+                <?php
+                echo printCardNews($new);
+                ?>
+            </div>
+            <?php
+            } 
+            ?>
         </div>
     </div>
 </div>
