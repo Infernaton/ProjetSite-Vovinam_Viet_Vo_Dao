@@ -129,6 +129,10 @@ button:hover {
     font-size: 20px;
     text-align: center;
 }
+#eventList .year {
+    border-bottom: 1px solid;
+    padding: 2% 5% .5%;
+}
 /*-- Form --*/
 form .row{
     font-size: 20px;
