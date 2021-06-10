@@ -1,3 +1,18 @@
+<?php 
+require_once 'management/init.php';
+session_start();
+
+if($_POST){
+    if ($_POST['mdp'] == getAccessAdmin()){
+        $_SESSION['success'] = true;
+    }
+    else {
+        unset($_SESSION['success']);
+        $_SESSION['try_'.count($_SESSION).''] = 2-count($_SESSION);
+        $failed = 'Mauvais mot de passe, '.$_SESSION['try_'.(count($_SESSION)-1).''].' essaie restant.';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr_FR">
 <head>
@@ -73,17 +88,40 @@
     </div>
 </div>
 <?php
-require_once 'management/init.php';
-$pages = ['panel','addClub','addMaster','event','sliders','modifyFAQ','calendars','news'];
-
-$page = 'panel';
-if (isset($_GET['p'])) {
-    if (in_array($_GET['p'],$pages)){
-        $page = $_GET['p'];
+if (isset($_SESSION['success'])){
+    $pages = ['panel','addClub','addMaster','event','sliders','modifyFAQ','calendars','news'];
+    $page = 'panel';
+    if (isset($_GET['p'])) {
+        if (in_array($_GET['p'],$pages)){
+            $page = $_GET['p'];
+        }
     }
+    require_once 'views/'.$page.'.php';
+}else {
+    ?>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="content-title-red">PANEL ADMINISTRATEUR</h1>
+        </div>
+        <hr>
+        <h3 class="mt-5 mb-5"> Veuillez entrer le mot de passe pour continuer sur cette page </h3>
+        <form action="" method="post" enctype="multipart/form-data">
+            <label class="data" for="mdp">Mot de Passe</label>
+            <input type="password" name="mdp" id="mdp" autocomplete="off" class="inputData form-control">
+            <?php 
+            if (isset($failed)){
+                echo '<p>'.$failed.'</p>';
+            }
+            ?>
+            <div class="text-right">
+                <div id="btn-reset" class="p-2">
+                    <button type="submit" value="submit" class="btn-annul annim confirm" data-dismiss="modal">Valider</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <?php
 }
-
-require_once 'views/'.$page.'.php';
 ?>
 </body>
 </html>

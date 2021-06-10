@@ -4,7 +4,7 @@
     <!-- Image du groupe fondateur -->
     <div class="text-center pb-3">
         <h1 class="content-title-blue">La Fédération</h1>
-        <p class="pt-2"><a href="#calendrier"><i>Voir les Calendriers</i></a></p>
+        <p class="pt-2"><a href="#calendrier"><i>Voir les Calendriers Fédéraux</i></a></p>
     </div>
         <img class="mx-auto d-block" src="assets/img/federation/groupe_fondateur.jpg">
         <p>

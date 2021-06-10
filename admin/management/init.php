@@ -26,6 +26,9 @@ function getAccessToken() {
 function getSliderDirr() {
     return '../assets/img/caroussel/';
 }
+function getAccessAdmin() {
+    return '0123456';
+}
 function str_replace_first($from, $to, $content){
     $from = '/'.preg_quote($from, '/').'/';
     return preg_replace($from, $to, $content, 1);
