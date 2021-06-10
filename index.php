@@ -47,13 +47,11 @@ if (isset($_GET['delete'])){
         die;
     }
 }*/
-echo "<div style='min-height: 55vh;'>";
+echo "<div class='main-body'>";
 require_once 'php/views/'.$pageCate.$page.'.php';
 echo "</div>";
 
 // </body> in the footer
-if ($pageCate != 'admin'){
-    partials_footer();
-}
+partials_footer();
 ?>
 </html>

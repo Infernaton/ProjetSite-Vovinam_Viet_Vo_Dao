@@ -4,35 +4,41 @@
 */
 .only-before-sm-hide, .only-sm-hide, .only-md-hide, .only-lg-hide, .only-xl-hide {display: block!important;}
 .hide, .sm-hide, .md-hide, .lg-hide {display: none!important;}
+
 @media (max-width:576px) {
     /*before sm*/
     .only-before-sm-hide{display:none!important;}
     .footer .social-links p{
         font-size: 14px;
     }
+    .main-body {min-height: 62vh;}
 }
 @media (min-width:576px) {
     /*sm*/
     .container{max-width: 740px;}
     .only-sm-hide{display: none!important;}
+    .main-body {min-height: 63vh;}
 }
 @media (min-width:768px) {
     /*md*/
     .container{max-width: 920px;}
     .only-sm-hide, .sm-hide{display: block!important;}
     .only-md-hide{display: none!important;}
+    .main-body {min-height: 60vh;}
 }
 @media (min-width:992px) {
     /*lg*/
     .container{max-width: 1260px;}
     .only-md-hide, .md-hide{display: block!important;}
     .only-lg-hide{display: none!important;}
+    .main-body {min-height: 58vh;}
 }
 @media (min-width: 1200px) {
     /*xl*/
     .container{max-width: 1440px;}
     .only-lg-hide, .lg-hide {display: block!important;}
     .only-xl-hide{display: none!important;}
+    .main-body {min-height: 55vh;}
 }
 a{  
     color:#6565a7;
