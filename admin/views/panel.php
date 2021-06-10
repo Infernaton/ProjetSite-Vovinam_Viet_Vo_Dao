@@ -6,6 +6,23 @@ $clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM event Order by `dateDebut` DESC');
 $eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
 //Sort by year event
+$yearList = array();
+foreach($eventDB as $event){
+    //Event sort by year
+    $year = explode("/", $event['dateDebut'])[0];
+    //If a year is already in the table, we put the event in it
+    if (array_key_exists($year, $yearList)){
+        array_push($yearList[$year], $event);
+    }
+    //If not, we create that year
+    else {
+        $yearList[$year] = [$event];
+    }
+}
+//var_dump($yearList);
+
+$req = $db->query('SELECT DISTINCT type FROM event');
+$eventType = $req->fetchAll(PDO::FETCH_ASSOC);  //To know all the type of event, if a new appear, we don't have to add it manually
 ?>
 <style>
 body {
@@ -18,6 +35,7 @@ body {
 
 <div id="container" class="container">
     <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
+    <!-- Maîtres -->
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Maîtres</div>
         <div class="p-2 text-center">
@@ -45,6 +63,7 @@ body {
                 </div>
             </div>  
         </div>  
+    <!-- Clubs -->
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Clubs</div>
         <div class="p-2">
@@ -79,6 +98,7 @@ body {
                 </div>
             </div>  
         </div> 
+    <!-- Evènements -->
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Evènements</div>
         <div class="p-2">
@@ -91,24 +111,38 @@ body {
             <div class="in">
                 <select name="eventSelect" class="custom-select mb-3" onchange="select('eventList',this.value)">
                     <option value="all">Tous les Evènements</option>
-                    <option value="stage">Stage</option>
-                    <option value="competition">Compétition</option>
-                    <option value="formation">Formation</option>
-                    <option value="autre">Autre</option>
+                    <?php
+                    foreach ($eventType as $e){
+                        $type = $e['type'];
+                        $type_value = strtolower(str_replace(array('é','è','ë','ê','à','â','ä','î','ï'), "e", $type));
+                        echo '<option value="'.$type_value.'">'.$type.'</option>';
+                    }
+                    ?>
                 </select>
                 <div class="row" id="eventList">
                     <?php 
+                    foreach ($yearList as $year => $list){
+                        echo '<h3 class="year col-12">'.$year.'</h3>';
+                        foreach ($list as $event){
+                            $event["type"] = strtolower(str_replace(array('é','è','ë','ê','à','â','ä','î','ï'), "e", $event["type"]));
+                            echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$event['type'].'">',
+                            '<a href="?p=event&e='.$event['id'].'">',
+                            '<button class="list-object">'.$event['title'].'</button>',
+                            '</a> </div>';
+                        }
+                    }/*
                     for ($i=0;$i<count($eventDB);$i++){
                         $eventDB[$i]["type"] = strtolower(str_replace(array('é','è','ë','ê','à','â','ä','î','ï'), "e", $eventDB[$i]["type"]));
                         echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$eventDB[$i]['type'].'">',
                             '<a href="?p=event&e='.$eventDB[$i]['id'].'">',
                             '<button class="list-object">'.$eventDB[$i]['title'].'</button>',
                             '</a> </div>';
-                    }
+                    }*/
                     ?>
                 </div>
             </div>  
         </div>
+    <!-- Autre -->
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Modifier le site</div>
     </div>
@@ -161,6 +195,7 @@ function select(list,value){
     let objects = Array.from(currentList.getElementsByClassName('btn-panel'));
     if (value != 'all'){
         objects.forEach(object => {
+            console.log(object);
             if (!object.classList.contains(value)){
                 object.classList.add('hide');
             }else {
