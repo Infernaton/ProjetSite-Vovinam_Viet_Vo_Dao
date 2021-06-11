@@ -1,16 +1,38 @@
 <?php 
 function partials_header($categorie,$page){
     global $pages;
+    /**
+     * le schéma est le suivant:
+     * ["titre de la categorie",
+     *      ["Page1","Page2", ...
+     *          ["Page extérieur au site","liens"],
+     *      ]
+     * ],
+     * ["Autre Catégorie"],
+     * 
+     * Le nombre de page et les redirections vers d'autre site sont optionnels et sans limite
+     * Si une nouvelle page est voulu dans la barre de naviguation, ne pas oublier de l'enregistrer dans le init.php dans la bonne catégorie
+    */
     $nav = [
         ["Accueil"],
-        ["La Fédération",["La Fédération","Les Régions et Clubs","Contacts","Liens","Mentions Légales et Logo"]],
-        ["Direction Technique",["Calendrier","Le Conseil des Maîtres","Liste officielle des maîtres et ceintures noires","Passage de grades"]],
-        ["Le Vovinam-Viet Vo Dao",["La discipline et ses valeurs","L'Histoire","Les Grands Maîtres",
-            ['La Fédération mondiale <i class="fas fa-external-link-alt"></i>',"https://vovinamworldfederation.eu/fr/"]
-        ]],
-        ["Affiliation/licenciés",["Documentation","Modalités d'Affiliation","FAQ Affiliation","Licenciés","Passeport"]],
+        ["La Fédération",
+            ["La Fédération","Les Régions et Clubs","Contacts","Liens","Mentions Légales et Logo"]
+        ],
+        ["Direction Technique",
+            ["Calendrier","Le Conseil des Maîtres","Liste officielle des maîtres et ceintures noires","Passage de grades"]
+        ],
+        ["Le Vovinam-Viet Vo Dao",
+            ["La discipline et ses valeurs","L'Histoire","Les Grands Maîtres",
+                ['La Fédération mondiale',"https://vovinamworldfederation.eu/fr/"]
+            ]
+        ],
+        ["Affiliation/licenciés",
+            ["Documentation","Modalités d'Affiliation","FAQ Affiliation","Licenciés","Passeport"]
+        ],
         ["Actualités"],
-        ["Contact",["Contact","FAQ","Personnalité de la Fédération"]]
+        ["Contact",
+            ["Contact","FAQ","Personnalité de la Fédération"]
+        ],
     ];
 ?>   
 <!-- Configurations de la page -->
@@ -56,6 +78,7 @@ function partials_header($categorie,$page){
             <ul class="nav-items">
                 <li class="nav-item" style="border:none;"><h3 class="mobile-title">Sommaire<i class="fas fa-times navbar-toggler-icon"></i></h3></li>
                 <?php 
+                //Affichage automatique du menu avec la var $nav l.4
                 $counter = 0;
                 foreach($pages as $key=>$p){
                     if(count($nav[$counter]) == 1 ){
@@ -76,7 +99,7 @@ function partials_header($categorie,$page){
                                 $link= '?c='.$key.'&p='.$i;
                             }else {
                                 $link= $c[1].'" target="_blank';
-                                $c = $c[0];
+                                $c = $c[0].' <i class="fas fa-external-link-alt"></i>';
                             }
                             echo'<li class="nav-item">',
 					                '<a class="nav-link" href="'.$link.'">'.$c.'</a>',
@@ -94,6 +117,7 @@ function partials_header($categorie,$page){
         <div class="collapse navbar-collapse justify-content-center">
             <ul class="navbar-nav">
                 <?php 
+                //Affichage automatique du menu avec la var $nav l.4
                 $counter = 0;
                 foreach($pages as $key=>$p){
                     if(count($nav[$counter]) == 1 ){
@@ -115,7 +139,7 @@ function partials_header($categorie,$page){
                                 $link= '?c='.$key.'&p='.$i;
                             }else {
                                 $link= $c[1].'" target="_blank';
-                                $c = $c[0];
+                                $c = $c[0].' <i class="fas fa-external-link-alt"></i>';
                             }
                             echo '<a class="dropdown-item" href="'.$link.'">'.$c.'</a>';
                         }
