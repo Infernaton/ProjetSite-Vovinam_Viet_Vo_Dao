@@ -31,6 +31,9 @@ if (isset($_GET['m'])) {
 <form action="management/addMasterDB.php" method="post" enctype="multipart/form-data">
   <div id="container" class="container">
     <div class="text-center">
+      <div class="p-2" style="float:left;">
+        <a onclick="history.go(-1);"><button class="btn-annul annim" type="button">← Retour</button></a>
+      </div>
       <h1 id="addGM" class="content-title-red" >Ajouter un Maître</h1>
       <br><br>
       <h5> <span class="note">*</span> : Champs Obligatoire</h5>
@@ -83,14 +86,10 @@ if (isset($_GET['m'])) {
 
       <div class="col-12">
 
-        <div class="d-flex justify-content-between mt-4">
-          <div id="btn-object" class="p-2">
-            <a onclick="history.go(-1);"><button class="btn-annul annim undo" type="button" id='undo'>Annuler</button></a>
-          </div>
-
-          <div id="btn-Action" class="p-2">
-            <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
-          </div>
+      <div class ="d-flex justify-content-between mt-3">
+          <button type="button" class="btn-annul annim" type="button" id='undo'><a onclick="history.go(-1);">Annuler</a></button>
+          <button type="submit" class="btn-modObject annim undo hide" value="delete" name="submit" id="delete">Supprimer</button>
+          <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
         </div>
 
       </div>
@@ -103,6 +102,9 @@ if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentMaster)?> != null){
     document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos du Maître";
     document.getElementById("confirm").value = "modify";
+    document.getElementById("confirm").innerHTML = "Modifier";
+    document.getElementById("delete").classList.remove('hide');
+    document.getElementById("undo").classList.add('hide');
 
     //if we click on an existant master, we have to fill all the cointainer with data
     document.getElementById("name").value = "<?php echo $currentMaster['name'] ?>";

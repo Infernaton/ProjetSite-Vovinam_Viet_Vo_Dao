@@ -81,6 +81,21 @@ switch ($_POST['submit']){
         $req->execute();
         break;
     case 'delete':
+        $request = 'DELETE FROM `specialist` WHERE `id` ='.(int)$_POST['currentMaster'];
+        $db->prepare($request)->execute();
+        $req = $db->query('SELECT id FROM specialist WHERE id > '.(int)$_POST['currentMaster']);
+        $masters = $req->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($masters as $master){
+            $request = 'UPDATE specialist SET'.' id="'.((int)$master['id']-1).'" WHERE id='.(int)$master['id'].'';
+            $req = $db->prepare($request);
+            $req->execute();
+        }
+        $incr = $db->query('SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = "vietvodao" AND TABLE_NAME = "specialist"')->fetch(PDO::FETCH_ASSOC);
+        if (isset($master['id'])) {
+            $db->prepare('ALTER TABLE specialist AUTO_INCREMENT ='.$master['id'])->execute();
+        }else {
+            $db->prepare('ALTER TABLE specialist AUTO_INCREMENT ='.$incr['AUTO_INCREMENT']-1)->execute();
+        }
         break;
 }
 

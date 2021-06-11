@@ -45,7 +45,7 @@ if (isset($_GET['club'])) {
   <div id="container" class="container">
 
     <div class="text-center">
-      <div id="btn-object" class="p-2" style="float:left;">
+      <div class="p-2" style="float:left;">
         <a onclick="history.go(-1);"><button class="btn-annul annim" type="button">← Retour</button></a>
       </div>
       <h1 class="content-title-red">Ajouter un Club</h1>
@@ -115,7 +115,7 @@ if (isset($_GET['club'])) {
         </div>
       </div>
     </div>
-    
+
   </div>
 </form> 
 
