@@ -1,5 +1,17 @@
 <?php 
 function partials_header($categorie,$page){
+    global $pages;
+    $nav = [
+        ["Accueil"],
+        ["La Fédération",["La Fédération","Les Régions et Clubs","Contacts","Liens","Mentions Légales et Logo"]],
+        ["Direction Technique",["Calendrier","Le Conseil des Maîtres","Liste officielle des maîtres et ceintures noires","Passage de grades"]],
+        ["Le Vovinam-Viet Vo Dao",["La discipline et ses valeurs","L'Histoire","Les Grands Maîtres",
+            ['La Fédération mondiale <i class="fas fa-external-link-alt"></i>',"https://vovinamworldfederation.eu/fr/"]
+        ]],
+        ["Affiliation/licenciés",["Documentation","Modalités d'Affiliation","FAQ Affiliation","Licenciés","Passeport"]],
+        ["Actualités"],
+        ["Contact",["Contact","FAQ","Personnalité de la Fédération"]]
+    ];
 ?>   
 <!-- Configurations de la page -->
 <head>
@@ -43,160 +55,78 @@ function partials_header($categorie,$page){
         <div class="nav-drill">
             <ul class="nav-items">
                 <li class="nav-item" style="border:none;"><h3 class="mobile-title">Sommaire<i class="fas fa-times navbar-toggler-icon"></i></h3></li>
-                <li class="nav-item home">
-                    <a class="nav-link" href="?c=home">Accueil</a>
-                </li>
-                <li class="nav-item nav-expand federation">
-			        <a class="nav-link nav-expand-link" href="#">La Fédération</a>
-			        <ul class="nav-items nav-expand-content">
-				        <li class="nav-item">
-					        <a class="nav-link" href="?c=federation&p=0">La Fédération</a>
-				        </li>
-				        <li class="nav-item">
-					        <a class="nav-link" href="?c=federation&p=1">Les Régions et Clubs</a>
-				        </li>
-				        <li class="nav-item">
-					        <a class="nav-link" href="?c=federation&p=2">Contacts</a>
-				        </li>
-				        <li class="nav-item">
-					        <a class="nav-link" href="?c=federation&p=3">Lien</a>
-				        </li>
-				        <li class="nav-item">
-					        <a class="nav-link" href="?c=federation&p=4">Mentions Légales et Logo</a>
-				        </li>
-			        </ul>
-		        </li>
-                <li class="nav-item nav-expand directionTech">
-			        <a class="nav-link nav-expand-link" href="#">Direction Technique</a>
-                    <ul class="nav-items nav-expand-content">
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=0">Calendrier</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=1">Le Conseil des Maîtres</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=2">Liste officielle des maîtres et ceintures noires</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=directionTech&p=3">Passage de grades</a>
-				        </li>                        
-                    </ul>
-		        </li>
-                <li class="nav-item nav-expand vietVoDao">
-			        <a class="nav-link nav-expand-link" href="#">Le Vovinam-Viet Vo Dao</a>
-                    <ul class="nav-items nav-expand-content">
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=vietVoDao&p=0">La discipline et ses valeurs</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=vietVoDao&p=1">L'Histoire</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=vietVoDao&p=2">Les Grands Maîtres</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="https://vovinamworldfederation.eu/fr/">La Fédération mondiale <i class="fas fa-external-link-alt"></i></a>
-				        </li>
-                    </ul>
-		        </li>
-                <li class="nav-item nav-expand affiliation">
-	    	    	<a class="nav-link nav-expand-link" href="#">Affiliation/licenciés</a>
-                    <ul class="nav-items nav-expand-content">
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=affiliation&p=0">Documentation</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=affiliation&p=1">Modalités d'Affiliation</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=affiliation&p=2">FAQ Affiliation</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=affiliation&p=3">Licenciés</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=affiliation&p=4">Passeport</a>
-				        </li>
-                    </ul>
-	    	    </li>
-                <li class="nav-item actualite">
-		        	<a class="nav-link" href="?c=actualite">Actualités</a>
-		        </li>
-                <li class="nav-item nav-expand contacts">
-		        	<a class="nav-link nav-expand-link" href="#">Contact</a>
-                    <ul class="nav-items nav-expand-content">
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=contacts&p=0">Contact</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=contacts&p=1">FAQ</a>
-				        </li>
-                        <li class="nav-item">
-					        <a class="nav-link" href="?c=contacts&p=2">Personnalité de la Fédération</a>
-				        </li>
-                    </ul>
-		        </li>
+                <?php 
+                $counter = 0;
+                foreach($pages as $key=>$p){
+                    if(count($nav[$counter]) == 1 ){
+                        $expand_li = '';
+                        $expand_a = '" href="?c='.$key.'"';
+                    }else {
+                        $expand_li = 'nav-expand ';
+                        $expand_a = ' nav-expand-link" href="#"';
+                    }
+                    
+                    echo '<li class="nav-item '.$expand_li.$key.'">',
+                        '<a class="nav-link'.$expand_a.'>'.$nav[$counter][0].'</a>';
+                    if(count($nav[$counter]) == 2){
+                        echo '<ul class="nav-items nav-expand-content">';
+                        for($i=0;$i<count($nav[$counter][1]);$i++){
+                            $c = $nav[$counter][1][$i];
+                            if(getType($c) == "string") {
+                                $link= '?c='.$key.'&p='.$i;
+                            }else {
+                                $link= $c[1].'" target="_blank';
+                                $c = $c[0];
+                            }
+                            echo'<li class="nav-item">',
+					                '<a class="nav-link" href="'.$link.'">'.$c.'</a>',
+				                '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                    echo '</li>';
+                    $counter ++;
+                }
+                ?>
             </ul>
         </div>
         <!--Menu Version PC et Tablette-->
         <div class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav">
-            <li class="nav-item home">
-                <a class="nav-link" href="/ProjetSite-Vovinam_Viet_Vo_Dao/">Accueil</a>
-            </li>
-            <li class="nav-item dropdown federation">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">La Fédération</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=federation&p=0">La Fédération</a>
-                    <a class="dropdown-item" href="?c=federation&p=1">Les Régions et Clubs</a>
-                    <a class="dropdown-item" href="?c=federation&p=2">Contacts</a>
-                    <a class="dropdown-item" href="?c=federation&p=3">Lien</a>
-                    <a class="dropdown-item" href="?c=federation&p=4">Mentions Légales et Logo</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown directionTech">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Direction Technique</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=directionTech&p=0">Calendrier</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=1">Le Conseil des Maîtres</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=2">Liste officielle des maîtres et ceintures noires</a>
-                    <a class="dropdown-item" href="?c=directionTech&p=3">Passage de grades</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown vietVoDao">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Le Vovinam-Viet Vo Dao</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=vietVoDao&p=0">La discipline et ses valeurs</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=1">L'Histoire</a>
-                    <a class="dropdown-item" href="?c=vietVoDao&p=2">Les Grands Maîtres</a>
-                    <a class="dropdown-item" href="https://vovinamworldfederation.eu/fr/" target="_blank">La Fédération mondiale <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </li>
-            <li class="nav-item dropdown affiliation">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Affiliation/licenciés</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=affiliation&p=0">Documentation</a>
-                    <a class="dropdown-item" href="?c=affiliation&p=1">Modalités d'Affiliation</a>
-                    <a class="dropdown-item" href="?c=affiliation&p=2">FAQ Affiliation</a>
-                    <a class="dropdown-item" href="?c=affiliation&p=3">Licenciés</a>
-                    <a class="dropdown-item" href="?c=affiliation&p=4">Passeport</a>
-                </div>
-            </li>
-            <li class="nav-item actualite">
-                <a class="nav-link" href="?c=actualite">Actualités</a>
-            </li>
-            <li class="nav-item dropdown contacts">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?c=contacts&p=0">Contact</a>
-                    <a class="dropdown-item" href="?c=contacts&p=1">FAQ</a>
-                    <a class="dropdown-item" href="?c=contacts&p=2">Personnalité de la Fédération</a>
-                </div>
-            </li>
-        </ul>
+            <ul class="navbar-nav">
+                <?php 
+                $counter = 0;
+                foreach($pages as $key=>$p){
+                    if(count($nav[$counter]) == 1 ){
+                        $expand_li = '';
+                        $expand_a = '" href="?c='.$key.'"';
+                    }else {
+                        $expand_li = 'dropdown ';
+                        $expand_a = ' dropdown-toggle" href="#" data-toggle="dropdown"';
+                    }
+                    
+                    echo '<li class="nav-item '.$expand_li.$key.'">',
+                        '<a class="nav-link'.$expand_a.'>'.$nav[$counter][0].'</a>';
+
+                    if(count($nav[$counter]) == 2){
+                        echo '<div class="dropdown-menu">';
+                        for($i=0;$i<count($nav[$counter][1]);$i++){
+                            $c = $nav[$counter][1][$i];
+                            if(getType($c) == "string") {
+                                $link= '?c='.$key.'&p='.$i;
+                            }else {
+                                $link= $c[1].'" target="_blank';
+                                $c = $c[0];
+                            }
+                            echo '<a class="dropdown-item" href="'.$link.'">'.$c.'</a>';
+                        }
+                        echo '</div>';
+                    }
+                    echo '</li>';
+                    $counter ++;
+                }
+                ?>
+            </ul>
         </div>
-        
     </nav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -245,9 +175,7 @@ navExpand.forEach(item => {
 const ham = [].slice.call(document.getElementsByClassName('navbar-toggler-icon'))
 ham.forEach(button => button.addEventListener('click', () => document.body.classList.toggle('nav-is-toggled')))
 </script>
-<?php
-    if ($categorie!='admin'){
-        ?>
+
 <script> 
 //To print in red the current Page
 currentCategory = [].slice.call(document.getElementsByClassName('<?php echo $categorie?>'));
@@ -259,7 +187,6 @@ currentCategory.forEach(cat => {
     }
 })
 </script>
-        <?php
-    }
+    <?php
 }
 ?>

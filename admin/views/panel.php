@@ -160,11 +160,11 @@ body {
         </div>
     <!-- Autre -->
     <div class="collapsible d-flex justify-content-between">
-        <div class="p-2">Modifier le site</div>
+        <div class="p-2">Administration</div>
     </div>
         <div class="content"> 
             <div class="in">
-                <div class="row" id="eventList">
+                <div class="row">
                     <div class="col-12 col-md-6 btn-panel">
                         <a href="?p=news">
                             <button class="list-object">Actualités</button>
@@ -180,6 +180,20 @@ body {
                             <button class="list-object">Calendriers Fédéraux</button>
                         </a>
                     </div>
+                    <div class="col-12 col-md-6 btn-pannel">
+                        <a href="#">
+                            <button class="list-object">Organigramme Fédération</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="collapsible d-flex justify-content-between">
+        <div class="p-2">Customisation</div>
+    </div>
+        <div class="content">
+            <div class="in">
+                <div class="row">
                     <div class="col-12 col-md-6 btn-panel">
                         <a href="?p=sliders">
                             <button class="list-object">Modifier les Sliders</button>
