@@ -148,7 +148,7 @@ function printEvent($currentEvent){
 
     /*background-image: url(<?php echo $currentEvent['image']?>)*/
     ?>
-    <div class="event_new <?php echo substr(strtolower($currentEvent['type']), 0, 4);?>" id="t-<?php echo $currentEvent['id'] ?>" >
+    <div class="event_new <?php echo substr(strtolower($currentEvent['type']), 0, 3);?>" id="t-<?php echo $currentEvent['id'] ?>" >
         <div class="row">
             <div class="col col-xl-1 padding-right-0">
                 <?php 
@@ -210,15 +210,18 @@ function no_event(){
     }
     <?php 
         foreach($eventType as $type){
-            $idType = substr(strtolower($type['type']), 0, 4);
+            $idType = substr(strtolower($type['type']), 0, 3);
             $color = [0,0,0];
-            for($i=0;$i<strlen($idType)-1;$i++){
-                $charV = intdiv(intdiv(mb_ord($idType[$i]),4)*8,1);
+            for($i=0;$i<strlen($idType);$i++){
+                
+                $pos = mb_ord($idType[$i])-97;
+                echo "/*".mb_ord($idType[$i])." => ".$pos."*/\n";
+                $charV = intdiv(intdiv($pos*100,26)*255,100);
                 $color[$i] += $charV;
-                echo "/*". $charV ."*/\n";
             }
+            //var_dump($color);
             $color = "rgb(".$color[0].",".$color[1].",".$color[2].")";
-            echo ".".$idType."{background-color:".$color."}\n";
+            echo ".".$idType."{background-color:".$color."\n}\n";
         }
     ?>
 </style>
@@ -250,7 +253,7 @@ function no_event(){
                     <?php 
                     foreach($eventType as $key => $type){
                         $type = $type['type'];
-                        $idType = substr(strtolower($type), 0, 4);
+                        $idType = substr(strtolower($type), 0, 3);
                         ?>
                         <div class="custom-control custom-checkbox mb-3">
                             <input type="checkbox" class="custom-control-input" id="<?php echo $idType ?>" name="type[<?php echo $idType ?>]">
