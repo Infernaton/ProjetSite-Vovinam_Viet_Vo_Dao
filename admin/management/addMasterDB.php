@@ -53,8 +53,6 @@ switch ($_POST['hierarchy']){
     case 'Maître':
         $_POST['hierarchy'] = 'master';
         break;
-    default:
-        $_POST['hierarchy'] = 'none';
 }
 
 switch ($_POST['submit']){

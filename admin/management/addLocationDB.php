@@ -32,9 +32,20 @@ switch ($_POST["submit"]){
         break;
 
     case 'delete':
+        $request = 'DELETE FROM `marqueur` WHERE `id` ='.(int)$_POST['currentClub'];
+        $req = $db->prepare($request);
+        $req->execute();
+        $req = $db->query('SELECT id FROM marqueur WHERE id > '.(int)$_POST['currentClub']);
+        $clubs = $req->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($clubs as $club){
+            $request = 'UPDATE marqueur SET'.' id="'.((int)$club['id']-1).'" WHERE id='.(int)$club['id'].'';
+            $req = $db->prepare($request);
+            $req->execute();
+        }
+        $db->prepare('ALTER TABLE marqueur AUTO_INCREMENT ='.$club['id'])->execute();
         break;
 }
 
-echo "<script type='text/javascript'> history.go(-2); </script>";
+//echo "<script type='text/javascript'> history.go(-2); </script>";
 die;
 ?>

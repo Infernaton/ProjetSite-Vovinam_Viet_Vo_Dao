@@ -43,10 +43,10 @@ if (isset($_GET['club'])) {
 
 <form action="management/addLocationDB.php" method="post" enctype="multipart/form-data">
   <div id="container" class="container">
-    
+
     <div class="text-center">
       <div id="btn-object" class="p-2" style="float:left;">
-        <a onclick="history.go(-1);"><button class="btn-annul annim" type="button" id='undo'>← Retour</button></a>
+        <a onclick="history.go(-1);"><button class="btn-annul annim" type="button">← Retour</button></a>
       </div>
       <h1 class="content-title-red">Ajouter un Club</h1>
       <br><br>
@@ -54,68 +54,68 @@ if (isset($_GET['club'])) {
     </div>
   
     <div class="row pt-3">
-    <div class="col-12 col-md-8">
-      <div class="row">
-        <div class="col-12">
-          <div id="coordonee"></div>
-        </div>
-        <div class="col-12">
-          <div id="map" style="height:400px; max-height:100%"></div>
-        </div>
-      </div>
-      
-    </div>
-    <div class="col-12 col-md-4">
-      <div class="row mt-3">
-
-      <div class="col-12">
-        <label class="data" for="titre"><b>Titre</b><span class="note">*</span></label>
-        <input class="inputData form-control" type="text" placeholder="Nom du club" name="titre" id="titre" required>
-      </div>
-      <div class="col-12">
-        <label class="data" for="Enseignant"><b>Enseignant Principal</b></label>
-        <input class="inputData form-control" type="text" placeholder="Nom" name="enseignant" id="enseignant" >
-      </div>
-      <div class="col-12">
-        <label class="data" for="Contact"><b>Contacter le club</b></label>
-        <input class="inputData form-control" type="text" placeholder="Nom - Tél - Mail (si fournis)" name="contact" id="contact">
-      </div>
-      <div class="col-12">
+      <div class="col-12 col-md-8">
         <div class="row">
-          <div class="col-12 col-md-6">
-            <label class="data" for="lien"><b>Lien du site Web</b></label>
-            <input class="inputData form-control" type="text" placeholder="http:\\ ..." name="lien" id="lien">
+          <div class="col-12">
+            <div id="coordonee"></div>
           </div>
-          <div class="col-12 col-md-6">
-            <label class="data" for="comite"><b>Comite</b><span class="note">*</span></label>
-            <!--<input class="inputData form-control" list="list" type="text" placeholder="---" name="comite" id="comite" onchange="comiteData(this.value)">-->
-            <select style="overflow-y:auto;" name="list" id="comite" onchange="comiteData(this.value)" class="custom-select inputData form-control">
-              <?php 
-                foreach ($comiteDB as $comite){
-                  echo '<option value="'.$comite["titre"].'">'.$comite["titre"].'</option>';
-                }
-              ?>
-            </datalist>
-            <input class="hide" type="text" name="comiteValue" id="comiteValue" value="" required>
+          <div class="col-12">
+            <div id="map" style="height:400px; max-height:100%"></div>
           </div>
         </div>
       </div>
-      <div class="col-12 mt-3">
-        <input class="list-group-item form-control" type="text" name="result" id="coo" placeholder="Coordonée GPS" required readonly>
-      </div>
-      <input class="hide" name="currentClub" value="<?php echo $index?>" id="currentClub">
 
-      </div> 
-      <div class ="d-flex justify-content-between mt-3">
-        <div id="btn-object" class="p-2">
-          <a onclick="history.go(-1);"><button class="btn-annul annim undo" type="button" id='undo'>Annuler</button></a>
-        </div>
-        <div id="btn-Action" class="p-2">
+      <div class="col-12 col-md-4">
+        <div class="row mt-3">
+          <div class="col-12">
+            <label class="data" for="titre"><b>Titre</b><span class="note">*</span></label>
+            <input class="inputData form-control" type="text" placeholder="Nom du club" name="titre" id="titre" required>
+          </div>
+
+          <div class="col-12">
+            <label class="data" for="Enseignant"><b>Enseignant Principal</b></label>
+            <input class="inputData form-control" type="text" placeholder="Nom" name="enseignant" id="enseignant" >
+          </div>
+
+          <div class="col-12">
+            <label class="data" for="Contact"><b>Contacter le club</b></label>
+            <input class="inputData form-control" type="text" placeholder="Nom - Tél - Mail (si fournis)" name="contact" id="contact">
+          </div>
+
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <label class="data" for="lien"><b>Lien du site Web</b></label>
+                <input class="inputData form-control" type="text" placeholder="http:\\ ..." name="lien" id="lien">
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="data" for="comite"><b>Comite</b><span class="note">*</span></label>
+                <select style="overflow-y:auto;" name="list" id="comite" onchange="comiteData(this.value)" class="custom-select inputData form-control">
+                  <?php 
+                    foreach ($comiteDB as $comite){
+                      echo '<option value="'.$comite["titre"].'">'.$comite["titre"].'</option>';
+                    }
+                  ?>
+                <input class="hide" type="text" name="comiteValue" id="comiteValue" value="" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mt-3">
+            <input class="list-group-item form-control" type="text" name="result" id="coo" placeholder="Coordonée GPS" required readonly>
+          </div>
+          <input class="hide" name="currentClub" value="<?php echo $index?>" id="currentClub">
+        </div> 
+
+        <div class ="d-flex justify-content-between mt-3">
+          <button type="button" class="btn-annul annim" type="button" id='undo'><a onclick="history.go(-1);">Annuler</a></button>
+          <button type="submit" class="btn-modObject annim undo hide" value="delete" name="submit" id="delete">Supprimer</button>
           <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
         </div>
       </div>
     </div>
-    </div>
+    
   </div>
 </form> 
 
@@ -223,6 +223,9 @@ if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentClub)?> != null){
     document.getElementsByTagName("h1")[0].innerHTML = "Modifier le Club";
     document.getElementById("confirm").value = "modify";
+    document.getElementById("confirm").innerHTML = "Modifier";
+    document.getElementById("delete").classList.remove('hide');
+    document.getElementById("undo").classList.add('hide');
 
     document.getElementById("titre").value = "<?php echo $currentClub["titre"]?>";
     document.getElementById("enseignant").value = "<?php echo $currentClub["enseignant"]?>";

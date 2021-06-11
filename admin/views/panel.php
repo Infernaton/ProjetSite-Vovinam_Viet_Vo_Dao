@@ -21,8 +21,9 @@ foreach($eventDB as $event){
 }
 //var_dump($yearList);
 
-$req = $db->query('SELECT DISTINCT type FROM event');
-$eventType = $req->fetchAll(PDO::FETCH_ASSOC);  //To know all the type of event, if a new appear, we don't have to add it manually
+$eventType = $db->query('SELECT DISTINCT type FROM event')->fetchAll(PDO::FETCH_ASSOC);
+//To know all the type of event, if a new appear, we don't have to add it manually
+$hierarchy = $db->query('SELECT DISTINCT hierarchy FROM specialist')->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <style>
 body {
@@ -48,8 +49,23 @@ body {
             <div class="in">
                 <select name="masterSelect" class="custom-select mb-3" onchange="select('masterList',this.value)">
                     <option value="all">Tous les Maîtres</option>
-                    <option value="great-master">Grands Maîtres</option>
-                    <option value="master">Maîtres</option>
+                    <!--<option value="great-master">Grands Maîtres</option>
+                    <option value="master">Maîtres</option>-->
+                    <?php
+                    foreach ($hierarchy as $h){
+                        $print = $h['hierarchy'];
+                        $type_value = strtolower(str_replace(array('é','è','ë','ê','à','â','ä','î','ï'), "e", $print));
+                        switch ($print){
+                            case 'great-master':
+                                $print = 'Grand Maître';
+                                break;
+                            case 'master':
+                                $print = 'Maître';
+                                break;
+                        }
+                        echo '<option value="'.$type_value.'">'.$print.'</option>';
+                    }
+                    ?>
                 </select>
                 <div class="row" id="masterList">
                     <?php 
