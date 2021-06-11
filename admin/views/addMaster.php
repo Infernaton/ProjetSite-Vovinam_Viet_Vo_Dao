@@ -36,7 +36,7 @@ if (isset($_GET['m'])) {
       </div>
       <h1 id="addGM" class="content-title-red" >Ajouter un Maître</h1>
       <br><br>
-      <h5> <span class="note">*</span> : Champs Obligatoire</h5>
+      <h5> <span class="note">*</span> : Champs Obligatoires</h5>
     </div>
     <div class="row">
       <div class="col-md-5 col-12">

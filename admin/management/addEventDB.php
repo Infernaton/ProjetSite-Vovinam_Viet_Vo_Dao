@@ -59,8 +59,8 @@ switch ($_POST['submit']){
         $req->bindValue(':description', translateToHTML($_POST["description"]));
         $req->bindValue(':dateDebut' , $_POST["debut"]);
         $req->bindValue(':dateFin' , $_POST["fin"]);
-        $req->bindValue(':prerequis' , $_POST["prerequis"]);
-        $req->bindValue(':objectif' , $_POST["objectif"]);
+        $req->bindValue(':prerequis' , "");
+        $req->bindValue(':objectif' , "");
         $req->bindValue(':image' , $target_file);
 
         $req->execute();

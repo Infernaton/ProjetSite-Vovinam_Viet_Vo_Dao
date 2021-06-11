@@ -50,7 +50,7 @@ if (isset($_GET['club'])) {
       </div>
       <h1 class="content-title-red">Ajouter un Club</h1>
       <br><br>
-      <h5> <span class="note">*</span> : Champs Obligatoire</h5>
+      <h5> <span class="note">*</span> : Champs Obligatoires</h5>
     </div>
   
     <div class="row pt-3">
