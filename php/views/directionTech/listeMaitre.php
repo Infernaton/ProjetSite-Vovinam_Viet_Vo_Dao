@@ -1,4 +1,8 @@
 <?php
+//affiche pour event
+//conseil, redirrection a refaire
+//Image des maitres
+//Fautes dans verif du mdp admin
 $req = $db->query('SELECT * FROM specialist WHERE hierarchy LIKE "master" ORDER BY id');
 $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>

@@ -213,11 +213,11 @@ function no_event(){
             $idType = substr(strtolower($type['type']), 0, 3);
             $color = [0,0,0];
             for($i=0;$i<strlen($idType);$i++){
-                
-                $pos = mb_ord($idType[$i])-97;
+                $pos = mb_ord($idType[$i])-97; // pour avoir un nombre entre 0 et 25, la position des lettres
                 echo "/*".mb_ord($idType[$i])." => ".$pos."*/\n";
-                $charV = intdiv(intdiv($pos*100,26)*255,100);
-                $color[$i] += $charV;
+
+                $charV = intdiv(intdiv($pos*100,26)*255,100); // puis on fait un calcul de pourcentage pour que la valeur soit entre 0 et 255
+                $color[$i] = $charV;
             }
             //var_dump($color);
             $color = "rgb(".$color[0].",".$color[1].",".$color[2].")";
