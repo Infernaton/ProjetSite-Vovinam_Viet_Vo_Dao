@@ -59,8 +59,6 @@ switch ($_POST['submit']){
         $req->bindValue(':description', translateToHTML($_POST["description"]));
         $req->bindValue(':dateDebut' , $_POST["debut"]);
         $req->bindValue(':dateFin' , $_POST["fin"]);
-        $req->bindValue(':prerequis' , "");
-        $req->bindValue(':objectif' , "");
         $req->bindValue(':image' , $target_file);
 
         $req->execute();
@@ -68,7 +66,7 @@ switch ($_POST['submit']){
         break;
 
     case 'modify':
-        $request = 'UPDATE event SET'.' type="'. $_POST["event"].'", title="'.$_POST["title"].'", description="'.translateToHTML($_POST["description"]).'", dateDebut="'.$_POST["debut"].'", dateFin="'.$_POST["fin"].'", prerequis="'.$_POST["prerequis"].'", objectif="'.$_POST["objectif"].'", image="'.$target_file.'" WHERE id='.(int)$_POST['currentEvent'].'';
+        $request = 'UPDATE event SET'.' type="'. $_POST["event"].'", title="'.$_POST["title"].'", description="'.translateToHTML($_POST["description"]).'", dateDebut="'.$_POST["debut"].'", dateFin="'.$_POST["fin"].'", image="'.$target_file.'" WHERE id='.(int)$_POST['currentEvent'].'';
         $req = $db->prepare($request);
         $req->execute();
         break;
