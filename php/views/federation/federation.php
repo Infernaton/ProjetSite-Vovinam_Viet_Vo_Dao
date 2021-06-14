@@ -6,8 +6,13 @@
         <h1 class="content-title-blue">La Fédération</h1>
         <p class="pt-2"><a href="#calendrier"><i>Voir les Calendriers Fédéraux</i></a></p>
     </div>
-        <img class="mx-auto d-block" src="assets/img/federation/groupe_fondateur.jpg">
-        <p>
+    <div class="row">
+    <!-- fixe taille pour téléphone-->
+        <div class="col-2 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <img class="img_fill" src="assets/img/logo.png" style="height: auto;">
+        </div>
+        <div class="col">
+            <p>
             Fondé en août 1985, la fédération de Vovinam-Viêt Võ Ðao France est une association à but non lucratif régie 
             par la loi du 1er juillet 1901. Depuis sa création, la Fédération gère et coordonne les nombreuses activités 
             au sein des nombreuses Régions qui sont actuellement sous sa tutelle. Son action est guidée par le souci constant 
@@ -19,9 +24,10 @@
             l’un des membres les plus influents. L’impact du VOVINAM VIET VO DAO FRANCE est remarquable puisqu’il est devenu 
             un modèle pour les structures des autres pays qui lui ont confié l’organisation des plus grands événements 
             internationaux (Coupe d’Europe, Congrès Mondial, Coupe du Monde…).
-        </p>
-        <br>
-        
+            </p>
+        </div>
+    </div>
+    <br>
         <div id="demo" class="carousel slide border text-center p-2" data-ride="carousel" data-interval="0" id="plaquette">
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -53,7 +59,7 @@
             $calendars = json_decode(file_get_contents($json_file), true, JSON_UNESCAPED_UNICODE);
             foreach($calendars as $calendar){
             ?>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="text-center">
                     <a href="<?php echo $calendar['pdf']?>" target="_blank">
                         <img class="img_fill" src="<?php echo $calendar['img_preview'] ?>" alt="preview">

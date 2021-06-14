@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="css/federation.css">
+<!-- Mise en valeur des liens-->
+
 
 <body>
     <div class="container info">

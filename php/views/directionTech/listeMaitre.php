@@ -80,29 +80,6 @@ $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="selection">
         <br>
-        <h5><span class="ml-3">➢ Les Experts</span></h5>
-        <div class="row">
-            <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
-                <img name="exp1" src="image.png" alt="expert 1">
-                <label for="exp1">Me .... ......</label>
-            </div>
-            <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
-                <img name="exp2" src="image.png" alt="expert 2">
-                <label for="exp2">Me .... ......</label>
-            </div>
-            <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
-                <img name="exp3" src="image.png" alt="expert 3">
-                <label for="exp3">Me .... ......</label>
-            </div>
-            <div class="col-sm-4" data-toggle="modal" data-target="#myModal">
-                <img name="exp4" src="image.png" alt="expert 4">
-                <label for="exp4">Me .... ......</label>
-            </div>
-        </div>
-    </div>
-
-    <div class="selection">
-        <br>
         <h5><span class="ml-3">➢ Les Responsables Techniques régionaux</span></h5>
         <div class="row">
             <div class="col-sm-4" data-toggle="modal" data-target="#myModal">

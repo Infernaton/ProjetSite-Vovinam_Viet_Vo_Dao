@@ -3,7 +3,7 @@
     <hr>
     <h4>Fédération de VOVINAM-Viet Vo Dao France</h4>
     <br>
-    <h4><small> Adresse: 6 Allée des Agrions, 91160 Ballainvilliers </small></h4>
-    <h4><small> Mail: vovinamfr@vietvodao.com  </small></h4>
-    <h4><small> Téléphone: 01.64.49.60.10 </small></h4>
+    <h4><small> <i class="fas fa-map-marker-alt"></i> 6 Allée des Agrions, 91160 Ballainvilliers </small></h4>
+    <h4><small> <i class="fas fa-envelope"></i> vovinamfr@vietvodao.com  </small></h4>
+    <h4><small> <i class="fas fa-phone"></i> 01.64.49.60.10 </small></h4>
 </div>
