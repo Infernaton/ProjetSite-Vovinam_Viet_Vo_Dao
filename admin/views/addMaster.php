@@ -54,14 +54,14 @@ if (isset($_GET['m'])) {
             <label class="data" for="name"><b>Nom Complet</b><span class="note">*</span></label>
             <input class="inputData form-control" type="text" placeholder="Nom" name="name" id="name" required>
           </div>
-        <div class="col-12 col-md-6">
-          <label class="data" for="birth"><b>Date de Naissance</b><span class="note">*</span></label>
-          <input class="inputData form-control" type="text" placeholder="'jj/mm/aaaa' ou 'aaaa'" name="birth" id="birth" required>    
-        </div>
-        <div class="col-12 col-md-6">
-          <label class="data" for="death"><b>Date du Décès</b></label>
-          <input class="inputData form-control" type="text" placeholder="(Optionnel)" name="death" id="death">
-        </div>
+          <div class="col-12 col-md-6">
+            <label class="data" for="birth"><b>Date de Naissance</b><span class="note">*</span></label>
+            <input class="inputData form-control" type="text" placeholder="'jj/mm/aaaa' ou 'aaaa'" name="birth" id="birth" required>    
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="data" for="death"><b>Date du Décès</b></label>
+            <input class="inputData form-control" type="text" placeholder="(Optionnel)" name="death" id="death">
+          </div>
         </div>
       </div>
 
@@ -113,7 +113,7 @@ if (<?php echo $index?> != -1){
     document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
     document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>".replaceAll('{n}', '\n');
     document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
-    document.getElementById("previewImgDiv").style = "background-image:url(<?php echo getSaveDirr("forPreview").$currentMaster['pictureProfile'] ?>);";
+    document.getElementById("previewImgDiv").style = "background-image:url('<?php echo getSaveDirr("forPreview").$currentMaster['pictureProfile'] ?>');";
     document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
     document.getElementById("newImage").required = false;
   }

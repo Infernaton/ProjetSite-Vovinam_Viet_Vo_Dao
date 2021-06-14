@@ -4,6 +4,9 @@ require_once 'init.php';
 //var_dump($_POST);
 //var_dump($_FILES);
 
+$_POST["biography"] = str_replace(["'",'"'],['\\\'',"\\\""],$_POST["biography"]);
+$_POST["function"] = str_replace(["'",'"'],['\\\'',"\\\""],$_POST["function"]);
+
 //If we want to upload a new image for the current Master
 if ($_FILES['newImage']['error']==0){
     //If there no new file, $_FILES['newImage']['error'] = 4;
@@ -53,6 +56,8 @@ switch ($_POST['hierarchy']){
     case 'Maître':
         $_POST['hierarchy'] = 'master';
         break;
+    default:
+        $_POST["hierarchy"] = str_replace(["'",'"'],['\\\'',"\\\""],$_POST["hierarchy"]);
 }
 
 switch ($_POST['submit']){
@@ -72,11 +77,11 @@ switch ($_POST['submit']){
 
         $req->execute();
         echo "\n Envoie réussi";
-
         break;
+
     case 'modify':
-        $request = 'UPDATE specialist SET'.' name="'.$_POST["name"].'", pictureProfile="'.$target_file.'", biographyShort="'.$_POST["biography"].'", birthday="'.$_POST["birth"].'", deathDate="'.$deathValue.'", function="'.$_POST["function"].'", hierarchy="'.$_POST["hierarchy"].'"'.' WHERE id='.(int)$_POST['currentMaster'].'';
-        var_dump($request);
+        $request = 'UPDATE specialist SET'.' name="'.$_POST["name"].'", pictureProfile="'.$target_file.'", birthday="'.$_POST["birth"].'", deathDate="'.$deathValue.'", function="'.$_POST["function"].'", biographyShort="'.$_POST["biography"].'", hierarchy="'.$_POST["hierarchy"].'" WHERE id='.(int)$_POST['currentMaster'].'';
+        //var_dump($request);
         $req = $db->prepare($request);
         $req->execute();
         break;
