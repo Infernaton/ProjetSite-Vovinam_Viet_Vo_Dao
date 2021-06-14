@@ -153,7 +153,7 @@ if (<?php echo $index?> != -1){
     
     //if we click on an existant master, we have to fill all the cointainer with his data
     document.getElementById("title").value = "<?php echo $currentEvent['title'] ?>";
-    document.getElementById("description").value = "<?php echo translateToInput($currentEvent['description'])?>";
+    document.getElementById("description").value = "<?php echo translateToInput(str_replace("<br>","{n}",$currentEvent['description']))?>".replaceAll('{n}', '\n');
     document.getElementById("dateDebut").value = "<?php echo reformatDate($currentEvent['dateDebut'])?>";
     document.getElementById("dateFin").value = "<?php echo reformatDate($currentEvent['dateFin'])?>";
     document.getElementById("event").value = "<?php echo $currentEvent['type'] ?>";
