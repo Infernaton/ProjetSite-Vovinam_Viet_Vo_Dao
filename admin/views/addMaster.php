@@ -40,13 +40,15 @@ if (isset($_GET['m'])) {
     </div>
     <div class="row">
       <div class="col-md-5 col-12">
-
-        <div id="previewImgDiv" class="responsive" style="background-image:url(../assets/img/no-picture.png);";>
-          <div class="hoverEle">
-            <p class="center">Changer l'image</p>
+        <div class="text-center">
+          <div id="previewImgDiv" class="responsive" style="background-image:url(../assets/img/no-picture.png);";>
+            <div class="hoverEle">
+              <p class="center">Changer l'image</p>
+            </div>
+            <input class="hide" type="text" name="oldImage" id="oldImage">
+            <input class="inputData input-file" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);">          
           </div>
-          <input class="hide" type="text" name="oldImage" id="oldImage">
-          <input class="inputData input-file" type="file" name="newImage" id="newImage" accept=".png, .jpeg, .jpg" required onchange="previewFile(this);">
+          <p>Taille recommandée: 512 x 512 pixels </p>
         </div>
 
         <div class="row">
