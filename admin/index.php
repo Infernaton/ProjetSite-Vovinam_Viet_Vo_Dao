@@ -9,7 +9,7 @@ if($_POST){
     else {
         unset($_SESSION['success']);
         $_SESSION['try_'.count($_SESSION).''] = 2-count($_SESSION);
-        $failed = 'Mauvais mot de passe, '.$_SESSION['try_'.(count($_SESSION)-1).''].' essaie restant.';
+        $failed = 'Mauvais mot de passe, '.$_SESSION['try_'.(count($_SESSION)-1).''].' essai(s) restant.';
         if (count($_SESSION)> 3){
             echo "<script type='text/javascript'> location.href = '../' </script>";
         }
