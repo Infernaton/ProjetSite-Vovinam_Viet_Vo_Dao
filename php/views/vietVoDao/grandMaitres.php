@@ -5,6 +5,25 @@ function str_replace_first($from, $to, $content){
     $from = '/'.preg_quote($from, '/').'/';
     return preg_replace($from, $to, $content, 1);
 }
+function printParagraph($paragraphes, $hint = 0){
+    global $fondatorData;
+    foreach ($paragraphes as $sentence){
+        if ($sentence[0] == '/'){
+            $sentence = explode("&",$sentence);
+            echo '<img src="assets/json/greatMaster_img'.$sentence[0].'">';
+            echo '<p> <b>'.$sentence[1].'</b> </p>';
+            continue;
+        }
+        for ($a=0;$a<strlen($sentence);$a++){
+            if ($sentence[$a] == '['){
+                $sentence = str_replace_first("[","<span class=\"hint\" rel=\"tooltip\" title=\"".$fondatorData['note'][$hint]."\">",$sentence);
+                $sentence = str_replace_first("]","</span>",$sentence);
+                $hint++;
+            }
+        }
+        echo '<p>'.$sentence.'</p>';                                
+    }
+}
 
 $greatMastersBeforeFetch = $db->query('SELECT * FROM specialist WHERE hierarchy LIKE "great-master" ORDER BY id');
 $greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
@@ -98,23 +117,7 @@ $fondatorData = $greatMasters[0];
                             </div>
                             <div class="content pl-4 pr-4">
                             <?php 
-                            foreach ($part['paragraphes'] as $sentence){
-                                if ($sentence[0] == '/'){
-                                    $sentence = explode("&",$sentence);
-                                    echo '<img src="#">';
-                                    $sentence = $sentence[1];
-                                    echo '<p> <b>'.$sentence.'</b> </p>';
-                                    continue;
-                                }
-                                for ($a=0;$a<strlen($sentence);$a++){
-                                    if ($sentence[$a] == '['){
-                                        $sentence = str_replace_first("[","<span class=\"hint\" rel=\"tooltip\" title=\"".$fondatorData['note'][$hint]."\">",$sentence);
-                                        $sentence = str_replace_first("]","</span>",$sentence);
-                                        $hint++;
-                                    }
-                                }
-                                echo '<p>'.$sentence.'</p>';
-                            }
+                                printParagraph($part['paragraphes'],$hint);
                             ?>  
                             </div>
                         </div>
@@ -223,23 +226,7 @@ $fondatorData = $greatMasters[0];
                             </div>
                             <div class="content pl-4 pr-4">
                             <?php 
-                            foreach ($part['paragraphes'] as $sentence){
-                                if ($sentence[0] == '/'){
-                                    $sentence = explode("&",$sentence);
-                                    echo '<img src="#">';
-                                    $sentence = $sentence[1];
-                                    echo '<p> <b>'.$sentence.'</b> </p>';
-                                    continue;
-                                }
-                                for ($o=0;$o<strlen($sentence);$o++){
-                                    if ($sentence[$o] == '['){
-                                        $sentence = str_replace_first("[","<span class=\"hint\" rel=\"tooltip\" title=\"".$greatMasters[$i+1]['note'][$hint]."\">",$sentence);
-                                        $sentence = str_replace_first("]","</span>","$sentence");
-                                        $hint++;
-                                    }
-                                }
-                                echo '<p>'.$sentence.'</p>';
-                            }
+                                printParagraph($part['paragraphes']);
                             ?>  
                             </div>
                         </div>
