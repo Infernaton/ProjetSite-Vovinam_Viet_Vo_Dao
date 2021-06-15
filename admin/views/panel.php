@@ -181,7 +181,7 @@ body {
                         </a>
                     </div>
                     <div class="col-12 col-md-6 btn-pannel">
-                        <a href="#">
+                        <a href="?p=organisation">
                             <button class="list-object">Organigramme Fédération</button>
                         </a>
                     </div>

@@ -1,7 +1,7 @@
 <?php 
 require_once 'management/init.php';
 session_start();
-
+/*
 if($_POST){
     if ($_POST['mdp'] == getAccessAdmin()){
         $_SESSION['success'] = true;
@@ -14,7 +14,7 @@ if($_POST){
             echo "<script type='text/javascript'> location.href = '../' </script>";
         }
     }
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="fr_FR">
@@ -91,15 +91,15 @@ if($_POST){
     </div>
 </div>
 <?php
-if (isset($_SESSION['success'])){
-    $pages = ['panel','addClub','addMaster','event','sliders','modifyFAQ','calendars','news'];
+//if (isset($_SESSION['success'])){
+    $pages = ['panel','addClub','addMaster','event','sliders','modifyFAQ','calendars','news','organisation'];
     $page = 'panel';
     if (isset($_GET['p'])) {
         if (in_array($_GET['p'],$pages)){
             $page = $_GET['p'];
         }
     }
-    require_once 'views/'.$page.'.php';
+    require_once 'views/'.$page.'.php';/*
 }else {
     ?>
     <div class="container">
@@ -124,7 +124,7 @@ if (isset($_SESSION['success'])){
         </form>
     </div>
     <?php
-}
+}*/
 ?>
 </body>
 </html>
