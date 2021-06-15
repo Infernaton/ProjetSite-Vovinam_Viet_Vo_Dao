@@ -18,11 +18,13 @@
                     }
                 }
                 $req = $db->prepare('INSERT INTO organisation (
-                    id, role, id_master, info
-                    ) VALUES (:id, :role, :id_master, :info)');
+                    id, role, id_master, affectation, info
+                    ) VALUES (:id, :role, :id_master, :affectation, :info)');
 
                 $req->bindValue(':id', ((int)$higherID['id']+1));
                 $req->bindValue(':role' , $_POST["role"]);
+
+                $req->bindValue(':affectation' , $_POST["affectation"]);
 
                 isset($_POST["isMaster"])? $req->bindValue(':id_master' , 0) : $req->bindValue(':id_master' , $currentMaster['id']);
                 isset($_POST["info"])? $req->bindValue(':info', $_POST["info"]) : $req->bindValue(':info', null);
@@ -40,6 +42,22 @@
     }
     $req = $db->query('SELECT * FROM organisation ORDER BY id');
     $function = $req->fetchAll(PDO::FETCH_ASSOC);
+
+    $affectations = array();
+    foreach($function as $f){
+        //Event sort by year
+        $affectation = $f['affectation'];
+        //If a year is already in the table, we put the event in it
+        if (array_key_exists($affectation, $affectations)){
+            array_push($affectations[$affectation], $f);
+        }
+        //If not, we create that year
+        else {
+            $affectations[$affectation] = [$f];
+        }
+    }
+    $req = $db->query('SELECT DISTINCT affectation FROM organisation ORDER BY id');
+    $aff = $req->fetchAll(PDO::FETCH_ASSOC);
 
     function printRole($function) {
         //var_dump($function);
@@ -114,6 +132,14 @@
     }
     ?>
 </datalist>
+<datalist id="affectation">
+    <?php
+    foreach ($aff as $a){
+        $name = $a['affectation'];
+        echo '<option value="'.$name.'">';
+    }
+    ?>
+</datalist>
 <div class="container">
     <div id="btn-object" class="p-2" style="">
         <a href="../admin"><button class="btn-annul annim" type="button" id='undo'>← Retour</button></a>
@@ -143,11 +169,15 @@
                                     <h5 class="data">Personne occupant ce rôle</h5>
                                     <input class="inputData form-control" list="master-name" type="text" name="name" id="name" placeholder="..." required>
                                 </div>
+                                <div class="col">
+                                    <h5 class="data">Affectation</h5>
+                                    <input class="inputData form-control" list="affectation" type="text" name="affectation" id="affectation" placeholder="Ex: Bureau, Comités Régionaux ..." required>
+                                </div>
                             </div>
                             <br>
                             <div class="custom-control custom-checkbox mb-3">
                                 <input type="checkbox" class="custom-control-input" id="isMaster" name="isMaster">
-                                <label class="custom-control-label" for="isMaster">La personne est un maître</label>
+                                <label class="custom-control-label" for="isMaster">La personne n'est pas un maître</label>
                             </div>
                         </div>
 
@@ -165,16 +195,18 @@
                 </form>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-2"></div>
-            <div class="col-4"><?php echo printRole($function[0])?></div>
-            <div class="col-4"><?php echo printRole($function[1])?></div>
-            <div class="col-2"></div>
-        </div>
-        <?php
-        for($i=2;$i<count($function);$i++){
-            printRole($function[$i]);
-        }
+        <?php 
+            foreach($affectations as $affectation=>$list){
+                echo '<h3>'.$affectation.'</h3>';
+                echo '<hr>';
+                echo '<div class="row m-3">';
+                foreach ($list as $function){
+                    echo '<div class="col-4">';
+                    printRole($function);
+                    echo '</div>';
+                }
+                echo '</div>';
+            }
         ?>
     </div>
 </div>
