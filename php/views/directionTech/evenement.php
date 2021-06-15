@@ -1,11 +1,5 @@
 <?php
 /*
---- Popup quand on clique, image +grand
---- saut de ligne pour description --> synthax faq
---- couleur pour type d'event
---+ couleur par event
-tri par trimestre
---- passage de grade pour nouvel event => Détéction automatique de nouveau type d'event
 Tri par région.
 */
 require_once 'php/init.php';
@@ -76,7 +70,7 @@ if($_POST){
         foreach ($_POST['type'] as $key => $value) {
             foreach($eventType as $type){
                 $type = $type['type'];
-                $idType = substr(strtolower($type), 0, 4);
+                $idType = substr(strtolower($type), 0, 3);
                 if($idType == $key){
                     array_push($someFilter, 'type like "'.$type.'"');
                     break;
@@ -320,7 +314,7 @@ function no_event(){
                     switch (type) {
                         <?php
                         foreach($eventType as $key => $type){
-                            $idType = substr(strtolower($type['type']), 0, 4);
+                            $idType = substr(strtolower($type['type']), 0, 3);
                             echo "case '".$idType."': \n";
                             echo "  document.getElementById(type).checked = true;\n";
                             echo "  break;\n";

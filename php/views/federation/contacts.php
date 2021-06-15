@@ -27,7 +27,7 @@ h4{
                                 <br>
                                 <h4 class="title">Secrétariat Général:</h4> <br> 
                                 <div class="sub">
-                                        M Rudy HANAFI - secretairegeneral@vietvodao.com
+                                        M. Rudy HANAFI - secretairegeneral@vietvodao.com
                                 </div>
                                 <br>
                                 <br>
