@@ -10,29 +10,31 @@
         <!-- Liens de redirection -->
         <div class="ml-3">
             <div>
-                <p>➢ Fédération Mondiale, Site Officiel: <a href="https://vovinamworldfederation.eu/fr/">https://vovinamworldfederation.eu/fr/</a></p>
+                <h3><a href="https://vovinamworldfederation.eu/fr/">➢ Fédération Mondiale, Site Officiel</a></h3>
             </div>
-            <div>
-                <p>➢ Conseil des Maîtres Mondial: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html</a></p>
-            </div>
-            <div>
-                <p>➢ Diplôme International: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html</a></p>
-            </div>
-
             <br>
             <div>
-                <p>➢ Fédération des Arts Martiaux Traditionnels Vietnamiens: <a href="http://www.famtv.fr/">http://www.famtv.fr/</a></p>
+                <h3><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html">➢ Conseil des Maîtres Mondial</a></h3>
+            </div>
+            <br>
+            <div>
+                <h3><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html">➢ Diplôme International</a></h3>
+            </div>
+            <br>
+            <br>
+            <div>
+                <h3><a href="http://www.famtv.fr/">➢ Fédération des Arts Martiaux Traditionnels Vietnamiens</a></h3>
             </div>
             
             <br>
             <div>
-                <p>➢ Résultats Coupes du Monde: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html</a></p>
+                <h3><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-du-monde.html">➢ Résultats Coupes du Monde</a></h3>
                 <ul>
                     <li>
-                        <p>➢ Résultats Coupes d'Europe: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupe-europe-2020.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupe-europe-2020.html</a></p>
+                        <h4><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupe-europe-2020.html">➢ Résultats Coupes d'Europe</a></h4>
                     </li>
                     <li>
-                        <p>➢ Résultats Coupes d'Afrique: <a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-continentales.html">https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-continentales.html</a></p>
+                        <h4><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/coupes-continentales.html">➢ Résultats Coupes d'Afrique</a></h4>
                     </li>
                 </ul>
             </div>
