@@ -19,11 +19,16 @@ foreach($eventDB as $event){
         $yearList[$year] = [$event];
     }
 }
-//var_dump($yearList);
 
 $eventType = $db->query('SELECT DISTINCT type FROM event')->fetchAll(PDO::FETCH_ASSOC);
 //To know all the type of event, if a new appear, we don't have to add it manually
 $hierarchy = $db->query('SELECT DISTINCT hierarchy FROM specialist')->fetchAll(PDO::FETCH_ASSOC);
+
+$json_file = "../assets/json/contact.json";
+if (isset($_POST['contact'])){
+    $contact = json_encode($_POST['contact'], JSON_PRETTY_PRINT);
+    file_put_contents($json_file, $contact);
+}
 ?>
 <style>
 body {
@@ -35,7 +40,7 @@ body {
 </style>
 
 <div id="container" class="container">
-    <h1 id="panel" class="content-title-red">PANEL ADMINISTRATEUR</h1>
+    <h1 id="panel" class="content-title-red">PANEL ADMIN</h1>
     <!-- Maîtres -->
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Maîtres</div>
@@ -199,14 +204,70 @@ body {
                             <button class="list-object">Modifier les Sliders</button>
                         </a>
                     </div>
+                    <div class="col-12 col-md-6 btn-panel">
+                        <a data-toggle="modal" data-target="#contact">
+                            <button class="list-object">Modifier le Contact de la Fédération</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 </div>
+<div class="modal" id="contact">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="modal-header">
+                <h4 class="modal-title">Modifier le Contact de la Fédération</h4>
+                <button type="button" class="btn btn-light" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <?php 
+                    $data = file_get_contents($json_file);
+                    $data = json_decode($data, true, JSON_UNESCAPED_UNICODE);
+                ?>
+                <div class="">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                        </div>
+                        <input type="text" class="inputData form-control" id="address" value="<?php echo $data['address']?>" name="contact[address]">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input type="text" class="inputData form-control" id="mail" value="<?php echo $data['mail']?>" name="contact[mail]">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        </div>
+                        <input type="text" class="inputData form-control" id="phone" value="<?php echo $data['phone']?>" name="contact[phone]">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="d-flex justify-content-between mb-3">
+                    <div id="btn-reset" class="p-2">
+                        <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+                    </div>
+                    <div id="btn-Action" class="p-2">
+                        <button type="submit" class="btn-modObject annim confirm" name="submit">Valider</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");

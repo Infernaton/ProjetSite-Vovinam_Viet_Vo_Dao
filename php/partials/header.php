@@ -78,7 +78,7 @@ function partials_header($categorie,$page){
             <ul class="nav-items">
                 <li class="nav-item" style="border:none;"><h3 class="mobile-title">Sommaire<i class="fas fa-times navbar-toggler-icon"></i></h3></li>
                 <?php 
-                //Affichage automatique du menu avec la var $nav l.4
+                //Affichage automatique du menu avec la variable $nav l.4
                 $counter = 0;
                 foreach($pages as $key=>$p){
                     if(count($nav[$counter]) == 1 ){
