@@ -9,6 +9,7 @@
 
         switch ($_POST['submit']){
             case 'add':
+                //Ajout d'une personne avec son rôle, si son id = 0, alors cela veux dire que cette personne n'est pas enregistrer parmi les maitres
                 $req = $db->query('SELECT * FROM organisation ORDER BY id DESC');
                 $higherID = $req->fetch(PDO::FETCH_ASSOC);
 
@@ -27,14 +28,14 @@
                 $req->bindValue(':affectation' , $_POST["affectation"]);
 
                 isset($_POST["isMaster"])? $req->bindValue(':id_master' , 0) : $req->bindValue(':id_master' , $currentMaster['id']);
-                isset($_POST["info"])? $req->bindValue(':info', $_POST["info"]) : $req->bindValue(':info', null);
+                isset($_POST["isMaster"])? $req->bindValue(':info', $_POST["name"]) : $req->bindValue(':info', null);
 
                 $req->execute();
-                echo "\n Envoie réussi";
                 break;
             case 'modify':
-                $request = 'UPDATE organisation SET '.'id_master="'.$currentMaster['id'].'" WHERE id='.(int)$_POST['index'].'';
-                //var_dump($currentMaster['id']);
+                isset($_POST["isMaster"])? $id = 0 : $id = $currentMaster['id'];
+                isset($_POST["isMaster"])? $info = $_POST['name'] : $info = null;
+                $request = 'UPDATE organisation SET '.'id_master="'.$id.'", info="'.$info.'" WHERE id='.(int)$_POST['index'].'';
                 $req = $db->prepare($request);
                 $req->execute();
                 break;
@@ -60,16 +61,16 @@
     $aff = $req->fetchAll(PDO::FETCH_ASSOC);
 
     function printRole($function) {
-        //var_dump($function);
-        $name = 'Not Define';
         $picture = 'assets/img/no-picture.png';
 
-        if ((int)$function['id']!= 0){
+        if ($function['id_master']!= 0){
             global $db;
             $req = $db->query('SELECT * FROM specialist WHERE id= "'.$function['id_master'].'"');
             $master = $req->fetch(PDO::FETCH_ASSOC);
             $name = $master['name'];
             $picture = $master['pictureProfile'];
+        }else {
+            $name = $function['info'];
         }
         ?>
         <div class="person">
@@ -78,13 +79,15 @@
             </div>
             <div class="body text-center">
                 <img class="" src="<?php echo getSaveDirr('forPreview').$picture?>" alt="image" height="200">
+                <div class="float-right">
+                    <div class="text-center">
+                        <h5><?php echo $name;?></h5>
+                        <button class type="button" data-toggle="modal" data-target="#modify-<?php echo $function['id']?>">Modifier</button>
+                    </div>
+                </div>
             </div>
             <div class="footer">
-                <div class="d-flex justify-content-between">
-                    <button class="undo" type="button" data-toggle="modal" data-target="#remove-<?php echo $function['id']?>" disabled>Supprimer</button>
-                    <h5><?php echo $name;?></h5>
-                    <button class="" type="button" data-toggle="modal" data-target="#modify-<?php echo $function['id']?>">Modifier</button>
-                </div>
+                
             </div>
         </div>
         <div class="modal fade" id="modify-<?php echo $function['id']?>">
@@ -102,8 +105,13 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="data">Personne occupant ce rôle</h5>
-                                    <input class="inputData form-control" type="text" list="master-name" name="name" id="name" placeholder="..." value="<?php echo $master['name'];?>" required>
+                                    <input class="inputData form-control" type="text" list="master-name" name="name" id="name" placeholder="..." value="<?php echo $name;?>" required>
                                 </div>
+                            </div>
+                            <br>
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="isNotMaster" name="isMaster" style="z-index: 10;">
+                                <p class="custom-control-label">La personne n'est pas un maître</p>
                             </div>
                         </div>
 
@@ -132,6 +140,7 @@
     }
     ?>
 </datalist>
+
 <datalist id="affectation">
     <?php
     foreach ($aff as $a){
@@ -140,6 +149,7 @@
     }
     ?>
 </datalist>
+
 <div class="container">
     <div id="btn-object" class="p-2" style="">
         <a href="../admin"><button class="btn-annul annim" type="button" id='undo'>← Retour</button></a>
@@ -199,9 +209,9 @@
             foreach($affectations as $affectation=>$list){
                 echo '<h3>'.$affectation.'</h3>';
                 echo '<hr>';
-                echo '<div class="row m-3">';
+                echo '<div class="row m-3 ml-5 mr-5">';
                 foreach ($list as $function){
-                    echo '<div class="col-4">';
+                    echo '<div class="col-12 col-md-6 mb-5 pl-5 pr-5">';
                     printRole($function);
                     echo '</div>';
                 }

@@ -280,3 +280,9 @@ textarea {
     resize: none;
 }
 /* ---- */
+/* Organigramme */
+.person .body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

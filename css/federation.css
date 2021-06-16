@@ -38,3 +38,12 @@
     height: 10px;
     margin-right: 5px;
 }
+.person {
+    padding: 10px;
+}
+.person .body {
+    margin: 12px;
+}
+.person .body .d-inline{
+    margin-right: 22px;
+}

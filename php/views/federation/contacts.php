@@ -1,147 +1,95 @@
-<link rel="stylesheet" href="css/federation.css">
-<style>
-h5{
-        display: inline-block;
-        vertical-align:baseline; 
-}
-h4{
-        display: inline-block;
-        vertical-align:baseline; 
-}
+<?php
+$req = $db->query('SELECT * FROM organisation ORDER BY id');
+$function = $req->fetchAll(PDO::FETCH_ASSOC);
 
-</style>
+$mail = [
+        'Conseildesmaitres@vietvodao.com',
+        'dtn@vietvodao.com',
+        'Secretariat@vietvodao.com',
+        'secretairegeneral@vietvodao.com',
+        'presidentfr@vietvodao.com',
+        'tresorierfr@vietvodao.com',
+        'pdt.idf@vietvodao.com',
+        'rt.idf@vietvodao.com',
+        'pdt.nouvelleaquitaine@vietvodao.com',
+        'rt.nouvelleaquitaine@vietvodao.com',
+        'pdt.rhonealpes@vietvodao.com',
+        'rt.rhonealpes@vietvodao.com',
+        'pdt.bassenormandie@vietvodao.com',
+        'rt.bassenormandie@vietvodao.com',
+        'pdt.champagne@vietvodao.com',
+        'rt.champagne@vietvodao.com',
+        'pdt.bretagne@vietvodao.com',
+        'rt.bretagne@vietvodao.com',
+];
+
+$affectations = array();
+foreach($function as $f){
+        //Event sort by year
+        $affectation = $f['affectation'];
+        //If a year is already in the table, we put the event in it
+        if (array_key_exists($affectation, $affectations)){
+            array_push($affectations[$affectation], $f);
+        }
+        //If not, we create that year
+        else {
+            $affectations[$affectation] = [$f];
+        }
+}
+function printRole($function,$mail) {
+        $picture = 'assets/img/no-picture.png';
+
+        if ($function['id_master']!= 0){
+            global $db;
+            $req = $db->query('SELECT * FROM specialist WHERE id= "'.$function['id_master'].'"');
+            $master = $req->fetch(PDO::FETCH_ASSOC);
+            $name = $master['name'];
+            $picture = $master['pictureProfile'];
+        }else {
+            $name = $function['info'];
+        }
+        ?>
+        <div class="person">
+            <div class="role">
+                <h4><?php echo $function['role'];?></h4>
+            </div>
+            <div class="body d-flex">
+                <img class="d-inline" src="<?php echo $picture?>" alt="image" height="75">
+                <div class="d-inline">
+                        <h5><?php echo $name;?></h5>
+                        <p class=""><?php echo $mail?></p>
+                </div>
+            </div>
+        </div>
+        <?php
+}
+?>
+<link rel="stylesheet" href="css/federation.css">
 <div class="container info">
-        <div class="text-center pb-3">
+        <div class="text-center">
                 <h1 class="content-title-yellow"> Contacts </h1>
         </div>
-
-        <div class="border">
-                <h3>Bureau: </h3>
+        <?php
+        $count = 0;
+        foreach ($affectations as $affectation => $list) {
+            ?>
+            <div class="border mt-4 p-4">
+                <h3><?php echo $affectation?>:</h3>
                 <div class="row">
+                        <?php
+                        foreach ($list as $function) {
+                        ?>
                         <div class="col-12 col-md-6">
-                                <h4 class="title">Président Fédéral:</h4> <br> 
-                                <div class="sub">
-                                        Mme. Mai GUERRIB - presidentfr@vietvodao.com
-                                </div>
-                                <br>
-                                <br>
-                                <h4 class="title">Secrétariat Général:</h4> <br> 
-                                <div class="sub">
-                                        M. Rudy HANAFI - secretairegeneral@vietvodao.com
-                                </div>
-                                <br>
-                                <br>
-                                <h4 class="title">Trésorier:</h4> <br> 
-                                <div class="sub">
-                                        M. Franck MALBOT - tresorierfr@vietvodao.com
-                                </div>
+                                <?php printRole($function,$mail[$count]);?>
                         </div>
-                        <div class="col-12 col-md-6">
-                                <h4 class="title">Gestionnaire de licence fédérale:</h4> <br> 
-                                <div class="sub">
-                                        M. Rudy HANAFI - Secretariat@vietvodao.com
-                                </div>
-                                <br>
-                                <br>
-
-                                <h4 class="title">Le Président du Conseil des Maitres:</h4>
-                                <div class="sub">
-                                        Me. MIESCH Philippe <br> Conseildesmaitres@vietvodao.com
-                                </div>
-                                <br>
-                                <br>
-                                <h4 class="title">Le Directeur Technique National:</h4>
-                                <div class="sub">
-                                        Me. GUERRIB Amar <br> dtn@vietvodao.com
-                                </div>
-                        </div>
-                </div>        
-        </div>
-       
-        <br>
-       <p>
-        <div class="border">
-                <h3>Comités Régionaux </h3>
-                <h4 class="title"> Ile de France:</h4>
-                <div class="sub">
-                        <a href="https://www.vovinam-idf.fr" target="_blank">www.vovinam-idf.fr</a>
-                        <br>
-                        <h5>Président du Comité:</h5> M. LE CHEVALLIER Gilles - pdt.idf@vietvodao.com
-                        <br>
-
-                        <h5>Responsable Technique: </h5> Maitre. LAMA David - rt.idf@vietvodao.com
+                        <?php
+                        $count += 1;
+                        }
+                        ?>
                 </div>
+            </div>
+            <?php
+        }
+        ?>
 
-                <br>
-                <br>
-
-                
-                <h4 class="title"> Nouvelle-Aquitaine:</h4>
-                <div class="sub">
-                <a href="http://www.vovinam-limousin.fr" target="_blank">www.vovinam-limousin.fr</a> / <a href="http://www.vovinampoitiers.fr" target="_blank">www.vovinampoitiers.fr</a>
-                <br>
-                        <h5>Présidente du Comité:</h5> Mme. HAMMANN Magalie - pdt.nouvelleaquitaine@vietvodao.com
-                        <br>
-
-                        <h5>Responsable Technique: </h5> Maitre. TA Jean-Pierre - rt.nouvelleaquitaine@vietvodao.com
-                </div>
-
-                <br>
-                <br>
-
-                
-                <h4 class="title"> Auvergne-Rhône-Alpes:</h4>
-                <div class="sub">
-                <a href="http://www.vietvodaolyon.free.fr" target="_blank">www.vietvodaolyon.free.fr</a>
-                <br>
-                        <h5>Présidente du Comité:</h5> Mme. THONGDARA Stéphanie - pdt.rhonealpes@vietvodao.com
-                        <br>
-
-                        <h5>Responsable Technique: </h5> Maître. THONGDARA Frédéric - rt.rhonealpes@vietvodao.com
-                </div>
-
-                <br>
-                <br>
-
-                
-                <h4 class="title"> Normandie:</h4>
-                <div class="sub">
-                <a href="https://www.vovinam-caen.com" target="_blank">www.vovinam-caen.com</a>
-                <br>
-                        <h5>Président du Comité:</h5> M. DEBROU Bruno - pdt.bassenormandie@vietvodao.com
-                        <br>
-
-                        <h5>Responsable Technique: </h5> Maitre. Emmanuel GREGORI - rt.bassenormandie@vietvodao.com
-                </div>
-                
-                <br>
-                <br>
-
-                
-                <h4 class="title">  Grand-Est:</h4>
-                <div class="sub">
-                <a href="www.vovinam-reims.com" target="_blank"> www.vovinam-reims.com</a>
-                <br>
-                        <h5>Président du Comité:</h5> M. Cédric Piasecki - pdt.champagne@vietvodao.com
-                        <br>
-
-                        <h5>Responsable Technique: </h5> Maître. NGUYEN Dinh Hoang - rt.champagne@vietvodao.com
-                </div>
-                
-                <br>
-                <br>
-
-                
-                <h4 class="title">  Bretagne:</h4>
-                <div class="sub">
-                <a href="www.vovinam-rennes.fr" target="_blank"> www.vovinam-rennes.fr</a>
-                <br>
-                        <h5>Président du Comité:</h5> M. Rolland RACOTEAU - pdt.bretagne@vietvodao.com
-                        <br>
-
-                        <h5>Responsable Technique: </h5> Maitre. Emmanuel GREGORI - rt.bretagne@vietvodao.com
-                </div>
-                <br>
-        </div>        
-       </p>
 </div>
