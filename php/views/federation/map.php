@@ -83,7 +83,7 @@
             </div>
         </div>
         <!-- Liste des Comités Régionaux -->
-        <div class="text-center">
+        <div class="text-center" id="comite">
             <!-- Titre -->
             <div class="row mt-5 mb-5">
                 <div class="col-sm-12"> <h2 class="content-title-blue">Les Régions</h2> </div>
