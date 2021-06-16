@@ -72,6 +72,9 @@ function printRole($function,$mail) {
         <?php
         $count = 0;
         foreach ($affectations as $affectation => $list) {
+                if($affectation == 'Comités Régionaux'){
+                        $affectation .= ' (<a href="?c=federation&p=1#comite">Voir la liste des Comités</a>)';
+                }
             ?>
             <div class="border mt-4 p-4">
                 <h3><?php echo $affectation?>:</h3>

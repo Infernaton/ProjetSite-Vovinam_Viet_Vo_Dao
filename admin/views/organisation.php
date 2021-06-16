@@ -38,6 +38,31 @@
                 $request = 'UPDATE organisation SET '.'id_master="'.$id.'", info="'.$info.'" WHERE id='.(int)$_POST['index'].'';
                 $req = $db->prepare($request);
                 $req->execute();
+
+                //Si les données sont pour un comité, alors on les modifie en même temps
+                $cutRole = explode(" ", $_POST['role']);
+                $region = $cutRole[count($cutRole)-1];
+
+                $req = $db->query('SELECT * FROM marqueur WHERE titre like "%'.$region.'%"');
+                $comite = $req->fetch(PDO::FETCH_ASSOC);
+
+                //$comite = false, si ce n'était pas un comite
+                if ($comite){
+                    switch ($cutRole[0]){
+                        case 'Président': $person = 'enseignant';
+                            break;
+                        case 'Responsable': $person = 'contact';
+                            break;
+                        default: $person = 'notDefine';
+                    }
+                    //Pour mettre le nouveau nom de la personne, sans enlevé l'adresse mail qui suit
+                    if (isset($comite[$person])){
+                        $data = str_replace(explode(' : ',$comite[$person])[0],$_POST['name'],$comite[$person]);
+                        $request = 'UPDATE marqueur SET '.$person.'="'.$data.'" WHERE id='.(int)$comite['id'].'';
+                        $req = $db->prepare($request)->execute();
+                    }
+                    
+                }
                 break;
         }
     }
@@ -100,7 +125,7 @@
 
                         <div class="modal-body">
                             <input type="text" name="index" id="index" class="hide" value="<?php echo $function['id']?>">
-                            <h5 >Nom du rôle</h5>
+                            <h5 >Nom de la fonction</h5>
                             <input class="inputData form-control" type="text" name="role" id="role" placeholder="Ex: Trésorier" value="<?php echo $function['role'];?>" readonly required>
                             <div class="row">
                                 <div class="col">
@@ -157,7 +182,6 @@
     <h1>Organigramme Officielle</h1>
     <hr>
     <div>
-        <h3>Changer l'Organisation</h3>
         <div class="text-center">
             <button type="button" data-toggle="modal" data-target="#add-article">
                 <h4>+ Ajouter un nouveau rôle au sein de la Fédération</h3>
@@ -172,7 +196,7 @@
                         </div>
 
                         <div class="modal-body">
-                            <h5 >Nom du rôle</h5>
+                            <h5 >Nom de la fonction</h5>
                             <input class="inputData form-control" type="text" name="role" id="role" placeholder="Ex: Trésorier" required>
                             <div class="row">
                                 <div class="col">
