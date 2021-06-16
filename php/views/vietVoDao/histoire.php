@@ -1,10 +1,10 @@
 <?php 
-$path = 'assets/img/le-vvd';
+
 $histoire = file_get_contents("assets/json/history.json");
 $histoire = json_decode($histoire, true, JSON_UNESCAPED_UNICODE);
 
 function printPara($paragraph){
-    global $path;
+    $path = 'assets/json/history';
     if ($paragraph[0] == '/'){
         echo '<img src="'.$path.$paragraph.'"alt="" class="top-centered mt-5">';
     }
