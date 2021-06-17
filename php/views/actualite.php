@@ -1,5 +1,5 @@
 <?php
-$req = $db->query('SELECT * FROM news ORDER BY date DESC');
+$req = $db->query('SELECT * FROM news ORDER BY id DESC');
 $news = $req->fetchAll(PDO::FETCH_ASSOC);
 
 function printLastNews($news){
@@ -12,9 +12,14 @@ function printLastNews($news){
                     <h5><?php echo $news['title']?></h5>
                     <p><?php echo $news['content']?></p>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2 image">
-                    <img class="img_fill" src="assets/img/no-picture.png" alt="">
-                    <div class="category"><?php echo $news['category']?></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="image">
+                        <img class="img_fill" src="assets/img/no-picture.png" alt="">
+                        <div class="category"><?php echo $news['category']?></div>
+                    </div>
+                    <div class="date text-center">
+                        <i><?php echo $news['date']?> - <?php echo $news['author']?></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,12 +30,16 @@ function printNews($news){
     ?>
     <div class="col-12 col-sm-6 col-lg-4">
         <div class="content-main border">
-            <div class="col-12 image">
+            <div class="image">
                 <img class="img_fill" src="assets/img/no-picture.png" alt="">
                 <div class="category"><?php echo $news['category']?></div>
             </div>
+            <hr>
             <div class="text-center">
                 <h5><?php echo $news['title']?></h5>
+                <div class="date">
+                    <i><?php echo $news['date']?> - <?php echo $news['author']?></i>
+                </div>
             </div>
         </div>
     </div>
@@ -47,8 +56,10 @@ function printNews($news){
         <h1 class="content-title-blue">Actualités</h1>
     </div>
     <?php printLastNews($news[0]); ?>
-    <div class="" id="thread">
+    <div class="mt-5" id="thread">
+        
         <h3>Précédentes Actualités</h3>
+        <hr>
         <div class="row">
             <?php
                 for($i=1;$i<count($news);$i++){
@@ -68,5 +79,6 @@ function printNews($news){
                 <a href="#" class="list-group-item list-group-item-action">First item</a>
                 <a href="#" class="list-group-item list-group-item-action">First item</a>
             </ul>
-        </div>-->
+        </div>
+    -->
 </div>

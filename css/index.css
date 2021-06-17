@@ -168,7 +168,7 @@ div.clickable {
 .content-main .image .category {
     position: absolute;
     top: 0;
-    right: 15px;
+    right: 0;
     background-color: grey;
     border-radius: 15px;
     margin: 5px;

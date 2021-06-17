@@ -15,7 +15,7 @@ switch ($_POST['submit']){
 
         $req->bindValue(':id', (int)$count['COUNT(*)']+1);
         $req->bindValue(':title' , $_POST["title"]);
-        $req->bindValue(':content' , $_POST["content"]);
+        $req->bindValue(':content' , translateToHTML($_POST["content"]));
         $req->bindValue(':category', $_POST["category"]);
         $req->bindValue(':date' , date('Y-m-d', time()));
         $req->bindValue(':author' , $_POST["author"]);
