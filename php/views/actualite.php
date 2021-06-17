@@ -7,12 +7,15 @@ function printLastNews($news){
     <div id="lastInfo">
         <h3>Dernière Actualité</h3>
         <div class="content-main border">
-            <div class="row">
-                <div class="col">
-                    <h5><?php echo $news['title']?></h5>
-                    <p><?php echo $news['content']?></p>
+            <div class="row" style="max-height: auto; overflow: hidden;">
+                <div class="only-before-sm-hide col" style="posistion:relative;">
+                    <div class="box-shadow-hide"></div>
+                    <div style="position: absolute;">
+                        <h5><?php echo $news['title']?></h5>
+                        <p><?php echo $news['content']?></p>
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="col-12 col-sm-5 col-md-4 col-lg-2">
                     <div class="image">
                         <img class="img_fill" src="assets/img/no-picture.png" alt="">
                         <div class="category"><?php echo $news['category']?></div>
