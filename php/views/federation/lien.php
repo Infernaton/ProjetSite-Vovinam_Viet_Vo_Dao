@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="css/federation.css">
 <!-- Mise en valeur des liens-->
 
-
+<style>
+.image {  
+    max-width: 6%;  
+    height: auto;  
+}  
+</style>
 <body>
     <div class="container info">
         <div class="pb-3 text-center">
@@ -11,7 +16,7 @@
         <div class="ml-3 d-flex justify-content-evenly">
             <div class="Mondiale">
                 <div>
-                    <h3><a href="https://vovinamworldfederation.eu/fr/">➢ Fédération Mondiale, Site Officiel</a></h3>
+                    <h3><a href="https://vovinamworldfederation.eu/fr/"><img class="image"src="assets/img/logo/logo_Federation_mondiale.jpg"> Fédération Mondiale, Site Officiel</a></h3>
                 </div>
                 <br>
                 <div>
@@ -24,7 +29,7 @@
                 <br>
                 
                 <div>
-                    <h3><a href="http://www.famtv.fr/">➢ Fédération des Arts Martiaux Traditionnels Vietnamiens</a></h3>
+                    <h3><a href="http://www.famtv.fr/"> Fédération des Arts Martiaux Traditionnels Vietnamiens</a></h3>
                 </div>
             </div>        
             <div class="result">
