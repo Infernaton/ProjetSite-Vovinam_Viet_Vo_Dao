@@ -16,10 +16,9 @@ function printLastNews($news){
                     </div>
                 </div>
                 <div class="col-12 col-sm-5 col-md-4 col-lg-2">
-                    <div class="image">
-                        <img class="img_fill" src="assets/img/no-picture.png" alt="">
-                        <div class="category"><?php echo $news['category']?></div>
-                    </div>
+                    <?php
+                        picture($news['category']);
+                    ?>
                     <div class="date text-center">
                         <i><?php echo $news['date']?> - <?php echo $news['author']?></i>
                     </div>
@@ -38,10 +37,9 @@ function printNews($news){
     ?>
     <div class="col-12 col-sm-6 col-lg-4">
         <div class="content-main border" data-toggle="modal" data-target="#n-<?php echo $news['id']?>">
-            <div class="image">
-                <img class="img_fill" src="assets/img/no-picture.png" alt="">
-                <div class="category"><?php echo $news['category']?></div>
-            </div>
+            <?php 
+                picture($news['category']);
+            ?>
             <hr>
             <div class="text-center">
                 <h5><?php echo $news['title']?></h5>
@@ -74,6 +72,17 @@ function printModal($news){
     </div>
     <?php
 }
+function picture($name){
+    echo '<div class="image">';
+    $file = 'assets/img/news/'.strtolower($name).'.png';
+    if (file_exists($file)){
+        echo '<img class="img_fill" src="'.$file.'" alt="">';
+    }else {
+        echo '<img class="img_fill" src="assets/img/no-picture.png" alt="">',
+            '<div class="category">'.$name.'</div>';
+    }
+    echo '</div>';
+}
 ?>
 <style>
 .btn-simple {
@@ -99,17 +108,4 @@ function printModal($news){
             ?>
         </div>
     </div>
-    
-    <!--
-        <div class="col-2" id="category">
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-dark">Catégorie</li>
-                <a href="#" class="list-group-item list-group-item-action">First item</a>
-                <a href="#" class="list-group-item list-group-item-action">First item</a>
-                <a href="#" class="list-group-item list-group-item-action">First item</a>
-                <a href="#" class="list-group-item list-group-item-action">First item</a>
-                <a href="#" class="list-group-item list-group-item-action">First item</a>
-            </ul>
-        </div>
-    -->
 </div>

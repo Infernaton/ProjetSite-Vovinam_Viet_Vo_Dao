@@ -183,11 +183,8 @@ div.clickable {
 }
 /*-------*/
 /* FAQ */
-#threadFAQ .col-md-6:first-child {
-    border-right: 1px solid;
-}
 .QnA {
-    border: 1px solid grey;
+    border: 1px solid #d1d1d1;
     border-radius:10px;
     padding:0 2%;
     margin:2% 0;
