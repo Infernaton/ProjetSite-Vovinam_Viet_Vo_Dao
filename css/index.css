@@ -157,7 +157,20 @@ div.clickable {
     flex: space-between;
 }
 /* Actualité */
-#lastInfo .content-main{
+.content-main{
     margin: 15px;
     padding: 15px;
+}
+.content-main .image {
+    position: relative;
+    text-align: center;
+}
+.content-main .image .category {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    background-color: grey;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 3px;
 }
