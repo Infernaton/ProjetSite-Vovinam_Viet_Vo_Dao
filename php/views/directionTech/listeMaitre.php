@@ -2,8 +2,8 @@
 //affiche pour event
 $req = $db->query('SELECT * FROM specialist WHERE hierarchy LIKE "master" ORDER BY id');
 $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
-$req = $db->query('SELECT id_master FROM organisation WHERE role LIKE "%Président du Conseil%"');
-$prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
+
+$prezCouncil = $db->query('SELECT id_master FROM organisation WHERE role LIKE "%Président du Conseil%"')->fetch(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM specialist WHERE id='.$prezCouncil['id_master'].'');
 $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
 ?>
@@ -60,7 +60,7 @@ $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
     <!-- Tableaux des maitres/membres etc -->
     <div class="selection">
         <br>
-        <h5><span class="ml-3">➢ Les membres titulaires & les membres suppléants</span></h5>
+        <h5><span class="ml-3">➢ Les Maîtres</span></h5>
         <div class="row">
             <?php
             foreach ($greatMastersDB as $master) {
@@ -107,7 +107,7 @@ $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
             ?>
         </div>
     </div>
-
+<!--
     <div class="selection">
         <br>
         <h5><span class="ml-3">➢ Les Responsables Techniques régionaux</span></h5>
@@ -223,5 +223,5 @@ $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>

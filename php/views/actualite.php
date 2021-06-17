@@ -22,14 +22,19 @@ function printLastNews($news){
                     </div>
                 </div>
             </div>
+            <hr>
+            <div>
+                <button class="btn btn-simple" data-toggle="modal" data-target="#n-<?php echo $news['id']?>">+ Plus</button>
+            </div>
         </div>
+        <?php printModal($news)?>
     </div>
     <?php
 }
 function printNews($news){
     ?>
     <div class="col-12 col-sm-6 col-lg-4">
-        <div class="content-main border">
+        <div class="content-main border" data-toggle="modal" data-target="#n-<?php echo $news['id']?>">
             <div class="image">
                 <img class="img_fill" src="assets/img/no-picture.png" alt="">
                 <div class="category"><?php echo $news['category']?></div>
@@ -42,13 +47,36 @@ function printNews($news){
                 </div>
             </div>
         </div>
+        <?php printModal($news)?>
+    </div>
+    <?php
+}
+function printModal($news){
+    ?>
+    <div class="modal" id="n-<?php echo $news['id']?>">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><?php echo $news['title']?></h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <?php echo $news['content']?>
+                </div>
+                <div class="modal-footer">
+                    <i><?php echo $news['date']?> - <?php echo $news['author']?></i>
+                </div>
+            </div>
+        </div>
     </div>
     <?php
 }
 ?>
 <style>
-#category .list-group-item-action{
-    transition: auto;
+.btn-simple {
+    opacity: .8;
+    color: #666666;
+    background-color: transparent;
 }
 </style>
 <div class="container">
