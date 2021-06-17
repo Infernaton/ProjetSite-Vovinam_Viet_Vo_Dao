@@ -28,8 +28,10 @@ if (isset($_GET['m'])) {
   $index = -1;
 }
 ?>
+
 <form action="management/addMasterDB.php" method="post" enctype="multipart/form-data">
   <div id="container" class="container">
+
     <div class="text-center">
       <div class="p-2" style="float:left;">
         <a onclick="history.go(-1);"><button class="btn-annul annim" type="button">← Retour</button></a>
@@ -38,6 +40,7 @@ if (isset($_GET['m'])) {
       <br><br>
       <h5> <span class="note">*</span> : Champs Obligatoires</h5>
     </div>
+
     <div class="row">
       <div class="col-md-5 col-12">
         <div class="text-center">
@@ -87,17 +90,41 @@ if (isset($_GET['m'])) {
       </div>
 
       <div class="col-12">
-
-      <div class ="d-flex justify-content-between mt-3">
+        <div class ="d-flex justify-content-between mt-3">
           <button type="button" class="btn-annul annim" type="button" id='undo'><a onclick="history.go(-1);">Annuler</a></button>
-          <button type="submit" class="btn-modObject annim undo hide" value="delete" name="submit" id="delete">Supprimer</button>
+          <!--<button type="submit" class="btn-modObject annim undo hide" value="delete" name="submit" id="delete">Supprimer</button>-->
+          <button class="btn-modObject annim undo hide" id="delete" type="button" data-toggle="modal" data-target="#remove">Supprimer</button>
           <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
         </div>
-
       </div>
     </div>
-  </div> 
-</form> 
+
+    <div class="modal fade" id="remove">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h4 class="modal-title">Supprimer les données du Maître</h4>
+          </div>
+
+          <div class="modal-footer">
+            <div class="d-flex justify-content-between mb-3">
+              <div id="btn-reset" class="p-2">
+                <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+              </div>
+              <div id="btn-Action" class="p-2">
+                <button type="submit" class="btn-modObject annim confirm" value="delete" name="submit">Valider la suppression</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
+
 <script src="scripts/previewPicture.js"></script>
 <script>
 if (<?php echo $index?> != -1){

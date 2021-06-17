@@ -110,12 +110,34 @@ if (isset($_GET['club'])) {
 
         <div class ="d-flex justify-content-between mt-3">
           <button type="button" class="btn-annul annim" type="button" id='undo'><a onclick="history.go(-1);">Annuler</a></button>
-          <button type="submit" class="btn-modObject annim undo hide" value="delete" name="submit" id="delete">Supprimer</button>
+          <button class="btn-modObject annim undo hide" id="delete" type="button" data-toggle="modal" data-target="#remove">Supprimer</button>
           <button type="submit" class="btn-modObject annim confirm" value="valid" name="submit" id="confirm">Valider</button>
         </div>
       </div>
     </div>
 
+    <div class="modal fade" id="remove">
+      <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Supprimer le Club</h4>
+          </div>
+
+          <div class="modal-footer">
+            <div class="d-flex justify-content-between mb-3">
+              <div id="btn-reset" class="p-2">
+                <button type="button" class="btn-annul annim undo" data-dismiss="modal">Annuler</button>
+              </div>
+              <div id="btn-Action" class="p-2">
+                <button type="submit" class="btn-modObject annim confirm" value="delete" name="submit">Valider la suppression</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </form> 
 
