@@ -6,32 +6,40 @@
     max-width: 6%;  
     height: auto;  
 }  
+h3{
+    background:#eee;
+    padding:5px;
+    margin:5px;
+    overflow-x: hidden;
+    display : inline-block
+}
+
+
 </style>
 <body>
     <div class="container info">
-        <div class="pb-3 text-center">
+        <div class="pb-3 text-center slt">
             <h1 class="content-title-yellow"> Liens </h1>
         </div>
         <!-- Liens de redirection -->
-        <div class="ml-3 d-flex justify-content-evenly">
+        <div class="ml-3 d-flex justify-content-between slt">
             <div class="Mondiale">
                 <div>
-                    <h3><a href="https://vovinamworldfederation.eu/fr/"><img class="image"src="assets/img/logo/logo_Federation_mondiale.jpg"> Fédération Mondiale, Site Officiel</a></h3>
-                </div>
-                <br>
-                <div>
-                    <h3><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html">➢ Conseil des Maîtres Mondial</a></h3>
-                </div>
-                <br>
-                <div>
-                    <h3><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html">➢ Diplôme International</a></h3>
-                </div>
-                <br>
+                    <h3><a href="https://vovinamworldfederation.eu/fr/"><img class="image"src="assets/img/logo/Fedmondiale.png"> Fédération Mondiale, Site Officiel</a></h3>
                 
+                <br>
                 <div>
-                    <h3><a href="http://www.famtv.fr/"> Fédération des Arts Martiaux Traditionnels Vietnamiens</a></h3>
+                    <h3><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux.html"><img class="image"src="assets/img/logo/Fede_ecu.png"> Conseil des Maîtres Mondial</a></h3>
                 </div>
-            </div>        
+                <br>
+                <div>
+                    <h3><a href="https://vovinamworldfederation.eu/fr/conseil-mondial-des-maitres/maitres-et-enseignants-internationaux/diplomes-internationaux.html"><img class="image"src="assets/img/logo/Fede_ecu.png"> Diplôme International</a></h3>
+                </div>
+                <br>
+                <div>
+                    <h3><a href="http://vietvodao.photos/"><img class="image"src="assets/img/logo/galerie_1.png"> Galerie photos</a></h3>
+                </div>
+            </div>      
             <div class="result">
                 <br>
                 <div>
@@ -47,5 +55,9 @@
                 </div>
             </div>
         </div>
+        <br>
+                <div class="d-flex justify-content-end">
+                    <h3><a href="http://www.famtv.fr/"> <img class="image"src="assets/img/logo/FAMTV.png">Fédération des Arts Martiaux Traditionnels Vietnamiens</a></h3>
+                </div>
     </div>
 </body>
