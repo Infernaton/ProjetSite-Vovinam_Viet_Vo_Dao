@@ -1,8 +1,11 @@
 <?php
 //affiche pour event
-//Image des maitres
 $req = $db->query('SELECT * FROM specialist WHERE hierarchy LIKE "master" ORDER BY id');
 $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
+$req = $db->query('SELECT id_master FROM organisation WHERE role LIKE "%Président du Conseil%"');
+$prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
+$req = $db->query('SELECT * FROM specialist WHERE id='.$prezCouncil['id_master'].'');
+$prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
 ?>
 <link rel="stylesheet" href="css/directionTech.css">
 
@@ -11,20 +14,47 @@ $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
         <h2 class="content-title-blue">Liste Officielle des Ceintures Noires et des Maîtres</h2>
     </div>
     <br>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-        deserunt mollit anim id est laborum.
-    </p>
             
     <!-- Présentation conseil-->
     <div class="selection">
         <h3><span class="ml-3">Président du Conseil des maîtres</span></h3>
-        <div class="text-center" data-toggle="modal" data-target="#myModal">
-            <img alt="Président du conseil" name="president" src="image.png"><br>
-            <label for="president">Me ..... ......</label>
+        <div class="text-center" data-toggle="modal" data-target="#prez">
+            <img alt="Président du conseil" name="president" height="200" src="<?php echo $prezCouncil['pictureProfile']?>"><br>
+            <label for="president">Maître <?php echo $prezCouncil['name']?></label>
+        </div>
+        <div class="modal fade" id="prez">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Maître <?php echo $prezCouncil['name']?></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img style="border-radius:50%;" src="<?php echo $prezCouncil['pictureProfile']?>" height="400" alt="<?php echo $prezCouncil['name']?>">
+                        </div>
+                        <ul>
+                            <?php 
+                            $functions = explode(",",$prezCouncil['function']);
+                            $a = array_pop($functions);
+                            foreach ($functions as $func) {
+                                echo '<li>'.$func.'</li>';
+                            }
+                            ?>
+                        </ul>
+                        <hr>
+                        <h3>Biographie Personnelle</h3>
+                        <p><?php echo $prezCouncil['biographyShort']?></p>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
     <!-- Tableaux des maitres/membres etc -->
