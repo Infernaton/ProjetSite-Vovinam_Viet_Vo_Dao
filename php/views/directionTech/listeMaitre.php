@@ -25,7 +25,7 @@ function modalMaster($master, $id){
                     <?php 
                     $functions = explode(",",$master['function']);
                     $search = explode(' ', $functions[0]);
-                    if ($search[0] == "Ceinture"){
+                    if ($search[0] == "Ceinture" || $search[0] == "C."){
                         transformToBelt($search,'40');
                     }
                     ?>
@@ -68,7 +68,7 @@ function modalMaster($master, $id){
             <?php 
             $functions = explode(",",$prezCouncil['function']);
             $search = explode(' ', $functions[0]);
-            if ($search[0] == "Ceinture"){
+            if ($search[0] == "Ceinture" || $search[0] == "C."){
                 transformToBelt($search,'20');
             }
             ?>
@@ -89,7 +89,7 @@ function modalMaster($master, $id){
                     <?php 
                     $functions = explode(",",$master['function']);
                     $search = explode(' ', $functions[0]);
-                    if ($search[0] == "Ceinture"){
+                    if ($search[0] == "Ceinture" || $search[0] == "C."){
                         transformToBelt($search,'20');
                     }
                     ?>

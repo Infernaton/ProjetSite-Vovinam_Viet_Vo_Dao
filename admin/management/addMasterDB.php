@@ -59,6 +59,7 @@ switch ($_POST['hierarchy']){
     default:
         $_POST["hierarchy"] = str_replace(["'",'"'],['\\\'',"\\\""],$_POST["hierarchy"]);
 }
+$_POST["function"] = $_POST['belt'].','.$_POST["function"];
 
 switch ($_POST['submit']){
     case 'valid':

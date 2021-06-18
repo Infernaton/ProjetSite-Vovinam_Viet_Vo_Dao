@@ -42,7 +42,7 @@ if (isset($_GET['m'])) {
     </div>
 
     <div class="row">
-      <div class="col-md-5 col-12">
+      <div class="col-12 col-md-5">
         <div class="text-center">
           <div id="previewImgDiv" class="responsive" style="background-image:url(../assets/img/no-picture.png);";>
             <div class="hoverEle">
@@ -70,14 +70,24 @@ if (isset($_GET['m'])) {
         </div>
       </div>
 
-      <div class="col-md-7 col-12">
-
-        <label class="data" for="currFunction"><b>Hiérarchie</b><span class="note">*</span></label>
-        <input class="inputData" list="list" placeholder="----" name="hierarchy" id="hierarchy" required>
-        <datalist id="list">
-          <option value="Grand Maître">
-          <option value="Maître">
-        </datalist>
+      <div class="col-12 col-md-7">
+        <?php //?>
+        <div class="row">
+          <div clas="col-5 col-md-12">
+            <label class="data"><b>Hiérarchie</b><span class="note">*</span></label>
+            <input class="inputData form-control" list="list" placeholder="----" name="hierarchy" id="hierarchy" required>
+            <datalist id="list">
+              <option value="Grand Maître">
+              <option value="Maître">
+            </datalist>
+          </div>
+          <div class="col">
+            <label class="data"><b>Ceinture Actuelle</b><span class="note">*</span></label>
+            <input class="inputData form-control" placeholder="Ex: Ceinture rouge 2ème degré (ceinture noire 6ème Dang)" name="belt" id="belt" required>
+          </div>
+        </div>
+        
+        
 
         <label class="data" for="biography"><b>Courte Biographie</b></label>
         <textarea class="inputData form-control" rows="6" cols="60" placeholder="(Optionnel)" name="biography" id="biography"></textarea>
@@ -129,6 +139,12 @@ if (isset($_GET['m'])) {
 <script>
 if (<?php echo $index?> != -1){
   if (<?php echo json_encode($currentMaster)?> != null){
+    <?php 
+    //Separate the belt value and the function
+    $currentMaster['function'] = explode(",", $currentMaster['function']);
+    $belt = array_shift($currentMaster['function']);
+    $function = implode(",", $currentMaster['function']);
+    ?>
     document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos du Maître";
     document.getElementById("confirm").value = "modify";
     document.getElementById("confirm").innerHTML = "Modifier";
@@ -140,8 +156,9 @@ if (<?php echo $index?> != -1){
     document.getElementById("biography").value = "<?php echo $currentMaster['biographyShort'] ?>".replaceAll('{n}', '\n');
     document.getElementById("birth").value = "<?php echo $currentMaster['birthday'] ?>";
     document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
-    document.getElementById("function").value = "<?php echo $currentMaster['function'] ?>".replaceAll('{n}', '\n');
+    document.getElementById("function").value = "<?php echo $function?>".replaceAll('{n}', '\n');
     document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
+    document.getElementById("belt").value = "<?php echo $belt ?>".replaceAll('{n}', '\n');
     document.getElementById("previewImgDiv").style = "background-image:url('<?php echo getSaveDirr("forPreview").$currentMaster['pictureProfile'] ?>');";
     document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
     document.getElementById("newImage").required = false;

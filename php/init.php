@@ -20,8 +20,9 @@ function transformToBelt($data,$size){
             case 'rouge':
                 $color = 'R';
                 //Test for the basic red belt
-                if (intval($num) != (int)$num){
+                if ($num == '('){
                     $num = 0;
+                    $i=-2;
                 }
                 break;
             case 'jaune':
@@ -30,6 +31,11 @@ function transformToBelt($data,$size){
             case 'noire';
             case 'noir' :
                 $color = 'N';
+                if ($num == "1"){
+                    if ($data[2+$i][1]== '0'){
+                        $num = '10';
+                    }
+                }
                 break;
             case 'bleue';
             case 'bleu' :
