@@ -33,7 +33,7 @@
                 <strong>Si vous souhaitez passer un grade n’hésitez pas revenir vers votre enseignant qui vous inscrira.</strong>
                 <br>
                 <br>
-                 
+                </h5> 
             </p>
         </div> 
     </div>
