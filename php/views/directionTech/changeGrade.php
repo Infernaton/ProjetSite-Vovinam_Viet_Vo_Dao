@@ -19,17 +19,19 @@
                     <option value="assets/img/ceintures/c_bleu_2eme_cap.png">C. bleue 2e Cap</option>
                     <option value="assets/img/ceintures/c_bleu_3eme_cap.png">C. bleue 3e Cap</option>
     
-                    <option value="assets/img/ceintures/c_jaune_1er_dang.png">C. jaune 1er Dang</option>
-                    <option value="assets/img/ceintures/c_jaune_2eme_dang.png">C. jaune 2e Dang</option>
-                    <option value="assets/img/ceintures/c_jaune_3eme_dang.png">C. jaune 3e Dang</option>
+                    <option value="assets/img/ceintures/CJ01.png">C. jaune 1er Dang</option>
+                    <option value="assets/img/ceintures/CJ02.png">C. jaune 2e Dang</option>
+                    <option value="assets/img/ceintures/CJ03.png">C. jaune 3e Dang</option>
     
-                    <option value="assets/img/ceintures/c_rouge.png">C. rouge</option>
-                    <option value="assets/img/ceintures/c_rouge_1er_degre.png">C. rouge 1er degré</option>
-                    <option value="assets/img/ceintures/c_rouge_2eme_degre.png">C. rouge 2e degré</option>
-                    <option value="assets/img/ceintures/c_rouge_3eme_degre.png">C. rouge 3e degré</option>
-                    <option value="assets/img/ceintures/c_rouge_4eme_degre.png">C. rouge 4e degré</option>
-                    <option value="assets/img/ceintures/c_rouge_5eme_degre.png">C. rouge 5e degré</option>
-                    <option value="assets/img/ceintures/c_rouge_6eme_degre.png">C. rouge 6e degré</option>
+                    <option value="assets/img/ceintures/CR4.png">C. rouge</option>
+                    <option value="assets/img/ceintures/CR5.png">C. rouge 1er degré</option>
+                    <option value="assets/img/ceintures/CR6.png">C. rouge 2e degré</option>
+                    <option value="assets/img/ceintures/CR7.png">C. rouge 3e degré</option>
+                    <option value="assets/img/ceintures/CR08.png">C. rouge 4e degré</option>
+                    <option value="assets/img/ceintures/CR09.png">C. rouge 5e degré</option>
+                    <option value="assets/img/ceintures/CR10.png">C. rouge 6e degré</option>
+
+                    <option value="assets/img/ceintures/CBlancheSupr.png">C. Blanche suprême</option>
                 </select>
                 <div class="text-center">
                     <p>Pour toutes informations sur le Passage des différents grades :</p>
