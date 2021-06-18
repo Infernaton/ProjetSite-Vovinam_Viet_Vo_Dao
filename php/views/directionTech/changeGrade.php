@@ -1,4 +1,9 @@
 <link rel="stylesheet" href="css/directionTech.css">
+<style>
+.inter{
+    max-width: 100% ;
+}
+</style>
 
 <div class="container">
         <!-- Titre -->
@@ -7,11 +12,13 @@
         </div>
         <br>
         <div class="row">
+
+            <img class="inter"src="assets/img/ceintures/Inter1.png">
             <!-- Affichage du mannequin -->
-            <div id="belt" class="col-sm-7">
+            <!--<div id="belt" class="col-sm-7">
                 <img style="width: 40%;" id="beltPicture" src="assets/img/ceintures/c_initiation.png">
             </div>
-            <!-- Menu déroulant pour afficher n'importe quelle ceinture -->
+             Menu déroulant pour afficher n'importe quelle ceinture 
             <div id="chooseBelt" class="col-sm-5">
                 <select name="belt" class="custom-select mb-3" onchange="document.getElementById('beltPicture').src = this.value">
                     <option value="assets/img/ceintures/c_initiation.png" selected>Initiation</option>
@@ -48,5 +55,5 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
