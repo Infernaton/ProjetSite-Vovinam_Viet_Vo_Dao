@@ -12,7 +12,6 @@
 }
 
 </style>
-<body>
     <div class="container info">
         <div class="pb-3 text-center">
             <h1 class="content-title-yellow"> Liens </h1>
@@ -50,11 +49,10 @@
                     </ul>
                 </div>
             </div>
-                </div>
-                <br>
-                <br>
-                <div class="d-flex justify-content-end">
-                    <h3><a href="http://www.famtv.fr/"> <img class="image"src="assets/img/logo/FAMTV.png">Fédération des Arts Martiaux Traditionnels Vietnamiens</a></h3>
-                </div>
+        </div>
+        <br>
+        <br>
+        <div class="d-flex justify-content-end">
+            <h3><a href="http://www.famtv.fr/"> <img class="image"src="assets/img/logo/FAMTV.png">Fédération des Arts Martiaux Traditionnels Vietnamiens</a></h3>
+        </div>
     </div>
-</body>

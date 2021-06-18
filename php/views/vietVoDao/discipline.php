@@ -78,19 +78,19 @@
                                 <td style="border:none;">La formation de l'homme vrai sur deux plan: Esprit et Technique.</td>
                             </tr>
                             <tr>
-                                <td><span style="color:#1c55a3;">Devise</span</td>
+                                <td><span style="color:#1c55a3;">Devise</span></td>
                                 <td>Être fort pour être utile.</td>
                             </tr>
                             <tr>
-                                <td><span style="color:#1c55a3;">Symbole</span</td>
+                                <td><span style="color:#1c55a3;">Symbole</span></td>
                                 <td>Le bambou, image de droiture et de souplesse.</td>
                             </tr>
                             <tr>
-                                <td><span style="color:#1c55a3;">Principe</span</td>
+                                <td><span style="color:#1c55a3;">Principe</span></td>
                                 <td>Harmonie entre force et souplesse.</td>
                             </tr>
                             <tr>
-                                <td><span style="color:#1c55a3;">Son Salut</span</td>
+                                <td><span style="color:#1c55a3;">Son Salut</span></td>
                                 <td>La main d'acier sur le coeur de bonté.</td>
                             </tr>
                         </table>
