@@ -30,6 +30,11 @@ function transformToBelt($data,$size){
             case 'noire';
             case 'noir' :
                 $color = 'N';
+                if ($num == "1"){
+                    if ($data[2+$i][1]== '0'){
+                        $num = '10';
+                    }
+                }
                 break;
             case 'bleue';
             case 'bleu' :
