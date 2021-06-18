@@ -6,6 +6,50 @@ $greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
 $prezCouncil = $db->query('SELECT id_master FROM organisation WHERE role LIKE "%Président du Conseil%"')->fetch(PDO::FETCH_ASSOC);
 $req = $db->query('SELECT * FROM specialist WHERE id='.$prezCouncil['id_master'].'');
 $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
+
+function modalMaster($master, $id){
+    ?>
+    <div class="modal fade" id="<?php echo $id?>">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Maître <?php echo $master['name']?></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img style="border-radius:50%;" src="<?php echo $master['pictureProfile']?>" height="400" alt="<?php echo $master['name']?>">
+                    </div>
+                    <?php 
+                    $functions = explode(",",$master['function']);
+                    $search = explode(' ', $functions[0]);
+                    if ($search[0] == "Ceinture"){
+                        transformToBelt($search,'40');
+                    }
+                    ?>
+                    <ul>
+                        <?php 
+                        $a = array_pop($functions);
+                        foreach ($functions as $func) {
+                            echo '<li>'.$func.'</li>';
+                        }
+                        ?>
+                    </ul>
+                    <hr>
+                    <h3>Biographie Personnelle</h3>
+                    <p><?php echo $master['biographyShort']?></p>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+}
 ?>
 <link rel="stylesheet" href="css/directionTech.css">
 
@@ -21,41 +65,15 @@ $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
         <div class="text-center" data-toggle="modal" data-target="#prez">
             <img alt="Président du conseil" name="president" height="200" src="<?php echo $prezCouncil['pictureProfile']?>"><br>
             <label for="president">Maître <?php echo $prezCouncil['name']?></label>
+            <?php 
+            $functions = explode(",",$prezCouncil['function']);
+            $search = explode(' ', $functions[0]);
+            if ($search[0] == "Ceinture"){
+                transformToBelt($search,'20');
+            }
+            ?>
         </div>
-        <div class="modal fade" id="prez">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <h4 class="modal-title">Maître <?php echo $prezCouncil['name']?></h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="text-center">
-                            <img style="border-radius:50%;" src="<?php echo $prezCouncil['pictureProfile']?>" height="400" alt="<?php echo $prezCouncil['name']?>">
-                        </div>
-                        <ul>
-                            <?php 
-                            $functions = explode(",",$prezCouncil['function']);
-                            $a = array_pop($functions);
-                            foreach ($functions as $func) {
-                                echo '<li>'.$func.'</li>';
-                            }
-                            ?>
-                        </ul>
-                        <hr>
-                        <h3>Biographie Personnelle</h3>
-                        <p><?php echo $prezCouncil['biographyShort']?></p>
-                    </div>
-        
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        <?php modalMaster($prezCouncil, "prez")?>
     </div>
     <!-- Tableaux des maitres/membres etc -->
     <div class="selection">
@@ -65,43 +83,18 @@ $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
             <?php
             foreach ($greatMastersDB as $master) {
             ?>
-                <div class="col-12 col-sm-6 col-md-4 text-center" data-toggle="modal" data-target="#m-<?php echo $master['id']?>">
+                <div class="col-12 col-sm-6 col-md-4 text-center mb-3" data-toggle="modal" data-target="#m-<?php echo $master['id']?>">
                     <img src="<?php echo $master['pictureProfile']?>" height="200" alt="<?php echo $master['name']?>">
-                    <p>Maître <?php echo $master['name']?></p>
+                    <p style="margin-bottom:0;">Maître <?php echo $master['name']?></p>
+                    <?php 
+                    $functions = explode(",",$master['function']);
+                    $search = explode(' ', $functions[0]);
+                    if ($search[0] == "Ceinture"){
+                        transformToBelt($search,'20');
+                    }
+                    ?>
                 </div>
-                <div class="modal fade" id="m-<?php echo $master['id']?>">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-                                <h4 class="modal-title">Maître <?php echo $master['name']?></h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <div class="modal-body">
-                                <div class="text-center">
-                                    <img style="border-radius:50%;" src="<?php echo $master['pictureProfile']?>" height="400" alt="<?php echo $master['name']?>">
-                                </div>
-                                <ul>
-                                    <?php 
-                                    $functions = explode(",",$master['function']);
-                                    $a = array_pop($functions);
-                                    foreach ($functions as $func) {
-                                        echo '<li>'.$func.'</li>';
-                                    }
-                                    ?>
-                                </ul>
-                                <hr>
-                                <h3>Biographie Personnelle</h3>
-                                <p><?php echo $master['biographyShort']?></p>
-                            </div>
-                
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php modalMaster($master, "m-".$master['id'])?>
             <?php
             }
             ?>
@@ -223,5 +216,6 @@ $prezCouncil = $req->fetch(PDO::FETCH_ASSOC);
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
+-->
 </div>
