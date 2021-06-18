@@ -1,20 +1,26 @@
 <?php 
 require_once 'management/init.php';
 session_start();
-/*
+
 if($_POST){
-    if ($_POST['mdp'] == getAccessAdmin()){
+    if (isset($_POST['mdp'])){
+        $_SESSION['mdp'] =  $_POST['mdp'];
+    }
+}
+if (isset($_SESSION['mdp'])){
+    if ($_SESSION['mdp'] == getAccessAdmin()){
         $_SESSION['success'] = true;
     }
     else {
         unset($_SESSION['success']);
         $_SESSION['try_'.count($_SESSION).''] = 2-count($_SESSION);
         $failed = 'Mauvais mot de passe, '.$_SESSION['try_'.(count($_SESSION)-1).''].' essai(s) restant.';
+        
         if (count($_SESSION)> 3){
             echo "<script type='text/javascript'> location.href = '../' </script>";
         }
     }
-}*/
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr_FR">
@@ -91,40 +97,74 @@ if($_POST){
     </div>
 </div>
 <?php
-//if (isset($_SESSION['success'])){
-    $pages = ['panel','addClub','addMaster','event','sliders','modifyFAQ','calendars','news','organisation'];
-    $page = 'panel';
-    if (isset($_GET['p'])) {
-        if (in_array($_GET['p'],$pages)){
-            $page = $_GET['p'];
+if (getAccessAdmin()){
+    if (isset($_SESSION['success'])){
+        $pages = ['panel','addClub','addMaster','event','sliders','modifyFAQ','calendars','news','organisation'];
+        $page = 'panel';
+        if (isset($_GET['p'])) {
+            if (in_array($_GET['p'],$pages)){
+                $page = $_GET['p'];
+            }
         }
+        require_once 'views/'.$page.'.php';
+    }else {
+        ?>
+        <div class="container">
+            <div class="text-center">
+                <h1 class="content-title-red">PANEL ADMIN</h1>
+            </div>
+            <hr>
+            <h3 class="mt-5 mb-5"> Veuillez entrer le mot de passe pour continuer sur cette page </h3>
+            <form action="" method="post" enctype="multipart/form-data">
+                <label class="data" for="mdp">Mot de Passe</label>
+                <input type="password" name="mdp" id="mdp" autocomplete="off" class="inputData form-control">
+                <?php 
+                if (isset($failed)){
+                    echo '<p>'.$failed.'</p>';
+                }
+                ?>
+                <div class="text-right">
+                    <div id="btn-reset" class="p-2">
+                        <button type="submit" value="submit" class="confirm" data-dismiss="modal">Valider</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <?php
     }
-    require_once 'views/'.$page.'.php';/*
 }else {
+    //Création d'un mot de passe si aucun n'est trouvé
     ?>
     <div class="container">
         <div class="text-center">
-            <h1 class="content-title-red">PANEL ADMINISTRATEUR</h1>
+            <h1 class="content-title-red">Bienvenue sur le panel Admin</h1>
         </div>
         <hr>
-        <h3 class="mt-5 mb-5"> Veuillez entrer le mot de passe pour continuer sur cette page </h3>
-        <form action="" method="post" enctype="multipart/form-data">
-            <label class="data" for="mdp">Mot de Passe</label>
-            <input type="password" name="mdp" id="mdp" autocomplete="off" class="inputData form-control">
-            <?php 
-            if (isset($failed)){
-                echo '<p>'.$failed.'</p>';
-            }
-            ?>
+        
+        <form action="management/createPassWord.php" method="post">
+            <h3>Création d'un nouveau de passe</h3>
+            <input type="text" name="mdp" id="mdp" autocomplete="off" class="inputData form-control">
+            <br>
+            <h3>Confirmer le nouveau de passe</h3>
+            <input type="password" name="confirmMDP" id="confirmMDP" onchange="confirmPassWord()" autocomplete="off" class="inputData form-control">
             <div class="text-right">
                 <div id="btn-reset" class="p-2">
-                    <button type="submit" value="submit" class="btn-annul annim confirm" data-dismiss="modal">Valider</button>
+                    <button type="submit" value="submit" id="valid" class="confirm hide" data-dismiss="modal" disabled>Valider</button>
                 </div>
             </div>
         </form>
     </div>
+    <script>
+        function confirmPassWord(){
+            if ($('#mdp').val() == $('#confirmMDP').val()){
+                $('#valid').removeClass("hide").prop("disabled", false);;
+            }else {
+                $('#valid').addClass("hide").prop("disabled", true);;
+            }
+        }
+    </script>
     <?php
-}*/
+}
 ?>
 </body>
 </html>

@@ -27,7 +27,7 @@ function getSliderDirr() {
     return '../assets/img/caroussel/';
 }
 function getAccessAdmin() {
-    return '0123456';
+    return @file_get_contents('management/mdp.txt');
 }
 function str_replace_first($from, $to, $content){
     $from = '/'.preg_quote($from, '/').'/';
@@ -69,6 +69,7 @@ function translateToHTML($string){
     }
     return $string;
 }
+//Pouvoir modifer les symboles de style dans les inputs
 function translateToInput($string){
     //Edit the response to make it easy to design in edit mode
     $string = str_replace("<br>", "\r\n", $string);

@@ -66,6 +66,12 @@ button:hover {
     border: 2px solid green;
     border-radius: 5px;
 }
+.confirm:hover:disabled{
+    background-color: #209020 !important;
+    color: white;
+    border: 2px solid #209020;
+    border-radius: 5px;
+}
 .undo:hover{
     background-color: #e82226 !important;
     color: white;
