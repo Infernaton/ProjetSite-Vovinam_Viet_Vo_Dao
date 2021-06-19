@@ -74,7 +74,7 @@ function printModal($news){
 }
 function picture($name){
     echo '<div class="image">';
-    $file = 'assets/img/news/'.strtolower($name).'.png';
+    $file = 'assets/img/news/'.strtolower(str_replace(array('é','è','ë','ê','à','â','ä','î','ï'), "e", $name)).'.png';
     if (file_exists($file)){
         echo '<img class="img_fill" src="'.$file.'" alt="">';
     }else {

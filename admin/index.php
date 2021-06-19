@@ -142,10 +142,10 @@ if (getAccessAdmin()){
         <hr>
         
         <form action="management/createPassWord.php" method="post">
-            <h3>Création d'un nouveau de passe</h3>
+            <h3>Création d'un nouveau mot de passe</h3>
             <input type="text" name="mdp" id="mdp" autocomplete="off" class="inputData form-control">
             <br>
-            <h3>Confirmer le nouveau de passe</h3>
+            <h3>Confirmer le nouveau mot de passe</h3>
             <input type="password" name="confirmMDP" id="confirmMDP" onchange="confirmPassWord()" autocomplete="off" class="inputData form-control">
             <div class="text-right">
                 <div id="btn-reset" class="p-2">

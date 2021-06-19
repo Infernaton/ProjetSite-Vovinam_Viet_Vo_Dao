@@ -8,7 +8,7 @@
         <br>
         
         <p  class="text-center">
-            ➢ <a href="?c=directionTech&p=2" class="link"> Voir la liste Actuelle du Conseil Des Maîtres</a>
+            ➢ <a href="?c=directionTech&p=2" class="link"> Voir la liste Actuelle des Maîtres</a>
         </p>
         <div>
             <br>
