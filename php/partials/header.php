@@ -15,9 +15,7 @@ function partials_header($categorie,$page){
     */
     $nav = [
         ["Accueil"],
-        ["La Fédération",
-            ["La Fédération","Les Régions et Clubs","Contacts","Liens","Mentions Légales et Logo"]
-        ],
+        ["Actualités"],
         ["Direction Technique",
             ["Calendrier","Le Conseil des Maîtres","Liste officielle des maîtres et ceintures noires","Passage de grades"]
         ],
@@ -29,7 +27,9 @@ function partials_header($categorie,$page){
         ["Affiliation/licenciés",
             ["Documentation","Modalités d'Affiliation","FAQ Affiliation","Licenciés","Passeport"]
         ],
-        ["Actualités"],
+        ["La Fédération",
+            ["La Fédération","Les Régions et Clubs","Contacts","Liens","Mentions Légales et Logo"]
+        ],
         ["Contact",
             ["Contact","FAQ","Personnalité de la Fédération"]
         ],

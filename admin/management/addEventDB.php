@@ -66,7 +66,10 @@ switch ($_POST['submit']){
         break;
 
     case 'modify':
-        $request = 'UPDATE event SET'.' type="'. $_POST["event"].'", title="'.$_POST["title"].'", description="'.translateToHTML($_POST["description"]).'", dateDebut="'.$_POST["debut"].'", dateFin="'.$_POST["fin"].'", image="'.$target_file.'" WHERE id='.(int)$_POST['currentEvent'].'';
+        $request = 'UPDATE event SET'.' type="'. $_POST["event"].'", 
+            title="'.$_POST["title"].'", description="'.translateToHTML($_POST["description"]).'", 
+            dateDebut="'.$_POST["debut"].'", dateFin="'.$_POST["fin"].'", 
+            image="'.$target_file.'" WHERE id='.(int)$_POST['currentEvent'].'';
         $req = $db->prepare($request);
         $req->execute();
         break;

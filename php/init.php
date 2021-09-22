@@ -58,11 +58,11 @@ function transformToBelt($data,$size){
 //The different status
 $pages = [
     'home' => ['home'],
-    'federation' => ['/federation','/map','/contacts','/lien','/legal'],
+    'actualite' => ['actualite'],
     'directionTech' => ['/evenement','/conseilMaitre','/listeMaitre','/changeGrade'],
     'vietVoDao' => ['/discipline','/histoire','/grandMaitres','/fedeMondial'],
     'affiliation' => ['/doc','/modaliteAffiliation','/faq','/licencies','/passeport'],
-    'actualite' => ['actualite'],
+    'federation' => ['/federation','/map','/contacts','/lien','/legal'],
     'contacts' => ['/contacts','/faq','/personnaliteFede'],
     /*'login' => ['/login','/register'],*/
 ];
