@@ -139,6 +139,3 @@ class Db{
         return $this->executeAndCloseWithArray($req, [":obj"=>$obj]);
     }
 }
-
-
-?>

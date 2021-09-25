@@ -1,6 +1,26 @@
 <?php 
 //Fichier qui repertories toutes choses qui ont besoin d'être modifiées facilement, comme le répertoires d'images où des valeurs
-require_once "db.php"; //La Base de donnée
+require_once "db.php";
+
+$bdd= tryConnection(); //La Base de donnée
+
+function tryConnection(){
+    $configBdd = [
+        ["bddType"=>"mysql", "bddName"=>"vietvodao", "bddHost"=>"localhost","bddUser"=>"root", "bddPassword"=>""],
+        ["bddType"=>"mysql", "bddName"=>"vxjgaxtviet", "bddHost"=>"vxjgaxtviet.mysql.db", "bddUser"=>"vxjgaxtviet", "bddPassword"=>"vOv1nAmVo"]
+    ];
+
+    foreach ($configBdd as $config){
+        try{
+            $bdd = Db::getInstance($config["bddType"], $config["bddName"], $config["bddHost"], $config["bddUser"], $config["bddPassword"]);
+            if ($bdd->getIsBddConnect()){
+                return $bdd;
+            }
+        }catch(Exception $e){
+        }
+    }
+    return null;
+}
 
 function getSaveDirr($target){
     //Dossier où sont stockées les images --A modifier si besoin--

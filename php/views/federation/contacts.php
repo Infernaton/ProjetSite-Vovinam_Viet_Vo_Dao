@@ -1,40 +1,4 @@
 <?php
-$function = $bdd->getOrganigramme();
-
-$mail = [
-        'Conseildesmaitres@vietvodao.com',
-        'dtn@vietvodao.com',
-        'Secretariat@vietvodao.com',
-        'secretairegeneral@vietvodao.com',
-        'presidentfr@vietvodao.com',
-        'tresorierfr@vietvodao.com',
-        'pdt.idf@vietvodao.com',
-        'rt.idf@vietvodao.com',
-        'pdt.nouvelleaquitaine@vietvodao.com',
-        'rt.nouvelleaquitaine@vietvodao.com',
-        'pdt.rhonealpes@vietvodao.com',
-        'rt.rhonealpes@vietvodao.com',
-        'pdt.bassenormandie@vietvodao.com',
-        'rt.bassenormandie@vietvodao.com',
-        'pdt.champagne@vietvodao.com',
-        'rt.champagne@vietvodao.com',
-        'pdt.bretagne@vietvodao.com',
-        'rt.bretagne@vietvodao.com',
-];
-
-$affectations = array();
-foreach($function as $f){
-        //Event sort by year
-        $affectation = $f['affectation'];
-        //If a year is already in the table, we put the event in it
-        if (array_key_exists($affectation, $affectations)){
-            array_push($affectations[$affectation], $f);
-        }
-        //If not, we create that year
-        else {
-            $affectations[$affectation] = [$f];
-        }
-}
 function printRole($function) {
         ?>
         <div class="person">
@@ -51,14 +15,21 @@ function printRole($function) {
         </div>
         <?php
 }
+$function = $bdd->getOrganigramme();
+
+$affectations = array();
+foreach($function as $f){
+        var_dump($f);
+        $affectation = $f['affectation'];
+
+        if (array_key_exists($affectation, $affectations)){ array_push($affectations[$affectation], $f); }
+        else { $affectations[$affectation] = [$f];}
+}
 ?>
 <link rel="stylesheet" href="css/federation.css">
 <div class="container info">
-        <div class="text-center">
-                <h1 class="content-title-yellow"> Contacts </h1>
-        </div>
+        <div class="text-center"><h1 class="content-title-yellow"> Contacts </h1></div>
         <?php
-        $count = 0;
         foreach ($affectations as $affectation => $list) {
                 if($affectation == 'Comités Régionaux'){
                         $affectation .= ' (<a href="?c=federation&p=1#comite">Voir la liste des Comités</a>)';
@@ -69,12 +40,7 @@ function printRole($function) {
                 <div class="row">
                         <?php
                         foreach ($list as $function) {
-                        ?>
-                        <div class="col-12 col-md-6">
-                                <?php printRole($function);?>
-                        </div>
-                        <?php
-                        $count += 1;
+                                echo '<div class="col-12 col-md-6">'. printRole($function) .'</div>';
                         }
                         ?>
                 </div>
