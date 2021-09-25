@@ -9,10 +9,8 @@
 <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 <?php 
     require_once 'php/init.php';
-    $listClubBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite like "club"');
-    $listClub = $listClubBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
-    $listComiteBeforeFetch = $db->query('SELECT * FROM marqueur WHERE club_comite="comite"');
-    $listComite = $listComiteBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+    $listClub = $bdd->getPosForMap("club");
+    $listComite = $bdd->getPosForMap("comite");
 ?>
 <style>
 .tooltip-inner {

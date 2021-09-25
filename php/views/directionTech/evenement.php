@@ -11,8 +11,7 @@ $today = explode("/",date('Y/m/d', time()));
 
 $monthsABBREV = cal_info(0)['abbrevmonths'];
 
-$req = $db->query('SELECT DISTINCT type FROM event');
-$eventType = $req->fetchAll(PDO::FETCH_ASSOC);  //To know all the type of event, if a new appear, we don't have to add it manually
+$eventType = $bdd->getAllEvent();  //To know all the type of event, if a new appear, we don't have to add it manually
 
 $selectedYear = $today[0]; //On prend l'année
 $quarter = intdiv($today[1]-1, 3); //On indique à quel trimestre on se situe
@@ -83,27 +82,7 @@ if($_POST){
     
 }
 //var_dump($someFilter);
-//On modifie la requete SQL en fonction des résultat du tri
-if (count($someFilter)>0){
-    $allFilter = 'WHERE (';
-    for ($i=0; $i< count($someFilter); $i++){
-        $allFilter .= $someFilter[$i];
-        if (isset($someFilter[$i+1])){
-            if (explode(" ",$someFilter[$i])[0] == explode(" ",$someFilter[$i+1])[0]){
-                $allFilter .= ' OR ';
-            }else {
-                $allFilter .= ') AND (';
-            }
-        }
-    }
-    $allFilter .= ')';
-}else {
-    $allFilter = 'WHERE dateDebut like "'.$selectedYear.'%"';
-}
-$request = 'SELECT * FROM event '.$allFilter.' Order by `dateDebut` DESC';
-//var_dump($request);
-$req = $db->query($request);
-$eventAll = $req->fetchAll(PDO::FETCH_ASSOC);
+$eventAll = $bdd->sortAllEvent($selectedYear, $someFilter);
 
 //var_dump($eventType);
 //var_dump($eventAll);

@@ -1,6 +1,26 @@
 <?php 
 require_once "management/db.php";
 
+$bdd= tryConnection(); //La Base de donnée
+
+function tryConnection(){
+    $configBdd = [
+        ["bddType"=>"mysql", "bddName"=>"vietvodao", "bddHost"=>"localhost","bddUser"=>"root", "bddPassword"=>""],
+        ["bddType"=>"mysql", "bddName"=>"vxjgaxtviet", "bddHost"=>"vxjgaxtviet.mysql.db", "bddUser"=>"vxjgaxtviet", "bddPassword"=>"vOv1nAmVo"]
+    ];
+
+    foreach ($configBdd as $config){
+        try{
+            $bdd = Db::getInstance($config["bddType"], $config["bddName"], $config["bddHost"], $config["bddUser"], $config["bddPassword"]);
+            if ($bdd->getIsBddConnect()){
+                return $bdd;
+            }
+        }catch(Exception $e){
+        }
+    }
+    return null;
+}
+
 function console_log( $data ){
     echo '<script>';
     echo 'console.log('. json_encode( $data ) .');';

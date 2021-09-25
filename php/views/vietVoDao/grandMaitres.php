@@ -24,9 +24,7 @@ function printParagraph($paragraphes, $hint = 0){
         echo '<p>'.$sentence.'</p>';                                
     }
 }
-
-$greatMastersBeforeFetch = $db->query('SELECT * FROM specialist WHERE hierarchy LIKE "great-master" ORDER BY id');
-$greatMastersDB = $greatMastersBeforeFetch->fetchAll(PDO::FETCH_ASSOC);
+$greatMastersDB = $bdd->getAllMasterByHierarchy("great-master");
 //var_dump($greatMasters);
 
 $path = 'assets/img/Maitres';

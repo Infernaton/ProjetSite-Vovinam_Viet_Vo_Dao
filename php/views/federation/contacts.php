@@ -1,6 +1,5 @@
 <?php
-$req = $db->query('SELECT * FROM organisation ORDER BY id');
-$function = $req->fetchAll(PDO::FETCH_ASSOC);
+$function = $bdd->getOrganigramme();
 
 $mail = [
         'Conseildesmaitres@vietvodao.com',
@@ -36,28 +35,17 @@ foreach($function as $f){
             $affectations[$affectation] = [$f];
         }
 }
-function printRole($function,$mail) {
-        $picture = 'assets/img/no-picture.png';
-
-        if ($function['id_master']!= 0){
-            global $db;
-            $req = $db->query('SELECT * FROM specialist WHERE id= "'.$function['id_master'].'"');
-            $master = $req->fetch(PDO::FETCH_ASSOC);
-            $name = $master['name'];
-            $picture = $master['pictureProfile'];
-        }else {
-            $name = $function['info'];
-        }
+function printRole($function) {
         ?>
         <div class="person">
             <div class="role">
                 <h4><?php echo $function['role'];?></h4>
             </div>
             <div class="body d-flex">
-                <img class="d-inline" src="<?php echo $picture?>" alt="image" height="75">
+                <img class="d-inline" src="<?php echo ($function["picture"] ? $function['picture']: 'assets/img/no-picture.png')?>" alt="image" height="75">
                 <div class="d-inline">
-                        <h5><?php echo $name;?></h5>
-                        <p class=""><?php echo $mail?></p>
+                        <h5><?php echo $function["name"];?></h5>
+                        <p class=""><?php echo $function["mail"]?></p>
                 </div>
             </div>
         </div>
@@ -83,7 +71,7 @@ function printRole($function,$mail) {
                         foreach ($list as $function) {
                         ?>
                         <div class="col-12 col-md-6">
-                                <?php printRole($function,$mail[$count]);?>
+                                <?php printRole($function);?>
                         </div>
                         <?php
                         $count += 1;
