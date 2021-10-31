@@ -34,19 +34,6 @@ switch ($_POST["submit"]){
     case 'delete':
         $request = 'DELETE FROM `marqueur` WHERE `id` ='.(int)$_POST['currentClub'];
         $db->prepare($request)->execute();
-        $req = $db->query('SELECT id FROM marqueur WHERE id > '.(int)$_POST['currentClub']);
-        $clubs = $req->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($clubs as $club){
-            $request = 'UPDATE marqueur SET'.' id="'.((int)$club['id']-1).'" WHERE id='.(int)$club['id'].'';
-            $req = $db->prepare($request);
-            $req->execute();
-        }
-        $incr = $db->query('SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = "vietvodao" AND TABLE_NAME = "marqueur"')->fetch(PDO::FETCH_ASSOC);
-        if (isset($club['id'])) {
-            $db->prepare('ALTER TABLE specialist AUTO_INCREMENT ='.$club['id'])->execute();
-        }else {
-            $db->prepare('ALTER TABLE specialist AUTO_INCREMENT ='.$incr['AUTO_INCREMENT']-1)->execute();
-        }
         break;
 }
 

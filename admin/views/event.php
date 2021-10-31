@@ -3,21 +3,16 @@ function reformatDate($dateStringDB){
     return str_replace("/","-",$dateStringDB);
 }
 //To know all the type of event, if a new appear, we don't have to add it manually
-$eventType = $db->query('SELECT DISTINCT type FROM event')->fetchAll(PDO::FETCH_ASSOC);
+$eventType = $bdd->getAllEventTypes();
 
 //Get the index of the current master in the url
 $currentEvent = null;
-if (isset($_GET['e'])) {
-  if ($_GET['e'] != null) {
+if (isset($_GET['e']) && $_GET['e'] != null) {
     $index = $_GET['e'];
-    $req = $db->query('SELECT * FROM event as s WHERE s.id = '.$index.'');
-    $currentEvent = $req->fetch(PDO::FETCH_ASSOC);
+    $currentEvent = $bdd->getDataEvent($index);
     //$currentEvent['description'] = str_replace(array("\r","\n"),array("","{n}"),$currentEvent['description']);
-  } else {
-    $index = -1;
-  }
 } else {
-  $index = -1;
+    $index = -1;
 }
 ?>
 <form action="management/addEventDB.php" method="post" enctype="multipart/form-data">
@@ -151,7 +146,7 @@ if (<?php echo $index?> != -1){
     document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos de l'évènement";
     document.getElementById("confirm").value = "modify";
     
-    //if we click on an existant master, we have to fill all the cointainer with his data
+    //if we click on an existant event, we have to fill all the cointainer with his data
     document.getElementById("title").value = "<?php echo $currentEvent['title'] ?>";
     document.getElementById("description").value = "<?php echo translateToInput(str_replace("<br>","{n}",$currentEvent['description']))?>".replaceAll('{n}', '\n');
     document.getElementById("dateDebut").value = "<?php echo reformatDate($currentEvent['dateDebut'])?>";

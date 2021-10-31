@@ -1,22 +1,17 @@
 <?php
-    $req = $db->query('SELECT name FROM specialist WHERE deathDate like "---"');
-    $allMaster = $req->fetchAll(PDO::FETCH_ASSOC);
+    $allMaster = $bdd->getAllMastersNameNotDead();
 
     if ($_POST){
         //var_dump($_POST);
-        $req = $db->query('SELECT id FROM specialist WHERE name like "%'.$_POST['name'].'%"');
-        $currentMaster = $req->fetch(PDO::FETCH_ASSOC);
+        $currentMaster = $bdd->getDataMasterByName($_POST['name']);
 
         switch ($_POST['submit']){
             case 'add':
                 //Ajout d'une personne avec son rôle, si son id = 0, alors cela veux dire que cette personne n'est pas enregistrer parmi les maitres
-                $req = $db->query('SELECT * FROM organisation ORDER BY id DESC');
-                $higherID = $req->fetch(PDO::FETCH_ASSOC);
+                $higherID = $bdd->getHigherIdFromOrganism();
 
-                if (isset($higherID['id'])){
-                    if ($higherID['role']==$_POST['role']){
-                        break;
-                    }
+                if (isset($higherID['id']) && $higherID['role']==$_POST['role']){
+                    break;
                 }
                 $req = $db->prepare('INSERT INTO organisation (
                     id, role, id_master, affectation, info
@@ -43,8 +38,8 @@
                 $cutRole = explode(" ", $_POST['role']);
                 $region = $cutRole[count($cutRole)-1];
 
-                $req = $db->query('SELECT * FROM marqueur WHERE titre like "%'.$region.'%"');
-                $comite = $req->fetch(PDO::FETCH_ASSOC);
+                //@TO DO improve the region name to give
+                $comite = $bdd->getDataComiteByName($region);
 
                 //$comite = false, si ce n'était pas un comite
                 if ($comite){
@@ -61,13 +56,11 @@
                         $request = 'UPDATE marqueur SET '.$person.'="'.$data.'" WHERE id='.(int)$comite['id'].'';
                         $req = $db->prepare($request)->execute();
                     }
-                    
                 }
                 break;
         }
     }
-    $req = $db->query('SELECT * FROM organisation ORDER BY id');
-    $function = $req->fetchAll(PDO::FETCH_ASSOC);
+    $function = $bdd->getAllOrganism();
 
     $affectations = array();
     foreach($function as $f){
@@ -82,16 +75,14 @@
             $affectations[$affectation] = [$f];
         }
     }
-    $req = $db->query('SELECT DISTINCT affectation FROM organisation ORDER BY id');
-    $aff = $req->fetchAll(PDO::FETCH_ASSOC);
+    $aff = $bdd->getAllAffectation();
 
     function printRole($function) {
         $picture = 'assets/img/no-picture.png';
 
         if ($function['id_master']!= 0){
-            global $db;
-            $req = $db->query('SELECT * FROM specialist WHERE id= "'.$function['id_master'].'"');
-            $master = $req->fetch(PDO::FETCH_ASSOC);
+            global $bdd;
+            $master = $bdd->getDataMaster($function['id_master']);
             $name = $master['name'];
             $picture = $master['pictureProfile'];
         }else {

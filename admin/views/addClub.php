@@ -1,18 +1,13 @@
 <?php
 //Get the index of the current master in the url
 $currentClub = null;
-$req = $db->query('SELECT * FROM marqueur WHERE club_comite LIKE "comite" ORDER BY id');
-$comiteDB =$req->fetchAll(PDO::FETCH_ASSOC);
-if (isset($_GET['club'])) {
-  if ($_GET['club'] != null) {
-    $index = $_GET['club'];
-    $req = $db->query('SELECT * FROM marqueur as s WHERE s.id = '.$index.'');
-    $currentClub = $req->fetch(PDO::FETCH_ASSOC);
-    $currentClub['coordonee'] = [unserialize(base64_decode($currentClub['coordonee']))[1],unserialize(base64_decode($currentClub['coordonee']))[0]];
-    //var_dump($currentClub);
-  } else {
-    $index = -1;
-  }
+$comiteDB = $bdd->getAllComite();
+
+if (isset($_GET['club']) && $_GET['club'] != null) {
+  $index = $_GET['club'];
+  $currentClub = $bdd->getDataClub($index);
+  $currentClub['coordonee'] = [unserialize(base64_decode($currentClub['coordonee']))[1],unserialize(base64_decode($currentClub['coordonee']))[0]];
+  //var_dump($currentClub);
 } else {
   $index = -1;
 }

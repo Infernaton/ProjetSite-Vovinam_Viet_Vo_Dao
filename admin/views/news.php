@@ -1,6 +1,5 @@
 <?php
-$req = $db->query('SELECT * FROM news ORDER BY date DESC');
-$news = $req->fetchAll(PDO::FETCH_ASSOC);
+$news = $bdd->getAllNews();
 
 function translateDate($date){
     $date = explode("-", $date);

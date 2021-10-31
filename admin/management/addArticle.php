@@ -6,8 +6,7 @@ date_default_timezone_set('Europe/Paris');
 
 switch ($_POST['submit']){
     case 'add':
-        $req = $db->query('SELECT COUNT(*) FROM news');
-        $count = $req->fetch(PDO::FETCH_ASSOC);
+        $count = $bdd->countAllNews();
         //Prepare to add the object
         $req = $db->prepare('INSERT INTO news (
             id, title, content, category, date, author
@@ -31,15 +30,7 @@ switch ($_POST['submit']){
         break;
     case 'remove':
         $request = 'DELETE FROM `news` WHERE `id` ='.(int)$_POST['index'];
-        $req = $db->prepare($request);
-        $req->execute();
-        $req = $db->query('SELECT id FROM news WHERE id >'.(int)$_POST['index']);
-        $news = $req->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($news as $new){
-            $request = 'UPDATE news SET'.' id="'.((int)$new['id']-1).'" WHERE id='.(int)$new['id'].'';
-            $req = $db->prepare($request);
-            $req->execute();
-        }
+        $req = $db->prepare($request)->execute();
         break;
 }
 echo "<script type='text/javascript'> location.href = '../?p=news' </script>";

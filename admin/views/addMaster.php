@@ -1,29 +1,24 @@
 <?php
 //Get the index of the current master in the url
 $currentMaster = null;
-if (isset($_GET['m'])) {
-  if ($_GET['m'] != null) {
-    $index = $_GET['m'];
-    $req = $db->query('SELECT * FROM specialist as s WHERE s.id = '.$index.'');
-    $currentMaster = $req->fetch(PDO::FETCH_ASSOC);
-    
-    $currentMaster['biographyShort'] = str_replace(array("\r","\n"),array("","{n}"),$currentMaster['biographyShort']);
-    $currentMaster['function'] = str_replace(array("\r","\n"),array("","{n}"),$currentMaster['function']);
+if (isset($_GET['m']) && $_GET['m'] != null) {
+  $index = $_GET['m'];
+  $currentMaster = $bdd->getDataMaster($index);
 
-    switch ($currentMaster['hierarchy']){
-      case 'great-master':
-        $currentMaster['hierarchy'] = 'Grand Maître';
-        break;
-      case 'master':
-        $currentMaster['hierarchy'] = 'Maître';
-        break;
-      default:
-        $currentMaster['hierarchy'] = 'none';
-    }
-    //var_dump($currentMaster);
-  } else {
-    $index = -1;
+  $currentMaster['biographyShort'] = str_replace(array("\r","\n"),array("","{n}"),$currentMaster['biographyShort']);
+  $currentMaster['function'] = str_replace(array("\r","\n"),array("","{n}"),$currentMaster['function']);
+
+  switch ($currentMaster['hierarchy']){
+    case 'great-master':
+      $currentMaster['hierarchy'] = 'Grand Maître';
+      break;
+    case 'master':
+      $currentMaster['hierarchy'] = 'Maître';
+      break;
+    default:
+      $currentMaster['hierarchy'] = 'none';
   }
+  //
 } else {
   $index = -1;
 }

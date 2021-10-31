@@ -1,10 +1,13 @@
 <?php
-$req = $db->query('SELECT * FROM specialist ORDER BY id');
-$greatMastersDB = $req->fetchAll(PDO::FETCH_ASSOC);
-$req = $db->query('SELECT * FROM marqueur ORDER BY id');
-$clubsDB =$req->fetchAll(PDO::FETCH_ASSOC);
-$req = $db->query('SELECT * FROM event Order by `dateDebut` DESC');
-$eventDB = $req->fetchAll(PDO::FETCH_ASSOC);
+//region db
+$greatMastersDB = $bdd->getAllMasters();
+$clubsDB = $bdd->getAllClubs();
+$eventDB = $bdd->getAllEvents();
+//To know all the type, if a new appear, we don't have to add it manually
+$eventType = $bdd->getAllEventTypes();
+$hierarchy = $bdd->getAllMasterTypes();
+//endregion
+
 //Sort by year event
 $yearList = array();
 foreach($eventDB as $event){
@@ -19,11 +22,6 @@ foreach($eventDB as $event){
         $yearList[$year] = [$event];
     }
 }
-
-$eventType = $db->query('SELECT DISTINCT type FROM event')->fetchAll(PDO::FETCH_ASSOC);
-//To know all the type of event, if a new appear, we don't have to add it manually
-$hierarchy = $db->query('SELECT DISTINCT hierarchy FROM specialist')->fetchAll(PDO::FETCH_ASSOC);
-
 $json_file = "../assets/json/contact.json";
 if (isset($_POST['contact'])){
     $contact = json_encode($_POST['contact'], JSON_PRETTY_PRINT);
