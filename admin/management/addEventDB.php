@@ -49,29 +49,31 @@ $_POST['fin'] = str_replace("-","/",$_POST['fin']);
 
 switch ($_POST['submit']){
     case 'valid':
-        //Prepare to add the object
-        $req = $db->prepare('INSERT INTO `event` (
-            type, title, description, dateDebut, dateFin, prerequis, objectif, image
-            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis, :objectif, :image)');
-
-        $req->bindValue(':type' , $_POST["event"]); 
-        $req->bindValue(':title' , $_POST["title"]);
-        $req->bindValue(':description', translateToHTML($_POST["description"]));
-        $req->bindValue(':dateDebut' , $_POST["debut"]);
-        $req->bindValue(':dateFin' , $_POST["fin"]);
-        $req->bindValue(':image' , $target_file);
-
-        $req->execute();
+        $bdd->addEvent(
+            ["title"=>$_POST["title"], 
+            "type"=>$_POST["event"], 
+            "description"=>translateToHTML($_POST["description"]), 
+            'dateDebut'=>$_POST["debut"],
+            'dateFin'=>$_POST["fin"],
+            'image'=>$target_file,
+            "prerequis"=>"",
+            "objectif"=>null]
+        );
         echo "\n Envoie réussi";
         break;
 
     case 'modify':
-        $request = 'UPDATE event SET'.' type="'. $_POST["event"].'", 
-            title="'.$_POST["title"].'", description="'.translateToHTML($_POST["description"]).'", 
-            dateDebut="'.$_POST["debut"].'", dateFin="'.$_POST["fin"].'", 
-            image="'.$target_file.'" WHERE id='.(int)$_POST['currentEvent'].'';
-        $req = $db->prepare($request);
-        $req->execute();
+        $bdd->modifyEvent(
+            ["id"=>$_POST['currentEvent'],
+            "title"=>$_POST["title"], 
+            "type"=>$_POST["event"], 
+            "description"=>translateToHTML($_POST["description"]), 
+            'dateDebut'=>$_POST["debut"],
+            'dateFin'=>$_POST["fin"],
+            'image'=>$target_file,
+            "prerequis"=>"",
+            "objectif"=>null]
+        );
         break;
 
     case 'delete':

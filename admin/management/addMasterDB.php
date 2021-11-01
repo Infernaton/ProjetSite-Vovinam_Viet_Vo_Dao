@@ -60,32 +60,32 @@ $_POST["function"] = $_POST['belt'].','.$_POST["function"];
 
 switch ($_POST['submit']){
     case 'valid':
-        //Prepare to add the object
-        $req = $db->prepare('INSERT INTO specialist (
-            name, pictureProfile, biographyShort, birthday, deathDate, function, hierarchy
-            ) VALUES (:name, :image, :biography, :birthday, :deathDate, :function, :hierarchy)');
-
-        $req->bindValue(':name' , $_POST["name"]);
-        $req->bindValue(':image' , $target_file);
-        $req->bindValue(':biography', $_POST["biography"]);
-        $req->bindValue(':birthday' , $_POST["birth"]);
-        $req->bindValue(':deathDate' , $deathValue);
-        $req->bindValue(':function' , $_POST["function"]);
-        $req->bindValue(':hierarchy' , $_POST["hierarchy"]);
-
-        $req->execute();
+        $bdd->addMaster(
+            ["name"=>$_POST["name"], 
+            "image"=>$target_file, 
+            "biography"=>$_POST["biography"], 
+            'birthday'=>$_POST["birth"],
+            'deathDate'=>$deathValue,
+            'function'=>$_POST["function"],
+            'hierarchy'=>$_POST["hierarchy"]]
+        );
         echo "\n Envoie réussi";
         break;
 
     case 'modify':
-        $request = 'UPDATE specialist SET'.' name="'.$_POST["name"].'", pictureProfile="'.$target_file.'", birthday="'.$_POST["birth"].'", deathDate="'.$deathValue.'", function="'.$_POST["function"].'", biographyShort="'.$_POST["biography"].'", hierarchy="'.$_POST["hierarchy"].'" WHERE id='.(int)$_POST['currentMaster'].'';
-        //var_dump($request);
-        $req = $db->prepare($request);
-        $req->execute();
+        $bdd->modifyMaster(
+            ["id"=>$_POST["currentMaster"],
+            "name"=>$_POST["name"], 
+            "image"=>$target_file, 
+            "biography"=>$_POST["biography"], 
+            'birthday'=>$_POST["birth"],
+            'deathDate'=>$deathValue,
+            'function'=>$_POST["function"],
+            'hierarchy'=>$_POST["hierarchy"]]
+        );
         break;
     case 'delete':
-        $request = 'DELETE FROM `specialist` WHERE `id` ='.(int)$_POST['currentMaster'];
-        $db->prepare($request)->execute();
+        $bdd->delMaster($_POST['currentMaster']);
         break;
 }
 

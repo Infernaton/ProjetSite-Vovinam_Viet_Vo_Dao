@@ -7,30 +7,27 @@ date_default_timezone_set('Europe/Paris');
 switch ($_POST['submit']){
     case 'add':
         $count = $bdd->countAllNews();
-        //Prepare to add the object
-        $req = $db->prepare('INSERT INTO news (
-            id, title, content, category, date, author
-            ) VALUES (:id, :title, :content, :category, :date, :author)');
-
-        $req->bindValue(':id', (int)$count['COUNT(*)']+1);
-        $req->bindValue(':title' , $_POST["title"]);
-        $req->bindValue(':content' , translateToHTML($_POST["content"]));
-        $req->bindValue(':category', $_POST["category"]);
-        $req->bindValue(':date' , date('Y-m-d', time()));
-        $req->bindValue(':author' , $_POST["author"]);
-
-        $req->execute();
+        $bdd->addNews(
+            ["id"=>(int)$count['COUNT(*)']+1, 
+            "title"=>$_POST["title"], 
+            "content"=>translateToHTML($_POST["content"]), 
+            'category'=>$_POST["category"],
+            'date'=>date('Y-m-d', time()),
+            'author'=>$_POST["author"],]
+        );
         echo "\n Envoie réussi";
-
         break;
     case 'modify':
-        $request = 'UPDATE news SET'.' title="'. $_POST["title"].'", content="'.translateToHTML($_POST["content"]).'", category="'.$_POST["category"].'", author="'.$_POST["author"].'" WHERE id='.(int)$_POST['index'].'';
-        $req = $db->prepare($request);
-        $req->execute();
+        $bdd->modifyNews(
+            ["id"=>(int)$_POST['index'],
+            "title"=>$_POST["title"], 
+            "content"=>translateToHTML($_POST["content"]), 
+            'category'=>$_POST["category"],
+            'author'=>$_POST["author"],]
+        );
         break;
     case 'remove':
-        $request = 'DELETE FROM `news` WHERE `id` ='.(int)$_POST['index'];
-        $req = $db->prepare($request)->execute();
+        $bdd->delNews($_POST["index"]);
         break;
 }
 echo "<script type='text/javascript'> location.href = '../?p=news' </script>";

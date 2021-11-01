@@ -13,26 +13,20 @@
                 if (isset($higherID['id']) && $higherID['role']==$_POST['role']){
                     break;
                 }
-                $req = $db->prepare('INSERT INTO organisation (
-                    id, role, id_master, affectation, info
-                    ) VALUES (:id, :role, :id_master, :affectation, :info)');
-
-                $req->bindValue(':id', ((int)$higherID['id']+1));
-                $req->bindValue(':role' , $_POST["role"]);
-
-                $req->bindValue(':affectation' , $_POST["affectation"]);
-
-                isset($_POST["isMaster"])? $req->bindValue(':id_master' , 0) : $req->bindValue(':id_master' , $currentMaster['id']);
-                isset($_POST["isMaster"])? $req->bindValue(':info', $_POST["name"]) : $req->bindValue(':info', null);
-
-                $req->execute();
+                $bdd->addRole(
+                    ["id"=>((int)$higherID['id']+1),
+                    "role"=>$_POST["role"], 
+                    "affectation"=>$_POST["affectation"]), 
+                    'id_master'=>(isset("isMaster")? 0 : $currentMaster['id']),
+                    'info'=>(isset("isMaster")? $_POST["name"] : null),]
+                );
                 break;
             case 'modify':
-                isset($_POST["isMaster"])? $id = 0 : $id = $currentMaster['id'];
-                isset($_POST["isMaster"])? $info = $_POST['name'] : $info = null;
-                $request = 'UPDATE organisation SET '.'id_master="'.$id.'", info="'.$info.'" WHERE id='.(int)$_POST['index'].'';
-                $req = $db->prepare($request);
-                $req->execute();
+                $bdd->modifyRole([
+                    "id"=>(int)$_POST['index'],
+                    'id_master'=>(isset("isMaster")? 0 : $currentMaster['id']),
+                    'info'=>(isset("isMaster")? $_POST["name"] : null),
+                ])
 
                 //Si les données sont pour un comité, alors on les modifie en même temps
                 $cutRole = explode(" ", $_POST['role']);
@@ -44,17 +38,14 @@
                 //$comite = false, si ce n'était pas un comite
                 if ($comite){
                     switch ($cutRole[0]){
-                        case 'Président': $person = 'enseignant';
-                            break;
-                        case 'Responsable': $person = 'contact';
-                            break;
+                        case 'Président': $person= 'enseignant'; break;
+                        case 'Responsable': $person = 'contact'; break;
                         default: $person = 'notDefine';
                     }
                     //Pour mettre le nouveau nom de la personne, sans enlevé l'adresse mail qui suit
                     if (isset($comite[$person])){
-                        $data = str_replace(explode(' : ',$comite[$person])[0],$_POST['name'],$comite[$person]);
-                        $request = 'UPDATE marqueur SET '.$person.'="'.$data.'" WHERE id='.(int)$comite['id'].'';
-                        $req = $db->prepare($request)->execute();
+                        $data = str_replace(explode(' : ',$comite[$person])[0], $_POST['name'], $comite[$person]);
+                        $bdd->modifyPersonBehindComite($person, ["data"=>$data, "id"=>(int)$comite['id']]);
                     }
                 }
                 break;

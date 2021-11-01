@@ -94,6 +94,24 @@ class Db{
         $req = $this->_bdd->prepare('SELECT id FROM specialist WHERE name like %:name%');
         return $this->executeAndCloseWithArray($req, ["name"=>$name])[0];
     }
+
+    public function addMaster($values){
+        $req = $this->_bdd->prepare('INSERT INTO specialist (
+            name, pictureProfile, biographyShort, birthday, deathDate, function, hierarchy
+            ) VALUES (:name, :image, :biography, :birthday, :deathDate, :function, :hierarchy)');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function modifyMaster($values){
+        $req = $this->_bdd->prepare('UPDATE specialist 
+            SET name=:name, pictureProfile=:image, birthday=:birthday, deathDate=:deathDate, 
+                function=:function, biographyShort=:biography, hierarchy=:hierarchy 
+            WHERE id=:id');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function delMaster($id){
+        $req = $this->_bdd->prepare('DELETE FROM `specialist` WHERE `id` = :id');
+        return $this->executeAndCloseWithArray($req, ["id"=>$id]);
+    }
     //endregion
     //region clubs
     public function getAllClubs(){
@@ -112,6 +130,33 @@ class Db{
         $req = $this->_bdd->prepare('SELECT * FROM marqueur WHERE titre like :title');
         return $this->executeAndCloseWithArray($req, ["title"=>$name])[0];
     }
+
+    public function addClub($values){
+        $req = $this->_bdd->prepare('INSERT INTO marqueur (
+            titre, enseignant, contact, club_comite, lien, coordonee, Comite
+            ) VALUES (:titre, :enseignant, :contact, :club_comite, :lien, :coordonee, :Comite)');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function modifyClub($values){
+        $req = $this->_bdd->prepare('UPDATE marqueur 
+            SET titre=:titre, enseignant=:enseignant, contact=:contact, lien=:lien, 
+                coordonee=:coordonee, Comite=:Comite 
+            WHERE id=:id');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function delClub($id){
+        $req = $this->_bdd->prepare('DELETE FROM `marqueur` WHERE `id` =:id');
+        return $this->executeAndCloseWithArray($req, ["id"=>$id]);
+    }
+
+    public function modifyPersonBehindComite($person, $values){
+        $stmt = 'UPDATE marqueur 
+                SET '.$person.'= :dataPerson
+                WHERE id=:id';
+        $req = $this->_bdd->prepare($stmt);
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+
     //endregion
     //region events
     public function getAllEvents(){
@@ -126,6 +171,24 @@ class Db{
         $req = $this->_bdd->prepare('SELECT * FROM event as e WHERE e.id = :id');
         return $this->executeAndCloseWithArray($req, ["id"=>$id])[0];
     }
+
+    public function addEvent($values){
+        $req = $this->_bdd->prepare('INSERT INTO `event` (
+            type, title, description, dateDebut, dateFin, prerequis, objectif, image
+            ) VALUES (:type, :title, :description, :dateDebut, :dateFin, :prerequis, :objectif, :image)');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function modifyEvent($values){
+        $req = $this->_bdd->prepare('UPDATE event 
+            SET title=:title, type=:type, description=:description, dateDebut=:dateDebut, dateFin=:dateFin, image=:image,
+                objectif=:objectif, prerequis=:prerequis
+            WHERE id=:id');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function delEvent($id){
+        $req = $this->_bdd->prepare('DELETE FROM `event` WHERE `id` =:id');
+        return $this->executeAndCloseWithArray($req, ["id"=>$id]);
+    }
     //endregion
     //region news
     public function getAllNews(){
@@ -135,6 +198,22 @@ class Db{
     public function countAllNews(){
         $req = $this->_bdd->prepare('SELECT COUNT(*) FROM news');
         return $this->executeAndClose($req);
+    }
+    public function addNews($values){
+        $req = $this->_bdd->prepare('INSERT INTO news (
+            id, title, content, category, date, author
+            ) VALUES (:id, :title, :content, :category, :date, :author)');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function modifyNews($values){
+        $req = $this->_bdd->prepare('UPDATE news 
+            SET title=:title, content=:content, category=:category, author=:author
+            WHERE id=:id');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function delNews($id){
+        $req = $this->_bdd->prepare('DELETE FROM `news` WHERE `id` =:id');
+        return $this->executeAndCloseWithArray($req, ["id"=>$id]);
     }
     //endregion
     //region organism
@@ -149,6 +228,18 @@ class Db{
     public function getHigherIdFromOrganism(){
         $req = $this->_bdd->prepare('SELECT id, role FROM organisation ORDER BY id DESC');
         return $this->executeAndClose($req)[0];
+    }
+
+    public function addRole($values){
+        $req = $this->_bdd->prepare('INSERT INTO organisation (
+            id, role, id_master, affectation, info
+            ) VALUES (:id, :role, :id_master, :affectation, :info)');
+        return $this->executeAndCloseWithArray($req, $values);
+    }
+    public function modifyRole($values){
+        $req = $this->_bdd->prepare('UPDATE organisation 
+            SET id_master=:id_master, info=:info WHERE id=:id');
+        return $this->executeAndCloseWithArray($req, $values);
     }
     //endregion
 
