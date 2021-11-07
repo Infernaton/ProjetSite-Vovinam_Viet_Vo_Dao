@@ -19,7 +19,6 @@ $function = $bdd->getOrganigramme();
 
 $affectations = array();
 foreach($function as $f){
-        var_dump($f);
         $affectation = $f['affectation'];
 
         if (array_key_exists($affectation, $affectations)){ array_push($affectations[$affectation], $f); }
