@@ -7,7 +7,6 @@ switch ($_POST["submit"]){
             ["titre"=>$_POST["titre"], 
             "enseignant"=>$_POST["enseignant"], 
             "contact"=>$_POST["contact"], 
-            'club_comite'=>"club",
             'lien'=>$_POST["lien"],
             'Comite'=>$_POST["comiteValue"],
             'coordonee'=>base64_encode(serialize(explode(",", ($_POST["result"]))))]
