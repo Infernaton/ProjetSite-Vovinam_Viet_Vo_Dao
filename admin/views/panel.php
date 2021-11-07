@@ -2,6 +2,7 @@
 //region db
 $greatMastersDB = $bdd->getAllMasters();
 $clubsDB = $bdd->getAllClubs();
+$comiteDB = $bdd->getAllComite();
 $eventDB = $bdd->getAllEvents();
 //To know all the type, if a new appear, we don't have to add it manually
 $eventType = $bdd->getAllEventTypes();
@@ -96,23 +97,19 @@ body {
                 <select name="clubSelect" class="custom-select mb-3" onchange="select('clubList',this.value)">
                     <option value="all">Tous les Clubs</option>
                 <?php 
-                    foreach ($clubsDB as $comite){
-                        if ($comite['club_comite'] == "comite"){
-                            echo '<option value="'.$comite['Comite'].'">'.$comite['titre'].'</option>';
-                        }
+                    foreach ($comiteDB as $comite){
+                        echo '<option value="'.$comite['Comite'].'">'.$comite['titre'].'</option>';
                     }
                 ?>
                 </select>
                 <div class="row" id="clubList">
                 <?php //var_dump($clubsDB) ?>
                     <?php 
-                    for ($i=0;$i<count($clubsDB);$i++){
-                        if ($clubsDB[$i]["club_comite"] == "club"){
-                            echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$clubsDB[$i]['Comite'].'">',
-                                '<a href="?p=addClub&club='.$clubsDB[$i]['id'].'">',
-                                '<button class="list-object">'.$clubsDB[$i]['titre'].'</button>',
-                                '</a> </div>';
-                        }
+                    foreach ($clubsDB as $club){
+                        echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$club['Comite'].'">',
+                            '<a href="?p=addClub&club='.$club['id'].'">',
+                            '<button class="list-object">'.$club['titre'].'</button>',
+                            '</a> </div>';
                     }?>
                 </div>
             </div>  

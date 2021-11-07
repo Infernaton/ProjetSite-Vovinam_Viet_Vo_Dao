@@ -115,42 +115,42 @@ class Db{
     //endregion
     //region clubs
     public function getAllClubs(){
-        $req = $this->_bdd->prepare('SELECT * FROM marqueur ORDER BY id');
+        $req = $this->_bdd->prepare('SELECT * FROM club ORDER BY id');
         return $this->executeAndClose($req);
     }
     public function getAllComite(){
-        $req = $this->_bdd->prepare('SELECT * FROM marqueur WHERE club_comite LIKE "comite" ORDER BY id');
+        $req = $this->_bdd->prepare('SELECT * FROM comite ORDER BY id');
         return $this->executeAndClose($req);
     }
     public function getDataClub($id){
-        $req = $this->_bdd->prepare('SELECT * FROM marqueur as m WHERE m.id = :id ');
+        $req = $this->_bdd->prepare('SELECT * FROM club as m WHERE m.id = :id ');
         return $this->executeAndCloseWithArray($req, ["id"=>$id])[0];
     }
     public function getDataComiteByName($name){
-        $req = $this->_bdd->prepare('SELECT * FROM marqueur WHERE titre like :title');
+        $req = $this->_bdd->prepare('SELECT * FROM club WHERE titre like :title');
         return $this->executeAndCloseWithArray($req, ["title"=>$name])[0];
     }
 
     public function addClub($values){
-        $req = $this->_bdd->prepare('INSERT INTO marqueur (
-            titre, enseignant, contact, club_comite, lien, coordonee, Comite
-            ) VALUES (:titre, :enseignant, :contact, :club_comite, :lien, :coordonee, :Comite)');
+        $req = $this->_bdd->prepare('INSERT INTO club (
+            titre, enseignant, contact, lien, coordonee, Comite
+            ) VALUES (:titre, :enseignant, :contact, :lien, :coordonee, :Comite)');
         return $this->executeAndCloseWithArray($req, $values);
     }
     public function modifyClub($values){
-        $req = $this->_bdd->prepare('UPDATE marqueur 
+        $req = $this->_bdd->prepare('UPDATE club 
             SET titre=:titre, enseignant=:enseignant, contact=:contact, lien=:lien, 
                 coordonee=:coordonee, Comite=:Comite 
             WHERE id=:id');
         return $this->executeAndCloseWithArray($req, $values);
     }
     public function delClub($id){
-        $req = $this->_bdd->prepare('DELETE FROM `marqueur` WHERE `id` =:id');
+        $req = $this->_bdd->prepare('DELETE FROM `club` WHERE `id` =:id');
         return $this->executeAndCloseWithArray($req, ["id"=>$id]);
     }
 
     public function modifyPersonBehindComite($person, $values){
-        $stmt = 'UPDATE marqueur 
+        $stmt = 'UPDATE club 
                 SET '.$person.'= :dataPerson
                 WHERE id=:id';
         $req = $this->_bdd->prepare($stmt);

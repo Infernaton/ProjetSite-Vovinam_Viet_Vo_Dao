@@ -134,8 +134,12 @@ class Db{
             ORDER BY O.id');
         return $this->executeAndClose($req);
     }
-    public function getPosForMap($obj){
-        $req = $this->_bdd->prepare('SELECT * FROM marqueur WHERE club_comite LIKE :obj ');
-        return $this->executeAndCloseWithArray($req, [":obj"=>$obj]);
+    public function getClubForMap(){
+        $req = $this->_bdd->prepare('SELECT * FROM club');
+        return $this->executeAndClose($req);
+    }
+    public function getComiteForMap(){
+        $req = $this->_bdd->prepare('SELECT * FROM comite');
+        return $this->executeAndClose($req);
     }
 }

@@ -3,7 +3,7 @@ function selectClub(selection){
 
     let listClubs = document.getElementById("listClub");
     let clubs = listClubs.getElementsByClassName("club");
-    
+
     let subtitle = document.getElementById("select");
     subtitle.innerHTML = '('+selection[1]+')';
 
