@@ -16,38 +16,17 @@
                 $bdd->addRole(
                     ["id"=>((int)$higherID['id']+1),
                     "role"=>$_POST["role"], 
-                    "affectation"=>$_POST["affectation"]), 
-                    'id_master'=>(isset("isMaster")? 0 : $currentMaster['id']),
-                    'info'=>(isset("isMaster")? $_POST["name"] : null),]
+                    "affectation"=>$_POST["affectation"], 
+                    'id_master'=>(isset($_POST["isMaster"])? 0 : $currentMaster['id']),
+                    'info'=>(isset($_POST["isMaster"])? $_POST["name"] : null),]
                 );
                 break;
             case 'modify':
                 $bdd->modifyRole([
                     "id"=>(int)$_POST['index'],
-                    'id_master'=>(isset("isMaster")? 0 : $currentMaster['id']),
-                    'info'=>(isset("isMaster")? $_POST["name"] : null),
-                ])
-
-                //Si les données sont pour un comité, alors on les modifie en même temps
-                $cutRole = explode(" ", $_POST['role']);
-                $region = $cutRole[count($cutRole)-1];
-
-                //@TO DO improve the region name to give
-                $comite = $bdd->getDataComiteByName($region);
-
-                //$comite = false, si ce n'était pas un comite
-                if ($comite){
-                    switch ($cutRole[0]){
-                        case 'Président': $person= 'enseignant'; break;
-                        case 'Responsable': $person = 'contact'; break;
-                        default: $person = 'notDefine';
-                    }
-                    //Pour mettre le nouveau nom de la personne, sans enlevé l'adresse mail qui suit
-                    if (isset($comite[$person])){
-                        $data = str_replace(explode(' : ',$comite[$person])[0], $_POST['name'], $comite[$person]);
-                        $bdd->modifyPersonBehindComite($person, ["data"=>$data, "id"=>(int)$comite['id']]);
-                    }
-                }
+                    'id_master'=>(isset($_POST["isMaster"])? 0 : $currentMaster['id']),
+                    'info'=>(isset($_POST["isMaster"])? $_POST["name"] : null),
+                ]);
                 break;
         }
     }

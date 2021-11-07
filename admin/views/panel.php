@@ -98,7 +98,7 @@ body {
                     <option value="all">Tous les Clubs</option>
                 <?php 
                     foreach ($comiteDB as $comite){
-                        echo '<option value="'.$comite['Comite'].'">'.$comite['titre'].'</option>';
+                        echo '<option value="'.$comite['id'].'">'.$comite['nomComite'].'</option>';
                     }
                 ?>
                 </select>
@@ -106,7 +106,7 @@ body {
                 <?php //var_dump($clubsDB) ?>
                     <?php 
                     foreach ($clubsDB as $club){
-                        echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$club['Comite'].'">',
+                        echo '<div class="col-12 col-sm-6 col-lg-3 btn-panel '.$club['comiteId'].'">',
                             '<a href="?p=addClub&club='.$club['id'].'">',
                             '<button class="list-object">'.$club['titre'].'</button>',
                             '</a> </div>';

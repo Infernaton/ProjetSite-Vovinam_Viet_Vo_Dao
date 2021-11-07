@@ -139,7 +139,16 @@ class Db{
         return $this->executeAndClose($req);
     }
     public function getComiteForMap(){
-        $req = $this->_bdd->prepare('SELECT * FROM comite');
+        $req = $this->_bdd->prepare(
+            'SELECT C.id, C.nomComite, C.link, C.coordonee, 
+                IF(O.id_master = 0, O.info, S.name) as president, O.mail as mail_pres,
+                IF(O_bis.id_master = 0, O_bis.info, S_bis.name) as repTechnique, O_bis.mail as mail_rt
+
+            FROM comite as C
+            LEFT JOIN organisation AS O ON O.id = C.idPresident
+            LEFT JOIN specialist as S on S.id = O.id_master
+            LEFT JOIN organisation AS O_bis ON O_bis.id = C.idRepTech 
+            LEFT JOIN specialist as S_bis on S_bis.id = O_bis.id_master');
         return $this->executeAndClose($req);
     }
 }

@@ -137,107 +137,106 @@ if (isset($_GET['club']) && $_GET['club'] != null) {
 </form> 
 
 <script>
-let centerMap, zoomMap;
-if (<?php echo $index ?>!= -1){
-  centerMap = <?php echo json_encode($currentClub['coordonee'])?>; 
-  zoomMap = 10;
-}else {
-  centerMap = [2, 47]; 
-  zoomMap = 5;
-}
-mapboxgl.accessToken = '<?php echo getAccessToken()?>';
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: centerMap,
-  zoom: zoomMap
-});
-var geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken,
-  mapboxgl: mapboxgl
-});
+  let centerMap, zoomMap;
+  if (<?php echo $index ?>!= -1){
+    centerMap = <?php echo json_encode($currentClub['coordonee'])?>; 
+    zoomMap = 10;
+  }else {
+    centerMap = [2, 47]; 
+    zoomMap = 5;
+  }
+  mapboxgl.accessToken = '<?php echo getAccessToken()?>';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: centerMap,
+    zoom: zoomMap
+  });
+  var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+  });
 
-if (<?php echo $index?> != -1){
-  map.on('load', function () {
-    const marker = {url: '../assets/img/markers/red_marker1.png', id: 'red_marker'};
-    map.loadImage(marker.url, function(error,image){
-      map.addImage(marker.id,image, {
-        pixelRatio : 0.8,
+  if (<?php echo $index?> != -1){
+    map.on('load', function () {
+      const marker = {url: '../assets/img/markers/red_marker1.png', id: 'red_marker'};
+      map.loadImage(marker.url, function(error,image){
+        map.addImage(marker.id,image, {
+          pixelRatio : 0.8,
+        });
       });
-    });
 
-    map.addSource('club', {
-      'type': 'geojson',
-      'data': {
-        'type': 'FeatureCollection',
-        'features': [
-          {
-            'type': 'Feature',
-            'properties': {
-              'title': 'Ancien Point'
-            },
-            'geometry': {
-              'type': 'Point',
-              'coordinates': centerMap
+      map.addSource('club', {
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': [
+            {
+              'type': 'Feature',
+              'properties': {
+                'title': 'Ancien Point'
+              },
+              'geometry': {
+                'type': 'Point',
+                'coordinates': centerMap
+              }
             }
-          }
-        ]
+          ]
+        }
+      })
+      map.addLayer({
+        'id': 'clubs',
+        'type': 'symbol',
+        'source': 'club',
+        'layout': {
+          'icon-image': 'red_marker',
+        }   
+      });
+    })
+  }
+
+  //geocoder.addTo('#coordonee')
+  document.getElementById('coordonee').appendChild(geocoder.onAdd(map));
+
+  // Get the geocoder results container.
+  var results = document.getElementById('coo');
+  
+  // Add geocoder result to container.
+  geocoder.on('result', function (e) {
+    value = e.result.geometry.coordinates
+    results.value = value
+  });
+</script>
+
+<script>
+  function comiteData(value) {
+    //Name of a region -> Name of his symbole
+    let comiteDB = <?php echo json_encode($comiteDB)?>;
+    let input = document.getElementById("comiteValue");
+    let isComiteExist = false;
+    comiteDB.forEach(comite => {
+      if (comite['titre'] == value) {
+        isComiteExist = true;
+        input.value = comite['Comite'];
       }
     })
-    map.addLayer({
-      'id': 'clubs',
-      'type': 'symbol',
-      'source': 'club',
-      'layout': {
-        'icon-image': 'red_marker',
-      }   
-    });
-  })
-}
-
-//geocoder.addTo('#coordonee')
-document.getElementById('coordonee').appendChild(geocoder.onAdd(map));
-
-// Get the geocoder results container.
-var results = document.getElementById('coo');
- 
-// Add geocoder result to container.
-geocoder.on('result', function (e) {
-  value = e.result.geometry.coordinates
-  results.value = value
-});
+  }
+  function comiteDataReverse(value) {
+    //Name of the symbole -> Name of his region
+    let comiteDB = <?php echo json_encode($comiteDB)?>;
+    let input = document.getElementById("comite");
+    let isComiteExist = false;
+    comiteDB.forEach(comite => {
+      if (comite['Comite'] == value) {
+        isComiteExist = true;
+        input.value = comite['titre'];
+      }
+    })
+  }
 </script>
 
 <script>
-function comiteData(value) {
-  //Name of a region -> Name of his symbole
-  let comiteDB = <?php echo json_encode($comiteDB)?>;
-  let input = document.getElementById("comiteValue");
-  let isComiteExist = false;
-  comiteDB.forEach(comite => {
-    if (comite['titre'] == value) {
-      isComiteExist = true;
-      input.value = comite['Comite'];
-    }
-  })
-}
-function comiteDataReverse(value) {
-  //Name of the symbole -> Name of his region
-  let comiteDB = <?php echo json_encode($comiteDB)?>;
-  let input = document.getElementById("comite");
-  let isComiteExist = false;
-  comiteDB.forEach(comite => {
-    if (comite['Comite'] == value) {
-      isComiteExist = true;
-      input.value = comite['titre'];
-    }
-  })
-}
-</script>
-
-<script>
-if (<?php echo $index?> != -1){
-  if (<?php echo json_encode($currentClub)?> != null){
+  if (<?php echo $index?> != -1 && <?php echo json_encode($currentClub)?> != null){
     document.getElementsByTagName("h1")[0].innerHTML = "Modifier le Club";
     document.getElementById("confirm").value = "modify";
     document.getElementById("confirm").innerHTML = "Modifier";
@@ -253,5 +252,4 @@ if (<?php echo $index?> != -1){
     
     document.getElementById("coo").value = "<?php echo $currentClub['coordonee'][1].','.$currentClub['coordonee'][0]?>";
   }
-}
 </script>
