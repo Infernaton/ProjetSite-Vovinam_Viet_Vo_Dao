@@ -1,6 +1,9 @@
 <?php 
 //Fichier qui repertories toutes choses qui ont besoin d'être modifiées facilement, comme le répertoires d'images où des valeurs
 require_once "db.php";
+require_once "popUpAdmin.php";
+
+session_start();
 
 $bdd= tryConnection(); //La Base de donnée
 

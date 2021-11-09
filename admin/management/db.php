@@ -73,6 +73,20 @@ class Db{
         return $result;
     }
 
+    //region userAccess Admin
+    public function getUserAccessDataByName($name){
+        $req = $this->_bdd->prepare('SELECT * FROM adminaccess WHERE accountName = :name');
+        $return = $this->executeAndCloseWithArray($req, ["name"=>$name]);
+        if (count($return)>0) return $return[0];
+        return $return;
+    }
+    public function getAllUserNotSupAdmin(){
+        $req=$this->_bdd->prepare('SELECT * FROM adminaccess WHERE permissionDegre < 10 ');
+        return $this->executeAndClose($req);
+    }
+    //endregion
+
+
     //region masters
     public function getAllMasters(){
         $req = $this->_bdd->prepare('SELECT * FROM specialist ORDER BY id');
@@ -91,8 +105,10 @@ class Db{
         return $this->executeAndCloseWithArray($req, ["id"=>$id])[0];
     }
     public function getDataMasterByName($name){
-        $req = $this->_bdd->prepare('SELECT id FROM specialist WHERE name like %:name%');
-        return $this->executeAndCloseWithArray($req, ["name"=>$name])[0];
+        $req = $this->_bdd->prepare('SELECT id FROM specialist WHERE name like :name');
+        $return = $this->executeAndCloseWithArray($req, ["name"=>"%$name%"]);
+        if (count($return)>0) return $return[0];
+        return $return;
     }
 
     public function addMaster($values){

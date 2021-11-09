@@ -30,17 +30,22 @@ if (isset($_POST['contact'])){
 }
 ?>
 <style>
-body {
-    overflow-y: scroll;
-}
-.p-2{
-    padding: 0!important;
-}
+    body {
+        overflow-y: scroll;
+    }
+    .p-2{
+        padding: 0!important;
+    }
 </style>
 
 <div id="container" class="container">
+    <div class="mt-2 ml-2" style="position: absolute;">
+        <a href="?p=userList">
+            <button>Utilisateurs</button>
+        </a>
+    </div>
     <h1 id="panel">PANEL ADMIN</h1>
-    <!-- Maîtres -->
+    <!-- //region maitres Maîtres -->
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Maîtres</div>
         <div class="p-2 text-center">
@@ -82,7 +87,7 @@ body {
                     ?>
                 </div>
             </div>  
-        </div>  
+        </div>
     <!-- Clubs -->
     <div class="collapsible d-flex justify-content-between">
         <div class="p-2">Clubs</div>
@@ -264,37 +269,37 @@ body {
     </a>
 </div>
 <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+        content.style.maxHeight = null;
+        } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        } 
+    });
+    }
 </script>
 <script>
-function select(list,value){
-    let currentList = document.getElementById(list);
-    let objects = Array.from(currentList.getElementsByClassName('btn-panel'));
-    if (value != 'all'){
-        objects.forEach(object => {
-            console.log(object);
-            if (!object.classList.contains(value)){
-                object.classList.add('hide');
-            }else {
+    function select(list,value){
+        let currentList = document.getElementById(list);
+        let objects = Array.from(currentList.getElementsByClassName('btn-panel'));
+        if (value != 'all'){
+            objects.forEach(object => {
+                console.log(object);
+                if (!object.classList.contains(value)){
+                    object.classList.add('hide');
+                }else {
+                    object.classList.remove('hide');
+                }
+            })
+        }else {
+            objects.forEach(object => {
                 object.classList.remove('hide');
-            }
-        })
-    }else {
-        objects.forEach(object => {
-            object.classList.remove('hide');
-        })
+            })
+        }
     }
-}
 </script>
