@@ -57,6 +57,10 @@ class Db{
     public function getIsBddConnect(){
         return $this->_isConnected;
     }
+
+    private function hashPassword($pwd){
+        return password_hash($_POST["passwordAccess"], PASSWORD_BCRYPT);
+    }
     
     private function executeAndClose($stmt){
         $stmt->execute();
@@ -80,9 +84,19 @@ class Db{
         if (count($return)>0) return $return[0];
         return $return;
     }
-    public function getAllUserNotSupAdmin(){
-        $req=$this->_bdd->prepare('SELECT * FROM adminaccess WHERE permissionDegre < 10 ');
+    public function getAllUserAdmin(){
+        $req=$this->_bdd->prepare('SELECT * FROM adminaccess');
         return $this->executeAndClose($req);
+    }
+
+    public function insertAccessAdmin($values){
+        try {
+            $values["password"] = $this->hashPassword($values["password"]);
+            $req = $this->_bdd->prepare('INSERT INTO adminaccess (accountName, password, permissionDegre) VALUES (:name, :password, :perms)');
+            return $this->executeAndCloseWithArray($req, $values);
+        } catch (\Throwable $th) {
+            return false;
+        }
     }
     //endregion
 

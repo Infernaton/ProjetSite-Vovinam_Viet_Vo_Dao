@@ -39,11 +39,13 @@ if (isset($_POST['contact'])){
 </style>
 
 <div id="container" class="container">
-    <div class="mt-2 ml-2" style="position: absolute;">
-        <a href="?p=userList">
-            <button>Utilisateurs</button>
-        </a>
-    </div>
+    <?php if(isset($_SESSION, $_SESSION["currentPerms"]) && $_SESSION["currentPerms"] >= 10) {?>
+        <div class="mt-2 ml-2" style="position: absolute;">
+            <a href="?p=userList">
+                <button>Utilisateurs</button>
+            </a>
+        </div>
+    <?php }?>
     <h1 id="panel">PANEL ADMIN</h1>
     <!-- //region maitres Maîtres -->
     <div class="collapsible d-flex justify-content-between">

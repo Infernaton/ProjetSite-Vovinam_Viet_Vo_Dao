@@ -68,4 +68,47 @@ class PopUp
         </div>
         <?php
     }
+    public function addUserAccessPopUp(){
+        ?>
+        <div class="modal fade" id="addAccessUser">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form method="post" id="newAccess"></form>
+                    <div class="modal-header">
+                        <h3>Ajouter un accès Utilisateur</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label for="nameAccess">Identifiant</label>
+                            <input type="text" form="newAccess" name="nameAccess" id="nameAccess" required>
+                        </div>
+                        <div>
+                            <label for="nameAccess">Mot de passe *</label>
+                            <input type="text" form="newAccess" name="passwordAccess" id="passwordAccess" required>
+                        </div>
+                        <div>
+                            <label for="nameAccess">Degré de permissions</label>
+                            <input type="number" min=1 max=9 form="newAccess" name="permission" id="permission" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" form="newAccess">Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    public function modifyAccessPopUp(){
+        ?>
+        <div class="modal fade" id="modifyAccess">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form method="post" id="updateAccess"></form>
+                    
+                </div>
+            </div>
+        </div>
+        <?php
+    }
 }

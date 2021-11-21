@@ -145,15 +145,11 @@ function printCardNews($cardContent){
             </div>
         </div>
         <div class="row">
-            <?php
+            <?php 
             foreach($news as $new) { 
-            ?>
-            <div class="col-6">
-                <?php
-                echo printCardNews($new);
-                ?>
-            </div>
-            <?php
+                echo '<div class="col-6">';
+                echo    printCardNews($new);
+                echo '</div>';
             } 
             ?>
         </div>
