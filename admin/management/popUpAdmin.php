@@ -69,43 +69,54 @@ class PopUp
         <?php
     }
     public function addUserAccessPopUp(){
+        $formId = "newAccess";
         ?>
         <div class="modal fade" id="addAccessUser">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <form method="post" id="newAccess"></form>
+                    <form method="post" id="<?php echo $formId?>"></form>
                     <div class="modal-header">
                         <h3>Ajouter un accès Utilisateur</h3>
                     </div>
                     <div class="modal-body">
                         <div>
                             <label for="nameAccess">Identifiant</label>
-                            <input type="text" form="newAccess" name="nameAccess" id="nameAccess" required>
+                            <input type="text" form="<?php echo $formId?>" name="nameAccess" id="nameAccess" required>
                         </div>
                         <div>
                             <label for="nameAccess">Mot de passe *</label>
-                            <input type="text" form="newAccess" name="passwordAccess" id="passwordAccess" required>
+                            <input type="text" form="<?php echo $formId?>" name="passwordAccess" id="passwordAccess" required>
                         </div>
                         <div>
                             <label for="nameAccess">Degré de permissions</label>
-                            <input type="number" min=1 max=9 form="newAccess" name="permission" id="permission" required>
+                            <input type="number" min=1 max=9 form="<?php echo $formId?>" name="permission" id="permission" required>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" form="newAccess">Ajouter</button>
+                        <button type="submit" form="<?php echo $formId?>">Ajouter</button>
                     </div>
                 </div>
             </div>
         </div>
         <?php
     }
-    public function modifyAccessPopUp(){
+    public function modifyPasswordPopUp(){
+        $formId = "modifyPwd";
         ?>
-        <div class="modal fade" id="modifyAccess">
+        <div class="modal fade" id="modifyPwd">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <form method="post" id="updateAccess"></form>
-                    
+                    <form method="post" id="<?php echo $formId?>"></form>
+                    <div class="modal-header">
+                        <h3>Modifier le mot de passe de</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="password" form="<?php echo $formId?>" name="newPassword" id="newPassword">
+                        <input type="text" class="hide" form="<?php echo $formId?>" name="idAccess" id="idAccess">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" form="<?php echo $formId?>">Ajouter</button>
+                    </div>
                 </div>
             </div>
         </div>
