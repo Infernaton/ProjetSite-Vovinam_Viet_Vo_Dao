@@ -89,7 +89,7 @@ if (isset($_GET['club']) && $_GET['club'] != null) {
                 <select style="overflow-y:auto;" name="list" id="comite" onchange="comiteData(this.value)" class="custom-select inputData form-control">
                   <?php 
                     foreach ($comiteDB as $comite){
-                      echo '<option value="'.$comite["nomComite"].'">'.$comite["nomComite"].'</option>';
+                      echo '<option value="'.$comite["id"].'">'.$comite["nomComite"].'</option>';
                     }
                   ?>
                 <input class="hide" type="text" name="comiteValue" id="comiteValue" value="" required>
@@ -215,9 +215,9 @@ if (isset($_GET['club']) && $_GET['club'] != null) {
     let input = document.getElementById("comiteValue");
     let isComiteExist = false;
     comiteDB.forEach(comite => {
-      if (comite['titre'] == value) {
+      if (comite['nomComite'] == value) {
         isComiteExist = true;
-        input.value = comite['Comite'];
+        input.value = comite['id'];
       }
     })
   }
