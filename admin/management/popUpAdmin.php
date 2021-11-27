@@ -68,6 +68,7 @@ class PopUp
         </div>
         <?php
     }
+
     public function addUserAccessPopUp(){
         $formId = "newAccess";
         ?>
@@ -81,15 +82,15 @@ class PopUp
                     <div class="modal-body">
                         <div>
                             <label for="nameAccess">Identifiant</label>
-                            <input type="text" form="<?php echo $formId?>" name="nameAccess" id="nameAccess" required>
+                            <input type="text" class="inputData form-control" form="<?php echo $formId?>" name="nameAccess" id="nameAccess" required>
                         </div>
                         <div>
                             <label for="nameAccess">Mot de passe *</label>
-                            <input type="text" form="<?php echo $formId?>" name="passwordAccess" id="passwordAccess" required>
+                            <input type="text" class="inputData form-control" form="<?php echo $formId?>" name="passwordAccess" id="passwordAccess" required>
                         </div>
                         <div>
-                            <label for="nameAccess">Degré de permissions</label>
-                            <input type="number" min=1 max=9 form="<?php echo $formId?>" name="permission" id="permission" required>
+                            <label for="nameAccess">Degré de permissions (1-10)</label>
+                            <input type="number" class="inputData form-control" min=1 max=10 form="<?php echo $formId?>" name="permission" id="permission" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -100,26 +101,63 @@ class PopUp
         </div>
         <?php
     }
+
     public function modifyPasswordPopUp(){
         $formId = "modifyPwd";
         ?>
-        <div class="modal fade" id="modifyPwd">
+        <div class="modal fade" id="modifyPwdPopUp">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <form method="post" id="<?php echo $formId?>"></form>
                     <div class="modal-header">
-                        <h3>Modifier le mot de passe de</h3>
+                        <h3 id="titleModifyPassword">Modifier le mot de passe de :user</h3>
                     </div>
                     <div class="modal-body">
-                        <input type="password" form="<?php echo $formId?>" name="newPassword" id="newPassword">
+                        <input type="text" class="inputData form-control" form="<?php echo $formId?>" name="newPassword" id="newPassword" placeholder="Nouveau mot de passe">
                         <input type="text" class="hide" form="<?php echo $formId?>" name="idAccess" id="idAccess">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" form="<?php echo $formId?>">Ajouter</button>
+                        <button type="submit" class="confirm" form="<?php echo $formId?>">Modifier Mot de passe</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            initTitle = document.getElementById("titleModifyPassword").innerHTML;
+            function getAccessIdForModify(id, name){
+                document.getElementById("idAccess").value = id;
+                document.getElementById("titleModifyPassword").innerHTML = initTitle.replace(":user", name);
+            }
+        </script>
+        <?php
+    }
+    public function deleteAccessPopUp(){
+        $formId = "deleteAccess";?>
+        <div class="modal fade" id="delAccessPopUp">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form method="post" id="<?php echo $formId?>"></form>
+                    <div class="modal-header">
+                        <h3 id="titleDeletePassword">Supprimer l'accès ':user'</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="text" class="hide" form="<?php echo $formId?>" name="idAccess" id="idAccessDelete">
+                        <input type="text" class="hide" form="<?php echo $formId?>" value="here" name="deleteAccessInput" id="deleteAccessInput">
+                        <button type="submit" class="undo" form="<?php echo $formId?>">Supprimer l'accès</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            initTitle = document.getElementById("titleDeletePassword").innerHTML;
+            function getAccessIdForDelete(id, name){
+                console.log(id);
+                document.getElementById("idAccessDelete").value = id;
+                document.getElementById("titleDeletePassword").innerHTML = initTitle.replace(":user", name);
+            }
+        </script>
         <?php
     }
 }

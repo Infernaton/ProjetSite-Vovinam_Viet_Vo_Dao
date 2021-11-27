@@ -60,9 +60,9 @@ button:not(:disabled):hover {
     border-radius: 5px;
 }
 button:disabled{
-    color: var(--disabled-color);
-    border-color: var(--disabled-color);
-    background-color: var(--disabled-background-color);
+    color: var(--disabled-color) !important;
+    border-color: var(--disabled-color) !important;
+    background-color: var(--disabled-background-color) !important;
 }
 .collapsible .confirm{
     background-color: var(--blue-vovinam);
@@ -70,8 +70,8 @@ button:disabled{
     border-bottom :1px solid var(--black);
     border-radius: 1px;
 }
-.confirm:hover{
-    background-color: green !important;
+.confirm:not(:disabled):hover{
+    background-color: green;
     color: white;
     border: 2px solid green;
     border-radius: 5px;
@@ -82,8 +82,8 @@ button:disabled{
     border: 2px solid #209020;
     border-radius: 5px;
 }
-.undo:hover{
-    background-color: #e82226 !important;
+.undo:not(:disabled):hover{
+    background-color: #e82226;
     color: white;
     border: 2px solid #e82226;
 }

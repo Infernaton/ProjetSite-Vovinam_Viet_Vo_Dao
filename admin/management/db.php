@@ -59,7 +59,7 @@ class Db{
     }
 
     private function hashPassword($pwd){
-        return password_hash($_POST["passwordAccess"], PASSWORD_BCRYPT);
+        return password_hash($pwd, PASSWORD_BCRYPT);
     }
     
     private function executeAndClose($stmt){
@@ -85,7 +85,7 @@ class Db{
         return $return;
     }
     public function getAllUserAdmin(){
-        $req=$this->_bdd->prepare('SELECT * FROM adminaccess');
+        $req=$this->_bdd->prepare('SELECT id, accountName, permissionDegre FROM adminaccess');
         return $this->executeAndClose($req);
     }
 
@@ -94,6 +94,23 @@ class Db{
             $values["password"] = $this->hashPassword($values["password"]);
             $req = $this->_bdd->prepare('INSERT INTO adminaccess (accountName, password, permissionDegre) VALUES (:name, :password, :perms)');
             return $this->executeAndCloseWithArray($req, $values);
+        } catch (\Throwable $th) {
+            return false;
+        }
+    }
+    public function updatePasswordAdmin($values){
+        try {
+            $values["newPassword"] = $this->hashPassword($values["newPassword"]);
+            $req = $this->_bdd->prepare('UPDATE adminaccess SET password= :newPassword WHERE id=:id');
+            return $this->executeAndCloseWithArray($req, $values);
+        } catch (\Throwable $th) {
+            return false;
+        }
+    }
+    public function deleteAccessAdminAccount($id){
+        try {
+            $req = $this->_bdd->prepare('DELETE adminaccess From adminaccess WHERE id = :id');
+            return $this->executeAndCloseWithArray($req, ["id"=>$id]);
         } catch (\Throwable $th) {
             return false;
         }
