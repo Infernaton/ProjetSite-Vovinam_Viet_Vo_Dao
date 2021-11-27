@@ -89,7 +89,7 @@ if (isset($_GET['club']) && $_GET['club'] != null) {
                 <select style="overflow-y:auto;" name="list" id="comite" onchange="comiteData(this.value)" class="custom-select inputData form-control">
                   <?php 
                     foreach ($comiteDB as $comite){
-                      echo '<option value="'.$comite["titre"].'">'.$comite["titre"].'</option>';
+                      echo '<option value="'.$comite["nomComite"].'">'.$comite["nomComite"].'</option>';
                     }
                   ?>
                 <input class="hide" type="text" name="comiteValue" id="comiteValue" value="" required>
@@ -227,9 +227,9 @@ if (isset($_GET['club']) && $_GET['club'] != null) {
     let input = document.getElementById("comite");
     let isComiteExist = false;
     comiteDB.forEach(comite => {
-      if (comite['Comite'] == value) {
+      if (comite['id'] == value) {
         isComiteExist = true;
-        input.value = comite['titre'];
+        input.value = comite['nomComite'];
       }
     })
   }
@@ -247,8 +247,8 @@ if (isset($_GET['club']) && $_GET['club'] != null) {
     document.getElementById("enseignant").value = "<?php echo $currentClub["enseignant"]?>";
     document.getElementById("contact").value = "<?php echo $currentClub["contact"]?>";
     document.getElementById("lien").value = "<?php echo $currentClub["lien"]?>";
-    document.getElementById("comiteValue").value = "<?php echo $currentClub["Comite"]?>";
-    comiteDataReverse("<?php echo $currentClub["Comite"]?>")
+    document.getElementById("comiteValue").value = "<?php echo $currentClub["comiteId"]?>";
+    comiteDataReverse("<?php echo $currentClub["comiteId"]?>")
     
     document.getElementById("coo").value = "<?php echo $currentClub['coordonee'][1].','.$currentClub['coordonee'][0]?>";
   }
