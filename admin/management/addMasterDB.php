@@ -6,40 +6,8 @@ $_POST["function"] = str_replace(["'",'"'],['\\\'',"\\\""],$_POST["function"]);
 
 //If we want to upload a new image for the current Master
 if ($_FILES['newImage']['error']==0){
-    //If there no new file, $_FILES['newImage']['error'] = 4;
-    $target_dir = getSaveDirr('forDB')."maitres/";
-    $target_file = $target_dir . basename($_FILES["newImage"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-    // Check if image file is a actual image or fake image
-    if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["newImage"]["tmp_name"]);
-        if($check !== false) {
-            //echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
-    }
-    // Check file size
-    if ($_FILES["newImage"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["newImage"]["tmp_name"], $target_file)) {
-            //echo "The file ". htmlspecialchars( basename( $_FILES["newImage"]["name"])). " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-    $target_file = str_replace("../","",$target_file);
+    $hf = new HandleFile("maitres");
+    $target_file = $hf->handleImage();
 }else {
     //If we want to stay with the current image
     $target_file = $_POST['oldImage'];
@@ -91,5 +59,3 @@ switch ($_POST['submit']){
 
 echo "<script type='text/javascript'> history.go(-2); </script>";
 die;
-
-?>

@@ -66,7 +66,6 @@ if (isset($_GET['m']) && $_GET['m'] != null) {
       </div>
 
       <div class="col-12 col-md-7">
-        <?php //?>
         <div class="row">
           <div clas="col-5 col-md-12">
             <label class="data"><b>Hiérarchie</b><span class="note">*</span></label>
@@ -132,31 +131,29 @@ if (isset($_GET['m']) && $_GET['m'] != null) {
 
 <script src="scripts/previewPicture.js"></script>
 <script>
-if (<?php echo $index?> != -1){
-  if (<?php echo json_encode($currentMaster)?> != null){
-    <?php 
-    //Separate the belt value and the function
-    $currentMaster['function'] = explode(",", $currentMaster['function']);
-    $belt = array_shift($currentMaster['function']);
-    $function = implode(",", $currentMaster['function']);
-    ?>
-    document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos du Maître";
-    document.getElementById("confirm").value = "modify";
-    document.getElementById("confirm").innerHTML = "Modifier";
-    document.getElementById("delete").classList.remove('hide');
-    document.getElementById("undo").classList.add('hide');
+if (<?php echo $index?> != -1 && <?php echo json_encode($currentMaster)?> != null){
+  <?php 
+  //Separate the belt value and the function
+  $currentMaster['function'] = explode(",", $currentMaster['function']);
+  $belt = array_shift($currentMaster['function']);
+  $function = implode(",", $currentMaster['function']);
+  ?>
+  document.getElementsByTagName("h1")[0].innerHTML = "Modifier les infos du Maître";
+  document.getElementById("confirm").value = "modify";
+  document.getElementById("confirm").innerHTML = "Modifier";
+  document.getElementById("delete").classList.remove('hide');
+  document.getElementById("undo").classList.add('hide');
 
-    //if we click on an existant master, we have to fill all the cointainer with data
-    document.getElementById("name").value = "<?php echo $currentMaster['name'] ?>";
-    document.getElementById("biography").value = "<?php echo $currentMaster['biographyShort'] ?>".replaceAll('{n}', '\n');
-    document.getElementById("birth").value = "<?php echo $currentMaster['birthday'] ?>";
-    document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
-    document.getElementById("function").value = "<?php echo $function?>".replaceAll('{n}', '\n');
-    document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
-    document.getElementById("belt").value = "<?php echo $belt ?>".replaceAll('{n}', '\n');
-    document.getElementById("previewImgDiv").style = "background-image:url('<?php echo getSaveDirr("forPreview").$currentMaster['pictureProfile'] ?>');";
-    document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
-    document.getElementById("newImage").required = false;
-  }
+  //if we click on an existant master, we have to fill all the cointainer with data
+  document.getElementById("name").value = "<?php echo $currentMaster['name'] ?>";
+  document.getElementById("biography").value = "<?php echo $currentMaster['biographyShort'] ?>".replaceAll('{n}', '\n');
+  document.getElementById("birth").value = "<?php echo $currentMaster['birthday'] ?>";
+  document.getElementById("death").value = "<?php echo $currentMaster['deathDate'] ?>";
+  document.getElementById("function").value = "<?php echo $function?>".replaceAll('{n}', '\n');
+  document.getElementById("hierarchy").value = "<?php echo $currentMaster['hierarchy'] ?>";
+  document.getElementById("belt").value = "<?php echo $belt ?>".replaceAll('{n}', '\n');
+  document.getElementById("previewImgDiv").style = "background-image:url('<?php echo getSaveDirr("forPreview").$currentMaster['pictureProfile'] ?>');";
+  document.getElementById("oldImage").value = "<?php echo $currentMaster['pictureProfile']?>"
+  document.getElementById("newImage").required = false;
 }
 </script>

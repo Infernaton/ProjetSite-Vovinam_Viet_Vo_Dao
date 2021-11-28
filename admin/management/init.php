@@ -2,6 +2,7 @@
 //Fichier qui repertories toutes choses qui ont besoin d'être modifiées facilement, comme le répertoires d'images où des valeurs
 require_once "db.php";
 require_once "popUpAdmin.php";
+require_once "handleImage.php";
 
 session_start();
 
